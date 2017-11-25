@@ -1,2 +1,2 @@
 # Accounting
-Income and Expanses
+Accounting your Income and Expanses
