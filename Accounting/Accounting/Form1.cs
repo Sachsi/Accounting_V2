@@ -15,13 +15,21 @@ namespace Accounting
         public Form1()
         {
             InitializeComponent();
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
             this.reportViewer1.RefreshReport();
+
+            using (var db = new Database.AccountingDatabase())
+            {
+                var customerTo = new Database.Customer() { FullName = "Marcel Sachse" };
+
+                db.Customers.Add(customerTo);
+                db.SaveChanges();
+            }
         }
     }
 }
