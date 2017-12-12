@@ -25,7 +25,7 @@ namespace Accounting
 
             using (var db = new Database.AccountingDatabase())
             {
-                var customerTo = new Database.Customer() { FullName = "Marcel Sachse" };
+                var customerTo = new Database.Customer() { FullName = "Marcel Sachse",EMail = "tobisachse27@msn.com" };
 
                 db.Customers.Add(customerTo);
                 db.SaveChanges();
