@@ -18,6 +18,8 @@ namespace Accounting
         {
             public  int ID { get; set; }
             public string FullName { get; set; }
+            //Colume is added
+            public string EMail { get; set; }
         }
     }
 }
