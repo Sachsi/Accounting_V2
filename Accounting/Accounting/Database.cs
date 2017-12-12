@@ -18,7 +18,7 @@ namespace Accounting
         {
             public  int ID { get; set; }
             public string FullName { get; set; }
-            //Colume is added
+            //Colume is added because of the ADD-Migration tool
             public string EMail { get; set; }
         }
     }
