@@ -86,6 +86,22 @@
     <Compile Include="Migrations\201712122049297_AddCustomerEMail.Designer.cs">
       <DependentUpon>201712122049297_AddCustomerEMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712122113437_AddIncomeTable.cs" />
+    <Compile Include="Migrations\201712122113437_AddIncomeTable.Designer.cs">
+      <DependentUpon>201712122113437_AddIncomeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712122133220_AddIncomeContext.cs" />
+    <Compile Include="Migrations\201712122133220_AddIncomeContext.Designer.cs">
+      <DependentUpon>201712122133220_AddIncomeContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712132101348_addIncomeDate.cs" />
+    <Compile Include="Migrations\201712132101348_addIncomeDate.Designer.cs">
+      <DependentUpon>201712132101348_addIncomeDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712132134055_addProduceTable.cs" />
+    <Compile Include="Migrations\201712132134055_addProduceTable.Designer.cs">
+      <DependentUpon>201712132134055_addProduceTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +113,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712122049297_AddCustomerEMail.resx">
       <DependentUpon>201712122049297_AddCustomerEMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712122113437_AddIncomeTable.resx">
+      <DependentUpon>201712122113437_AddIncomeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712122133220_AddIncomeContext.resx">
+      <DependentUpon>201712122133220_AddIncomeContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712132101348_addIncomeDate.resx">
+      <DependentUpon>201712132101348_addIncomeDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712132134055_addProduceTable.resx">
+      <DependentUpon>201712132134055_addProduceTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
