@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Accounting
 {
@@ -13,18 +15,37 @@ namespace Accounting
         {
             public DbSet<Customer> Customers { get; set; }
             public DbSet<Income> Incomes { get; set; }
-            public DbSet<Produce> Produces { get; set; }
+            public DbSet<Product> Products { get; set; }
+            public DbSet<Expanses> Expanses { get; set; }
 
         }
-
+        /// <summary>
+        /// Customer Tabel to list all customer from his company with foregen key to the
+        /// income table 
+        /// </summary>
         public class Customer
         {
             public  int ID { get; set; }
+            public DateTime Date
+            {
+                get
+                {
+                    return this.Date.ToUniversalTime();
+                }
+                set
+                {
+                    this.Date = DateTime.Now;
+                }
+            }
             public string FullName { get; set; }
             //Colume is added because of the ADD-Migration tool
             public string EMail { get; set; }
             public ulong Phone { get; set; }
-
+            //added 3 new Columes 
+            public bool CSA { get; set; }
+            public bool Neighborhood { get; set; }
+            public bool Horse_Barn { get; set; }
+            
             public virtual List<Income> Incomes { get; set; }
 
             public Customer()
@@ -32,28 +53,83 @@ namespace Accounting
                 this.Incomes = new List<Income>();
             }
         }
-
+        /// <summary>
+        /// income Table to document all incomes. This has two foregen keys. One for
+        /// Producta and the one for the Customer
+        /// </summary>
         public class Income
         {
             public int ID { get; set; }
+            public DateTime Date
+            {
+                get
+                {
+                    return this.Date.ToUniversalTime();
+                }
+                set
+                {
+                    this.Date = DateTime.Now;
+                }
+            }
+                       
+            public string Payment { get; set; }
             public double Price  { get; set; }
             //add this colume later
-            //public DateTime Date { get; set; }
-            public virtual Produce Proudces { get; set; }
+            public string Product { get; set; }
+            public virtual Product Products { get; set; }
 
-            public virtual Customer CustomerName { get; set; }
+            public string CustomerName { get; set; }
+            public virtual Customer Customer { get; set; }
         }
-        public class Produce
+        /// <summary>
+        /// Product table list all poducsed products and one foregen key to the 
+        /// Icome table
+        /// </summary>
+        public class Product
         {
             public int ID { get; set; }
-            public string ProduceName { get; set; }
+            public DateTime Date
+            {
+                get
+                {
+                    return this.Date.ToUniversalTime();
+                }
+                set
+                {
+                    this.Date = DateTime.Now;
+                }
+            }
+            public string ProductName { get; set; }
 
             public virtual List<Income> Incomes { get; set; }
 
-            public Produce()
+            public Product()
             {
                 this.Incomes = new List<Income>();
             }
+        }
+
+        /// <summary>
+        /// Expanses Table to list all expense 
+        /// </summary>
+        [Table("Expanses")]
+        public class Expanses
+        {
+            public int ExpansesId { get; set; }
+            public DateTime Date
+            {
+                get
+                {
+                    return this.Date.ToUniversalTime();
+                }
+                set
+                {
+                    this.Date = DateTime.Now;
+                }
+            }
+            public string payment { get; set; }
+            public double Price { get; set; }
+            public string recipient { get; set; }
         }
     }
 }
