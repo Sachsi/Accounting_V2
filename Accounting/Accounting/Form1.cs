@@ -20,8 +20,15 @@ namespace Accounting
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
+
+            using (Database.AccountingDatabase db = new Database.AccountingDatabase())
+            {
+                incomeBindingSource.DataSource = db.Incomes.ToList();
+            }
+
+            mP_Income.Enabled = false;    
 
             //using (var db = new Database.AccountingDatabase())
             //{
@@ -44,6 +51,32 @@ namespace Accounting
 
             //    db.SaveChanges();
             //}
+        }
+
+        private void mB_ADD_Income_Click(object sender, EventArgs e)
+        {
+            mP_Income.Enabled = true;
+            incomeBindingSource.Add(new Database.Income());
+            incomeBindingSource.MoveLast();
+            mT_Date_Income.Focus();
+        }
+
+        private void mB_Save_Income_Click(object sender, EventArgs e)
+        {
+            using (Database.AccountingDatabase db = new Database.AccountingDatabase())
+            {
+                Database.Income obj = incomeBindingSource.Current as Database.Income;
+                if (obj != null)
+                {
+                    if (db.Entry<Database.Income>(obj).State == System.Data.Entity.EntityState.Detached)
+                    {
+                        db.Set<Database.Income>().Attach(obj);
+                    }
+                    db.SaveChanges();
+                    mGrid_Income.Refresh();
+                    mP_Income.Enabled = false;
+                }
+            }
         }
     }
 }

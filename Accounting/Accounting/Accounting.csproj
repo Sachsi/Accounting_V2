@@ -127,6 +127,10 @@
     <Compile Include="Migrations\201712172103501_addIncomeColume.Designer.cs">
       <DependentUpon>201712172103501_addIncomeColume.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712192109191_editedDate.cs" />
+    <Compile Include="Migrations\201712192109191_editedDate.Designer.cs">
+      <DependentUpon>201712192109191_editedDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +173,9 @@
     <EmbeddedResource Include="Migrations\201712172103501_addIncomeColume.resx">
       <DependentUpon>201712172103501_addIncomeColume.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712192109191_editedDate.resx">
+      <DependentUpon>201712192109191_editedDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -178,7 +185,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\CustomerReport.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Database.Customer.datasource" />
+    <None Include="Properties\DataSources\Database.Income.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

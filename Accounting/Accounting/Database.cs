@@ -13,6 +13,8 @@ namespace Accounting
     {
         public class AccountingDatabase : DbContext
         {
+            public AccountingDatabase() : base("name = AccountingDatabase") { }
+
             public DbSet<Customer> Customers { get; set; }
             public DbSet<Income> Incomes { get; set; }
             public DbSet<Product> Products { get; set; }
@@ -60,17 +62,8 @@ namespace Accounting
         public class Income
         {
             public int ID { get; set; }
-            public DateTime Date
-            {
-                get
-                {
-                    return this.Date.ToUniversalTime();
-                }
-                set
-                {
-                    this.Date = DateTime.Now;
-                }
-            }
+            
+            public DateTime Date { get; set; }
                        
             public string Payment { get; set; }
             public double Price  { get; set; }
