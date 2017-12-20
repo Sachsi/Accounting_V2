@@ -28,17 +28,7 @@ namespace Accounting
         public class Customer
         {
             public  int ID { get; set; }
-            public DateTime Date
-            {
-                get
-                {
-                    return this.Date.ToUniversalTime();
-                }
-                set
-                {
-                    this.Date = DateTime.Now;
-                }
-            }
+            public DateTime Date { get; set; }
             public string FullName { get; set; }
             //Colume is added because of the ADD-Migration tool
             public string EMail { get; set; }

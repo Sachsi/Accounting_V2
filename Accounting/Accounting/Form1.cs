@@ -20,15 +20,15 @@ namespace Accounting
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.reportViewer1.RefreshReport();
             this.reportViewer2.RefreshReport();
 
             using (Database.AccountingDatabase db = new Database.AccountingDatabase())
             {
                 incomeBindingSource.DataSource = db.Incomes.ToList();
+                customerBindingSource.DataSource = db.Customers.ToList();
             }
-
-            mP_Income.Enabled = false;    
+            mP_Income.Enabled = false;
+            mP_Customer.Enabled = false;
 
             //using (var db = new Database.AccountingDatabase())
             //{
@@ -78,5 +78,7 @@ namespace Accounting
                 }
             }
         }
+
+
     }
 }
