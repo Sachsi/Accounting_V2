@@ -71,6 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerTabler.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Data\DummyData.cs" />
     <Compile Include="Form1.cs">

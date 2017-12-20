@@ -32,17 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mTC_Accounting = new MetroFramework.Controls.MetroTabControl();
-            this.mTP_Overview = new MetroFramework.Controls.MetroTabPage();
             this.mTP_Income = new MetroFramework.Controls.MetroTabPage();
             this.mB_ADD_Income = new MetroFramework.Controls.MetroButton();
             this.mB_Save_Income = new MetroFramework.Controls.MetroButton();
             this.mP_Income = new MetroFramework.Controls.MetroPanel();
             this.mT_Product_Income = new MetroFramework.Controls.MetroTextBox();
+            this.incomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mL_Product_Income = new MetroFramework.Controls.MetroLabel();
             this.mT_Date_Income = new MetroFramework.Controls.MetroTextBox();
             this.mT_Name_Income = new MetroFramework.Controls.MetroTextBox();
-            this.incomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mT_Price_Income = new MetroFramework.Controls.MetroTextBox();
             this.mT_Payment_Income = new MetroFramework.Controls.MetroTextBox();
             this.mL_Price_Income = new MetroFramework.Controls.MetroLabel();
@@ -50,6 +52,11 @@
             this.mL_Payment_Income = new MetroFramework.Controls.MetroLabel();
             this.mL_Date_Income = new MetroFramework.Controls.MetroLabel();
             this.mGrid_Income = new MetroFramework.Controls.MetroGrid();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mTP_Expenses = new MetroFramework.Controls.MetroTabPage();
             this.metroCheckBox3 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox4 = new MetroFramework.Controls.MetroCheckBox();
@@ -65,24 +72,29 @@
             this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.mTP_Customer = new MetroFramework.Controls.MetroTabPage();
-            this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
+            this.mB_Save_Customer = new MetroFramework.Controls.MetroButton();
+            this.mP_Customer = new MetroFramework.Controls.MetroPanel();
+            this.mCB_HorsBar_Customer = new MetroFramework.Controls.MetroCheckBox();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mCB_CSA_Customer = new MetroFramework.Controls.MetroCheckBox();
+            this.mCB_Neighborhood_Customer = new MetroFramework.Controls.MetroCheckBox();
+            this.mTB_Date_Customer = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_FullName_Customer = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_Phone_Customer = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_EMail_Customer = new MetroFramework.Controls.MetroTextBox();
+            this.mL_Phone_Customer = new MetroFramework.Controls.MetroLabel();
+            this.mL_FullName_Customer = new MetroFramework.Controls.MetroLabel();
+            this.mL_EMail_Customer = new MetroFramework.Controls.MetroLabel();
+            this.mL_Date_Customer = new MetroFramework.Controls.MetroLabel();
+            this.mG_Customer = new MetroFramework.Controls.MetroGrid();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cSADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.neighborhoodDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.horseBarnDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Income.SuspendLayout();
             this.mP_Income.SuspendLayout();
@@ -90,11 +102,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.mGrid_Income)).BeginInit();
             this.mTP_Expenses.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
+            this.mP_Customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mG_Customer)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Accounting
             // 
-            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
             this.mTC_Accounting.Controls.Add(this.mTP_Expenses);
             this.mTC_Accounting.Controls.Add(this.mTP_Customer);
@@ -103,25 +117,11 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(90, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(20, 60);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 1;
-            this.mTC_Accounting.Size = new System.Drawing.Size(758, 361);
+            this.mTC_Accounting.SelectedIndex = 0;
+            this.mTC_Accounting.Size = new System.Drawing.Size(751, 375);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.mTC_Accounting.TabIndex = 0;
             this.mTC_Accounting.UseSelectable = true;
-            // 
-            // mTP_Overview
-            // 
-            this.mTP_Overview.HorizontalScrollbarBarColor = true;
-            this.mTP_Overview.HorizontalScrollbarHighlightOnWheel = false;
-            this.mTP_Overview.HorizontalScrollbarSize = 10;
-            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Overview.Name = "mTP_Overview";
-            this.mTP_Overview.Size = new System.Drawing.Size(750, 319);
-            this.mTP_Overview.TabIndex = 0;
-            this.mTP_Overview.Text = "Overview";
-            this.mTP_Overview.VerticalScrollbarBarColor = true;
-            this.mTP_Overview.VerticalScrollbarHighlightOnWheel = false;
-            this.mTP_Overview.VerticalScrollbarSize = 10;
             // 
             // mTP_Income
             // 
@@ -134,7 +134,7 @@
             this.mTP_Income.HorizontalScrollbarSize = 10;
             this.mTP_Income.Location = new System.Drawing.Point(4, 38);
             this.mTP_Income.Name = "mTP_Income";
-            this.mTP_Income.Size = new System.Drawing.Size(750, 319);
+            this.mTP_Income.Size = new System.Drawing.Size(743, 333);
             this.mTP_Income.TabIndex = 1;
             this.mTP_Income.Text = "Income";
             this.mTP_Income.VerticalScrollbarBarColor = true;
@@ -144,7 +144,7 @@
             // mB_ADD_Income
             // 
             this.mB_ADD_Income.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_ADD_Income.Location = new System.Drawing.Point(570, 285);
+            this.mB_ADD_Income.Location = new System.Drawing.Point(563, 299);
             this.mB_ADD_Income.Name = "mB_ADD_Income";
             this.mB_ADD_Income.Size = new System.Drawing.Size(85, 27);
             this.mB_ADD_Income.TabIndex = 31;
@@ -155,7 +155,7 @@
             // mB_Save_Income
             // 
             this.mB_Save_Income.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Save_Income.Location = new System.Drawing.Point(662, 285);
+            this.mB_Save_Income.Location = new System.Drawing.Point(655, 299);
             this.mB_Save_Income.Name = "mB_Save_Income";
             this.mB_Save_Income.Size = new System.Drawing.Size(85, 27);
             this.mB_Save_Income.TabIndex = 30;
@@ -180,9 +180,9 @@
             this.mP_Income.HorizontalScrollbarBarColor = true;
             this.mP_Income.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_Income.HorizontalScrollbarSize = 10;
-            this.mP_Income.Location = new System.Drawing.Point(3, 185);
+            this.mP_Income.Location = new System.Drawing.Point(3, 199);
             this.mP_Income.Name = "mP_Income";
-            this.mP_Income.Size = new System.Drawing.Size(744, 94);
+            this.mP_Income.Size = new System.Drawing.Size(740, 94);
             this.mP_Income.TabIndex = 25;
             this.mP_Income.VerticalScrollbarBarColor = true;
             this.mP_Income.VerticalScrollbarHighlightOnWheel = false;
@@ -218,6 +218,10 @@
             this.mT_Product_Income.UseSelectable = true;
             this.mT_Product_Income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mT_Product_Income.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // incomeBindingSource
+            // 
+            this.incomeBindingSource.DataSource = typeof(Accounting.Database.Income);
             // 
             // mL_Product_Income
             // 
@@ -294,10 +298,6 @@
             this.mT_Name_Income.UseSelectable = true;
             this.mT_Name_Income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mT_Name_Income.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // incomeBindingSource
-            // 
-            this.incomeBindingSource.DataSource = typeof(Accounting.Database.Income);
             // 
             // mT_Price_Income
             // 
@@ -455,8 +455,44 @@
             this.mGrid_Income.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mGrid_Income.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mGrid_Income.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mGrid_Income.Size = new System.Drawing.Size(747, 176);
+            this.mGrid_Income.Size = new System.Drawing.Size(740, 190);
             this.mGrid_Income.TabIndex = 24;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paymentDataGridViewTextBoxColumn
+            // 
+            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
+            this.paymentDataGridViewTextBoxColumn.HeaderText = "Payment";
+            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
+            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            this.productDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mTP_Expenses
             // 
@@ -478,7 +514,7 @@
             this.mTP_Expenses.HorizontalScrollbarSize = 10;
             this.mTP_Expenses.Location = new System.Drawing.Point(4, 38);
             this.mTP_Expenses.Name = "mTP_Expenses";
-            this.mTP_Expenses.Size = new System.Drawing.Size(750, 319);
+            this.mTP_Expenses.Size = new System.Drawing.Size(743, 333);
             this.mTP_Expenses.TabIndex = 2;
             this.mTP_Expenses.Text = "Expenses";
             this.mTP_Expenses.VerticalScrollbarBarColor = true;
@@ -636,7 +672,7 @@
             // metroButton3
             // 
             this.metroButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton3.Location = new System.Drawing.Point(591, 314);
+            this.metroButton3.Location = new System.Drawing.Point(584, 328);
             this.metroButton3.Name = "metroButton3";
             this.metroButton3.Size = new System.Drawing.Size(85, 27);
             this.metroButton3.TabIndex = 17;
@@ -682,7 +718,7 @@
             // metroButton4
             // 
             this.metroButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton4.Location = new System.Drawing.Point(683, 314);
+            this.metroButton4.Location = new System.Drawing.Point(676, 328);
             this.metroButton4.Name = "metroButton4";
             this.metroButton4.Size = new System.Drawing.Size(85, 27);
             this.metroButton4.TabIndex = 12;
@@ -695,290 +731,388 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer2.Location = new System.Drawing.Point(3, 15);
             this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(765, 247);
+            this.reportViewer2.Size = new System.Drawing.Size(758, 247);
             this.reportViewer2.TabIndex = 11;
             // 
             // mTP_Customer
             // 
-            this.mTP_Customer.Controls.Add(this.metroCheckBox2);
-            this.mTP_Customer.Controls.Add(this.metroCheckBox1);
-            this.mTP_Customer.Controls.Add(this.metroTextBox4);
-            this.mTP_Customer.Controls.Add(this.metroTextBox3);
-            this.mTP_Customer.Controls.Add(this.metroTextBox2);
-            this.mTP_Customer.Controls.Add(this.metroTextBox1);
-            this.mTP_Customer.Controls.Add(this.metroButton2);
-            this.mTP_Customer.Controls.Add(this.metroLabel4);
-            this.mTP_Customer.Controls.Add(this.metroLabel3);
-            this.mTP_Customer.Controls.Add(this.metroLabel2);
-            this.mTP_Customer.Controls.Add(this.metroLabel1);
-            this.mTP_Customer.Controls.Add(this.metroButton1);
-            this.mTP_Customer.Controls.Add(this.reportViewer1);
+            this.mTP_Customer.Controls.Add(this.mB_Add_Customer);
+            this.mTP_Customer.Controls.Add(this.mB_Save_Customer);
+            this.mTP_Customer.Controls.Add(this.mP_Customer);
+            this.mTP_Customer.Controls.Add(this.mG_Customer);
             this.mTP_Customer.HorizontalScrollbarBarColor = true;
             this.mTP_Customer.HorizontalScrollbarHighlightOnWheel = false;
             this.mTP_Customer.HorizontalScrollbarSize = 10;
             this.mTP_Customer.Location = new System.Drawing.Point(4, 38);
             this.mTP_Customer.Name = "mTP_Customer";
-            this.mTP_Customer.Size = new System.Drawing.Size(750, 319);
+            this.mTP_Customer.Size = new System.Drawing.Size(743, 333);
             this.mTP_Customer.TabIndex = 3;
             this.mTP_Customer.Text = "Customer";
             this.mTP_Customer.VerticalScrollbarBarColor = true;
             this.mTP_Customer.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Customer.VerticalScrollbarSize = 10;
             // 
-            // metroCheckBox2
+            // mB_Add_Customer
             // 
-            this.metroCheckBox2.AutoSize = true;
-            this.metroCheckBox2.Location = new System.Drawing.Point(381, 327);
-            this.metroCheckBox2.Name = "metroCheckBox2";
-            this.metroCheckBox2.Size = new System.Drawing.Size(113, 15);
-            this.metroCheckBox2.TabIndex = 10;
-            this.metroCheckBox2.Text = "metroCheckBox1";
-            this.metroCheckBox2.UseSelectable = true;
+            this.mB_Add_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Add_Customer.Location = new System.Drawing.Point(563, 298);
+            this.mB_Add_Customer.Name = "mB_Add_Customer";
+            this.mB_Add_Customer.Size = new System.Drawing.Size(85, 27);
+            this.mB_Add_Customer.TabIndex = 18;
+            this.mB_Add_Customer.Text = "Add";
+            this.mB_Add_Customer.UseSelectable = true;
+            this.mB_Add_Customer.Click += new System.EventHandler(this.mB_Add_Customer_Click);
             // 
-            // metroCheckBox1
+            // mB_Save_Customer
             // 
-            this.metroCheckBox1.AutoSize = true;
-            this.metroCheckBox1.Location = new System.Drawing.Point(105, 327);
-            this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(113, 15);
-            this.metroCheckBox1.TabIndex = 10;
-            this.metroCheckBox1.Text = "metroCheckBox1";
-            this.metroCheckBox1.UseSelectable = true;
+            this.mB_Save_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Save_Customer.Location = new System.Drawing.Point(655, 298);
+            this.mB_Save_Customer.Name = "mB_Save_Customer";
+            this.mB_Save_Customer.Size = new System.Drawing.Size(85, 27);
+            this.mB_Save_Customer.TabIndex = 17;
+            this.mB_Save_Customer.Text = "Save";
+            this.mB_Save_Customer.UseSelectable = true;
+            this.mB_Save_Customer.Click += new System.EventHandler(this.mB_Save_Customer_Click);
             // 
-            // metroTextBox4
+            // mP_Customer
+            // 
+            this.mP_Customer.Controls.Add(this.mCB_HorsBar_Customer);
+            this.mP_Customer.Controls.Add(this.mCB_CSA_Customer);
+            this.mP_Customer.Controls.Add(this.mCB_Neighborhood_Customer);
+            this.mP_Customer.Controls.Add(this.mTB_Date_Customer);
+            this.mP_Customer.Controls.Add(this.mTB_FullName_Customer);
+            this.mP_Customer.Controls.Add(this.mTB_Phone_Customer);
+            this.mP_Customer.Controls.Add(this.mTB_EMail_Customer);
+            this.mP_Customer.Controls.Add(this.mL_Phone_Customer);
+            this.mP_Customer.Controls.Add(this.mL_FullName_Customer);
+            this.mP_Customer.Controls.Add(this.mL_EMail_Customer);
+            this.mP_Customer.Controls.Add(this.mL_Date_Customer);
+            this.mP_Customer.HorizontalScrollbarBarColor = true;
+            this.mP_Customer.HorizontalScrollbarHighlightOnWheel = false;
+            this.mP_Customer.HorizontalScrollbarSize = 10;
+            this.mP_Customer.Location = new System.Drawing.Point(3, 199);
+            this.mP_Customer.Name = "mP_Customer";
+            this.mP_Customer.Size = new System.Drawing.Size(740, 93);
+            this.mP_Customer.TabIndex = 12;
+            this.mP_Customer.VerticalScrollbarBarColor = true;
+            this.mP_Customer.VerticalScrollbarHighlightOnWheel = false;
+            this.mP_Customer.VerticalScrollbarSize = 10;
+            // 
+            // mCB_HorsBar_Customer
+            // 
+            this.mCB_HorsBar_Customer.AutoSize = true;
+            this.mCB_HorsBar_Customer.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.customerBindingSource, "Horse_Barn", true));
+            this.mCB_HorsBar_Customer.Location = new System.Drawing.Point(514, 55);
+            this.mCB_HorsBar_Customer.Name = "mCB_HorsBar_Customer";
+            this.mCB_HorsBar_Customer.Size = new System.Drawing.Size(81, 15);
+            this.mCB_HorsBar_Customer.TabIndex = 23;
+            this.mCB_HorsBar_Customer.Text = "Horse Barn";
+            this.mCB_HorsBar_Customer.UseSelectable = true;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(Accounting.Database.Customer);
+            // 
+            // mCB_CSA_Customer
+            // 
+            this.mCB_CSA_Customer.AutoSize = true;
+            this.mCB_CSA_Customer.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.customerBindingSource, "CSA", true));
+            this.mCB_CSA_Customer.Location = new System.Drawing.Point(514, 9);
+            this.mCB_CSA_Customer.Name = "mCB_CSA_Customer";
+            this.mCB_CSA_Customer.Size = new System.Drawing.Size(45, 15);
+            this.mCB_CSA_Customer.TabIndex = 21;
+            this.mCB_CSA_Customer.Text = "CSA";
+            this.mCB_CSA_Customer.UseSelectable = true;
+            this.mCB_CSA_Customer.CheckedChanged += new System.EventHandler(this.metroCheckBox2_CheckedChanged);
+            // 
+            // mCB_Neighborhood_Customer
+            // 
+            this.mCB_Neighborhood_Customer.AutoSize = true;
+            this.mCB_Neighborhood_Customer.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.customerBindingSource, "Neighborhood", true));
+            this.mCB_Neighborhood_Customer.Location = new System.Drawing.Point(514, 32);
+            this.mCB_Neighborhood_Customer.Name = "mCB_Neighborhood_Customer";
+            this.mCB_Neighborhood_Customer.Size = new System.Drawing.Size(105, 15);
+            this.mCB_Neighborhood_Customer.TabIndex = 22;
+            this.mCB_Neighborhood_Customer.Text = "Neightborhood";
+            this.mCB_Neighborhood_Customer.UseSelectable = true;
+            // 
+            // mTB_Date_Customer
             // 
             // 
             // 
             // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[] {
+            this.mTB_Date_Customer.CustomButton.BackColor = System.Drawing.SystemColors.Control;
+            this.mTB_Date_Customer.CustomButton.Image = null;
+            this.mTB_Date_Customer.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_Date_Customer.CustomButton.Name = "";
+            this.mTB_Date_Customer.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_Date_Customer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Date_Customer.CustomButton.TabIndex = 1;
+            this.mTB_Date_Customer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Date_Customer.CustomButton.UseSelectable = true;
+            this.mTB_Date_Customer.CustomButton.UseVisualStyleBackColor = false;
+            this.mTB_Date_Customer.CustomButton.Visible = false;
+            this.mTB_Date_Customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Date", true));
+            this.mTB_Date_Customer.Lines = new string[] {
         "metroTextBox1"};
-            this.metroTextBox4.Location = new System.Drawing.Point(105, 268);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(122, 23);
-            this.metroTextBox4.TabIndex = 9;
-            this.metroTextBox4.Text = "metroTextBox1";
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Date_Customer.Location = new System.Drawing.Point(92, 3);
+            this.mTB_Date_Customer.MaxLength = 32767;
+            this.mTB_Date_Customer.Name = "mTB_Date_Customer";
+            this.mTB_Date_Customer.PasswordChar = '\0';
+            this.mTB_Date_Customer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Date_Customer.SelectedText = "";
+            this.mTB_Date_Customer.SelectionLength = 0;
+            this.mTB_Date_Customer.SelectionStart = 0;
+            this.mTB_Date_Customer.ShortcutsEnabled = true;
+            this.mTB_Date_Customer.Size = new System.Drawing.Size(122, 23);
+            this.mTB_Date_Customer.TabIndex = 17;
+            this.mTB_Date_Customer.Text = "metroTextBox1";
+            this.mTB_Date_Customer.UseSelectable = true;
+            this.mTB_Date_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Date_Customer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox3
-            // 
-            // 
+            // mTB_FullName_Customer
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.Lines = new string[] {
+            // 
+            // 
+            this.mTB_FullName_Customer.CustomButton.Image = null;
+            this.mTB_FullName_Customer.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_FullName_Customer.CustomButton.Name = "";
+            this.mTB_FullName_Customer.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_FullName_Customer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_FullName_Customer.CustomButton.TabIndex = 1;
+            this.mTB_FullName_Customer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_FullName_Customer.CustomButton.UseSelectable = true;
+            this.mTB_FullName_Customer.CustomButton.Visible = false;
+            this.mTB_FullName_Customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "FullName", true));
+            this.mTB_FullName_Customer.Lines = new string[] {
         "metroTextBox1"};
-            this.metroTextBox3.Location = new System.Drawing.Point(105, 297);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(122, 23);
-            this.metroTextBox3.TabIndex = 9;
-            this.metroTextBox3.Text = "metroTextBox1";
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_FullName_Customer.Location = new System.Drawing.Point(92, 32);
+            this.mTB_FullName_Customer.MaxLength = 32767;
+            this.mTB_FullName_Customer.Name = "mTB_FullName_Customer";
+            this.mTB_FullName_Customer.PasswordChar = '\0';
+            this.mTB_FullName_Customer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_FullName_Customer.SelectedText = "";
+            this.mTB_FullName_Customer.SelectionLength = 0;
+            this.mTB_FullName_Customer.SelectionStart = 0;
+            this.mTB_FullName_Customer.ShortcutsEnabled = true;
+            this.mTB_FullName_Customer.Size = new System.Drawing.Size(122, 23);
+            this.mTB_FullName_Customer.TabIndex = 18;
+            this.mTB_FullName_Customer.Text = "metroTextBox1";
+            this.mTB_FullName_Customer.UseSelectable = true;
+            this.mTB_FullName_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_FullName_Customer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox2
-            // 
-            // 
+            // mTB_Phone_Customer
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[] {
+            // 
+            // 
+            this.mTB_Phone_Customer.CustomButton.Image = null;
+            this.mTB_Phone_Customer.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_Phone_Customer.CustomButton.Name = "";
+            this.mTB_Phone_Customer.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_Phone_Customer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Phone_Customer.CustomButton.TabIndex = 1;
+            this.mTB_Phone_Customer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Phone_Customer.CustomButton.UseSelectable = true;
+            this.mTB_Phone_Customer.CustomButton.Visible = false;
+            this.mTB_Phone_Customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "Phone", true));
+            this.mTB_Phone_Customer.Lines = new string[] {
         "metroTextBox1"};
-            this.metroTextBox2.Location = new System.Drawing.Point(381, 297);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(122, 23);
-            this.metroTextBox2.TabIndex = 9;
-            this.metroTextBox2.Text = "metroTextBox1";
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Phone_Customer.Location = new System.Drawing.Point(368, 32);
+            this.mTB_Phone_Customer.MaxLength = 32767;
+            this.mTB_Phone_Customer.Name = "mTB_Phone_Customer";
+            this.mTB_Phone_Customer.PasswordChar = '\0';
+            this.mTB_Phone_Customer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Phone_Customer.SelectedText = "";
+            this.mTB_Phone_Customer.SelectionLength = 0;
+            this.mTB_Phone_Customer.SelectionStart = 0;
+            this.mTB_Phone_Customer.ShortcutsEnabled = true;
+            this.mTB_Phone_Customer.Size = new System.Drawing.Size(122, 23);
+            this.mTB_Phone_Customer.TabIndex = 19;
+            this.mTB_Phone_Customer.Text = "metroTextBox1";
+            this.mTB_Phone_Customer.UseSelectable = true;
+            this.mTB_Phone_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Phone_Customer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox1
-            // 
-            // 
+            // mTB_EMail_Customer
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[] {
+            // 
+            // 
+            this.mTB_EMail_Customer.CustomButton.Image = null;
+            this.mTB_EMail_Customer.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_EMail_Customer.CustomButton.Name = "";
+            this.mTB_EMail_Customer.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_EMail_Customer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_EMail_Customer.CustomButton.TabIndex = 1;
+            this.mTB_EMail_Customer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_EMail_Customer.CustomButton.UseSelectable = true;
+            this.mTB_EMail_Customer.CustomButton.Visible = false;
+            this.mTB_EMail_Customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "EMail", true));
+            this.mTB_EMail_Customer.Lines = new string[] {
         "metroTextBox1"};
-            this.metroTextBox1.Location = new System.Drawing.Point(381, 268);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(122, 23);
-            this.metroTextBox1.TabIndex = 9;
-            this.metroTextBox1.Text = "metroTextBox1";
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_EMail_Customer.Location = new System.Drawing.Point(368, 3);
+            this.mTB_EMail_Customer.MaxLength = 32767;
+            this.mTB_EMail_Customer.Name = "mTB_EMail_Customer";
+            this.mTB_EMail_Customer.PasswordChar = '\0';
+            this.mTB_EMail_Customer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_EMail_Customer.SelectedText = "";
+            this.mTB_EMail_Customer.SelectionLength = 0;
+            this.mTB_EMail_Customer.SelectionStart = 0;
+            this.mTB_EMail_Customer.ShortcutsEnabled = true;
+            this.mTB_EMail_Customer.Size = new System.Drawing.Size(122, 23);
+            this.mTB_EMail_Customer.TabIndex = 20;
+            this.mTB_EMail_Customer.Text = "metroTextBox1";
+            this.mTB_EMail_Customer.UseSelectable = true;
+            this.mTB_EMail_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_EMail_Customer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton2
+            // mL_Phone_Customer
             // 
-            this.metroButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton2.Location = new System.Drawing.Point(593, 312);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(85, 27);
-            this.metroButton2.TabIndex = 8;
-            this.metroButton2.Text = "metroButton2";
-            this.metroButton2.UseSelectable = true;
+            this.mL_Phone_Customer.AutoSize = true;
+            this.mL_Phone_Customer.Location = new System.Drawing.Point(279, 34);
+            this.mL_Phone_Customer.Name = "mL_Phone_Customer";
+            this.mL_Phone_Customer.Size = new System.Drawing.Size(49, 19);
+            this.mL_Phone_Customer.TabIndex = 15;
+            this.mL_Phone_Customer.Text = "Phone:";
             // 
-            // metroLabel4
+            // mL_FullName_Customer
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(292, 299);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "metroLabel4";
+            this.mL_FullName_Customer.AutoSize = true;
+            this.mL_FullName_Customer.Location = new System.Drawing.Point(3, 34);
+            this.mL_FullName_Customer.Name = "mL_FullName_Customer";
+            this.mL_FullName_Customer.Size = new System.Drawing.Size(72, 19);
+            this.mL_FullName_Customer.TabIndex = 14;
+            this.mL_FullName_Customer.Text = "Full Name:";
             // 
-            // metroLabel3
+            // mL_EMail_Customer
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(16, 299);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "metroLabel3";
+            this.mL_EMail_Customer.AutoSize = true;
+            this.mL_EMail_Customer.Location = new System.Drawing.Point(279, 5);
+            this.mL_EMail_Customer.Name = "mL_EMail_Customer";
+            this.mL_EMail_Customer.Size = new System.Drawing.Size(50, 19);
+            this.mL_EMail_Customer.TabIndex = 13;
+            this.mL_EMail_Customer.Text = "E-Mail:";
             // 
-            // metroLabel2
+            // mL_Date_Customer
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(292, 270);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel2.TabIndex = 5;
-            this.metroLabel2.Text = "metroLabel2";
+            this.mL_Date_Customer.AutoSize = true;
+            this.mL_Date_Customer.Location = new System.Drawing.Point(3, 5);
+            this.mL_Date_Customer.Name = "mL_Date_Customer";
+            this.mL_Date_Customer.Size = new System.Drawing.Size(39, 19);
+            this.mL_Date_Customer.TabIndex = 12;
+            this.mL_Date_Customer.Text = "Date:";
             // 
-            // metroLabel1
+            // mG_Customer
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 270);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "metroLabel1";
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.Location = new System.Drawing.Point(685, 312);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(85, 27);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mG_Customer.AllowUserToResizeRows = false;
+            this.mG_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.Location = new System.Drawing.Point(3, 15);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(767, 247);
-            this.reportViewer1.TabIndex = 2;
+            this.mG_Customer.AutoGenerateColumns = false;
+            this.mG_Customer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mG_Customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mG_Customer.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.mG_Customer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mG_Customer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.mG_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mG_Customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateDataGridViewTextBoxColumn,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.eMailDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.cSADataGridViewCheckBoxColumn,
+            this.neighborhoodDataGridViewCheckBoxColumn,
+            this.horseBarnDataGridViewCheckBoxColumn});
+            this.mG_Customer.DataSource = this.customerBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mG_Customer.DefaultCellStyle = dataGridViewCellStyle5;
+            this.mG_Customer.EnableHeadersVisualStyles = false;
+            this.mG_Customer.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mG_Customer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mG_Customer.Location = new System.Drawing.Point(3, 3);
+            this.mG_Customer.Name = "mG_Customer";
+            this.mG_Customer.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mG_Customer.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.mG_Customer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mG_Customer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.mG_Customer.Size = new System.Drawing.Size(740, 190);
+            this.mG_Customer.TabIndex = 11;
             // 
-            // Date
+            // dateDataGridViewTextBoxColumn
             // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.Frozen = true;
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
-            // customerNameDataGridViewTextBoxColumn
+            // fullNameDataGridViewTextBoxColumn
             // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full Name";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
             // 
-            // paymentDataGridViewTextBoxColumn
+            // eMailDataGridViewTextBoxColumn
             // 
-            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
-            this.paymentDataGridViewTextBoxColumn.HeaderText = "Payment";
-            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
-            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.eMailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "EMail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "E-Mail";
+            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
             // 
-            // priceDataGridViewTextBoxColumn
+            // phoneDataGridViewTextBoxColumn
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             // 
-            // productDataGridViewTextBoxColumn
+            // cSADataGridViewCheckBoxColumn
             // 
-            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            this.productDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cSADataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
+            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
+            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
+            this.cSADataGridViewCheckBoxColumn.Width = 31;
+            // 
+            // neighborhoodDataGridViewCheckBoxColumn
+            // 
+            this.neighborhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighborhood";
+            this.neighborhoodDataGridViewCheckBoxColumn.HeaderText = "Neighborhood";
+            this.neighborhoodDataGridViewCheckBoxColumn.Name = "neighborhoodDataGridViewCheckBoxColumn";
+            // 
+            // horseBarnDataGridViewCheckBoxColumn
+            // 
+            this.horseBarnDataGridViewCheckBoxColumn.DataPropertyName = "Horse_Barn";
+            this.horseBarnDataGridViewCheckBoxColumn.HeaderText = "Horse Barn";
+            this.horseBarnDataGridViewCheckBoxColumn.Name = "horseBarnDataGridViewCheckBoxColumn";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 441);
+            this.ClientSize = new System.Drawing.Size(791, 455);
             this.Controls.Add(this.mTC_Accounting);
             this.Name = "Form1";
             this.Text = "Accounting";
@@ -992,7 +1126,10 @@
             this.mTP_Expenses.ResumeLayout(false);
             this.mTP_Expenses.PerformLayout();
             this.mTP_Customer.ResumeLayout(false);
-            this.mTP_Customer.PerformLayout();
+            this.mP_Customer.ResumeLayout(false);
+            this.mP_Customer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mG_Customer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1000,23 +1137,9 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl mTC_Accounting;
-        private MetroFramework.Controls.MetroTabPage mTP_Overview;
         private MetroFramework.Controls.MetroTabPage mTP_Income;
         private MetroFramework.Controls.MetroTabPage mTP_Expenses;
         private MetroFramework.Controls.MetroTabPage mTP_Customer;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox3;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox4;
         private MetroFramework.Controls.MetroTextBox metroTextBox5;
@@ -1050,6 +1173,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroButton mB_Add_Customer;
+        private MetroFramework.Controls.MetroButton mB_Save_Customer;
+        private MetroFramework.Controls.MetroPanel mP_Customer;
+        private MetroFramework.Controls.MetroCheckBox mCB_CSA_Customer;
+        private MetroFramework.Controls.MetroCheckBox mCB_Neighborhood_Customer;
+        private MetroFramework.Controls.MetroTextBox mTB_Date_Customer;
+        private MetroFramework.Controls.MetroTextBox mTB_FullName_Customer;
+        private MetroFramework.Controls.MetroTextBox mTB_Phone_Customer;
+        private MetroFramework.Controls.MetroTextBox mTB_EMail_Customer;
+        private MetroFramework.Controls.MetroLabel mL_Phone_Customer;
+        private MetroFramework.Controls.MetroLabel mL_FullName_Customer;
+        private MetroFramework.Controls.MetroLabel mL_EMail_Customer;
+        private MetroFramework.Controls.MetroLabel mL_Date_Customer;
+        private MetroFramework.Controls.MetroGrid mG_Customer;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eMailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cSADataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn neighborhoodDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn horseBarnDataGridViewCheckBoxColumn;
+        private MetroFramework.Controls.MetroCheckBox mCB_HorsBar_Customer;
     }
 }
 
