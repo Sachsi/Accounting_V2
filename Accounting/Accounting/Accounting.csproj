@@ -71,9 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerTabler.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Data\DummyData.cs" />
     <Compile Include="Form1.cs">
@@ -191,6 +188,7 @@
     <EmbeddedResource Include="Reports\CustomerReport.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Database.Customer.datasource" />
+    <None Include="Properties\DataSources\Database.Expanses.datasource" />
     <None Include="Properties\DataSources\Database.Income.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
