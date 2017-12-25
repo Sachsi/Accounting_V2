@@ -99,17 +99,7 @@ namespace Accounting
         public class Expanses
         {
             public int ExpansesId { get; set; }
-            public DateTime Date
-            {
-                get
-                {
-                    return this.Date.ToUniversalTime();
-                }
-                set
-                {
-                    this.Date = DateTime.Now;
-                }
-            }
+            public DateTime Date{get; set;}
             public string payment { get; set; }
             public double Price { get; set; }
             public string recipient { get; set; }
