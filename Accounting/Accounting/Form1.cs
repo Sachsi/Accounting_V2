@@ -24,9 +24,11 @@ namespace Accounting
             {
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 customerBindingSource.DataSource = db.Customers.ToList();
+                expansesBindingSource.DataSource = db.Expanses.ToList();
             }
             mP_Income.Enabled = false;
             mP_Customer.Enabled = false;
+            mP_Expenses.Enabled = false;
 
             //using (var db = new Database.AccountingDatabase())
             //{
@@ -51,6 +53,11 @@ namespace Accounting
             //}
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mB_ADD_Income_Click(object sender, EventArgs e)
         {
             mP_Income.Enabled = true;
@@ -92,12 +99,6 @@ namespace Accounting
 
                 db.SaveChanges();
             }
-        }
-
-
-        private void metroCheckBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -159,11 +160,48 @@ namespace Accounting
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void mB_Cancel_Customer_Click(object sender, EventArgs e)
+        private void mB_Cancel_Tables_Click(object sender, EventArgs e)
         {
             mP_Customer.Enabled = false;
+            mP_Expenses.Enabled = false;
+            mP_Income.Enabled = false;
+            incomeBindingSource.ResetBindings(false);
+            expansesBindingSource.ResetBindings(false);
             customerBindingSource.ResetBindings(false);
             Form1_Load(sender, e);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mB_Add_Expenses_Click(object sender, EventArgs e)
+        {
+            mP_Expenses.Enabled = true;
+            expansesBindingSource.Add(new Database.Expanses());
+            expansesBindingSource.MoveLast();
+            mTB_Date_Expenses.Focus();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mB_Edit_Expenses_Click(object sender, EventArgs e)
+        {
+            mP_Expenses.Enabled = true;
+            mTB_Date_Expenses.Focus();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mB_Delete_Expenses_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
