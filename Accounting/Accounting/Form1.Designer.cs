@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mTC_Accounting = new MetroFramework.Controls.MetroTabControl();
             this.mTP_Income = new MetroFramework.Controls.MetroTabPage();
             this.mB_Cancel_Income = new MetroFramework.Controls.MetroButton();
@@ -58,7 +58,31 @@
             this.mL_Payment_Income = new MetroFramework.Controls.MetroLabel();
             this.mL_Date_Income = new MetroFramework.Controls.MetroLabel();
             this.mGrid_Income = new MetroFramework.Controls.MetroGrid();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mTP_Expenses = new MetroFramework.Controls.MetroTabPage();
+            this.mB_Save_Expenses = new MetroFramework.Controls.MetroButton();
+            this.mB_Cancel_Expenses = new MetroFramework.Controls.MetroButton();
+            this.mB_Edit_Expenses = new MetroFramework.Controls.MetroButton();
+            this.mB_Add_Expenses = new MetroFramework.Controls.MetroButton();
+            this.mP_Expenses = new MetroFramework.Controls.MetroPanel();
+            this.mTB_Date_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.expansesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_Price_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_Payment_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.mL_Price_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mL_Recipient_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mL_Payment_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mL_Date_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mB_Delete_Expenses = new MetroFramework.Controls.MetroButton();
+            this.mG_Expenses = new MetroFramework.Controls.MetroGrid();
+            this.dateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recipientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mTP_Customer = new MetroFramework.Controls.MetroTabPage();
             this.mB_Cancel_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
@@ -86,43 +110,19 @@
             this.cSADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.neighborhoodDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.horseBarnDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mB_Save_Expenses = new MetroFramework.Controls.MetroButton();
-            this.mTB_Date_Expenses = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.mB_Cancel_Expenses = new MetroFramework.Controls.MetroButton();
-            this.mB_Edit_Expenses = new MetroFramework.Controls.MetroButton();
-            this.mB_Add_Expenses = new MetroFramework.Controls.MetroButton();
-            this.mTB_Price_Expenses = new MetroFramework.Controls.MetroTextBox();
-            this.mTB_Payment_Expenses = new MetroFramework.Controls.MetroTextBox();
-            this.mL_Price_Expenses = new MetroFramework.Controls.MetroLabel();
-            this.mL_Payment_Expenses = new MetroFramework.Controls.MetroLabel();
-            this.mP_Expenses = new MetroFramework.Controls.MetroPanel();
-            this.mL_Recipient_Expenses = new MetroFramework.Controls.MetroLabel();
-            this.mL_Date_Expenses = new MetroFramework.Controls.MetroLabel();
-            this.mB_Delete_Expenses = new MetroFramework.Controls.MetroButton();
-            this.mG_Expenses = new MetroFramework.Controls.MetroGrid();
-            this.expansesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recipientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Income.SuspendLayout();
             this.mP_Income.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGrid_Income)).BeginInit();
             this.mTP_Expenses.SuspendLayout();
+            this.mP_Expenses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.expansesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mG_Expenses)).BeginInit();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mG_Customer)).BeginInit();
-            this.mP_Expenses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mG_Expenses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expansesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Accounting
@@ -135,7 +135,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(90, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(20, 60);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 1;
+            this.mTC_Accounting.SelectedIndex = 0;
             this.mTC_Accounting.Size = new System.Drawing.Size(777, 447);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.mTC_Accounting.TabIndex = 0;
@@ -171,6 +171,7 @@
             this.mB_Cancel_Income.TabIndex = 39;
             this.mB_Cancel_Income.Text = "Cancel";
             this.mB_Cancel_Income.UseSelectable = true;
+            this.mB_Cancel_Income.Click += new System.EventHandler(this.mB_Cancel_Tables_Click);
             // 
             // mB_Edit_Income
             // 
@@ -508,6 +509,35 @@
             this.mGrid_Income.Size = new System.Drawing.Size(749, 235);
             this.mGrid_Income.TabIndex = 24;
             // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // paymentDataGridViewTextBoxColumn
+            // 
+            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
+            this.paymentDataGridViewTextBoxColumn.HeaderText = "Payment";
+            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
+            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productDataGridViewTextBoxColumn
+            // 
+            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
+            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
+            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
+            this.productDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // mTP_Expenses
             // 
             this.mTP_Expenses.Controls.Add(this.mB_Save_Expenses);
@@ -528,6 +558,344 @@
             this.mTP_Expenses.VerticalScrollbarBarColor = true;
             this.mTP_Expenses.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Expenses.VerticalScrollbarSize = 10;
+            // 
+            // mB_Save_Expenses
+            // 
+            this.mB_Save_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Save_Expenses.Location = new System.Drawing.Point(667, 344);
+            this.mB_Save_Expenses.Name = "mB_Save_Expenses";
+            this.mB_Save_Expenses.Size = new System.Drawing.Size(85, 27);
+            this.mB_Save_Expenses.TabIndex = 42;
+            this.mB_Save_Expenses.Text = "Save";
+            this.mB_Save_Expenses.UseSelectable = true;
+            this.mB_Save_Expenses.Click += new System.EventHandler(this.mB_Save_Tables_Click);
+            // 
+            // mB_Cancel_Expenses
+            // 
+            this.mB_Cancel_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Cancel_Expenses.Location = new System.Drawing.Point(487, 344);
+            this.mB_Cancel_Expenses.Name = "mB_Cancel_Expenses";
+            this.mB_Cancel_Expenses.Size = new System.Drawing.Size(85, 27);
+            this.mB_Cancel_Expenses.TabIndex = 46;
+            this.mB_Cancel_Expenses.Text = "Cancel";
+            this.mB_Cancel_Expenses.UseSelectable = true;
+            this.mB_Cancel_Expenses.Click += new System.EventHandler(this.mB_Cancel_Tables_Click);
+            // 
+            // mB_Edit_Expenses
+            // 
+            this.mB_Edit_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Edit_Expenses.Location = new System.Drawing.Point(397, 344);
+            this.mB_Edit_Expenses.Name = "mB_Edit_Expenses";
+            this.mB_Edit_Expenses.Size = new System.Drawing.Size(85, 27);
+            this.mB_Edit_Expenses.TabIndex = 45;
+            this.mB_Edit_Expenses.Text = "Edit";
+            this.mB_Edit_Expenses.UseSelectable = true;
+            this.mB_Edit_Expenses.Click += new System.EventHandler(this.mB_Edit_Expenses_Click);
+            // 
+            // mB_Add_Expenses
+            // 
+            this.mB_Add_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Add_Expenses.Location = new System.Drawing.Point(307, 344);
+            this.mB_Add_Expenses.Name = "mB_Add_Expenses";
+            this.mB_Add_Expenses.Size = new System.Drawing.Size(85, 27);
+            this.mB_Add_Expenses.TabIndex = 43;
+            this.mB_Add_Expenses.Text = "Add";
+            this.mB_Add_Expenses.UseSelectable = true;
+            this.mB_Add_Expenses.Click += new System.EventHandler(this.mB_Add_Expenses_Click);
+            // 
+            // mP_Expenses
+            // 
+            this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mP_Expenses.Controls.Add(this.mTB_Date_Expenses);
+            this.mP_Expenses.Controls.Add(this.metroTextBox2);
+            this.mP_Expenses.Controls.Add(this.mTB_Price_Expenses);
+            this.mP_Expenses.Controls.Add(this.mTB_Payment_Expenses);
+            this.mP_Expenses.Controls.Add(this.mL_Price_Expenses);
+            this.mP_Expenses.Controls.Add(this.mL_Recipient_Expenses);
+            this.mP_Expenses.Controls.Add(this.mL_Payment_Expenses);
+            this.mP_Expenses.Controls.Add(this.mL_Date_Expenses);
+            this.mP_Expenses.HorizontalScrollbarBarColor = true;
+            this.mP_Expenses.HorizontalScrollbarHighlightOnWheel = false;
+            this.mP_Expenses.HorizontalScrollbarSize = 10;
+            this.mP_Expenses.Location = new System.Drawing.Point(3, 244);
+            this.mP_Expenses.Name = "mP_Expenses";
+            this.mP_Expenses.Size = new System.Drawing.Size(749, 94);
+            this.mP_Expenses.TabIndex = 41;
+            this.mP_Expenses.VerticalScrollbarBarColor = true;
+            this.mP_Expenses.VerticalScrollbarHighlightOnWheel = false;
+            this.mP_Expenses.VerticalScrollbarSize = 10;
+            // 
+            // mTB_Date_Expenses
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Date_Expenses.CustomButton.Image = null;
+            this.mTB_Date_Expenses.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_Date_Expenses.CustomButton.Name = "";
+            this.mTB_Date_Expenses.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_Date_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Date_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Date_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Date_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Date_Expenses.CustomButton.Visible = false;
+            this.mTB_Date_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "Date", true));
+            this.mTB_Date_Expenses.Lines = new string[] {
+        "metroTextBox1"};
+            this.mTB_Date_Expenses.Location = new System.Drawing.Point(92, 3);
+            this.mTB_Date_Expenses.MaxLength = 32767;
+            this.mTB_Date_Expenses.Name = "mTB_Date_Expenses";
+            this.mTB_Date_Expenses.PasswordChar = '\0';
+            this.mTB_Date_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Date_Expenses.SelectedText = "";
+            this.mTB_Date_Expenses.SelectionLength = 0;
+            this.mTB_Date_Expenses.SelectionStart = 0;
+            this.mTB_Date_Expenses.ShortcutsEnabled = true;
+            this.mTB_Date_Expenses.Size = new System.Drawing.Size(122, 23);
+            this.mTB_Date_Expenses.TabIndex = 30;
+            this.mTB_Date_Expenses.Text = "metroTextBox1";
+            this.mTB_Date_Expenses.UseSelectable = true;
+            this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Date_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // expansesBindingSource
+            // 
+            this.expansesBindingSource.DataSource = typeof(Accounting.Database.Expanses);
+            // 
+            // metroTextBox2
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox2.CustomButton.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incomeBindingSource, "CustomerName", true));
+            this.metroTextBox2.CustomButton.Image = null;
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.metroTextBox2.CustomButton.Name = "";
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox2.CustomButton.TabIndex = 1;
+            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox2.CustomButton.UseSelectable = true;
+            this.metroTextBox2.CustomButton.Visible = false;
+            this.metroTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "recipient", true));
+            this.metroTextBox2.Lines = new string[] {
+        "metroTextBox1"};
+            this.metroTextBox2.Location = new System.Drawing.Point(92, 32);
+            this.metroTextBox2.MaxLength = 32767;
+            this.metroTextBox2.Name = "metroTextBox2";
+            this.metroTextBox2.PasswordChar = '\0';
+            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox2.SelectedText = "";
+            this.metroTextBox2.SelectionLength = 0;
+            this.metroTextBox2.SelectionStart = 0;
+            this.metroTextBox2.ShortcutsEnabled = true;
+            this.metroTextBox2.Size = new System.Drawing.Size(122, 23);
+            this.metroTextBox2.TabIndex = 31;
+            this.metroTextBox2.Text = "metroTextBox1";
+            this.metroTextBox2.UseSelectable = true;
+            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mTB_Price_Expenses
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Price_Expenses.CustomButton.Image = null;
+            this.mTB_Price_Expenses.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_Price_Expenses.CustomButton.Name = "";
+            this.mTB_Price_Expenses.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_Price_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Price_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Price_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Price_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Price_Expenses.CustomButton.Visible = false;
+            this.mTB_Price_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "Price", true));
+            this.mTB_Price_Expenses.Lines = new string[] {
+        "metroTextBox1"};
+            this.mTB_Price_Expenses.Location = new System.Drawing.Point(368, 32);
+            this.mTB_Price_Expenses.MaxLength = 32767;
+            this.mTB_Price_Expenses.Name = "mTB_Price_Expenses";
+            this.mTB_Price_Expenses.PasswordChar = '\0';
+            this.mTB_Price_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Price_Expenses.SelectedText = "";
+            this.mTB_Price_Expenses.SelectionLength = 0;
+            this.mTB_Price_Expenses.SelectionStart = 0;
+            this.mTB_Price_Expenses.ShortcutsEnabled = true;
+            this.mTB_Price_Expenses.Size = new System.Drawing.Size(122, 23);
+            this.mTB_Price_Expenses.TabIndex = 32;
+            this.mTB_Price_Expenses.Text = "metroTextBox1";
+            this.mTB_Price_Expenses.UseSelectable = true;
+            this.mTB_Price_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Price_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mTB_Payment_Expenses
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Payment_Expenses.CustomButton.Image = null;
+            this.mTB_Payment_Expenses.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.mTB_Payment_Expenses.CustomButton.Name = "";
+            this.mTB_Payment_Expenses.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTB_Payment_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Payment_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Payment_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Payment_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Payment_Expenses.CustomButton.Visible = false;
+            this.mTB_Payment_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "payment", true));
+            this.mTB_Payment_Expenses.Lines = new string[] {
+        "metroTextBox12"};
+            this.mTB_Payment_Expenses.Location = new System.Drawing.Point(368, 3);
+            this.mTB_Payment_Expenses.MaxLength = 32767;
+            this.mTB_Payment_Expenses.Name = "mTB_Payment_Expenses";
+            this.mTB_Payment_Expenses.PasswordChar = '\0';
+            this.mTB_Payment_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Payment_Expenses.SelectedText = "";
+            this.mTB_Payment_Expenses.SelectionLength = 0;
+            this.mTB_Payment_Expenses.SelectionStart = 0;
+            this.mTB_Payment_Expenses.ShortcutsEnabled = true;
+            this.mTB_Payment_Expenses.Size = new System.Drawing.Size(122, 23);
+            this.mTB_Payment_Expenses.TabIndex = 33;
+            this.mTB_Payment_Expenses.Text = "metroTextBox12";
+            this.mTB_Payment_Expenses.UseSelectable = true;
+            this.mTB_Payment_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Payment_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mL_Price_Expenses
+            // 
+            this.mL_Price_Expenses.AutoSize = true;
+            this.mL_Price_Expenses.Location = new System.Drawing.Point(279, 34);
+            this.mL_Price_Expenses.Name = "mL_Price_Expenses";
+            this.mL_Price_Expenses.Size = new System.Drawing.Size(38, 19);
+            this.mL_Price_Expenses.TabIndex = 28;
+            this.mL_Price_Expenses.Text = "Price";
+            // 
+            // mL_Recipient_Expenses
+            // 
+            this.mL_Recipient_Expenses.AutoSize = true;
+            this.mL_Recipient_Expenses.Location = new System.Drawing.Point(3, 34);
+            this.mL_Recipient_Expenses.Name = "mL_Recipient_Expenses";
+            this.mL_Recipient_Expenses.Size = new System.Drawing.Size(65, 19);
+            this.mL_Recipient_Expenses.TabIndex = 27;
+            this.mL_Recipient_Expenses.Text = "Recipient:";
+            // 
+            // mL_Payment_Expenses
+            // 
+            this.mL_Payment_Expenses.AutoSize = true;
+            this.mL_Payment_Expenses.Location = new System.Drawing.Point(279, 5);
+            this.mL_Payment_Expenses.Name = "mL_Payment_Expenses";
+            this.mL_Payment_Expenses.Size = new System.Drawing.Size(62, 19);
+            this.mL_Payment_Expenses.TabIndex = 26;
+            this.mL_Payment_Expenses.Text = "Payment:";
+            // 
+            // mL_Date_Expenses
+            // 
+            this.mL_Date_Expenses.AutoSize = true;
+            this.mL_Date_Expenses.Location = new System.Drawing.Point(3, 5);
+            this.mL_Date_Expenses.Name = "mL_Date_Expenses";
+            this.mL_Date_Expenses.Size = new System.Drawing.Size(39, 19);
+            this.mL_Date_Expenses.TabIndex = 25;
+            this.mL_Date_Expenses.Text = "Date:";
+            // 
+            // mB_Delete_Expenses
+            // 
+            this.mB_Delete_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Delete_Expenses.Location = new System.Drawing.Point(577, 344);
+            this.mB_Delete_Expenses.Name = "mB_Delete_Expenses";
+            this.mB_Delete_Expenses.Size = new System.Drawing.Size(85, 27);
+            this.mB_Delete_Expenses.TabIndex = 44;
+            this.mB_Delete_Expenses.Text = "Delete";
+            this.mB_Delete_Expenses.UseSelectable = true;
+            this.mB_Delete_Expenses.Click += new System.EventHandler(this.mB_Delete_Expenses_Click);
+            // 
+            // mG_Expenses
+            // 
+            this.mG_Expenses.AllowUserToAddRows = false;
+            this.mG_Expenses.AllowUserToDeleteRows = false;
+            this.mG_Expenses.AllowUserToResizeRows = false;
+            this.mG_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mG_Expenses.AutoGenerateColumns = false;
+            this.mG_Expenses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mG_Expenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mG_Expenses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.mG_Expenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mG_Expenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.mG_Expenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mG_Expenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateDataGridViewTextBoxColumn1,
+            this.paymentDataGridViewTextBoxColumn1,
+            this.priceDataGridViewTextBoxColumn1,
+            this.recipientDataGridViewTextBoxColumn});
+            this.mG_Expenses.DataSource = this.expansesBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mG_Expenses.DefaultCellStyle = dataGridViewCellStyle5;
+            this.mG_Expenses.EnableHeadersVisualStyles = false;
+            this.mG_Expenses.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mG_Expenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.mG_Expenses.Location = new System.Drawing.Point(3, 3);
+            this.mG_Expenses.Name = "mG_Expenses";
+            this.mG_Expenses.ReadOnly = true;
+            this.mG_Expenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mG_Expenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.mG_Expenses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mG_Expenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.mG_Expenses.Size = new System.Drawing.Size(749, 235);
+            this.mG_Expenses.TabIndex = 40;
+            // 
+            // dateDataGridViewTextBoxColumn1
+            // 
+            this.dateDataGridViewTextBoxColumn1.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn1.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn1.Name = "dateDataGridViewTextBoxColumn1";
+            this.dateDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // paymentDataGridViewTextBoxColumn1
+            // 
+            this.paymentDataGridViewTextBoxColumn1.DataPropertyName = "payment";
+            this.paymentDataGridViewTextBoxColumn1.HeaderText = "Payment";
+            this.paymentDataGridViewTextBoxColumn1.Name = "paymentDataGridViewTextBoxColumn1";
+            this.paymentDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.paymentDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // priceDataGridViewTextBoxColumn1
+            // 
+            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn1.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
+            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // recipientDataGridViewTextBoxColumn
+            // 
+            this.recipientDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.recipientDataGridViewTextBoxColumn.DataPropertyName = "recipient";
+            this.recipientDataGridViewTextBoxColumn.HeaderText = "Recipient";
+            this.recipientDataGridViewTextBoxColumn.Name = "recipientDataGridViewTextBoxColumn";
+            this.recipientDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mTP_Customer
             // 
@@ -559,7 +927,7 @@
             this.mB_Cancel_Customer.TabIndex = 36;
             this.mB_Cancel_Customer.Text = "Cancel";
             this.mB_Cancel_Customer.UseSelectable = true;
-            this.mB_Cancel_Customer.Click += new System.EventHandler(this.mB_Cancel_Customer_Click);
+            this.mB_Cancel_Customer.Click += new System.EventHandler(this.mB_Cancel_Tables_Click);
             // 
             // mB_Edit_Customer
             // 
@@ -656,7 +1024,6 @@
             this.mCB_CSA_Customer.TabIndex = 21;
             this.mCB_CSA_Customer.Text = "CSA";
             this.mCB_CSA_Customer.UseSelectable = true;
-            this.mCB_CSA_Customer.CheckedChanged += new System.EventHandler(this.metroCheckBox2_CheckedChanged);
             // 
             // mCB_Neighborhood_Customer
             // 
@@ -951,368 +1318,6 @@
             this.horseBarnDataGridViewCheckBoxColumn.Name = "horseBarnDataGridViewCheckBoxColumn";
             this.horseBarnDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // paymentDataGridViewTextBoxColumn
-            // 
-            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
-            this.paymentDataGridViewTextBoxColumn.HeaderText = "Payment";
-            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
-            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            this.productDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mB_Save_Expenses
-            // 
-            this.mB_Save_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Save_Expenses.Location = new System.Drawing.Point(667, 344);
-            this.mB_Save_Expenses.Name = "mB_Save_Expenses";
-            this.mB_Save_Expenses.Size = new System.Drawing.Size(85, 27);
-            this.mB_Save_Expenses.TabIndex = 42;
-            this.mB_Save_Expenses.Text = "Save";
-            this.mB_Save_Expenses.UseSelectable = true;
-            // 
-            // mTB_Date_Expenses
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Date_Expenses.CustomButton.Image = null;
-            this.mTB_Date_Expenses.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.mTB_Date_Expenses.CustomButton.Name = "";
-            this.mTB_Date_Expenses.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.mTB_Date_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Date_Expenses.CustomButton.TabIndex = 1;
-            this.mTB_Date_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Date_Expenses.CustomButton.UseSelectable = true;
-            this.mTB_Date_Expenses.CustomButton.Visible = false;
-            this.mTB_Date_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "Date", true));
-            this.mTB_Date_Expenses.Lines = new string[] {
-        "metroTextBox1"};
-            this.mTB_Date_Expenses.Location = new System.Drawing.Point(92, 3);
-            this.mTB_Date_Expenses.MaxLength = 32767;
-            this.mTB_Date_Expenses.Name = "mTB_Date_Expenses";
-            this.mTB_Date_Expenses.PasswordChar = '\0';
-            this.mTB_Date_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Date_Expenses.SelectedText = "";
-            this.mTB_Date_Expenses.SelectionLength = 0;
-            this.mTB_Date_Expenses.SelectionStart = 0;
-            this.mTB_Date_Expenses.ShortcutsEnabled = true;
-            this.mTB_Date_Expenses.Size = new System.Drawing.Size(122, 23);
-            this.mTB_Date_Expenses.TabIndex = 30;
-            this.mTB_Date_Expenses.Text = "metroTextBox1";
-            this.mTB_Date_Expenses.UseSelectable = true;
-            this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Date_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox2
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox2.CustomButton.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incomeBindingSource, "CustomerName", true));
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "recipient", true));
-            this.metroTextBox2.Lines = new string[] {
-        "metroTextBox1"};
-            this.metroTextBox2.Location = new System.Drawing.Point(92, 32);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(122, 23);
-            this.metroTextBox2.TabIndex = 31;
-            this.metroTextBox2.Text = "metroTextBox1";
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mB_Cancel_Expenses
-            // 
-            this.mB_Cancel_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Cancel_Expenses.Location = new System.Drawing.Point(487, 344);
-            this.mB_Cancel_Expenses.Name = "mB_Cancel_Expenses";
-            this.mB_Cancel_Expenses.Size = new System.Drawing.Size(85, 27);
-            this.mB_Cancel_Expenses.TabIndex = 46;
-            this.mB_Cancel_Expenses.Text = "Cancel";
-            this.mB_Cancel_Expenses.UseSelectable = true;
-            // 
-            // mB_Edit_Expenses
-            // 
-            this.mB_Edit_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Edit_Expenses.Location = new System.Drawing.Point(397, 344);
-            this.mB_Edit_Expenses.Name = "mB_Edit_Expenses";
-            this.mB_Edit_Expenses.Size = new System.Drawing.Size(85, 27);
-            this.mB_Edit_Expenses.TabIndex = 45;
-            this.mB_Edit_Expenses.Text = "Edit";
-            this.mB_Edit_Expenses.UseSelectable = true;
-            // 
-            // mB_Add_Expenses
-            // 
-            this.mB_Add_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Add_Expenses.Location = new System.Drawing.Point(307, 344);
-            this.mB_Add_Expenses.Name = "mB_Add_Expenses";
-            this.mB_Add_Expenses.Size = new System.Drawing.Size(85, 27);
-            this.mB_Add_Expenses.TabIndex = 43;
-            this.mB_Add_Expenses.Text = "Add";
-            this.mB_Add_Expenses.UseSelectable = true;
-            // 
-            // mTB_Price_Expenses
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Price_Expenses.CustomButton.Image = null;
-            this.mTB_Price_Expenses.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.mTB_Price_Expenses.CustomButton.Name = "";
-            this.mTB_Price_Expenses.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.mTB_Price_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Price_Expenses.CustomButton.TabIndex = 1;
-            this.mTB_Price_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Price_Expenses.CustomButton.UseSelectable = true;
-            this.mTB_Price_Expenses.CustomButton.Visible = false;
-            this.mTB_Price_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "Price", true));
-            this.mTB_Price_Expenses.Lines = new string[] {
-        "metroTextBox1"};
-            this.mTB_Price_Expenses.Location = new System.Drawing.Point(368, 32);
-            this.mTB_Price_Expenses.MaxLength = 32767;
-            this.mTB_Price_Expenses.Name = "mTB_Price_Expenses";
-            this.mTB_Price_Expenses.PasswordChar = '\0';
-            this.mTB_Price_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Price_Expenses.SelectedText = "";
-            this.mTB_Price_Expenses.SelectionLength = 0;
-            this.mTB_Price_Expenses.SelectionStart = 0;
-            this.mTB_Price_Expenses.ShortcutsEnabled = true;
-            this.mTB_Price_Expenses.Size = new System.Drawing.Size(122, 23);
-            this.mTB_Price_Expenses.TabIndex = 32;
-            this.mTB_Price_Expenses.Text = "metroTextBox1";
-            this.mTB_Price_Expenses.UseSelectable = true;
-            this.mTB_Price_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Price_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mTB_Payment_Expenses
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Payment_Expenses.CustomButton.Image = null;
-            this.mTB_Payment_Expenses.CustomButton.Location = new System.Drawing.Point(100, 1);
-            this.mTB_Payment_Expenses.CustomButton.Name = "";
-            this.mTB_Payment_Expenses.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.mTB_Payment_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Payment_Expenses.CustomButton.TabIndex = 1;
-            this.mTB_Payment_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Payment_Expenses.CustomButton.UseSelectable = true;
-            this.mTB_Payment_Expenses.CustomButton.Visible = false;
-            this.mTB_Payment_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expansesBindingSource, "payment", true));
-            this.mTB_Payment_Expenses.Lines = new string[] {
-        "metroTextBox12"};
-            this.mTB_Payment_Expenses.Location = new System.Drawing.Point(368, 3);
-            this.mTB_Payment_Expenses.MaxLength = 32767;
-            this.mTB_Payment_Expenses.Name = "mTB_Payment_Expenses";
-            this.mTB_Payment_Expenses.PasswordChar = '\0';
-            this.mTB_Payment_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Payment_Expenses.SelectedText = "";
-            this.mTB_Payment_Expenses.SelectionLength = 0;
-            this.mTB_Payment_Expenses.SelectionStart = 0;
-            this.mTB_Payment_Expenses.ShortcutsEnabled = true;
-            this.mTB_Payment_Expenses.Size = new System.Drawing.Size(122, 23);
-            this.mTB_Payment_Expenses.TabIndex = 33;
-            this.mTB_Payment_Expenses.Text = "metroTextBox12";
-            this.mTB_Payment_Expenses.UseSelectable = true;
-            this.mTB_Payment_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Payment_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mL_Price_Expenses
-            // 
-            this.mL_Price_Expenses.AutoSize = true;
-            this.mL_Price_Expenses.Location = new System.Drawing.Point(279, 34);
-            this.mL_Price_Expenses.Name = "mL_Price_Expenses";
-            this.mL_Price_Expenses.Size = new System.Drawing.Size(38, 19);
-            this.mL_Price_Expenses.TabIndex = 28;
-            this.mL_Price_Expenses.Text = "Price";
-            // 
-            // mL_Payment_Expenses
-            // 
-            this.mL_Payment_Expenses.AutoSize = true;
-            this.mL_Payment_Expenses.Location = new System.Drawing.Point(279, 5);
-            this.mL_Payment_Expenses.Name = "mL_Payment_Expenses";
-            this.mL_Payment_Expenses.Size = new System.Drawing.Size(62, 19);
-            this.mL_Payment_Expenses.TabIndex = 26;
-            this.mL_Payment_Expenses.Text = "Payment:";
-            // 
-            // mP_Expenses
-            // 
-            this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mP_Expenses.Controls.Add(this.mTB_Date_Expenses);
-            this.mP_Expenses.Controls.Add(this.metroTextBox2);
-            this.mP_Expenses.Controls.Add(this.mTB_Price_Expenses);
-            this.mP_Expenses.Controls.Add(this.mTB_Payment_Expenses);
-            this.mP_Expenses.Controls.Add(this.mL_Price_Expenses);
-            this.mP_Expenses.Controls.Add(this.mL_Recipient_Expenses);
-            this.mP_Expenses.Controls.Add(this.mL_Payment_Expenses);
-            this.mP_Expenses.Controls.Add(this.mL_Date_Expenses);
-            this.mP_Expenses.HorizontalScrollbarBarColor = true;
-            this.mP_Expenses.HorizontalScrollbarHighlightOnWheel = false;
-            this.mP_Expenses.HorizontalScrollbarSize = 10;
-            this.mP_Expenses.Location = new System.Drawing.Point(3, 244);
-            this.mP_Expenses.Name = "mP_Expenses";
-            this.mP_Expenses.Size = new System.Drawing.Size(749, 94);
-            this.mP_Expenses.TabIndex = 41;
-            this.mP_Expenses.VerticalScrollbarBarColor = true;
-            this.mP_Expenses.VerticalScrollbarHighlightOnWheel = false;
-            this.mP_Expenses.VerticalScrollbarSize = 10;
-            // 
-            // mL_Recipient_Expenses
-            // 
-            this.mL_Recipient_Expenses.AutoSize = true;
-            this.mL_Recipient_Expenses.Location = new System.Drawing.Point(3, 34);
-            this.mL_Recipient_Expenses.Name = "mL_Recipient_Expenses";
-            this.mL_Recipient_Expenses.Size = new System.Drawing.Size(65, 19);
-            this.mL_Recipient_Expenses.TabIndex = 27;
-            this.mL_Recipient_Expenses.Text = "Recipient:";
-            // 
-            // mL_Date_Expenses
-            // 
-            this.mL_Date_Expenses.AutoSize = true;
-            this.mL_Date_Expenses.Location = new System.Drawing.Point(3, 5);
-            this.mL_Date_Expenses.Name = "mL_Date_Expenses";
-            this.mL_Date_Expenses.Size = new System.Drawing.Size(39, 19);
-            this.mL_Date_Expenses.TabIndex = 25;
-            this.mL_Date_Expenses.Text = "Date:";
-            // 
-            // mB_Delete_Expenses
-            // 
-            this.mB_Delete_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Delete_Expenses.Location = new System.Drawing.Point(577, 344);
-            this.mB_Delete_Expenses.Name = "mB_Delete_Expenses";
-            this.mB_Delete_Expenses.Size = new System.Drawing.Size(85, 27);
-            this.mB_Delete_Expenses.TabIndex = 44;
-            this.mB_Delete_Expenses.Text = "Delete";
-            this.mB_Delete_Expenses.UseSelectable = true;
-            // 
-            // mG_Expenses
-            // 
-            this.mG_Expenses.AllowUserToAddRows = false;
-            this.mG_Expenses.AllowUserToDeleteRows = false;
-            this.mG_Expenses.AllowUserToResizeRows = false;
-            this.mG_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mG_Expenses.AutoGenerateColumns = false;
-            this.mG_Expenses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mG_Expenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mG_Expenses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.mG_Expenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mG_Expenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.mG_Expenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mG_Expenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dateDataGridViewTextBoxColumn1,
-            this.paymentDataGridViewTextBoxColumn1,
-            this.priceDataGridViewTextBoxColumn1,
-            this.recipientDataGridViewTextBoxColumn});
-            this.mG_Expenses.DataSource = this.expansesBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mG_Expenses.DefaultCellStyle = dataGridViewCellStyle5;
-            this.mG_Expenses.EnableHeadersVisualStyles = false;
-            this.mG_Expenses.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mG_Expenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.mG_Expenses.Location = new System.Drawing.Point(3, 3);
-            this.mG_Expenses.Name = "mG_Expenses";
-            this.mG_Expenses.ReadOnly = true;
-            this.mG_Expenses.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mG_Expenses.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.mG_Expenses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.mG_Expenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mG_Expenses.Size = new System.Drawing.Size(749, 235);
-            this.mG_Expenses.TabIndex = 40;
-            // 
-            // expansesBindingSource
-            // 
-            this.expansesBindingSource.DataSource = typeof(Accounting.Database.Expanses);
-            // 
-            // dateDataGridViewTextBoxColumn1
-            // 
-            this.dateDataGridViewTextBoxColumn1.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn1.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn1.Name = "dateDataGridViewTextBoxColumn1";
-            this.dateDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // paymentDataGridViewTextBoxColumn1
-            // 
-            this.paymentDataGridViewTextBoxColumn1.DataPropertyName = "payment";
-            this.paymentDataGridViewTextBoxColumn1.HeaderText = "Payment";
-            this.paymentDataGridViewTextBoxColumn1.Name = "paymentDataGridViewTextBoxColumn1";
-            this.paymentDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.paymentDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // priceDataGridViewTextBoxColumn1
-            // 
-            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn1.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
-            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // recipientDataGridViewTextBoxColumn
-            // 
-            this.recipientDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.recipientDataGridViewTextBoxColumn.DataPropertyName = "recipient";
-            this.recipientDataGridViewTextBoxColumn.HeaderText = "Recipient";
-            this.recipientDataGridViewTextBoxColumn.Name = "recipientDataGridViewTextBoxColumn";
-            this.recipientDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1332,15 +1337,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGrid_Income)).EndInit();
             this.mTP_Expenses.ResumeLayout(false);
+            this.mP_Expenses.ResumeLayout(false);
+            this.mP_Expenses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.expansesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mG_Expenses)).EndInit();
             this.mTP_Customer.ResumeLayout(false);
             this.mP_Customer.ResumeLayout(false);
             this.mP_Customer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mG_Customer)).EndInit();
-            this.mP_Expenses.ResumeLayout(false);
-            this.mP_Expenses.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mG_Expenses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expansesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
