@@ -62,27 +62,27 @@ namespace Accounting.Data
             {
                 new Income()
                 {
-                    Date = DateTime.Now,
-                    Payment = "Chash",
-                    CustomerName = Context.Customers.Find("Tobias Sachse").FullName,
-                    Product = Context.Products.Find("Garlic").ProductName,
-                    Price = 25.2,
+                    //Date = DateTime.Now,
+                    //Payment = "Chash",
+                    ////CustomerName = Context.Customers.Find("Tobias Sachse").FullName,
+                    //Product = Context.Products.Find("Garlic").ProductName,
+                    //Price = 25.2,
                 },
                 new Income()
                 {
-                    Date = DateTime.Now,
-                    Payment = "debit",
-                    CustomerName = Context.Customers.Find("Marcel Sachse").FullName,
-                    Product = Context.Products.Find("Leek").ProductName,
-                    Price = 10.2,
+                    //Date = DateTime.Now,
+                    //Payment = "debit",
+                    ////CustomerName = Context.Customers.Find("Marcel Sachse").FullName,
+                    //Product = Context.Products.Find("Leek").ProductName,
+                    //Price = 10.2,
                 },
                 new Income()
                 {
-                    Date = DateTime.Now,
-                    Payment = "Credit",
-                    CustomerName = Context.Customers.Find("Ute Sachse").FullName,
-                    Product = Context.Products.Find("Leek").ProductName,
-                    Price = 9.99,
+                    //Date = DateTime.Now,
+                    //Payment = "Credit",
+                    ////CustomerName = Context.Customers.Find("Ute Sachse").FullName,
+                    //Product = Context.Products.Find("Leek").ProductName,
+                    //Price = 9.99,
                 },
             };
             return Incomes;

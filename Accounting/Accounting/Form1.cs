@@ -29,28 +29,6 @@ namespace Accounting
             mP_Income.Enabled = false;
             mP_Customer.Enabled = false;
             mP_Expenses.Enabled = false;
-
-            //using (var db = new Database.AccountingDatabase())
-            //{
-            //    var customerTo = new Database.Customer() { FullName = "Marcel Sachse",EMail = "tobisachse27@msn.com" };
-            //    var Strawberry = new Database.Product() { ProductName = "Strawberry" };
-            //    var Blackberry = new Database.Product() { ProductName = "Blackberry" };
-
-            //    var income0 = new Database.Income() { Price = 23.5 };
-            //    var income1 = new Database.Income() { Price = 21.4 };
-
-            //    Strawberry.Incomes.Add(income0);
-            //    Blackberry.Incomes.Add(income1);
-
-            //    customerTo.Incomes.Add(income0);
-            //    customerTo.Incomes.Add(income1);
-
-            //    db.Products.Add(Strawberry);
-            //    db.Products.Add(Blackberry);
-            //    db.Customers.Add(customerTo);
-
-            //    db.SaveChanges();
-            //}
         }
 
         /// <summary>
@@ -64,6 +42,17 @@ namespace Accounting
             incomeBindingSource.Add(new Database.Income());
             incomeBindingSource.MoveLast();
             mT_Date_Income.Focus();
+
+            //using (Database.AccountingDatabase db = new Database.AccountingDatabase())
+            //{
+            //    var obj = from Customer in db.Customers
+            //              select Customer;
+
+            //    mCB_Name_Income.DataSource = obj.ToList();
+            //    mCB_Name_Income.DisplayMember = "FullName";
+            //    mCB_Name_Income.ValueMember = "ID";
+            //}
+
         }
 
         /// <summary>
@@ -76,10 +65,14 @@ namespace Accounting
             using (Database.AccountingDatabase db = new Database.AccountingDatabase())
             {
                 Database.Income obj_Income = incomeBindingSource.Current as Database.Income;
+                
                 Database.Customer obj_Customer = customerBindingSource.Current as Database.Customer;
 
                 if (obj_Income != null)
                 {
+                    //obj_Income.Customer = mCB_Name_Income.SelectedItem as Database.Customer;
+                    obj_Income.Customer = db.Customers.Find(mCB_Name_Income.SelectedValue);
+
                     if (db.Entry<Database.Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
                     {
                         db.Set<Database.Income>().Attach(obj_Income);
@@ -200,6 +193,11 @@ namespace Accounting
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void mB_Delete_Expenses_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mCB_Name_Income_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

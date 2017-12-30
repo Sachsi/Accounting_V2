@@ -13,7 +13,7 @@ namespace Accounting
     {
         public class AccountingDatabase : DbContext
         {
-            public AccountingDatabase() : base("name = AccountingDatabase") { }
+            //public AccountingDatabase() : base("name = AccountingDatabase") { }
 
             public DbSet<Customer> Customers { get; set; }
             public DbSet<Income> Incomes { get; set; }
@@ -37,9 +37,7 @@ namespace Accounting
             public bool CSA { get; set; }
             public bool Neighborhood { get; set; }
             public bool Horse_Barn { get; set; }
-            
-            public virtual List<Income> Incomes { get; set; }
-
+            public List<Income> Incomes { get; set; }
             public Customer()
             {
                 this.Incomes = new List<Income>();
@@ -52,17 +50,14 @@ namespace Accounting
         public class Income
         {
             public int ID { get; set; }
-            
-            public DateTime Date { get; set; }
-                       
-            public string Payment { get; set; }
-            public double Price  { get; set; }
-            //add this colume later
-            public string Product { get; set; }
-            public virtual Product Products { get; set; }
 
-            public string CustomerName { get; set; }
-            public virtual Customer Customer { get; set; }
+            public DateTime Date { get; set; }
+
+            public string Payment { get; set; }
+            public double Price { get; set; }
+            public string Product { get; set; }
+            //public Product Products { get; set; }
+            public Customer Customer { get; set; }
         }
         /// <summary>
         /// Product table list all poducsed products and one foregen key to the 
@@ -71,25 +66,14 @@ namespace Accounting
         public class Product
         {
             public int ID { get; set; }
-            public DateTime Date
-            {
-                get
-                {
-                    return this.Date.ToUniversalTime();
-                }
-                set
-                {
-                    this.Date = DateTime.Now;
-                }
-            }
+            public DateTime Date{ get; set;}
             public string ProductName { get; set; }
-
-            public virtual List<Income> Incomes { get; set; }
-
-            public Product()
-            {
-                this.Incomes = new List<Income>();
-            }
+            //public List<Income> Incomes { get; set; }
+     
+            //public Product()
+            //{
+            //    this.Incomes = new List<Income>();
+            //}
         }
 
         /// <summary>
