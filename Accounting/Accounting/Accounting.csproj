@@ -131,6 +131,22 @@
     <Compile Include="Migrations\201712192109191_editedDate.Designer.cs">
       <DependentUpon>201712192109191_editedDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712291248114_corretedTables.cs" />
+    <Compile Include="Migrations\201712291248114_corretedTables.Designer.cs">
+      <DependentUpon>201712291248114_corretedTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712291302244_deletecolumsincome.cs" />
+    <Compile Include="Migrations\201712291302244_deletecolumsincome.Designer.cs">
+      <DependentUpon>201712291302244_deletecolumsincome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712291339173_addcolumeIncome.cs" />
+    <Compile Include="Migrations\201712291339173_addcolumeIncome.Designer.cs">
+      <DependentUpon>201712291339173_addcolumeIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712291345546_removecolumesProducts.cs" />
+    <Compile Include="Migrations\201712291345546_removecolumesProducts.Designer.cs">
+      <DependentUpon>201712291345546_removecolumesProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,6 +191,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712192109191_editedDate.resx">
       <DependentUpon>201712192109191_editedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712291248114_corretedTables.resx">
+      <DependentUpon>201712291248114_corretedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712291302244_deletecolumsincome.resx">
+      <DependentUpon>201712291302244_deletecolumsincome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712291339173_addcolumeIncome.resx">
+      <DependentUpon>201712291339173_addcolumeIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712291345546_removecolumesProducts.resx">
+      <DependentUpon>201712291345546_removecolumesProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
