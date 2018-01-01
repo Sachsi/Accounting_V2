@@ -1,33 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Accounting
 {
-    public class Database
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class AccountingDatabase : DbContext
     {
-        public class AccountingDatabase : DbContext
+        public AccountingDatabase()
+            : base("name=AccountingDatabase")
+        { }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Income> Incomes { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Expanse> Expanses { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //public AccountingDatabase() : base("name = AccountingDatabase") { }
-
-            public DbSet<Customer> Customers { get; set; }
-            public DbSet<Income> Incomes { get; set; }
-            public DbSet<Product> Products { get; set; }
-            public DbSet<Expanses> Expanses { get; set; }
-
         }
+
         /// <summary>
         /// Customer Tabel to list all customer from his company with foregen key to the
         /// income table 
         /// </summary>
         public class Customer
         {
-            public  int ID { get; set; }
+            public int ID { get; set; }
             public DateTime Date { get; set; }
             public string FullName { get; set; }
             //Colume is added because of the ADD-Migration tool
@@ -66,24 +67,18 @@ namespace Accounting
         public class Product
         {
             public int ID { get; set; }
-            public DateTime Date{ get; set;}
+            public DateTime Date { get; set; }
             public string ProductName { get; set; }
-            //public List<Income> Incomes { get; set; }
-     
-            //public Product()
-            //{
-            //    this.Incomes = new List<Income>();
-            //}
         }
 
         /// <summary>
         /// Expanses Table to list all expense 
         /// </summary>
-        [Table("Expanses")]
-        public class Expanses
-        {
-            public int ExpansesId { get; set; }
-            public DateTime Date{get; set;}
+        [Table("Expanse")]
+        public class Expanse
+        { 
+            public int ID { get; set; }
+            public DateTime Date { get; set; }
             public string payment { get; set; }
             public double Price { get; set; }
             public string recipient { get; set; }

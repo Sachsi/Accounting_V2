@@ -1,12 +1,11 @@
 namespace Accounting.Migrations
 {
-    using Data;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Accounting.Database.AccountingDatabase>
+    internal sealed class Configuration : DbMigrationsConfiguration<Accounting.AccountingDatabase>
     {
         public Configuration()
         {
@@ -15,7 +14,7 @@ namespace Accounting.Migrations
             
         }
 
-        protected override void Seed(Accounting.Database.AccountingDatabase context)
+        protected override void Seed(Accounting.AccountingDatabase context)
         {
             //  This method will be called after migrating to the latest version.
 
