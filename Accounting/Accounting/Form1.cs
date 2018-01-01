@@ -20,7 +20,11 @@ namespace Accounting
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (Database.AccountingDatabase db = new Database.AccountingDatabase())
+
+            Accounting.Migrations.AddCustomerEMail a = new Migrations.AddCustomerEMail();
+            a.Down();
+
+            using (AccountingDatabase db = new AccountingDatabase())
             {
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 customerBindingSource.DataSource = db.Customers.ToList();
@@ -31,6 +35,8 @@ namespace Accounting
             mP_Expenses.Enabled = false;
         }
 
+        Repository a = new Repository();
+
         /// <summary>
         /// 
         /// </summary>
@@ -39,10 +45,12 @@ namespace Accounting
         private void mB_ADD_Income_Click(object sender, EventArgs e)
         {
             mP_Income.Enabled = true;
-            incomeBindingSource.Add(new Database.Income());
+            incomeBindingSource.Add(new AccountingDatabase.Income());
             incomeBindingSource.MoveLast();
             mT_Date_Income.Focus();
-
+            //List<Database.Customer> b = a.GetCustomers();
+            //mCB_Test.DataSource = b;
+            
             //using (Database.AccountingDatabase db = new Database.AccountingDatabase())
             //{
             //    var obj = from Customer in db.Customers
@@ -62,29 +70,29 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Save_Tables_Click(object sender, EventArgs e)
         {
-            using (Database.AccountingDatabase db = new Database.AccountingDatabase())
+            using (AccountingDatabase db = new AccountingDatabase())
             {
-                Database.Income obj_Income = incomeBindingSource.Current as Database.Income;
+                AccountingDatabase.Income obj_Income = incomeBindingSource.Current as AccountingDatabase.Income;
                 
-                Database.Customer obj_Customer = customerBindingSource.Current as Database.Customer;
+                AccountingDatabase.Customer obj_Customer = customerBindingSource.Current as AccountingDatabase.Customer;
 
                 if (obj_Income != null)
                 {
                     //obj_Income.Customer = mCB_Name_Income.SelectedItem as Database.Customer;
                     obj_Income.Customer = db.Customers.Find(mCB_Name_Income.SelectedValue);
 
-                    if (db.Entry<Database.Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
+                    if (db.Entry<AccountingDatabase.Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
                     {
-                        db.Set<Database.Income>().Attach(obj_Income);
+                        db.Set<AccountingDatabase.Income>().Attach(obj_Income);
                     }
                     mGrid_Income.Refresh();
                     mP_Income.Enabled = false;
                 }
                 if(obj_Customer != null)
                 {
-                    if (db.Entry<Database.Customer>(obj_Customer).State == System.Data.Entity.EntityState.Detached)
+                    if (db.Entry<AccountingDatabase.Customer>(obj_Customer).State == System.Data.Entity.EntityState.Detached)
                     {
-                        db.Set<Database.Customer>().Attach(obj_Customer);
+                        db.Set<AccountingDatabase.Customer>().Attach(obj_Customer);
                     }
                     mG_Customer.Refresh();
                     mP_Customer.Enabled = false;
@@ -102,7 +110,7 @@ namespace Accounting
         private void mB_Add_Customer_Click(object sender, EventArgs e)
         {
             mP_Customer.Enabled = true;
-            customerBindingSource.Add(new Database.Customer());
+            customerBindingSource.Add(new AccountingDatabase.Customer());
             customerBindingSource.MoveLast();
             mTB_Date_Customer.Focus();
         }
@@ -171,7 +179,7 @@ namespace Accounting
         private void mB_Add_Expenses_Click(object sender, EventArgs e)
         {
             mP_Expenses.Enabled = true;
-            expansesBindingSource.Add(new Database.Expanses());
+            expansesBindingSource.Add(new AccountingDatabase.Expanse());
             expansesBindingSource.MoveLast();
             mTB_Date_Expenses.Focus();
         }
