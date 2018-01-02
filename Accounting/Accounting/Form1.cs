@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Accounting
 {
-    public partial class Form1 : MetroFramework.Forms.MetroForm
+    public partial class Form_Main : MetroFramework.Forms.MetroForm
     {
-        public Form1()
+        public Form_Main()
         {
             InitializeComponent();
 
@@ -20,7 +20,15 @@ namespace Accounting
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            using (var db = new AccountingDatabase())
+            {
+                Customer b = new Customer() { Full_Name = "Tobias Sachse", E_Mail = "tobisachse27", PhoneNr = 0123256 };
+                Customer a = new Customer() { Full_Name = "Marcel Sachse", E_Mail = "Marcelsachse", PhoneNr = 478569 };
 
+                db.Customer.Add(b);
+                db.Customer.Add(a);
+                db.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -56,37 +64,37 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Save_Tables_Click(object sender, EventArgs e)
         {
-            //using (AccountingDatabase db = new AccountingDatabase())
-            //{
-            //    AccountingDatabase.Income obj_Income = incomeBindingSource.Current as AccountingDatabase.Income;
-                
-            //    AccountingDatabase.Customer obj_Customer = customerBindingSource.Current as AccountingDatabase.Customer;
+            using (AccountingDatabase db = new AccountingDatabase())
+            {
+                //    AccountingDatabase.Income obj_Income = incomeBindingSource.Current as AccountingDatabase.Income;
 
-            //    if (obj_Income != null)
-            //    {
-            //        //obj_Income.Customer = mCB_Name_Income.SelectedItem as Database.Customer;
-            //        obj_Income.Customer = db.Customers.Find(mCB_Name_Income.SelectedValue);
+                Customer obj_Customer = customerBindingSource.Current as Customer;
 
-            //        if (db.Entry<AccountingDatabase.Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
-            //        {
-            //            db.Set<AccountingDatabase.Income>().Attach(obj_Income);
-            //        }
-            //        mGrid_Income.Refresh();
-            //        mP_Income.Enabled = false;
-            //    }
-            //    if(obj_Customer != null)
-            //    {
-            //        if (db.Entry<AccountingDatabase.Customer>(obj_Customer).State == System.Data.Entity.EntityState.Detached)
-            //        {
-            //            db.Set<AccountingDatabase.Customer>().Attach(obj_Customer);
-            //        }
-            //        mG_Customer.Refresh();
-            //        mP_Customer.Enabled = false;
-            //    }
+                //    if (obj_Income != null)
+                //    {
+                //        //obj_Income.Customer = mCB_Name_Income.SelectedItem as Database.Customer;
+                //        obj_Income.Customer = db.Customers.Find(mCB_Name_Income.SelectedValue);
 
-            //    db.SaveChanges();
-            //}
-        }
+                //        if (db.Entry<AccountingDatabase.Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
+                //        {
+                //            db.Set<AccountingDatabase.Income>().Attach(obj_Income);
+                //        }
+                //        mGrid_Income.Refresh();
+                //        mP_Income.Enabled = false;
+                //    }
+                if (obj_Customer != null)
+                {
+                    if (db.Entry<Customer>(obj_Customer).State == System.Data.Entity.EntityState.Detached)
+                    {
+                        db.Set<Customer>().Attach(obj_Customer);
+                    }
+                    mG_Customer.Refresh();
+                    mP_Customer.Enabled = false;
+                }
+
+                db.SaveChanges();
+            }
+    }
 
         /// <summary>
         /// 
