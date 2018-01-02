@@ -7,13 +7,13 @@ namespace Accounting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class deletecolumsincome : IMigrationMetadata
+    public sealed partial class addColumeCustomer : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(deletecolumsincome));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addColumeCustomer));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712291302244_deletecolumsincome"; }
+            get { return "201801012130092_addColumeCustomer"; }
         }
         
         string IMigrationMetadata.Source

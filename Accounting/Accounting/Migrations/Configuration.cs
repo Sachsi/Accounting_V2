@@ -9,9 +9,7 @@ namespace Accounting.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "Accounting.Database+AccountingDatabase";
-            
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(Accounting.AccountingDatabase context)
@@ -20,7 +18,6 @@ namespace Accounting.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-
         }
     }
 }

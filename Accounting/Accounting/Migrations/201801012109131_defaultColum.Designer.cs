@@ -7,13 +7,13 @@ namespace Accounting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class corretedTables : IMigrationMetadata
+    public sealed partial class defaultColum : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(corretedTables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(defaultColum));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712291248114_corretedTables"; }
+            get { return "201801012109131_defaultColum"; }
         }
         
         string IMigrationMetadata.Source
