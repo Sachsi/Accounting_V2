@@ -5,14 +5,14 @@ namespace Accounting.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Accounting.AccountingDatabase>
+    internal sealed class Configuration : DbMigrationsConfiguration<Accounting.DatabaseContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Accounting.AccountingDatabase context)
+        protected override void Seed(Accounting.DatabaseContext context)
         {
             //  This method will be called after migrating to the latest version.
 

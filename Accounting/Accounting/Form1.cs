@@ -17,18 +17,19 @@ namespace Accounting
             InitializeComponent();
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form_Main_Load(object sender, EventArgs e)
         {
-            using (var db = new AccountingDatabase())
+            using (DatabaseContext db = new DatabaseContext())
             {
-                Customer b = new Customer() { Full_Name = "Tobias Sachse", E_Mail = "tobisachse27", PhoneNr = 0123256 };
-                Customer a = new Customer() { Full_Name = "Marcel Sachse", E_Mail = "Marcelsachse", PhoneNr = 478569 };
-
-                db.Customer.Add(b);
-                db.Customer.Add(a);
-                db.SaveChanges();
+                customerBindingSource.DataSource = db.Customers.ToList();
             }
+
+            mP_Customer.Enabled = false;
         }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Save_Tables_Click(object sender, EventArgs e)
         {
-            using (AccountingDatabase db = new AccountingDatabase())
+            using (DatabaseContext db = new DatabaseContext())
             {
                 //    AccountingDatabase.Income obj_Income = incomeBindingSource.Current as AccountingDatabase.Income;
 
@@ -85,16 +86,21 @@ namespace Accounting
                 if (obj_Customer != null)
                 {
                     if (db.Entry<Customer>(obj_Customer).State == System.Data.Entity.EntityState.Detached)
-                    {
                         db.Set<Customer>().Attach(obj_Customer);
-                    }
+                    if (obj_Customer.ObjectState == 1)
+                        db.Entry<Customer>(obj_Customer).State = System.Data.Entity.EntityState.Added;
+                    else if (obj_Customer.ObjectState == 2)
+                        db.Entry<Customer>(obj_Customer).State = System.Data.Entity.EntityState.Modified;
+                    
+                    db.SaveChanges();
                     mG_Customer.Refresh();
                     mP_Customer.Enabled = false;
+                    obj_Customer.ObjectState = 0;
                 }
 
-                db.SaveChanges();
+                
             }
-    }
+        }
 
         /// <summary>
         /// 
@@ -103,10 +109,10 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Add_Customer_Click(object sender, EventArgs e)
         {
-            //mP_Customer.Enabled = true;
-            ////customerBindingSource.Add(new AccountingDatabase.Customer());
-            ////customerBindingSource.MoveLast();
-            ////mTB_Date_Customer.Focus();
+            mP_Customer.Enabled = true;
+            customerBindingSource.Add(new Customer() { ObjectState = 1 });
+            customerBindingSource.MoveLast();
+            mTB_Date_Customer.Focus();
         }
 
         /// <summary>
@@ -116,8 +122,11 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Edit_Customer_Click(object sender, EventArgs e)
         {
-            //mP_Customer.Enabled = true;
-            //mTB_Date_Customer.Focus();
+            mP_Customer.Enabled = true;
+            mTB_Date_Customer.Focus();
+            Customer obj = customerBindingSource.Current as Customer;
+            if (obj != null)
+                obj.ObjectState = 2;
         }
         /// <summary>
         /// 
@@ -182,5 +191,7 @@ namespace Accounting
         {
 
         }
+
+
     }
 }

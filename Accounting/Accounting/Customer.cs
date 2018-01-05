@@ -36,5 +36,8 @@ namespace Accounting
         [Column("Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+
+        [NotMapped]
+        public int ObjectState { get; set; }
     }
 }
