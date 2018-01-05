@@ -3,7 +3,7 @@ namespace Accounting.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CustomerColumeedite : DbMigration
+    public partial class addObjState : DbMigration
     {
         public override void Up()
         {

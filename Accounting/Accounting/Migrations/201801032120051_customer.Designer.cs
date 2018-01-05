@@ -7,13 +7,13 @@ namespace Accounting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CustomerColumeedite : IMigrationMetadata
+    public sealed partial class customer : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CustomerColumeedite));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(customer));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801012137591_CustomerColumeedite"; }
+            get { return "201801032120051_customer"; }
         }
         
         string IMigrationMetadata.Source
