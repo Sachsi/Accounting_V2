@@ -106,6 +106,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Income.cs" />
     <Compile Include="Migrations\201801032120051_customer.cs" />
     <Compile Include="Migrations\201801032120051_customer.Designer.cs">
       <DependentUpon>201801032120051_customer.cs</DependentUpon>
@@ -113,6 +114,14 @@
     <Compile Include="Migrations\201801041942280_addObjState.cs" />
     <Compile Include="Migrations\201801041942280_addObjState.Designer.cs">
       <DependentUpon>201801041942280_addObjState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801052248539_addIncomeTable.cs" />
+    <Compile Include="Migrations\201801052248539_addIncomeTable.Designer.cs">
+      <DependentUpon>201801052248539_addIncomeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801052304258_addIncomeFK.cs" />
+    <Compile Include="Migrations\201801052304258_addIncomeFK.Designer.cs">
+      <DependentUpon>201801052304258_addIncomeFK.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -126,6 +135,12 @@
     <EmbeddedResource Include="Migrations\201801041942280_addObjState.resx">
       <DependentUpon>201801041942280_addObjState.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801052248539_addIncomeTable.resx">
+      <DependentUpon>201801052248539_addIncomeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801052304258_addIncomeFK.resx">
+      <DependentUpon>201801052304258_addIncomeFK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -137,6 +152,7 @@
     </Compile>
     <None Include="Accounting_TemporaryKey.pfx" />
     <None Include="Customer.datasource" />
+    <None Include="Income.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
