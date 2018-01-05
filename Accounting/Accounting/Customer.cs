@@ -9,6 +9,11 @@ namespace Accounting
     [Table("Customer")]
     public partial class Customer
     {
+        public Customer()
+        {
+            this.Incomes = new List<Income>();
+        }
+
         public int Id { get; set; }
 
         [Column("Full Name")]
@@ -36,6 +41,9 @@ namespace Accounting
         [Column("Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+
+        
+        public List<Income> Incomes { get; set; }
 
         [NotMapped]
         public int ObjectState { get; set; }
