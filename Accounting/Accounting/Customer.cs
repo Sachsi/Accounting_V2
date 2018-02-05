@@ -6,12 +6,13 @@ namespace Accounting
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [DisplayColumn("Full_Name")]
     [Table("Customer")]
     public partial class Customer
     {
         public Customer()
         {
-            this.Incomes = new List<Income>();
+            this.Incomes = new HashSet<Income>();
         }
 
         public int Id { get; set; }
@@ -27,7 +28,8 @@ namespace Accounting
 
         [Column("Phone Number")]
         [DataType(DataType.PhoneNumber)]
-        public int PhoneNr { get; set; }
+        [StringLength(50)]
+        public string PhoneNr { get; set; }
 
         [Column("CSA")]
         public bool CSA { get; set; }
@@ -41,9 +43,9 @@ namespace Accounting
         [Column("Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+       
 
-        
-        public List<Income> Incomes { get; set; }
+        public virtual ICollection<Income> Incomes { get; set; }
 
         [NotMapped]
         public int ObjectState { get; set; }

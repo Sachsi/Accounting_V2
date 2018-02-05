@@ -14,9 +14,12 @@
         [Column("Date")]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
+        
+        [NotMapped]
+        public int? Customer_Id { get; set; }
 
         [Column("Customer")]
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         [Column("Payment")]
         [StringLength(20)]

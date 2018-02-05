@@ -12,6 +12,7 @@ namespace Accounting
     public class DatabaseContext : DbContext
     {
         public DatabaseContext() : base("name= AccountingDatabase") { }
+
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Income> Incomes { get; set; }
     }
