@@ -49,13 +49,42 @@ namespace Accounting
                 foreach (Income c in list)
                 {
                     ListViewItem b = new ListViewItem(c.Date.ToShortDateString());
-                    b.SubItems.Add(c.Customer.Full_Name);
+                    try
+                    {
+                        b.SubItems.Add(c.Customer.Full_Name);
+                    }
+                    catch (Exception)
+                    {
+                        b.SubItems.Add("Error");
+                    }
                     b.SubItems.Add(c.Payment);
                     b.SubItems.Add(c.Price.ToString("c"));
                     listview.Items.Add(b);
                 }
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list_Expenses"></param>
+        public static void RefreshExpenses(MetroListView list_Expenses)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var list = db.Expenses.ToList();
+
+                foreach (var item in list)
+                {
+                    ListViewItem listItems = new ListViewItem(item.Date.ToShortDateString());
+                    listItems.SubItems.Add(item.Dealer);
+                    listItems.SubItems.Add(item.Payment);
+                    listItems.SubItems.Add(item.Price.ToString("c"));
+                    list_Expenses.Items.Add(listItems);
+                }
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -95,5 +124,13 @@ namespace Accounting
             listview.Items.Remove(listview.SelectedItems[0]);
         }
 
+        public static void AddExpenses(MetroListView list_Expenses, Expense obj_Expense)
+        {
+            ListViewItem item = new ListViewItem(obj_Expense.Date.ToShortDateString());
+            item.SubItems.Add(obj_Expense.Dealer);
+            item.SubItems.Add(obj_Expense.Payment);
+            item.SubItems.Add(obj_Expense.Price.ToString("c"));
+            list_Expenses.Items.Add(item);
+        }
     }
 }
