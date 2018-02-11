@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mTC_Accounting = new MetroFramework.Controls.MetroTabControl();
-            this.tabPage_Customer = new System.Windows.Forms.TabPage();
+            this.mTP_Customer = new System.Windows.Forms.TabPage();
             this.List_Customer = new MetroFramework.Controls.MetroListView();
             this.CH_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CH_Customer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,30 +68,38 @@
             this.mTB_Price_Income = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Payment_Income = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Date_Income = new MetroFramework.Controls.MetroTextBox();
-            this.mTP_Products = new MetroFramework.Controls.MetroTabPage();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.mTP_Expenses = new MetroFramework.Controls.MetroTabPage();
+            this.List_Expenses = new MetroFramework.Controls.MetroListView();
+            this.CH_Date_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Dealer_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Payment_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Price_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Details_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mP_Expenses = new MetroFramework.Controls.MetroPanel();
+            this.mTB_Dealer_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.expensesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
-            this.tabPage_Overview = new System.Windows.Forms.TabPage();
+            this.mL_Dealer_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mL_Date_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mL_Payment_Expenses = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Price_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_Payment_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_Date_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.mTP_Overview = new System.Windows.Forms.TabPage();
             this.mB_Save = new MetroFramework.Controls.MetroButton();
             this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
             this.mTC_Accounting.SuspendLayout();
-            this.tabPage_Customer.SuspendLayout();
+            this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.mTP_Income.SuspendLayout();
             this.mP_Income.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).BeginInit();
-            this.mTP_Products.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
+            this.mTP_Expenses.SuspendLayout();
+            this.mP_Expenses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Accounting
@@ -99,27 +107,30 @@
             this.mTC_Accounting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mTC_Accounting.Controls.Add(this.tabPage_Customer);
+            this.mTC_Accounting.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.mTC_Accounting.Controls.Add(this.mTP_Customer);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
-            this.mTC_Accounting.Controls.Add(this.mTP_Products);
-            this.mTC_Accounting.Controls.Add(this.tabPage_Overview);
-            this.mTC_Accounting.ItemSize = new System.Drawing.Size(80, 34);
+            this.mTC_Accounting.Controls.Add(this.mTP_Expenses);
+            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
+            this.mTC_Accounting.HotTrack = true;
+            this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
             this.mTC_Accounting.SelectedIndex = 2;
             this.mTC_Accounting.Size = new System.Drawing.Size(768, 376);
+            this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
             this.mTC_Accounting.UseSelectable = true;
             // 
-            // tabPage_Customer
+            // mTP_Customer
             // 
-            this.tabPage_Customer.Controls.Add(this.List_Customer);
-            this.tabPage_Customer.Controls.Add(this.mP_Customer);
-            this.tabPage_Customer.Location = new System.Drawing.Point(4, 38);
-            this.tabPage_Customer.Name = "tabPage_Customer";
-            this.tabPage_Customer.Size = new System.Drawing.Size(760, 334);
-            this.tabPage_Customer.TabIndex = 1;
-            this.tabPage_Customer.Text = "Customer";
+            this.mTP_Customer.Controls.Add(this.List_Customer);
+            this.mTP_Customer.Controls.Add(this.mP_Customer);
+            this.mTP_Customer.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Customer.Name = "mTP_Customer";
+            this.mTP_Customer.Size = new System.Drawing.Size(760, 334);
+            this.mTP_Customer.TabIndex = 1;
+            this.mTP_Customer.Text = "Customer";
             // 
             // List_Customer
             // 
@@ -153,25 +164,21 @@
             // CH_Customer
             // 
             this.CH_Customer.Text = "Customer";
-            this.CH_Customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Customer.Width = 140;
             // 
             // CH_Email
             // 
             this.CH_Email.Text = "E-Mail";
-            this.CH_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Email.Width = 150;
             // 
             // CH_Phone
             // 
             this.CH_Phone.Text = "Phone";
-            this.CH_Phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Phone.Width = 100;
             // 
             // CH_CSA
             // 
             this.CH_CSA.Text = "CSA";
-            this.CH_CSA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_CSA.Width = 50;
             // 
             // CH_Neightbarhood
@@ -464,19 +471,16 @@
             // CH_Customer_Income
             // 
             this.CH_Customer_Income.Text = "Customer";
-            this.CH_Customer_Income.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Customer_Income.Width = 200;
             // 
             // CH_Payment_Income
             // 
             this.CH_Payment_Income.Text = "Payment";
-            this.CH_Payment_Income.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Payment_Income.Width = 150;
             // 
             // CH_Price_Income
             // 
             this.CH_Price_Income.Text = "Price";
-            this.CH_Price_Income.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Price_Income.Width = 80;
             // 
             // mP_Income
@@ -658,57 +662,129 @@
             this.mTB_Date_Income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Date_Income.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // mTP_Products
+            // mTP_Expenses
             // 
-            this.mTP_Products.Controls.Add(this.metroPanel1);
-            this.mTP_Products.HorizontalScrollbarBarColor = true;
-            this.mTP_Products.HorizontalScrollbarHighlightOnWheel = false;
-            this.mTP_Products.HorizontalScrollbarSize = 10;
-            this.mTP_Products.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Products.Name = "mTP_Products";
-            this.mTP_Products.Size = new System.Drawing.Size(760, 334);
-            this.mTP_Products.TabIndex = 3;
-            this.mTP_Products.Text = "Products";
-            this.mTP_Products.VerticalScrollbarBarColor = true;
-            this.mTP_Products.VerticalScrollbarHighlightOnWheel = false;
-            this.mTP_Products.VerticalScrollbarSize = 10;
+            this.mTP_Expenses.Controls.Add(this.List_Expenses);
+            this.mTP_Expenses.Controls.Add(this.mP_Expenses);
+            this.mTP_Expenses.HorizontalScrollbarBarColor = true;
+            this.mTP_Expenses.HorizontalScrollbarHighlightOnWheel = false;
+            this.mTP_Expenses.HorizontalScrollbarSize = 10;
+            this.mTP_Expenses.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Expenses.Name = "mTP_Expenses";
+            this.mTP_Expenses.Size = new System.Drawing.Size(760, 334);
+            this.mTP_Expenses.TabIndex = 3;
+            this.mTP_Expenses.Text = "Expenses";
+            this.mTP_Expenses.VerticalScrollbarBarColor = true;
+            this.mTP_Expenses.VerticalScrollbarHighlightOnWheel = false;
+            this.mTP_Expenses.VerticalScrollbarSize = 10;
             // 
-            // metroPanel1
+            // List_Expenses
             // 
-            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.List_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel1.Controls.Add(this.metroComboBox1);
-            this.metroPanel1.Controls.Add(this.metroLabel1);
-            this.metroPanel1.Controls.Add(this.metroLabel2);
-            this.metroPanel1.Controls.Add(this.metroLabel4);
-            this.metroPanel1.Controls.Add(this.metroLabel5);
-            this.metroPanel1.Controls.Add(this.metroTextBox1);
-            this.metroPanel1.Controls.Add(this.metroTextBox2);
-            this.metroPanel1.Controls.Add(this.metroTextBox3);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(3, 247);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(754, 84);
-            this.metroPanel1.TabIndex = 4;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.List_Expenses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CH_Date_Expenses,
+            this.CH_Dealer_Expenses,
+            this.CH_Payment_Expenses,
+            this.CH_Price_Expenses,
+            this.CH_Details_Expenses});
+            this.List_Expenses.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.List_Expenses.FullRowSelect = true;
+            this.List_Expenses.Location = new System.Drawing.Point(3, 3);
+            this.List_Expenses.Name = "List_Expenses";
+            this.List_Expenses.OwnerDraw = true;
+            this.List_Expenses.Size = new System.Drawing.Size(754, 241);
+            this.List_Expenses.TabIndex = 5;
+            this.List_Expenses.UseCompatibleStateImageBehavior = false;
+            this.List_Expenses.UseSelectable = true;
+            this.List_Expenses.View = System.Windows.Forms.View.Details;
             // 
-            // metroComboBox1
+            // CH_Date_Expenses
             // 
-            this.metroComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.incomeBindingSource, "Customer_Id", true));
-            this.metroComboBox1.DataSource = this.customerBindingSource;
-            this.metroComboBox1.DisplayMember = "Full_Name";
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(87, 42);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(122, 29);
-            this.metroComboBox1.TabIndex = 10;
-            this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.ValueMember = "Id";
+            this.CH_Date_Expenses.Text = "Date";
+            this.CH_Date_Expenses.Width = 120;
+            // 
+            // CH_Dealer_Expenses
+            // 
+            this.CH_Dealer_Expenses.Text = "Dealer";
+            this.CH_Dealer_Expenses.Width = 200;
+            // 
+            // CH_Payment_Expenses
+            // 
+            this.CH_Payment_Expenses.Text = "Payment";
+            this.CH_Payment_Expenses.Width = 150;
+            // 
+            // CH_Price_Expenses
+            // 
+            this.CH_Price_Expenses.Text = "Price";
+            this.CH_Price_Expenses.Width = 80;
+            // 
+            // CH_Details_Expenses
+            // 
+            this.CH_Details_Expenses.Text = "Details";
+            this.CH_Details_Expenses.Width = 150;
+            // 
+            // mP_Expenses
+            // 
+            this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mP_Expenses.Controls.Add(this.mTB_Dealer_Expenses);
+            this.mP_Expenses.Controls.Add(this.metroLabel1);
+            this.mP_Expenses.Controls.Add(this.mL_Dealer_Expenses);
+            this.mP_Expenses.Controls.Add(this.mL_Date_Expenses);
+            this.mP_Expenses.Controls.Add(this.mL_Payment_Expenses);
+            this.mP_Expenses.Controls.Add(this.mTB_Price_Expenses);
+            this.mP_Expenses.Controls.Add(this.mTB_Payment_Expenses);
+            this.mP_Expenses.Controls.Add(this.mTB_Date_Expenses);
+            this.mP_Expenses.HorizontalScrollbarBarColor = true;
+            this.mP_Expenses.HorizontalScrollbarHighlightOnWheel = false;
+            this.mP_Expenses.HorizontalScrollbarSize = 10;
+            this.mP_Expenses.Location = new System.Drawing.Point(3, 247);
+            this.mP_Expenses.Name = "mP_Expenses";
+            this.mP_Expenses.Size = new System.Drawing.Size(754, 84);
+            this.mP_Expenses.TabIndex = 4;
+            this.mP_Expenses.VerticalScrollbarBarColor = true;
+            this.mP_Expenses.VerticalScrollbarHighlightOnWheel = false;
+            this.mP_Expenses.VerticalScrollbarSize = 10;
+            // 
+            // mTB_Dealer_Expenses
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Dealer_Expenses.CustomButton.Image = null;
+            this.mTB_Dealer_Expenses.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Dealer_Expenses.CustomButton.Name = "";
+            this.mTB_Dealer_Expenses.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Dealer_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Dealer_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Dealer_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Dealer_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Dealer_Expenses.CustomButton.Visible = false;
+            this.mTB_Dealer_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Dealer", true));
+            this.mTB_Dealer_Expenses.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Dealer_Expenses.Lines = new string[] {
+        "Dealer"};
+            this.mTB_Dealer_Expenses.Location = new System.Drawing.Point(87, 42);
+            this.mTB_Dealer_Expenses.MaxLength = 32767;
+            this.mTB_Dealer_Expenses.Name = "mTB_Dealer_Expenses";
+            this.mTB_Dealer_Expenses.PasswordChar = '\0';
+            this.mTB_Dealer_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Dealer_Expenses.SelectedText = "";
+            this.mTB_Dealer_Expenses.SelectionLength = 0;
+            this.mTB_Dealer_Expenses.SelectionStart = 0;
+            this.mTB_Dealer_Expenses.ShortcutsEnabled = true;
+            this.mTB_Dealer_Expenses.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Dealer_Expenses.TabIndex = 10;
+            this.mTB_Dealer_Expenses.Text = "Dealer";
+            this.mTB_Dealer_Expenses.UseSelectable = true;
+            this.mTB_Dealer_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Dealer_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // expensesBindingSource
+            // 
+            this.expensesBindingSource.DataSource = typeof(Accounting.Expense);
             // 
             // metroLabel1
             // 
@@ -719,142 +795,143 @@
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Price:";
             // 
-            // metroLabel2
+            // mL_Dealer_Expenses
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 47);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(58, 19);
-            this.metroLabel2.TabIndex = 9;
-            this.metroLabel2.Text = "Product:";
+            this.mL_Dealer_Expenses.AutoSize = true;
+            this.mL_Dealer_Expenses.Location = new System.Drawing.Point(3, 47);
+            this.mL_Dealer_Expenses.Name = "mL_Dealer_Expenses";
+            this.mL_Dealer_Expenses.Size = new System.Drawing.Size(51, 19);
+            this.mL_Dealer_Expenses.TabIndex = 9;
+            this.mL_Dealer_Expenses.Text = "Dealer:";
             // 
-            // metroLabel4
+            // mL_Date_Expenses
             // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(3, 8);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel4.TabIndex = 9;
-            this.metroLabel4.Text = "Date:";
+            this.mL_Date_Expenses.AutoSize = true;
+            this.mL_Date_Expenses.Location = new System.Drawing.Point(3, 8);
+            this.mL_Date_Expenses.Name = "mL_Date_Expenses";
+            this.mL_Date_Expenses.Size = new System.Drawing.Size(39, 19);
+            this.mL_Date_Expenses.TabIndex = 9;
+            this.mL_Date_Expenses.Text = "Date:";
             // 
-            // metroLabel5
+            // mL_Payment_Expenses
             // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(260, 8);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(41, 19);
-            this.metroLabel5.TabIndex = 9;
-            this.metroLabel5.Text = "Price:";
+            this.mL_Payment_Expenses.AutoSize = true;
+            this.mL_Payment_Expenses.Location = new System.Drawing.Point(260, 8);
+            this.mL_Payment_Expenses.Name = "mL_Payment_Expenses";
+            this.mL_Payment_Expenses.Size = new System.Drawing.Size(62, 19);
+            this.mL_Payment_Expenses.TabIndex = 9;
+            this.mL_Payment_Expenses.Text = "Payment:";
             // 
-            // metroTextBox1
-            // 
-            // 
+            // mTB_Price_Expenses
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incomeBindingSource, "Price", true));
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[] {
+            // 
+            // 
+            this.mTB_Price_Expenses.CustomButton.Image = null;
+            this.mTB_Price_Expenses.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Price_Expenses.CustomButton.Name = "";
+            this.mTB_Price_Expenses.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Price_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Price_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Price_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Price_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Price_Expenses.CustomButton.Visible = false;
+            this.mTB_Price_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Price", true));
+            this.mTB_Price_Expenses.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Price_Expenses.Lines = new string[] {
         "10,23"};
-            this.metroTextBox1.Location = new System.Drawing.Point(347, 42);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(122, 29);
-            this.metroTextBox1.TabIndex = 5;
-            this.metroTextBox1.Text = "10,23";
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Price_Expenses.Location = new System.Drawing.Point(347, 42);
+            this.mTB_Price_Expenses.MaxLength = 32767;
+            this.mTB_Price_Expenses.Name = "mTB_Price_Expenses";
+            this.mTB_Price_Expenses.PasswordChar = '\0';
+            this.mTB_Price_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Price_Expenses.SelectedText = "";
+            this.mTB_Price_Expenses.SelectionLength = 0;
+            this.mTB_Price_Expenses.SelectionStart = 0;
+            this.mTB_Price_Expenses.ShortcutsEnabled = true;
+            this.mTB_Price_Expenses.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Price_Expenses.TabIndex = 5;
+            this.mTB_Price_Expenses.Text = "10,23";
+            this.mTB_Price_Expenses.UseSelectable = true;
+            this.mTB_Price_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Price_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox2
-            // 
-            // 
+            // mTB_Payment_Expenses
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incomeBindingSource, "Payment", true));
-            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox2.Lines = new string[] {
+            // 
+            // 
+            this.mTB_Payment_Expenses.CustomButton.Image = null;
+            this.mTB_Payment_Expenses.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Payment_Expenses.CustomButton.Name = "";
+            this.mTB_Payment_Expenses.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Payment_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Payment_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Payment_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Payment_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Payment_Expenses.CustomButton.Visible = false;
+            this.mTB_Payment_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Payment", true));
+            this.mTB_Payment_Expenses.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Payment_Expenses.Lines = new string[] {
         "Chash"};
-            this.metroTextBox2.Location = new System.Drawing.Point(347, 3);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(122, 29);
-            this.metroTextBox2.TabIndex = 3;
-            this.metroTextBox2.Text = "Chash";
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Payment_Expenses.Location = new System.Drawing.Point(347, 3);
+            this.mTB_Payment_Expenses.MaxLength = 32767;
+            this.mTB_Payment_Expenses.Name = "mTB_Payment_Expenses";
+            this.mTB_Payment_Expenses.PasswordChar = '\0';
+            this.mTB_Payment_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Payment_Expenses.SelectedText = "";
+            this.mTB_Payment_Expenses.SelectionLength = 0;
+            this.mTB_Payment_Expenses.SelectionStart = 0;
+            this.mTB_Payment_Expenses.ShortcutsEnabled = true;
+            this.mTB_Payment_Expenses.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Payment_Expenses.TabIndex = 3;
+            this.mTB_Payment_Expenses.Text = "Chash";
+            this.mTB_Payment_Expenses.UseSelectable = true;
+            this.mTB_Payment_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Payment_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroTextBox3
-            // 
-            // 
+            // mTB_Date_Expenses
             // 
             // 
-            this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.metroTextBox3.CustomButton.Name = "";
-            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox3.CustomButton.TabIndex = 1;
-            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox3.CustomButton.UseSelectable = true;
-            this.metroTextBox3.CustomButton.Visible = false;
-            this.metroTextBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.incomeBindingSource, "Date", true));
-            this.metroTextBox3.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox3.Lines = new string[] {
+            // 
+            // 
+            this.mTB_Date_Expenses.CustomButton.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Date", true));
+            this.mTB_Date_Expenses.CustomButton.Image = null;
+            this.mTB_Date_Expenses.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Date_Expenses.CustomButton.Name = "";
+            this.mTB_Date_Expenses.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Date_Expenses.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Date_Expenses.CustomButton.TabIndex = 1;
+            this.mTB_Date_Expenses.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Date_Expenses.CustomButton.UseSelectable = true;
+            this.mTB_Date_Expenses.CustomButton.Visible = false;
+            this.mTB_Date_Expenses.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Date", true));
+            this.mTB_Date_Expenses.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Date_Expenses.Lines = new string[] {
         "01.01.2018"};
-            this.metroTextBox3.Location = new System.Drawing.Point(87, 3);
-            this.metroTextBox3.MaxLength = 32767;
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.PasswordChar = '\0';
-            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox3.SelectedText = "";
-            this.metroTextBox3.SelectionLength = 0;
-            this.metroTextBox3.SelectionStart = 0;
-            this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(122, 29);
-            this.metroTextBox3.TabIndex = 2;
-            this.metroTextBox3.Text = "01.01.2018";
-            this.metroTextBox3.UseSelectable = true;
-            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Date_Expenses.Location = new System.Drawing.Point(87, 3);
+            this.mTB_Date_Expenses.MaxLength = 32767;
+            this.mTB_Date_Expenses.Name = "mTB_Date_Expenses";
+            this.mTB_Date_Expenses.PasswordChar = '\0';
+            this.mTB_Date_Expenses.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Date_Expenses.SelectedText = "";
+            this.mTB_Date_Expenses.SelectionLength = 0;
+            this.mTB_Date_Expenses.SelectionStart = 0;
+            this.mTB_Date_Expenses.ShortcutsEnabled = true;
+            this.mTB_Date_Expenses.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Date_Expenses.TabIndex = 2;
+            this.mTB_Date_Expenses.Text = "01.01.2018";
+            this.mTB_Date_Expenses.UseSelectable = true;
+            this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Date_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // tabPage_Overview
+            // mTP_Overview
             // 
-            this.tabPage_Overview.Location = new System.Drawing.Point(4, 38);
-            this.tabPage_Overview.Name = "tabPage_Overview";
-            this.tabPage_Overview.Size = new System.Drawing.Size(760, 334);
-            this.tabPage_Overview.TabIndex = 0;
-            this.tabPage_Overview.Text = "Overview";
+            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Overview.Name = "mTP_Overview";
+            this.mTP_Overview.Size = new System.Drawing.Size(760, 334);
+            this.mTP_Overview.TabIndex = 0;
+            this.mTP_Overview.Text = "Overview";
             // 
             // mB_Save
             // 
@@ -914,7 +991,7 @@
             this.Text = "Accounting";
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.mTC_Accounting.ResumeLayout(false);
-            this.tabPage_Customer.ResumeLayout(false);
+            this.mTP_Customer.ResumeLayout(false);
             this.mP_Customer.ResumeLayout(false);
             this.mP_Customer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
@@ -922,9 +999,10 @@
             this.mP_Income.ResumeLayout(false);
             this.mP_Income.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).EndInit();
-            this.mTP_Products.ResumeLayout(false);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.mTP_Expenses.ResumeLayout(false);
+            this.mP_Expenses.ResumeLayout(false);
+            this.mP_Expenses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -932,8 +1010,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl mTC_Accounting;
-        private System.Windows.Forms.TabPage tabPage_Overview;
-        private System.Windows.Forms.TabPage tabPage_Customer;
+        private System.Windows.Forms.TabPage mTP_Overview;
+        private System.Windows.Forms.TabPage mTP_Customer;
         private MetroFramework.Controls.MetroButton mB_Save;
         private MetroFramework.Controls.MetroPanel mP_Customer;
         private MetroFramework.Controls.MetroTextBox mTB_Date_Customer;
@@ -961,16 +1039,15 @@
         private MetroFramework.Controls.MetroTextBox mTB_Date_Income;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.BindingSource incomeBindingSource;
-        private MetroFramework.Controls.MetroTabPage mTP_Products;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroTabPage mTP_Expenses;
+        private MetroFramework.Controls.MetroPanel mP_Expenses;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroLabel mL_Dealer_Expenses;
+        private MetroFramework.Controls.MetroLabel mL_Date_Expenses;
+        private MetroFramework.Controls.MetroLabel mL_Payment_Expenses;
+        private MetroFramework.Controls.MetroTextBox mTB_Price_Expenses;
+        private MetroFramework.Controls.MetroTextBox mTB_Payment_Expenses;
+        private MetroFramework.Controls.MetroTextBox mTB_Date_Expenses;
         private MetroFramework.Controls.MetroListView List_Customer;
         private System.Windows.Forms.ColumnHeader CH_Date;
         private System.Windows.Forms.ColumnHeader CH_Customer;
@@ -985,6 +1062,14 @@
         private System.Windows.Forms.ColumnHeader CH_Customer_Income;
         private System.Windows.Forms.ColumnHeader CH_Payment_Income;
         private System.Windows.Forms.ColumnHeader CH_Price_Income;
+        private MetroFramework.Controls.MetroListView List_Expenses;
+        private System.Windows.Forms.ColumnHeader CH_Date_Expenses;
+        private System.Windows.Forms.ColumnHeader CH_Dealer_Expenses;
+        private System.Windows.Forms.ColumnHeader CH_Payment_Expenses;
+        private System.Windows.Forms.ColumnHeader CH_Price_Expenses;
+        private System.Windows.Forms.BindingSource expensesBindingSource;
+        private System.Windows.Forms.ColumnHeader CH_Details_Expenses;
+        private MetroFramework.Controls.MetroTextBox mTB_Dealer_Expenses;
     }
 }
 

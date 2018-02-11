@@ -10,7 +10,6 @@ namespace Accounting.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-
         }
 
         protected override void Seed(Accounting.DatabaseContext context)
