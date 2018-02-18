@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mTC_Accounting = new MetroFramework.Controls.MetroTabControl();
+            this.mTP_Overview = new System.Windows.Forms.TabPage();
             this.mTP_Customer = new System.Windows.Forms.TabPage();
             this.List_Customer = new MetroFramework.Controls.MetroListView();
             this.CH_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -85,11 +86,11 @@
             this.mTB_Price_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Payment_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Date_Expenses = new MetroFramework.Controls.MetroTextBox();
-            this.mTP_Overview = new System.Windows.Forms.TabPage();
             this.mB_Save = new MetroFramework.Controls.MetroButton();
             this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -112,15 +113,24 @@
             this.mTC_Accounting.Controls.Add(this.mTP_Customer);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
             this.mTC_Accounting.Controls.Add(this.mTP_Expenses);
+            this.mTC_Accounting.Controls.Add(this.metroTabPage1);
             this.mTC_Accounting.HotTrack = true;
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 0;
-            this.mTC_Accounting.Size = new System.Drawing.Size(768, 376);
+            this.mTC_Accounting.SelectedIndex = 4;
+            this.mTC_Accounting.Size = new System.Drawing.Size(769, 376);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
             this.mTC_Accounting.UseSelectable = true;
+            // 
+            // mTP_Overview
+            // 
+            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Overview.Name = "mTP_Overview";
+            this.mTP_Overview.Size = new System.Drawing.Size(761, 334);
+            this.mTP_Overview.TabIndex = 0;
+            this.mTP_Overview.Text = "Overview";
             // 
             // mTP_Customer
             // 
@@ -925,18 +935,10 @@
             this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Date_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // mTP_Overview
-            // 
-            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Overview.Name = "mTP_Overview";
-            this.mTP_Overview.Size = new System.Drawing.Size(760, 334);
-            this.mTP_Overview.TabIndex = 0;
-            this.mTP_Overview.Text = "Overview";
-            // 
             // mB_Save
             // 
             this.mB_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Save.Location = new System.Drawing.Point(687, 454);
+            this.mB_Save.Location = new System.Drawing.Point(688, 454);
             this.mB_Save.Name = "mB_Save";
             this.mB_Save.Size = new System.Drawing.Size(100, 25);
             this.mB_Save.TabIndex = 1;
@@ -947,7 +949,7 @@
             // mB_Add_Customer
             // 
             this.mB_Add_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Add_Customer.Location = new System.Drawing.Point(369, 454);
+            this.mB_Add_Customer.Location = new System.Drawing.Point(370, 454);
             this.mB_Add_Customer.Name = "mB_Add_Customer";
             this.mB_Add_Customer.Size = new System.Drawing.Size(100, 25);
             this.mB_Add_Customer.TabIndex = 2;
@@ -958,7 +960,7 @@
             // mB_Edit_Customer
             // 
             this.mB_Edit_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Edit_Customer.Location = new System.Drawing.Point(475, 454);
+            this.mB_Edit_Customer.Location = new System.Drawing.Point(476, 454);
             this.mB_Edit_Customer.Name = "mB_Edit_Customer";
             this.mB_Edit_Customer.Size = new System.Drawing.Size(100, 25);
             this.mB_Edit_Customer.TabIndex = 3;
@@ -969,7 +971,7 @@
             // mB_Remove
             // 
             this.mB_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Remove.Location = new System.Drawing.Point(581, 454);
+            this.mB_Remove.Location = new System.Drawing.Point(582, 454);
             this.mB_Remove.Name = "mB_Remove";
             this.mB_Remove.Size = new System.Drawing.Size(100, 25);
             this.mB_Remove.TabIndex = 4;
@@ -977,16 +979,31 @@
             this.mB_Remove.UseSelectable = true;
             this.mB_Remove.Click += new System.EventHandler(this.mB_Remove_Click);
             // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(761, 334);
+            this.metroTabPage1.TabIndex = 4;
+            this.metroTabPage1.Text = "metroTabPage1";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 502);
+            this.ClientSize = new System.Drawing.Size(815, 502);
             this.Controls.Add(this.mB_Remove);
             this.Controls.Add(this.mB_Edit_Customer);
             this.Controls.Add(this.mB_Add_Customer);
             this.Controls.Add(this.mB_Save);
             this.Controls.Add(this.mTC_Accounting);
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Form_Main";
             this.Text = "Accounting";
             this.Load += new System.EventHandler(this.Form_Main_Load);
@@ -1070,6 +1087,7 @@
         private System.Windows.Forms.BindingSource expensesBindingSource;
         private System.Windows.Forms.ColumnHeader CH_Details_Expenses;
         private MetroFramework.Controls.MetroTextBox mTB_Dealer_Expenses;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
     }
 }
 
