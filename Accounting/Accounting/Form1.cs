@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Accounting
 {
     public partial class Form_Main : MetroFramework.Forms.MetroForm
     {
+        Updater a = new Updater();
 
         public Form_Main()
         {
             InitializeComponent();
-
+            //a.Show();
         }
         /// <summary>
         /// 
