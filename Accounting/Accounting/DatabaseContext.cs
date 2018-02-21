@@ -16,5 +16,6 @@ namespace Accounting
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Income> Incomes { get; set; }
         public DbSet<Expense> Expenses { get; set; }
+        public DbSet<Produkt> Produkts { get; set; }
     }
 }

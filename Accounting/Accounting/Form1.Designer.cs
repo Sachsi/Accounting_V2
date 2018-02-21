@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mTC_Accounting = new MetroFramework.Controls.MetroTabControl();
-            this.mTP_Overview = new System.Windows.Forms.TabPage();
             this.mTP_Customer = new System.Windows.Forms.TabPage();
             this.List_Customer = new MetroFramework.Controls.MetroListView();
             this.CH_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -86,30 +85,35 @@
             this.mTB_Price_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Payment_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Date_Expenses = new MetroFramework.Controls.MetroTextBox();
+            this.mTP_Overview = new System.Windows.Forms.TabPage();
             this.mTP_Produkts = new MetroFramework.Controls.MetroTabPage();
-            this.mB_Save = new MetroFramework.Controls.MetroButton();
-            this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
-            this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
-            this.mB_Remove = new MetroFramework.Controls.MetroButton();
             this.List_Produkts = new MetroFramework.Controls.MetroListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produkts_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produkts_Farmer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produkts_Produce = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produkts_Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produkts_Quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produkts_Unit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mP_Produkts = new MetroFramework.Controls.MetroPanel();
+            this.mL_Produkts_Unit = new MetroFramework.Controls.MetroLabel();
+            this.mCB_Produkts_Unit = new MetroFramework.Controls.MetroComboBox();
+            this.ml_Unit = new MetroFramework.Controls.MetroLabel();
+            this.mL_Produkts_Quantity = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Produkts_Quantity = new MetroFramework.Controls.MetroTextBox();
+            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mTB_Produkts_Dealer = new MetroFramework.Controls.MetroTextBox();
             this.mL_Produkts_Price = new MetroFramework.Controls.MetroLabel();
-            this.mL_Produkts_Dealer = new MetroFramework.Controls.MetroLabel();
+            this.mL_Produkts_Farmer = new MetroFramework.Controls.MetroLabel();
             this.mL_Produkts_Date = new MetroFramework.Controls.MetroLabel();
             this.mL_Produkts_Produkt = new MetroFramework.Controls.MetroLabel();
             this.mTB_Produkts_Price = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Produkts_Produkt = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Produkts_Date = new MetroFramework.Controls.MetroTextBox();
-            this.mL_Produkts_Quantity = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.ml_Unit = new MetroFramework.Controls.MetroLabel();
-            this.mCB_Produkts_Unit = new MetroFramework.Controls.MetroCheckBox();
+            this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mB_Save = new MetroFramework.Controls.MetroButton();
+            this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
+            this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
+            this.mB_Remove = new MetroFramework.Controls.MetroButton();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -122,6 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.expensesBindingSource)).BeginInit();
             this.mTP_Produkts.SuspendLayout();
             this.mP_Produkts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Accounting
@@ -130,10 +136,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mTC_Accounting.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
             this.mTC_Accounting.Controls.Add(this.mTP_Customer);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
             this.mTC_Accounting.Controls.Add(this.mTP_Expenses);
+            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
             this.mTC_Accounting.Controls.Add(this.mTP_Produkts);
             this.mTC_Accounting.HotTrack = true;
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
@@ -144,14 +150,6 @@
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
             this.mTC_Accounting.UseSelectable = true;
-            // 
-            // mTP_Overview
-            // 
-            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Overview.Name = "mTP_Overview";
-            this.mTP_Overview.Size = new System.Drawing.Size(761, 334);
-            this.mTP_Overview.TabIndex = 0;
-            this.mTP_Overview.Text = "Overview";
             // 
             // mTP_Customer
             // 
@@ -957,6 +955,14 @@
             this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Date_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // mTP_Overview
+            // 
+            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Overview.Name = "mTP_Overview";
+            this.mTP_Overview.Size = new System.Drawing.Size(761, 334);
+            this.mTP_Overview.TabIndex = 0;
+            this.mTP_Overview.Text = "Overview";
+            // 
             // mTP_Produkts
             // 
             this.mTP_Produkts.Controls.Add(this.List_Produkts);
@@ -973,6 +979,341 @@
             this.mTP_Produkts.VerticalScrollbarBarColor = true;
             this.mTP_Produkts.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Produkts.VerticalScrollbarSize = 10;
+            // 
+            // List_Produkts
+            // 
+            this.List_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.List_Produkts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CH_Produkts_Date,
+            this.CH_Produkts_Farmer,
+            this.CH_Produkts_Produce,
+            this.CH_Produkts_Price,
+            this.CH_Produkts_Quantity,
+            this.CH_Produkts_Unit});
+            this.List_Produkts.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.List_Produkts.FullRowSelect = true;
+            this.List_Produkts.Location = new System.Drawing.Point(3, 3);
+            this.List_Produkts.Name = "List_Produkts";
+            this.List_Produkts.OwnerDraw = true;
+            this.List_Produkts.Size = new System.Drawing.Size(754, 241);
+            this.List_Produkts.TabIndex = 7;
+            this.List_Produkts.UseCompatibleStateImageBehavior = false;
+            this.List_Produkts.UseSelectable = true;
+            this.List_Produkts.View = System.Windows.Forms.View.Details;
+            // 
+            // CH_Produkts_Date
+            // 
+            this.CH_Produkts_Date.Text = "Date";
+            this.CH_Produkts_Date.Width = 120;
+            // 
+            // CH_Produkts_Farmer
+            // 
+            this.CH_Produkts_Farmer.Text = "Farmer";
+            this.CH_Produkts_Farmer.Width = 200;
+            // 
+            // CH_Produkts_Produce
+            // 
+            this.CH_Produkts_Produce.Text = "Produce";
+            this.CH_Produkts_Produce.Width = 150;
+            // 
+            // CH_Produkts_Price
+            // 
+            this.CH_Produkts_Price.Text = "Price";
+            this.CH_Produkts_Price.Width = 80;
+            // 
+            // CH_Produkts_Quantity
+            // 
+            this.CH_Produkts_Quantity.Text = "Quanitiy";
+            this.CH_Produkts_Quantity.Width = 100;
+            // 
+            // CH_Produkts_Unit
+            // 
+            this.CH_Produkts_Unit.Text = "Unit";
+            this.CH_Produkts_Unit.Width = 50;
+            // 
+            // mP_Produkts
+            // 
+            this.mP_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mP_Produkts.Controls.Add(this.mL_Produkts_Unit);
+            this.mP_Produkts.Controls.Add(this.mCB_Produkts_Unit);
+            this.mP_Produkts.Controls.Add(this.ml_Unit);
+            this.mP_Produkts.Controls.Add(this.mL_Produkts_Quantity);
+            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Quantity);
+            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Dealer);
+            this.mP_Produkts.Controls.Add(this.mL_Produkts_Price);
+            this.mP_Produkts.Controls.Add(this.mL_Produkts_Farmer);
+            this.mP_Produkts.Controls.Add(this.mL_Produkts_Date);
+            this.mP_Produkts.Controls.Add(this.mL_Produkts_Produkt);
+            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Price);
+            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Produkt);
+            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Date);
+            this.mP_Produkts.HorizontalScrollbarBarColor = true;
+            this.mP_Produkts.HorizontalScrollbarHighlightOnWheel = false;
+            this.mP_Produkts.HorizontalScrollbarSize = 10;
+            this.mP_Produkts.Location = new System.Drawing.Point(3, 247);
+            this.mP_Produkts.Name = "mP_Produkts";
+            this.mP_Produkts.Size = new System.Drawing.Size(754, 84);
+            this.mP_Produkts.TabIndex = 6;
+            this.mP_Produkts.VerticalScrollbarBarColor = true;
+            this.mP_Produkts.VerticalScrollbarHighlightOnWheel = false;
+            this.mP_Produkts.VerticalScrollbarSize = 10;
+            // 
+            // mL_Produkts_Unit
+            // 
+            this.mL_Produkts_Unit.AutoSize = true;
+            this.mL_Produkts_Unit.Location = new System.Drawing.Point(516, 8);
+            this.mL_Produkts_Unit.Name = "mL_Produkts_Unit";
+            this.mL_Produkts_Unit.Size = new System.Drawing.Size(35, 19);
+            this.mL_Produkts_Unit.TabIndex = 15;
+            this.mL_Produkts_Unit.Text = "Unit:";
+            // 
+            // mCB_Produkts_Unit
+            // 
+            this.mCB_Produkts_Unit.FormattingEnabled = true;
+            this.mCB_Produkts_Unit.ItemHeight = 23;
+            this.mCB_Produkts_Unit.Location = new System.Drawing.Point(603, 3);
+            this.mCB_Produkts_Unit.Name = "mCB_Produkts_Unit";
+            this.mCB_Produkts_Unit.Size = new System.Drawing.Size(95, 29);
+            this.mCB_Produkts_Unit.TabIndex = 14;
+            this.mCB_Produkts_Unit.UseSelectable = true;
+            this.mCB_Produkts_Unit.SelectedIndexChanged += new System.EventHandler(this.mCB_Produkts_Unit_SelectedIndexChanged);
+            // 
+            // ml_Unit
+            // 
+            this.ml_Unit.AutoSize = true;
+            this.ml_Unit.Location = new System.Drawing.Point(703, 47);
+            this.ml_Unit.Name = "ml_Unit";
+            this.ml_Unit.Size = new System.Drawing.Size(29, 19);
+            this.ml_Unit.TabIndex = 13;
+            this.ml_Unit.Text = "mg";
+            // 
+            // mL_Produkts_Quantity
+            // 
+            this.mL_Produkts_Quantity.AutoSize = true;
+            this.mL_Produkts_Quantity.Location = new System.Drawing.Point(516, 47);
+            this.mL_Produkts_Quantity.Name = "mL_Produkts_Quantity";
+            this.mL_Produkts_Quantity.Size = new System.Drawing.Size(61, 19);
+            this.mL_Produkts_Quantity.TabIndex = 12;
+            this.mL_Produkts_Quantity.Text = "Quantity:";
+            // 
+            // mTB_Produkts_Quantity
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Produkts_Quantity.CustomButton.Image = null;
+            this.mTB_Produkts_Quantity.CustomButton.Location = new System.Drawing.Point(66, 1);
+            this.mTB_Produkts_Quantity.CustomButton.Name = "";
+            this.mTB_Produkts_Quantity.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Produkts_Quantity.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Produkts_Quantity.CustomButton.TabIndex = 1;
+            this.mTB_Produkts_Quantity.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Produkts_Quantity.CustomButton.UseSelectable = true;
+            this.mTB_Produkts_Quantity.CustomButton.Visible = false;
+            this.mTB_Produkts_Quantity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produktBindingSource, "Quantity", true));
+            this.mTB_Produkts_Quantity.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Produkts_Quantity.Lines = new string[] {
+        "100"};
+            this.mTB_Produkts_Quantity.Location = new System.Drawing.Point(603, 42);
+            this.mTB_Produkts_Quantity.MaxLength = 32767;
+            this.mTB_Produkts_Quantity.Name = "mTB_Produkts_Quantity";
+            this.mTB_Produkts_Quantity.PasswordChar = '\0';
+            this.mTB_Produkts_Quantity.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Produkts_Quantity.SelectedText = "";
+            this.mTB_Produkts_Quantity.SelectionLength = 0;
+            this.mTB_Produkts_Quantity.SelectionStart = 0;
+            this.mTB_Produkts_Quantity.ShortcutsEnabled = true;
+            this.mTB_Produkts_Quantity.Size = new System.Drawing.Size(94, 29);
+            this.mTB_Produkts_Quantity.TabIndex = 11;
+            this.mTB_Produkts_Quantity.Text = "100";
+            this.mTB_Produkts_Quantity.UseSelectable = true;
+            this.mTB_Produkts_Quantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Produkts_Quantity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // produktBindingSource
+            // 
+            this.produktBindingSource.DataSource = typeof(Accounting.Produkt);
+            // 
+            // mTB_Produkts_Dealer
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Produkts_Dealer.CustomButton.Image = null;
+            this.mTB_Produkts_Dealer.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Produkts_Dealer.CustomButton.Name = "";
+            this.mTB_Produkts_Dealer.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Produkts_Dealer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Produkts_Dealer.CustomButton.TabIndex = 1;
+            this.mTB_Produkts_Dealer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Produkts_Dealer.CustomButton.UseSelectable = true;
+            this.mTB_Produkts_Dealer.CustomButton.Visible = false;
+            this.mTB_Produkts_Dealer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produktBindingSource, "Farmer", true));
+            this.mTB_Produkts_Dealer.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Produkts_Dealer.Lines = new string[] {
+        "Pinsch of Soil"};
+            this.mTB_Produkts_Dealer.Location = new System.Drawing.Point(87, 42);
+            this.mTB_Produkts_Dealer.MaxLength = 32767;
+            this.mTB_Produkts_Dealer.Name = "mTB_Produkts_Dealer";
+            this.mTB_Produkts_Dealer.PasswordChar = '\0';
+            this.mTB_Produkts_Dealer.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Produkts_Dealer.SelectedText = "";
+            this.mTB_Produkts_Dealer.SelectionLength = 0;
+            this.mTB_Produkts_Dealer.SelectionStart = 0;
+            this.mTB_Produkts_Dealer.ShortcutsEnabled = true;
+            this.mTB_Produkts_Dealer.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Produkts_Dealer.TabIndex = 10;
+            this.mTB_Produkts_Dealer.Text = "Pinsch of Soil";
+            this.mTB_Produkts_Dealer.UseSelectable = true;
+            this.mTB_Produkts_Dealer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Produkts_Dealer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mL_Produkts_Price
+            // 
+            this.mL_Produkts_Price.AutoSize = true;
+            this.mL_Produkts_Price.Location = new System.Drawing.Point(260, 47);
+            this.mL_Produkts_Price.Name = "mL_Produkts_Price";
+            this.mL_Produkts_Price.Size = new System.Drawing.Size(41, 19);
+            this.mL_Produkts_Price.TabIndex = 9;
+            this.mL_Produkts_Price.Text = "Price:";
+            // 
+            // mL_Produkts_Farmer
+            // 
+            this.mL_Produkts_Farmer.AutoSize = true;
+            this.mL_Produkts_Farmer.Location = new System.Drawing.Point(3, 47);
+            this.mL_Produkts_Farmer.Name = "mL_Produkts_Farmer";
+            this.mL_Produkts_Farmer.Size = new System.Drawing.Size(55, 19);
+            this.mL_Produkts_Farmer.TabIndex = 9;
+            this.mL_Produkts_Farmer.Text = "Farmer:";
+            // 
+            // mL_Produkts_Date
+            // 
+            this.mL_Produkts_Date.AutoSize = true;
+            this.mL_Produkts_Date.Location = new System.Drawing.Point(3, 8);
+            this.mL_Produkts_Date.Name = "mL_Produkts_Date";
+            this.mL_Produkts_Date.Size = new System.Drawing.Size(39, 19);
+            this.mL_Produkts_Date.TabIndex = 9;
+            this.mL_Produkts_Date.Text = "Date:";
+            // 
+            // mL_Produkts_Produkt
+            // 
+            this.mL_Produkts_Produkt.AutoSize = true;
+            this.mL_Produkts_Produkt.Location = new System.Drawing.Point(260, 8);
+            this.mL_Produkts_Produkt.Name = "mL_Produkts_Produkt";
+            this.mL_Produkts_Produkt.Size = new System.Drawing.Size(58, 19);
+            this.mL_Produkts_Produkt.TabIndex = 9;
+            this.mL_Produkts_Produkt.Text = "Produkt:";
+            // 
+            // mTB_Produkts_Price
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Produkts_Price.CustomButton.Image = null;
+            this.mTB_Produkts_Price.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Produkts_Price.CustomButton.Name = "";
+            this.mTB_Produkts_Price.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Produkts_Price.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Produkts_Price.CustomButton.TabIndex = 1;
+            this.mTB_Produkts_Price.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Produkts_Price.CustomButton.UseSelectable = true;
+            this.mTB_Produkts_Price.CustomButton.Visible = false;
+            this.mTB_Produkts_Price.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produktBindingSource, "Price", true));
+            this.mTB_Produkts_Price.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Produkts_Price.Lines = new string[] {
+        "1,00"};
+            this.mTB_Produkts_Price.Location = new System.Drawing.Point(347, 42);
+            this.mTB_Produkts_Price.MaxLength = 32767;
+            this.mTB_Produkts_Price.Name = "mTB_Produkts_Price";
+            this.mTB_Produkts_Price.PasswordChar = '\0';
+            this.mTB_Produkts_Price.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Produkts_Price.SelectedText = "";
+            this.mTB_Produkts_Price.SelectionLength = 0;
+            this.mTB_Produkts_Price.SelectionStart = 0;
+            this.mTB_Produkts_Price.ShortcutsEnabled = true;
+            this.mTB_Produkts_Price.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Produkts_Price.TabIndex = 5;
+            this.mTB_Produkts_Price.Text = "1,00";
+            this.mTB_Produkts_Price.UseSelectable = true;
+            this.mTB_Produkts_Price.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Produkts_Price.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mTB_Produkts_Produkt
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Produkts_Produkt.CustomButton.Image = null;
+            this.mTB_Produkts_Produkt.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Produkts_Produkt.CustomButton.Name = "";
+            this.mTB_Produkts_Produkt.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Produkts_Produkt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Produkts_Produkt.CustomButton.TabIndex = 1;
+            this.mTB_Produkts_Produkt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Produkts_Produkt.CustomButton.UseSelectable = true;
+            this.mTB_Produkts_Produkt.CustomButton.Visible = false;
+            this.mTB_Produkts_Produkt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produktBindingSource, "Produce", true));
+            this.mTB_Produkts_Produkt.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Produkts_Produkt.Lines = new string[] {
+        "Veggie"};
+            this.mTB_Produkts_Produkt.Location = new System.Drawing.Point(347, 3);
+            this.mTB_Produkts_Produkt.MaxLength = 32767;
+            this.mTB_Produkts_Produkt.Name = "mTB_Produkts_Produkt";
+            this.mTB_Produkts_Produkt.PasswordChar = '\0';
+            this.mTB_Produkts_Produkt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Produkts_Produkt.SelectedText = "";
+            this.mTB_Produkts_Produkt.SelectionLength = 0;
+            this.mTB_Produkts_Produkt.SelectionStart = 0;
+            this.mTB_Produkts_Produkt.ShortcutsEnabled = true;
+            this.mTB_Produkts_Produkt.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Produkts_Produkt.TabIndex = 3;
+            this.mTB_Produkts_Produkt.Text = "Veggie";
+            this.mTB_Produkts_Produkt.UseSelectable = true;
+            this.mTB_Produkts_Produkt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Produkts_Produkt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mTB_Produkts_Date
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Produkts_Date.CustomButton.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Date", true));
+            this.mTB_Produkts_Date.CustomButton.Image = null;
+            this.mTB_Produkts_Date.CustomButton.Location = new System.Drawing.Point(94, 1);
+            this.mTB_Produkts_Date.CustomButton.Name = "";
+            this.mTB_Produkts_Date.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Produkts_Date.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Produkts_Date.CustomButton.TabIndex = 1;
+            this.mTB_Produkts_Date.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Produkts_Date.CustomButton.UseSelectable = true;
+            this.mTB_Produkts_Date.CustomButton.Visible = false;
+            this.mTB_Produkts_Date.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.produktBindingSource, "Date", true));
+            this.mTB_Produkts_Date.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Produkts_Date.Lines = new string[] {
+        "01.01.2018"};
+            this.mTB_Produkts_Date.Location = new System.Drawing.Point(87, 3);
+            this.mTB_Produkts_Date.MaxLength = 32767;
+            this.mTB_Produkts_Date.Name = "mTB_Produkts_Date";
+            this.mTB_Produkts_Date.PasswordChar = '\0';
+            this.mTB_Produkts_Date.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Produkts_Date.SelectedText = "";
+            this.mTB_Produkts_Date.SelectionLength = 0;
+            this.mTB_Produkts_Date.SelectionStart = 0;
+            this.mTB_Produkts_Date.ShortcutsEnabled = true;
+            this.mTB_Produkts_Date.Size = new System.Drawing.Size(122, 29);
+            this.mTB_Produkts_Date.TabIndex = 2;
+            this.mTB_Produkts_Date.Text = "01.01.2018";
+            this.mTB_Produkts_Date.UseSelectable = true;
+            this.mTB_Produkts_Date.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Produkts_Date.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // unitsBindingSource
+            // 
+            this.unitsBindingSource.DataMember = "Units";
+            this.unitsBindingSource.DataSource = this.produktBindingSource;
             // 
             // mB_Save
             // 
@@ -1018,314 +1359,6 @@
             this.mB_Remove.UseSelectable = true;
             this.mB_Remove.Click += new System.EventHandler(this.mB_Remove_Click);
             // 
-            // List_Produkts
-            // 
-            this.List_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.List_Produkts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.List_Produkts.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.List_Produkts.FullRowSelect = true;
-            this.List_Produkts.Location = new System.Drawing.Point(3, 3);
-            this.List_Produkts.Name = "List_Produkts";
-            this.List_Produkts.OwnerDraw = true;
-            this.List_Produkts.Size = new System.Drawing.Size(754, 241);
-            this.List_Produkts.TabIndex = 7;
-            this.List_Produkts.UseCompatibleStateImageBehavior = false;
-            this.List_Produkts.UseSelectable = true;
-            this.List_Produkts.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Date";
-            this.columnHeader1.Width = 120;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Dealer";
-            this.columnHeader2.Width = 200;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Payment";
-            this.columnHeader3.Width = 150;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Price";
-            this.columnHeader4.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Details";
-            this.columnHeader5.Width = 150;
-            // 
-            // mP_Produkts
-            // 
-            this.mP_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mP_Produkts.Controls.Add(this.mCB_Produkts_Unit);
-            this.mP_Produkts.Controls.Add(this.ml_Unit);
-            this.mP_Produkts.Controls.Add(this.mL_Produkts_Quantity);
-            this.mP_Produkts.Controls.Add(this.metroTextBox1);
-            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Dealer);
-            this.mP_Produkts.Controls.Add(this.mL_Produkts_Price);
-            this.mP_Produkts.Controls.Add(this.mL_Produkts_Dealer);
-            this.mP_Produkts.Controls.Add(this.mL_Produkts_Date);
-            this.mP_Produkts.Controls.Add(this.mL_Produkts_Produkt);
-            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Price);
-            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Produkt);
-            this.mP_Produkts.Controls.Add(this.mTB_Produkts_Date);
-            this.mP_Produkts.HorizontalScrollbarBarColor = true;
-            this.mP_Produkts.HorizontalScrollbarHighlightOnWheel = false;
-            this.mP_Produkts.HorizontalScrollbarSize = 10;
-            this.mP_Produkts.Location = new System.Drawing.Point(3, 247);
-            this.mP_Produkts.Name = "mP_Produkts";
-            this.mP_Produkts.Size = new System.Drawing.Size(754, 84);
-            this.mP_Produkts.TabIndex = 6;
-            this.mP_Produkts.VerticalScrollbarBarColor = true;
-            this.mP_Produkts.VerticalScrollbarHighlightOnWheel = false;
-            this.mP_Produkts.VerticalScrollbarSize = 10;
-            // 
-            // mTB_Produkts_Dealer
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Produkts_Dealer.CustomButton.Image = null;
-            this.mTB_Produkts_Dealer.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.mTB_Produkts_Dealer.CustomButton.Name = "";
-            this.mTB_Produkts_Dealer.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.mTB_Produkts_Dealer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Produkts_Dealer.CustomButton.TabIndex = 1;
-            this.mTB_Produkts_Dealer.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Produkts_Dealer.CustomButton.UseSelectable = true;
-            this.mTB_Produkts_Dealer.CustomButton.Visible = false;
-            this.mTB_Produkts_Dealer.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.mTB_Produkts_Dealer.Lines = new string[] {
-        "Pinsch of Soil"};
-            this.mTB_Produkts_Dealer.Location = new System.Drawing.Point(87, 42);
-            this.mTB_Produkts_Dealer.MaxLength = 32767;
-            this.mTB_Produkts_Dealer.Name = "mTB_Produkts_Dealer";
-            this.mTB_Produkts_Dealer.PasswordChar = '\0';
-            this.mTB_Produkts_Dealer.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Produkts_Dealer.SelectedText = "";
-            this.mTB_Produkts_Dealer.SelectionLength = 0;
-            this.mTB_Produkts_Dealer.SelectionStart = 0;
-            this.mTB_Produkts_Dealer.ShortcutsEnabled = true;
-            this.mTB_Produkts_Dealer.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Dealer.TabIndex = 10;
-            this.mTB_Produkts_Dealer.Text = "Pinsch of Soil";
-            this.mTB_Produkts_Dealer.UseSelectable = true;
-            this.mTB_Produkts_Dealer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Produkts_Dealer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mL_Produkts_Price
-            // 
-            this.mL_Produkts_Price.AutoSize = true;
-            this.mL_Produkts_Price.Location = new System.Drawing.Point(260, 47);
-            this.mL_Produkts_Price.Name = "mL_Produkts_Price";
-            this.mL_Produkts_Price.Size = new System.Drawing.Size(41, 19);
-            this.mL_Produkts_Price.TabIndex = 9;
-            this.mL_Produkts_Price.Text = "Price:";
-            // 
-            // mL_Produkts_Dealer
-            // 
-            this.mL_Produkts_Dealer.AutoSize = true;
-            this.mL_Produkts_Dealer.Location = new System.Drawing.Point(3, 47);
-            this.mL_Produkts_Dealer.Name = "mL_Produkts_Dealer";
-            this.mL_Produkts_Dealer.Size = new System.Drawing.Size(51, 19);
-            this.mL_Produkts_Dealer.TabIndex = 9;
-            this.mL_Produkts_Dealer.Text = "Dealer:";
-            // 
-            // mL_Produkts_Date
-            // 
-            this.mL_Produkts_Date.AutoSize = true;
-            this.mL_Produkts_Date.Location = new System.Drawing.Point(3, 8);
-            this.mL_Produkts_Date.Name = "mL_Produkts_Date";
-            this.mL_Produkts_Date.Size = new System.Drawing.Size(39, 19);
-            this.mL_Produkts_Date.TabIndex = 9;
-            this.mL_Produkts_Date.Text = "Date:";
-            // 
-            // mL_Produkts_Produkt
-            // 
-            this.mL_Produkts_Produkt.AutoSize = true;
-            this.mL_Produkts_Produkt.Location = new System.Drawing.Point(260, 8);
-            this.mL_Produkts_Produkt.Name = "mL_Produkts_Produkt";
-            this.mL_Produkts_Produkt.Size = new System.Drawing.Size(58, 19);
-            this.mL_Produkts_Produkt.TabIndex = 9;
-            this.mL_Produkts_Produkt.Text = "Produkt:";
-            // 
-            // mTB_Produkts_Price
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Produkts_Price.CustomButton.Image = null;
-            this.mTB_Produkts_Price.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.mTB_Produkts_Price.CustomButton.Name = "";
-            this.mTB_Produkts_Price.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.mTB_Produkts_Price.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Produkts_Price.CustomButton.TabIndex = 1;
-            this.mTB_Produkts_Price.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Produkts_Price.CustomButton.UseSelectable = true;
-            this.mTB_Produkts_Price.CustomButton.Visible = false;
-            this.mTB_Produkts_Price.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Price", true));
-            this.mTB_Produkts_Price.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.mTB_Produkts_Price.Lines = new string[] {
-        "10,23"};
-            this.mTB_Produkts_Price.Location = new System.Drawing.Point(347, 42);
-            this.mTB_Produkts_Price.MaxLength = 32767;
-            this.mTB_Produkts_Price.Name = "mTB_Produkts_Price";
-            this.mTB_Produkts_Price.PasswordChar = '\0';
-            this.mTB_Produkts_Price.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Produkts_Price.SelectedText = "";
-            this.mTB_Produkts_Price.SelectionLength = 0;
-            this.mTB_Produkts_Price.SelectionStart = 0;
-            this.mTB_Produkts_Price.ShortcutsEnabled = true;
-            this.mTB_Produkts_Price.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Price.TabIndex = 5;
-            this.mTB_Produkts_Price.Text = "10,23";
-            this.mTB_Produkts_Price.UseSelectable = true;
-            this.mTB_Produkts_Price.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Produkts_Price.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mTB_Produkts_Produkt
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Produkts_Produkt.CustomButton.Image = null;
-            this.mTB_Produkts_Produkt.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.mTB_Produkts_Produkt.CustomButton.Name = "";
-            this.mTB_Produkts_Produkt.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.mTB_Produkts_Produkt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Produkts_Produkt.CustomButton.TabIndex = 1;
-            this.mTB_Produkts_Produkt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Produkts_Produkt.CustomButton.UseSelectable = true;
-            this.mTB_Produkts_Produkt.CustomButton.Visible = false;
-            this.mTB_Produkts_Produkt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Payment", true));
-            this.mTB_Produkts_Produkt.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.mTB_Produkts_Produkt.Lines = new string[] {
-        "Chash"};
-            this.mTB_Produkts_Produkt.Location = new System.Drawing.Point(347, 3);
-            this.mTB_Produkts_Produkt.MaxLength = 32767;
-            this.mTB_Produkts_Produkt.Name = "mTB_Produkts_Produkt";
-            this.mTB_Produkts_Produkt.PasswordChar = '\0';
-            this.mTB_Produkts_Produkt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Produkts_Produkt.SelectedText = "";
-            this.mTB_Produkts_Produkt.SelectionLength = 0;
-            this.mTB_Produkts_Produkt.SelectionStart = 0;
-            this.mTB_Produkts_Produkt.ShortcutsEnabled = true;
-            this.mTB_Produkts_Produkt.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Produkt.TabIndex = 3;
-            this.mTB_Produkts_Produkt.Text = "Chash";
-            this.mTB_Produkts_Produkt.UseSelectable = true;
-            this.mTB_Produkts_Produkt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Produkts_Produkt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mTB_Produkts_Date
-            // 
-            // 
-            // 
-            // 
-            this.mTB_Produkts_Date.CustomButton.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Date", true));
-            this.mTB_Produkts_Date.CustomButton.Image = null;
-            this.mTB_Produkts_Date.CustomButton.Location = new System.Drawing.Point(94, 1);
-            this.mTB_Produkts_Date.CustomButton.Name = "";
-            this.mTB_Produkts_Date.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.mTB_Produkts_Date.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_Produkts_Date.CustomButton.TabIndex = 1;
-            this.mTB_Produkts_Date.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_Produkts_Date.CustomButton.UseSelectable = true;
-            this.mTB_Produkts_Date.CustomButton.Visible = false;
-            this.mTB_Produkts_Date.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Date", true));
-            this.mTB_Produkts_Date.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.mTB_Produkts_Date.Lines = new string[] {
-        "01.01.2018"};
-            this.mTB_Produkts_Date.Location = new System.Drawing.Point(87, 3);
-            this.mTB_Produkts_Date.MaxLength = 32767;
-            this.mTB_Produkts_Date.Name = "mTB_Produkts_Date";
-            this.mTB_Produkts_Date.PasswordChar = '\0';
-            this.mTB_Produkts_Date.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_Produkts_Date.SelectedText = "";
-            this.mTB_Produkts_Date.SelectionLength = 0;
-            this.mTB_Produkts_Date.SelectionStart = 0;
-            this.mTB_Produkts_Date.ShortcutsEnabled = true;
-            this.mTB_Produkts_Date.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Date.TabIndex = 2;
-            this.mTB_Produkts_Date.Text = "01.01.2018";
-            this.mTB_Produkts_Date.UseSelectable = true;
-            this.mTB_Produkts_Date.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_Produkts_Date.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // mL_Produkts_Quantity
-            // 
-            this.mL_Produkts_Quantity.AutoSize = true;
-            this.mL_Produkts_Quantity.Location = new System.Drawing.Point(516, 47);
-            this.mL_Produkts_Quantity.Name = "mL_Produkts_Quantity";
-            this.mL_Produkts_Quantity.Size = new System.Drawing.Size(61, 19);
-            this.mL_Produkts_Quantity.TabIndex = 12;
-            this.mL_Produkts_Quantity.Text = "Quantity:";
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(32, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Payment", true));
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.metroTextBox1.Lines = new string[] {
-        "100"};
-            this.metroTextBox1.Location = new System.Drawing.Point(603, 42);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(60, 29);
-            this.metroTextBox1.TabIndex = 11;
-            this.metroTextBox1.Text = "100";
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // ml_Unit
-            // 
-            this.ml_Unit.AutoSize = true;
-            this.ml_Unit.Location = new System.Drawing.Point(669, 47);
-            this.ml_Unit.Name = "ml_Unit";
-            this.ml_Unit.Size = new System.Drawing.Size(29, 19);
-            this.ml_Unit.TabIndex = 13;
-            this.ml_Unit.Text = "mg";
-            // 
-            // mCB_Produkts_Unit
-            // 
-            this.mCB_Produkts_Unit.AutoSize = true;
-            this.mCB_Produkts_Unit.Location = new System.Drawing.Point(532, 8);
-            this.mCB_Produkts_Unit.Name = "mCB_Produkts_Unit";
-            this.mCB_Produkts_Unit.Size = new System.Drawing.Size(51, 15);
-            this.mCB_Produkts_Unit.TabIndex = 14;
-            this.mCB_Produkts_Unit.Text = "Piece";
-            this.mCB_Produkts_Unit.UseSelectable = true;
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1356,6 +1389,8 @@
             this.mTP_Produkts.ResumeLayout(false);
             this.mP_Produkts.ResumeLayout(false);
             this.mP_Produkts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1425,24 +1460,28 @@
         private MetroFramework.Controls.MetroTextBox mTB_Dealer_Expenses;
         private MetroFramework.Controls.MetroTabPage mTP_Produkts;
         private MetroFramework.Controls.MetroListView List_Produkts;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader CH_Produkts_Date;
+        private System.Windows.Forms.ColumnHeader CH_Produkts_Farmer;
+        private System.Windows.Forms.ColumnHeader CH_Produkts_Produce;
+        private System.Windows.Forms.ColumnHeader CH_Produkts_Price;
+        private System.Windows.Forms.ColumnHeader CH_Produkts_Quantity;
         private MetroFramework.Controls.MetroPanel mP_Produkts;
-        private MetroFramework.Controls.MetroCheckBox mCB_Produkts_Unit;
         private MetroFramework.Controls.MetroLabel ml_Unit;
         private MetroFramework.Controls.MetroLabel mL_Produkts_Quantity;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox mTB_Produkts_Quantity;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Dealer;
         private MetroFramework.Controls.MetroLabel mL_Produkts_Price;
-        private MetroFramework.Controls.MetroLabel mL_Produkts_Dealer;
+        private MetroFramework.Controls.MetroLabel mL_Produkts_Farmer;
         private MetroFramework.Controls.MetroLabel mL_Produkts_Date;
         private MetroFramework.Controls.MetroLabel mL_Produkts_Produkt;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Price;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Produkt;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Date;
+        private System.Windows.Forms.BindingSource produktBindingSource;
+        private System.Windows.Forms.ColumnHeader CH_Produkts_Unit;
+        private MetroFramework.Controls.MetroLabel mL_Produkts_Unit;
+        private MetroFramework.Controls.MetroComboBox mCB_Produkts_Unit;
+        private System.Windows.Forms.BindingSource unitsBindingSource;
     }
 }
 

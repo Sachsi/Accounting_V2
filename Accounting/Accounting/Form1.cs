@@ -1,4 +1,5 @@
 ﻿using Accounting;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,10 @@ namespace Accounting
 {
     public partial class Form_Main : MetroFramework.Forms.MetroForm
     {
-        Updater a = new Updater();
 
         public Form_Main()
         {
             InitializeComponent();
-            //a.Show();
         }
         /// <summary>
         /// 
@@ -32,19 +31,23 @@ namespace Accounting
                 customerBindingSource.DataSource = db.Customers.ToList();
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 expensesBindingSource.DataSource = db.Expenses.ToList();
+                produktBindingSource.DataSource = db.Produkts.ToList();
             }   
 
-            ///Tabellen werde nur geladen, wenn die Datenbanken Einträge enhalten
+            ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
             if (incomeBindingSource.Count != 0)
                 TabControl.RefreshIncome(List_Income);
             if (customerBindingSource.Count != 0)
                 TabControl.RefreshCustomer(List_Customer);
             if (expensesBindingSource.Count != 0)
                 TabControl.RefreshExpenses(List_Expenses);
+            if (produktBindingSource.Count != 0)
+                TabControl.RefreshProdukt(List_Produkts);
 
             mP_Customer.Enabled = false;
             mP_Income.Enabled = false;
             mP_Expenses.Enabled = false;
+            mP_Produkts.Enabled = false;
         }
         /// <summary>
         /// 
@@ -115,6 +118,27 @@ namespace Accounting
                         TabControl.AddExpenses(List_Expenses, obj_Expense);
                         return;
                     }
+                }
+                else if (mTC_Accounting.SelectedTab == mTP_Produkts)
+                {
+                    Produkt obj_Produkt = produktBindingSource.Current as Produkt;
+
+                    if (obj_Produkt != null)
+                    {
+                        obj_Produkt.Unit = mCB_Produkts_Unit.SelectedIndex;
+
+                        if (db.Entry<Produkt>(obj_Produkt).State == System.Data.Entity.EntityState.Detached)
+                            db.Set<Produkt>().Attach(obj_Produkt);
+                        if (obj_Produkt.ObjectState == 1)
+                            db.Entry<Produkt>(obj_Produkt).State = System.Data.Entity.EntityState.Added;
+                        if (obj_Produkt.ObjectState == 2)
+                            db.Entry<Produkt>(obj_Produkt).State = System.Data.Entity.EntityState.Modified;
+
+                        db.SaveChanges();
+                        mP_Produkts.Enabled = false;
+                        obj_Produkt.ObjectState = 0;
+                        TabControl.AddProdukt(List_Produkts, obj_Produkt);
+                    }
                 } 
             }    
         }
@@ -132,6 +156,7 @@ namespace Accounting
                 customerBindingSource.Add(new Customer() { ObjectState = 1 });
                 customerBindingSource.MoveLast();
                 mTB_Date_Customer.Focus();
+                mTB_Date_Customer.Text = DateTime.UtcNow.ToShortDateString();
             }
             else if(mP_Income.Visible == true)
             {
@@ -139,6 +164,7 @@ namespace Accounting
                 incomeBindingSource.Add(new Income() { ObjectState = 1 });
                 incomeBindingSource.MoveLast();
                 mTB_Date_Income.Focus();
+                mTB_Date_Income.Text = DateTime.UtcNow.ToShortDateString();
             }
             else if (mP_Expenses.Visible == true)
             {
@@ -146,6 +172,17 @@ namespace Accounting
                 expensesBindingSource.Add(new Expense() { ObjectState = 1 });
                 expensesBindingSource.MoveLast();
                 mTB_Date_Expenses.Focus();
+                mTB_Date_Expenses.Text = DateTime.UtcNow.ToShortDateString();
+            }
+            else if (mP_Produkts.Visible == true)
+            {
+                Produkt newProdukt = new Produkt() { ObjectState = 1 };
+                mCB_Produkts_Unit.DataSource = newProdukt.Units;
+                mP_Produkts.Enabled = true;
+                produktBindingSource.Add(newProdukt);
+                produktBindingSource.MoveLast();
+                mTB_Produkts_Date.Focus();
+                mTB_Produkts_Date.Text = DateTime.UtcNow.ToShortDateString();
             }
         }
 
@@ -156,7 +193,7 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Edit_Customer_Click(object sender, EventArgs e)
         {
-            if (mP_Customer.Visible == true)
+            if ((List_Customer.Visible == true) &&(List_Customer.SelectedItems.Count > 0) )
             {
                 mP_Customer.Enabled = true;
                 mTB_Date_Customer.Focus();
@@ -164,7 +201,7 @@ namespace Accounting
                 if (obj != null)
                     obj.ObjectState = 2;
             }
-            else if (mP_Income.Visible == true)
+            else if ((List_Income.Visible == true) && (List_Income.SelectedItems.Count > 0))
             {
                 mP_Income.Enabled = true;
                 mTB_Date_Income.Focus();
@@ -190,34 +227,6 @@ namespace Accounting
             //customerBindingSource.ResetBindings(false);
             //Form1_Load(sender, e);
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mB_Add_Expenses_Click(object sender, EventArgs e)
-        {
-            //mP_Expenses.Enabled = true;
-            //expansesBindingSource.Add(new AccountingDatabase.Expanse());
-            //expansesBindingSource.MoveLast();
-            //mTB_Date_Expenses.Focus();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void mB_Edit_Expenses_Click(object sender, EventArgs e)
-        {
-            //mP_Expenses.Enabled = true;
-            //mTB_Date_Expenses.Focus();
-        }
-
-        private void mCB_Name_Income_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// 
@@ -230,12 +239,12 @@ namespace Accounting
 
             using (DatabaseContext db = new DatabaseContext())
             {
-                if (List_Customer.Visible)
+                if ((List_Customer.Visible == true) && (List_Customer.SelectedItems.Count > 0))
                 {
                     customerBindingSource.Position = (List_Customer.SelectedItems[0].Index);
                     Customer del_customer = customerBindingSource.Current as Customer;
 
-                    a = MessageBox.Show(this, "Do really want to delete the customer " + List_Customer.SelectedItems[0].SubItems[1].Text, "Attantion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    a = MetroMessageBox.Show(this, "Do really want to delete the customer " + List_Customer.SelectedItems[0].SubItems[1].Text, "Attantion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (a == DialogResult.No)
                         return;
 
@@ -245,15 +254,15 @@ namespace Accounting
                         db.Set<Customer>().Remove(del_customer);
                         customerBindingSource.RemoveCurrent();
                         TabControl.RemoveRow(List_Customer);
-                    }                    
+                    }
                     db.SaveChanges();
                 }
-                else if (List_Income.Visible)
+                else if ((List_Income.Visible == true) && (List_Income.SelectedItems.Count > 0))
                 {
                     incomeBindingSource.Position = (List_Income.SelectedItems[0].Index);
                     Income del_Income = incomeBindingSource.Current as Income;
 
-                    a = MessageBox.Show(this, "Do you really want to delete the selectet row?", "Attantion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    a = MetroMessageBox.Show(this, "Do you really want to delete the selectet row?", "Attantion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (a == DialogResult.No)
                         return;
 
@@ -266,12 +275,12 @@ namespace Accounting
                     }
                     db.SaveChanges();
                 }
-                else if (List_Expenses.Visible == true)
+                else if ((List_Expenses.Visible == true) && (List_Expenses.SelectedItems.Count > 0))
                 {
-                    expensesBindingSource.Position = (List_Expenses.SelectedItems[0].Index);
+                    expensesBindingSource.Position = List_Expenses.SelectedItems[0].Index;
                     Expense del_Expenses = expensesBindingSource.Current as Expense;
 
-                    a = MessageBox.Show(this, "Do you really want to delete the selectet row?","Attation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    a = MetroMessageBox.Show(this, "Do you really want to delete the selectet row?", "Attation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (a == DialogResult.No)
                         return;
                     if (del_Expenses != null)
@@ -283,8 +292,39 @@ namespace Accounting
                     }
                     db.SaveChanges();
                 }
+                else if ((List_Produkts.Visible == true) && (List_Produkts.SelectedItems.Count > 0))
+                {
+                    produktBindingSource.Position = List_Produkts.SelectedItems[0].Index;
+                    Produkt del_Produkt = produktBindingSource.Current as Produkt;
+
+                    a = MetroMessageBox.Show(this, "Do you really want to delete the selected row?", "Attation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (a == DialogResult.No)
+                        return;
+                    if (del_Produkt != null)
+                    {
+                        db.Entry<Produkt>(del_Produkt).State = System.Data.Entity.EntityState.Deleted;
+                        db.Set<Produkt>().Remove(del_Produkt);
+                        produktBindingSource.RemoveCurrent();
+                        TabControl.RemoveRow(List_Produkts);
+                    }
+                    db.SaveChanges();
+                }
             }
             
+        }
+        /// <summary>
+        /// Ändert die Maßeinheit entsprechend der ausgewählten Einheit in der ComboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mCB_Produkts_Unit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mCB_Produkts_Unit.SelectedIndex == 0)
+                ml_Unit.Text = "pcs";
+            else if (mCB_Produkts_Unit.SelectedIndex == 1)
+                ml_Unit.Text = "g";
+            else if (mCB_Produkts_Unit.SelectedIndex == 2)
+                ml_Unit.Text = "lb";
         }
     }
 }

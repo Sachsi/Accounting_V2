@@ -165,9 +165,19 @@
     <Compile Include="Migrations\201802111655090_addExpenses.Designer.cs">
       <DependentUpon>201802111655090_addExpenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802191812003_addProdukts.cs" />
+    <Compile Include="Migrations\201802191812003_addProdukts.Designer.cs">
+      <DependentUpon>201802191812003_addProdukts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802201947209_addUnitColum.cs" />
+    <Compile Include="Migrations\201802201947209_addUnitColum.Designer.cs">
+      <DependentUpon>201802201947209_addUnitColum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProduktsProperties\Units.cs" />
     <Compile Include="TabControl.cs" />
     <Compile Include="Updater.cs">
       <SubType>Form</SubType>
@@ -184,6 +194,12 @@
     <EmbeddedResource Include="Migrations\201802111655090_addExpenses.resx">
       <DependentUpon>201802111655090_addExpenses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191812003_addProdukts.resx">
+      <DependentUpon>201802191812003_addProdukts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802201947209_addUnitColum.resx">
+      <DependentUpon>201802201947209_addUnitColum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -197,12 +213,14 @@
       <DependentUpon>Updater.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Accounting_TemporaryKey.pfx" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Customer.datasource" />
     <None Include="Expense.datasource" />
     <None Include="Income.datasource">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Produkt.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
