@@ -54,12 +54,32 @@ namespace Accounting
                         b.SubItems.Add(c.Customer.Full_Name);
                     }
                     catch (Exception)
-                    {
+                    {///wenn die abgespeicherten Kundennamen nicht mehr vorhanden sind, erscheint Error.
                         b.SubItems.Add("Error");
                     }
                     b.SubItems.Add(c.Payment);
                     b.SubItems.Add(c.Price.ToString("c"));
                     listview.Items.Add(b);
+                }
+            }
+        }
+
+        internal static void RefreshProdukt(MetroListView list_Produkts)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var list = db.Produkts.ToList();
+
+                foreach (var item in list)
+                {
+                    ListViewItem listItems = new ListViewItem(item.Date.ToLongDateString());
+                    listItems.SubItems.Add(item.Farmer);
+                    listItems.SubItems.Add(item.Produce);
+                    listItems.SubItems.Add(item.Price.ToString("c"));
+                    listItems.SubItems.Add(item.Quantity.ToString());
+                    listItems.SubItems.Add(item.Units[item.Unit]);
+                    list_Produkts.Items.Add(listItems);
+                    
                 }
             }
         }
@@ -119,11 +139,19 @@ namespace Accounting
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="listview"></param>
         public static void RemoveRow(MetroListView listview)
         {
             listview.Items.Remove(listview.SelectedItems[0]);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list_Expenses"></param>
+        /// <param name="obj_Expense"></param>
         public static void AddExpenses(MetroListView list_Expenses, Expense obj_Expense)
         {
             ListViewItem item = new ListViewItem(obj_Expense.Date.ToShortDateString());
@@ -131,6 +159,21 @@ namespace Accounting
             item.SubItems.Add(obj_Expense.Payment);
             item.SubItems.Add(obj_Expense.Price.ToString("c"));
             list_Expenses.Items.Add(item);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list_Produkts"></param>
+        /// <param name="obj_Produkt"></param>
+        internal static void AddProdukt(MetroListView list_Produkts, Produkt obj_Produkt)
+        {
+            ListViewItem item = new ListViewItem(obj_Produkt.Date.ToShortDateString());
+            item.SubItems.Add(obj_Produkt.Farmer);
+            item.SubItems.Add(obj_Produkt.Produce);
+            item.SubItems.Add(obj_Produkt.Price.ToString("c"));
+            item.SubItems.Add(obj_Produkt.Quantity.ToString());
+            item.SubItems.Add(obj_Produkt.Units[obj_Produkt.Unit]);
+            list_Produkts.Items.Add(item);
         }
     }
 }
