@@ -55,18 +55,10 @@ namespace Accounting
                     }
                     catch (Exception)
                     {///wenn die abgespeicherten Kundennamen nicht mehr vorhanden sind, erscheint Error.
-                        b.SubItems.Add("Deleted");
+                        b.SubItems.Add("Error");
                     }
                     b.SubItems.Add(c.Payment);
                     b.SubItems.Add(c.Price.ToString("c"));
-                    try
-                    {
-                        b.SubItems.Add(c.Produces.Produce);
-                    }
-                    catch (Exception)
-                    {///wen die abgespeicherten Produktnamen nicht mehr vohanden sind, erscheint Error.
-                        b.SubItems.Add("Deleted");
-                    }
                     listview.Items.Add(b);
                 }
             }
@@ -143,7 +135,6 @@ namespace Accounting
                 a.SubItems.Add(customerID.Full_Name);
                 a.SubItems.Add(income.Payment);
                 a.SubItems.Add(income.Price.ToString("c"));
-                a.SubItems.Add(income.Produces.Produce);
                 listview.Items.Add(a);
             }
         }

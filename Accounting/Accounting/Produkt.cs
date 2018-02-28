@@ -9,11 +9,6 @@
     [Table("Produkts")]
     public partial class Produkt
     {
-        public Produkt()
-        {
-            this.Incomes = new HashSet<Income>();
-        }
-
         public int Id { get; set; }
 
         [Column("Date")]
@@ -37,14 +32,11 @@
         [Column("Unit")]
         public int Unit { get; set; }
 
-        [Column("Quantity")]
-        public int Quantity { get; set; }
-
-        public virtual ICollection<Income> Incomes { get; set; }
-
-
         [NotMapped]
         public List<string> Units { get { return new List<string>() { "Piece", "Gramm", "Pound" }; } }
+
+        [Column("Quantity")]
+        public int Quantity { get; set; }
 
         [NotMapped]
         public int ObjectState { get; set; }
