@@ -9,18 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
-using System.Runtime.InteropServices;
 
 namespace Accounting
 {
     public partial class Form_Main : MetroFramework.Forms.MetroForm
     {
-        
+
         public Form_Main()
         {
             InitializeComponent();
-            mL_Version.Text += " " + Application.ProductVersion;
         }
         /// <summary>
         /// 
@@ -35,27 +32,17 @@ namespace Accounting
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 expensesBindingSource.DataSource = db.Expenses.ToList();
                 produktBindingSource.DataSource = db.Produkts.ToList();
-
-
-                ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
-                if (incomeBindingSource.Count != 0)
-                    TabControl.RefreshIncome(List_Income);
-                if (customerBindingSource.Count != 0)
-                    TabControl.RefreshCustomer(List_Customer);
-                if (expensesBindingSource.Count != 0)
-                    TabControl.RefreshExpenses(List_Expenses);
-                if (produktBindingSource.Count != 0)
-                {
-                    TabControl.RefreshProdukt(List_Produkts);
-
-                    var produkts = db.Produkts.ToList();
-                    foreach (var item in produkts)
-                    {
-                        mLV_Income_Produces.Items.Add(item.Produce);
-                    }
-                    
-                }
             }   
+
+            ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
+            if (incomeBindingSource.Count != 0)
+                TabControl.RefreshIncome(List_Income);
+            if (customerBindingSource.Count != 0)
+                TabControl.RefreshCustomer(List_Customer);
+            if (expensesBindingSource.Count != 0)
+                TabControl.RefreshExpenses(List_Expenses);
+            if (produktBindingSource.Count != 0)
+                TabControl.RefreshProdukt(List_Produkts);
 
             mP_Customer.Enabled = false;
             mP_Income.Enabled = false;
@@ -63,7 +50,7 @@ namespace Accounting
             mP_Produkts.Enabled = false;
         }
         /// <summary>
-        /// Save all new and edited entites in the database and add a new row to the list or remove it.
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -82,11 +69,7 @@ namespace Accounting
                         if (obj_Customer.ObjectState == 1)
                             db.Entry<Customer>(obj_Customer).State = System.Data.Entity.EntityState.Added;
                         else if (obj_Customer.ObjectState == 2)
-                        {
                             db.Entry<Customer>(obj_Customer).State = System.Data.Entity.EntityState.Modified;
-                            TabControl.RemoveRow(List_Customer);
-                        }
-                            
 
                         db.SaveChanges();
                         mP_Customer.Enabled = false;
@@ -97,22 +80,17 @@ namespace Accounting
                 else if (mTC_Accounting.SelectedTab == mTP_Income)
                 {
                     Income obj_Income = incomeBindingSource.Current as Income;
-                    
 
                     if (obj_Income != null)
                     {
                         obj_Income.Customer = db.Customers.First(c => c.Id == obj_Income.Customer_Id);
                    
-                        if (db.Entry<Income>(obj_Income).State == System.Data.Entity.EntityState.Added)
-                            db.Set<Income>().Add(obj_Income);
+                        if (db.Entry<Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
+                            db.Set<Income>().Attach(obj_Income);
                         if (obj_Income.ObjectState == 1)
                             db.Entry<Income>(obj_Income).State = System.Data.Entity.EntityState.Added;
                         else if (obj_Income.ObjectState == 2)
-                        {
                             db.Entry<Income>(obj_Income).State = System.Data.Entity.EntityState.Modified;
-                            TabControl.RemoveRow(List_Income);
-                        }
-                            
 
                         db.SaveChanges();
                         mP_Income.Enabled = false;
@@ -132,11 +110,7 @@ namespace Accounting
                         if (obj_Expense.ObjectState == 1)
                             db.Entry<Expense>(obj_Expense).State = System.Data.Entity.EntityState.Added;
                         else if (obj_Expense.ObjectState == 2)
-                        {
                             db.Entry<Expense>(obj_Expense).State = System.Data.Entity.EntityState.Modified;
-                            TabControl.RemoveRow(List_Expenses);
-                        }
-                            
 
                         db.SaveChanges();
                         mP_Expenses.Enabled = false;
@@ -158,11 +132,7 @@ namespace Accounting
                         if (obj_Produkt.ObjectState == 1)
                             db.Entry<Produkt>(obj_Produkt).State = System.Data.Entity.EntityState.Added;
                         if (obj_Produkt.ObjectState == 2)
-                        {
                             db.Entry<Produkt>(obj_Produkt).State = System.Data.Entity.EntityState.Modified;
-                            TabControl.RemoveRow(List_Produkts);
-                        }
-                            
 
                         db.SaveChanges();
                         mP_Produkts.Enabled = false;
@@ -212,12 +182,12 @@ namespace Accounting
                 produktBindingSource.Add(newProdukt);
                 produktBindingSource.MoveLast();
                 mTB_Produkts_Date.Focus();
-                //mTB_Produkts_Date.Text = DateTime.UtcNow.ToShortDateString();
+                mTB_Produkts_Date.Text = DateTime.UtcNow.ToShortDateString();
             }
         }
 
         /// <summary>
-        /// edit the current selected list row and set the selected entity in the modifed state.
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -227,7 +197,6 @@ namespace Accounting
             {
                 mP_Customer.Enabled = true;
                 mTB_Date_Customer.Focus();
-                customerBindingSource.Position = List_Customer.SelectedItems[0].Index;
                 Customer obj = customerBindingSource.Current as Customer;
                 if (obj != null)
                     obj.ObjectState = 2;
@@ -236,32 +205,9 @@ namespace Accounting
             {
                 mP_Income.Enabled = true;
                 mTB_Date_Income.Focus();
-                incomeBindingSource.Position = List_Income.SelectedItems[0].Index;
                 Income obj = incomeBindingSource.Current as Income;
                 if (obj != null)
                     obj.ObjectState = 2;
-            }
-            else if ((List_Expenses.Visible == true) && (List_Expenses.SelectedItems.Count > 0))
-            {
-                mP_Expenses.Enabled = true;
-                mTB_Date_Expenses.Focus();
-                expensesBindingSource.Position = List_Expenses.SelectedItems[0].Index;
-                Expense obj = expensesBindingSource.Current as Expense;
-                if (obj != null)
-                {
-                    obj.ObjectState = 2;
-                }
-            }
-            else if ((List_Produkts.Visible == true) && (List_Produkts.SelectedItems.Count > 0))
-            {
-                mP_Produkts.Enabled = true;
-                mTB_Produkts_Date.Focus();
-                produktBindingSource.Position = List_Produkts.SelectedItems[0].Index;
-                Produkt obj = produktBindingSource.Current as Produkt;
-                if (obj != null)
-                {
-                    obj.ObjectState = 2;
-                }
             }
             
         }
@@ -379,36 +325,6 @@ namespace Accounting
                 ml_Unit.Text = "g";
             else if (mCB_Produkts_Unit.SelectedIndex == 2)
                 ml_Unit.Text = "lb";
-        }
-        /// <summary>
-        /// Change the position of the bindingSource to the curren selected index in the List
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void List_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int positionNew = 0;
-
-            if ((List_Customer.Visible == true ) && (List_Customer.SelectedItems.Count > 0))
-            {
-                positionNew = List_Customer.SelectedItems[0].Index;
-                customerBindingSource.Position = positionNew;
-            }
-            else if ((List_Expenses.Visible == true) && (List_Expenses.SelectedItems.Count > 0))
-            {
-                positionNew = List_Expenses.SelectedItems[0].Index;
-                expensesBindingSource.Position = positionNew;
-            }
-            else if ((List_Income.Visible == true) && (List_Income.SelectedItems.Count > 0))
-            {
-                positionNew = List_Income.SelectedItems[0].Index;
-                incomeBindingSource.Position = positionNew;
-            }
-            else if ((List_Produkts.Visible == true) && (List_Produkts.SelectedItems.Count > 0))
-            {
-                positionNew = List_Produkts.SelectedItems[0].Index;
-                produktBindingSource.Position = positionNew;
-            }
         }
     }
 }

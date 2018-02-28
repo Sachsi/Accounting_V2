@@ -9,7 +9,6 @@
     [Table("Income")]
     public partial class Income
     {
-
         public int Id { get; set; }
 
         [Column("Date")]
@@ -21,9 +20,6 @@
 
         [Column("Customer")]
         public virtual Customer Customer { get; set; }
-
-        [Column("Poduce")]
-        public virtual Produkt Produces { get; set; }
 
         [Column("Payment")]
         [StringLength(20)]
