@@ -58,9 +58,13 @@
             this.CH_Customer_Income = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CH_Payment_Income = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CH_Price_Income = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CH_Produce = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mP_Income = new MetroFramework.Controls.MetroPanel();
-            this.mCB_Customer_Income = new MetroFramework.Controls.MetroComboBox();
+            this.mLV_Income_Produces = new MetroFramework.Controls.MetroListView();
+            this.mL_Produces_Income = new MetroFramework.Controls.MetroLabel();
             this.incomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mCB_Customer_Income = new MetroFramework.Controls.MetroComboBox();
             this.mL_Price_Income = new MetroFramework.Controls.MetroLabel();
             this.mL_Customer_Income = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -100,7 +104,6 @@
             this.ml_Unit = new MetroFramework.Controls.MetroLabel();
             this.mL_Produkts_Quantity = new MetroFramework.Controls.MetroLabel();
             this.mTB_Produkts_Quantity = new MetroFramework.Controls.MetroTextBox();
-            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mTB_Produkts_Dealer = new MetroFramework.Controls.MetroTextBox();
             this.mL_Produkts_Price = new MetroFramework.Controls.MetroLabel();
             this.mL_Produkts_Farmer = new MetroFramework.Controls.MetroLabel();
@@ -109,11 +112,11 @@
             this.mTB_Produkts_Price = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Produkts_Produkt = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Produkts_Date = new MetroFramework.Controls.MetroTextBox();
-            this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mB_Save = new MetroFramework.Controls.MetroButton();
             this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
+            this.mL_Version = new MetroFramework.Controls.MetroLabel();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -121,13 +124,12 @@
             this.mTP_Income.SuspendLayout();
             this.mP_Income.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
             this.mTP_Expenses.SuspendLayout();
             this.mP_Expenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.expensesBindingSource)).BeginInit();
             this.mTP_Produkts.SuspendLayout();
             this.mP_Produkts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Accounting
@@ -145,7 +147,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 4;
+            this.mTC_Accounting.SelectedIndex = 1;
             this.mTC_Accounting.Size = new System.Drawing.Size(769, 376);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
@@ -184,6 +186,7 @@
             this.List_Customer.UseCompatibleStateImageBehavior = false;
             this.List_Customer.UseSelectable = true;
             this.List_Customer.View = System.Windows.Forms.View.Details;
+            this.List_Customer.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
             // 
             // CH_Date
             // 
@@ -480,9 +483,11 @@
             this.CH_Date_Income,
             this.CH_Customer_Income,
             this.CH_Payment_Income,
-            this.CH_Price_Income});
+            this.CH_Price_Income,
+            this.CH_Produce});
             this.List_Income.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.List_Income.FullRowSelect = true;
+            this.List_Income.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.List_Income.Location = new System.Drawing.Point(3, 3);
             this.List_Income.Name = "List_Income";
             this.List_Income.OwnerDraw = true;
@@ -491,6 +496,7 @@
             this.List_Income.UseCompatibleStateImageBehavior = false;
             this.List_Income.UseSelectable = true;
             this.List_Income.View = System.Windows.Forms.View.Details;
+            this.List_Income.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
             // 
             // CH_Date_Income
             // 
@@ -512,10 +518,17 @@
             this.CH_Price_Income.Text = "Price";
             this.CH_Price_Income.Width = 80;
             // 
+            // CH_Produce
+            // 
+            this.CH_Produce.Text = "Produces";
+            this.CH_Produce.Width = 200;
+            // 
             // mP_Income
             // 
             this.mP_Income.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mP_Income.Controls.Add(this.mLV_Income_Produces);
+            this.mP_Income.Controls.Add(this.mL_Produces_Income);
             this.mP_Income.Controls.Add(this.mCB_Customer_Income);
             this.mP_Income.Controls.Add(this.mL_Price_Income);
             this.mP_Income.Controls.Add(this.mL_Customer_Income);
@@ -535,6 +548,37 @@
             this.mP_Income.VerticalScrollbarHighlightOnWheel = false;
             this.mP_Income.VerticalScrollbarSize = 10;
             // 
+            // mLV_Income_Produces
+            // 
+            this.mLV_Income_Produces.CheckBoxes = true;
+            this.mLV_Income_Produces.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mLV_Income_Produces.FullRowSelect = true;
+            this.mLV_Income_Produces.Location = new System.Drawing.Point(604, 3);
+            this.mLV_Income_Produces.Name = "mLV_Income_Produces";
+            this.mLV_Income_Produces.OwnerDraw = true;
+            this.mLV_Income_Produces.Size = new System.Drawing.Size(137, 68);
+            this.mLV_Income_Produces.TabIndex = 13;
+            this.mLV_Income_Produces.UseCompatibleStateImageBehavior = false;
+            this.mLV_Income_Produces.UseSelectable = true;
+            this.mLV_Income_Produces.View = System.Windows.Forms.View.List;
+            // 
+            // mL_Produces_Income
+            // 
+            this.mL_Produces_Income.AutoSize = true;
+            this.mL_Produces_Income.Location = new System.Drawing.Point(516, 8);
+            this.mL_Produces_Income.Name = "mL_Produces_Income";
+            this.mL_Produces_Income.Size = new System.Drawing.Size(66, 19);
+            this.mL_Produces_Income.TabIndex = 12;
+            this.mL_Produces_Income.Text = "Produces:";
+            // 
+            // incomeBindingSource
+            // 
+            this.incomeBindingSource.DataSource = typeof(Accounting.Income);
+            // 
+            // produktBindingSource
+            // 
+            this.produktBindingSource.DataSource = typeof(Accounting.Produkt);
+            // 
             // mCB_Customer_Income
             // 
             this.mCB_Customer_Income.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.incomeBindingSource, "Customer_Id", true));
@@ -548,10 +592,6 @@
             this.mCB_Customer_Income.TabIndex = 10;
             this.mCB_Customer_Income.UseSelectable = true;
             this.mCB_Customer_Income.ValueMember = "Id";
-            // 
-            // incomeBindingSource
-            // 
-            this.incomeBindingSource.DataSource = typeof(Accounting.Income);
             // 
             // mL_Price_Income
             // 
@@ -729,6 +769,7 @@
             this.List_Expenses.UseCompatibleStateImageBehavior = false;
             this.List_Expenses.UseSelectable = true;
             this.List_Expenses.View = System.Windows.Forms.View.Details;
+            this.List_Expenses.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
             // 
             // CH_Date_Expenses
             // 
@@ -1002,6 +1043,7 @@
             this.List_Produkts.UseCompatibleStateImageBehavior = false;
             this.List_Produkts.UseSelectable = true;
             this.List_Produkts.View = System.Windows.Forms.View.Details;
+            this.List_Produkts.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
             // 
             // CH_Produkts_Date
             // 
@@ -1132,10 +1174,6 @@
             this.mTB_Produkts_Quantity.UseSelectable = true;
             this.mTB_Produkts_Quantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Produkts_Quantity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // produktBindingSource
-            // 
-            this.produktBindingSource.DataSource = typeof(Accounting.Produkt);
             // 
             // mTB_Produkts_Dealer
             // 
@@ -1310,11 +1348,6 @@
             this.mTB_Produkts_Date.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Produkts_Date.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // unitsBindingSource
-            // 
-            this.unitsBindingSource.DataMember = "Units";
-            this.unitsBindingSource.DataSource = this.produktBindingSource;
-            // 
             // mB_Save
             // 
             this.mB_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1359,11 +1392,21 @@
             this.mB_Remove.UseSelectable = true;
             this.mB_Remove.Click += new System.EventHandler(this.mB_Remove_Click);
             // 
+            // mL_Version
+            // 
+            this.mL_Version.AutoSize = true;
+            this.mL_Version.Location = new System.Drawing.Point(180, 31);
+            this.mL_Version.Name = "mL_Version";
+            this.mL_Version.Size = new System.Drawing.Size(54, 19);
+            this.mL_Version.TabIndex = 5;
+            this.mL_Version.Text = "Version:";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 502);
+            this.Controls.Add(this.mL_Version);
             this.Controls.Add(this.mB_Remove);
             this.Controls.Add(this.mB_Edit_Customer);
             this.Controls.Add(this.mB_Add_Customer);
@@ -1382,6 +1425,7 @@
             this.mP_Income.ResumeLayout(false);
             this.mP_Income.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
             this.mTP_Expenses.ResumeLayout(false);
             this.mP_Expenses.ResumeLayout(false);
             this.mP_Expenses.PerformLayout();
@@ -1389,9 +1433,8 @@
             this.mTP_Produkts.ResumeLayout(false);
             this.mP_Produkts.ResumeLayout(false);
             this.mP_Produkts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produktBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1481,7 +1524,10 @@
         private System.Windows.Forms.ColumnHeader CH_Produkts_Unit;
         private MetroFramework.Controls.MetroLabel mL_Produkts_Unit;
         private MetroFramework.Controls.MetroComboBox mCB_Produkts_Unit;
-        private System.Windows.Forms.BindingSource unitsBindingSource;
+        private System.Windows.Forms.ColumnHeader CH_Produce;
+        private MetroFramework.Controls.MetroLabel mL_Produces_Income;
+        private MetroFramework.Controls.MetroLabel mL_Version;
+        private MetroFramework.Controls.MetroListView mLV_Income_Produces;
     }
 }
 
