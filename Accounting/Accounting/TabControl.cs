@@ -100,6 +100,7 @@ namespace Accounting
                     listItems.SubItems.Add(item.Dealer);
                     listItems.SubItems.Add(item.Payment);
                     listItems.SubItems.Add(item.Price.ToString("c"));
+                    listItems.SubItems.Add(item.Details.ToString());
                     list_Expenses.Items.Add(listItems);
                 }
             }
