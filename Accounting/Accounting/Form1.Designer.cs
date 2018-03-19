@@ -76,8 +76,8 @@
             this.CH_Price_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CH_Details_Expenses = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mP_Expenses = new MetroFramework.Controls.MetroPanel();
-            this.mTB_Dealer_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.expensesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mTB_Dealer_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.mL_Dealer_Expenses = new MetroFramework.Controls.MetroLabel();
             this.mL_Date_Expenses = new MetroFramework.Controls.MetroLabel();
@@ -114,6 +114,8 @@
             this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
+            this.mTB_Details = new MetroFramework.Controls.MetroTextBox();
+            this.ml_Details = new MetroFramework.Controls.MetroLabel();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -145,7 +147,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 4;
+            this.mTC_Accounting.SelectedIndex = 2;
             this.mTC_Accounting.Size = new System.Drawing.Size(769, 376);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
@@ -696,6 +698,7 @@
             this.mTP_Expenses.Controls.Add(this.List_Expenses);
             this.mTP_Expenses.Controls.Add(this.mP_Expenses);
             this.mTP_Expenses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mTP_Expenses.HorizontalScrollbar = true;
             this.mTP_Expenses.HorizontalScrollbarBarColor = true;
             this.mTP_Expenses.HorizontalScrollbarHighlightOnWheel = false;
             this.mTP_Expenses.HorizontalScrollbarSize = 10;
@@ -704,6 +707,7 @@
             this.mTP_Expenses.Size = new System.Drawing.Size(761, 334);
             this.mTP_Expenses.TabIndex = 3;
             this.mTP_Expenses.Text = "Expenses";
+            this.mTP_Expenses.VerticalScrollbar = true;
             this.mTP_Expenses.VerticalScrollbarBarColor = true;
             this.mTP_Expenses.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Expenses.VerticalScrollbarSize = 10;
@@ -759,6 +763,8 @@
             // 
             this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mP_Expenses.Controls.Add(this.ml_Details);
+            this.mP_Expenses.Controls.Add(this.mTB_Details);
             this.mP_Expenses.Controls.Add(this.mTB_Dealer_Expenses);
             this.mP_Expenses.Controls.Add(this.metroLabel1);
             this.mP_Expenses.Controls.Add(this.mL_Dealer_Expenses);
@@ -777,6 +783,10 @@
             this.mP_Expenses.VerticalScrollbarBarColor = true;
             this.mP_Expenses.VerticalScrollbarHighlightOnWheel = false;
             this.mP_Expenses.VerticalScrollbarSize = 10;
+            // 
+            // expensesBindingSource
+            // 
+            this.expensesBindingSource.DataSource = typeof(Accounting.Expense);
             // 
             // mTB_Dealer_Expenses
             // 
@@ -811,10 +821,6 @@
             this.mTB_Dealer_Expenses.UseSelectable = true;
             this.mTB_Dealer_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Dealer_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // expensesBindingSource
-            // 
-            this.expensesBindingSource.DataSource = typeof(Accounting.Expense);
             // 
             // metroLabel1
             // 
@@ -1359,6 +1365,50 @@
             this.mB_Remove.UseSelectable = true;
             this.mB_Remove.Click += new System.EventHandler(this.mB_Remove_Click);
             // 
+            // mTB_Details
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Details.CustomButton.Image = null;
+            this.mTB_Details.CustomButton.Location = new System.Drawing.Point(96, 2);
+            this.mTB_Details.CustomButton.Name = "";
+            this.mTB_Details.CustomButton.Size = new System.Drawing.Size(63, 63);
+            this.mTB_Details.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Details.CustomButton.TabIndex = 1;
+            this.mTB_Details.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Details.CustomButton.UseSelectable = true;
+            this.mTB_Details.CustomButton.Visible = false;
+            this.mTB_Details.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.expensesBindingSource, "Details", true));
+            this.mTB_Details.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Details.Lines = new string[] {
+        "Details"};
+            this.mTB_Details.Location = new System.Drawing.Point(581, 3);
+            this.mTB_Details.MaxLength = 32767;
+            this.mTB_Details.Multiline = true;
+            this.mTB_Details.Name = "mTB_Details";
+            this.mTB_Details.PasswordChar = '\0';
+            this.mTB_Details.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Details.SelectedText = "";
+            this.mTB_Details.SelectionLength = 0;
+            this.mTB_Details.SelectionStart = 0;
+            this.mTB_Details.ShortcutsEnabled = true;
+            this.mTB_Details.Size = new System.Drawing.Size(162, 68);
+            this.mTB_Details.TabIndex = 11;
+            this.mTB_Details.Text = "Details";
+            this.mTB_Details.UseSelectable = true;
+            this.mTB_Details.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Details.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // ml_Details
+            // 
+            this.ml_Details.AutoSize = true;
+            this.ml_Details.Location = new System.Drawing.Point(501, 8);
+            this.ml_Details.Name = "ml_Details";
+            this.ml_Details.Size = new System.Drawing.Size(50, 19);
+            this.ml_Details.TabIndex = 12;
+            this.ml_Details.Text = "Details:";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1482,6 +1532,8 @@
         private MetroFramework.Controls.MetroLabel mL_Produkts_Unit;
         private MetroFramework.Controls.MetroComboBox mCB_Produkts_Unit;
         private System.Windows.Forms.BindingSource unitsBindingSource;
+        private MetroFramework.Controls.MetroLabel ml_Details;
+        private MetroFramework.Controls.MetroTextBox mTB_Details;
     }
 }
 

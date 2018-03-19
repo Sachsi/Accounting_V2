@@ -159,6 +159,7 @@ namespace Accounting
             item.SubItems.Add(obj_Expense.Dealer);
             item.SubItems.Add(obj_Expense.Payment);
             item.SubItems.Add(obj_Expense.Price.ToString("c"));
+            item.SubItems.Add(obj_Expense.Details.ToString());
             list_Expenses.Items.Add(item);
         }
         /// <summary>
