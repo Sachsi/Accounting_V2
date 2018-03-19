@@ -10,10 +10,6 @@ namespace Accounting
 {
     public class TabControl
     {
-        //public TabelleControls()
-        //{
-
-        //}
         /// <summary>
         /// 
         /// </summary>

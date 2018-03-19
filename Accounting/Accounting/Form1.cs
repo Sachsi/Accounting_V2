@@ -220,17 +220,19 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Cancel_Tables_Click(object sender, EventArgs e)
         {
-            //mP_Customer.Enabled = false;
-            //mP_Expenses.Enabled = false;
-            //mP_Income.Enabled = false;
-            //incomeBindingSource.ResetBindings(false);
-            //expansesBindingSource.ResetBindings(false);
-            //customerBindingSource.ResetBindings(false);
-            //Form1_Load(sender, e);
+            mP_Customer.Enabled = false;
+            mP_Expenses.Enabled = false;
+            mP_Income.Enabled = false;
+            mP_Produkts.Enabled = false;
+            produktBindingSource.ResetBindings(false);
+            incomeBindingSource.ResetBindings(false);
+            expensesBindingSource.ResetBindings(false);
+            customerBindingSource.ResetBindings(false);
+            //Form_Main_Load(sender, e);
         }
 
         /// <summary>
-        /// 
+        /// remove the selected rows from the current visible table
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
