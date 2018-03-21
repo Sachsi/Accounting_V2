@@ -1,6 +1,7 @@
 ﻿using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,10 @@ namespace Accounting
 {
     public class TabControl
     {
+        private static Font tablefont = new Font("tablefont", 18, FontStyle.Bold, GraphicsUnit.Pixel);
+
+        internal static Font Tablefont { get => tablefont; set => tablefont = value; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -20,6 +25,8 @@ namespace Accounting
             {
                 
                 var list = Db.Customers.ToList();
+                listview.Font = tablefont;
+
                 foreach (Customer c in list)
                 {
                     ListViewItem a = new ListViewItem(c.Date.ToShortDateString());
@@ -42,6 +49,8 @@ namespace Accounting
             using (DatabaseContext Db = new DatabaseContext())
             {
                 var list = Db.Incomes.ToList();
+                listview.Font = tablefont;
+
                 foreach (Income c in list)
                 {
                     ListViewItem b = new ListViewItem(c.Date.ToShortDateString());
@@ -55,16 +64,22 @@ namespace Accounting
                     }
                     b.SubItems.Add(c.Payment);
                     b.SubItems.Add(c.Price.ToString("c"));
+                    b.SubItems.Add(c.Products);
                     listview.Items.Add(b);
                 }
             }
         }
 
-        internal static void RefreshProdukt(MetroListView list_Produkts)
+        internal static void RefreshProdukt(MetroListView list_Produkts, MetroListView selected_Produkts)
         {
             using (DatabaseContext db = new DatabaseContext())
             {
+                
                 var list = db.Produkts.ToList();
+
+                selected_Produkts.Clear();
+                ClearTableProdukts(list_Produkts);
+                list_Produkts.Font = tablefont;
 
                 foreach (var item in list)
                 {
@@ -75,9 +90,22 @@ namespace Accounting
                     listItems.SubItems.Add(item.Quantity.ToString());
                     listItems.SubItems.Add(item.Units[item.Unit]);
                     list_Produkts.Items.Add(listItems);
-                    
+                    selected_Produkts.Items.Add(item.Produce);
                 }
             }
+        }
+
+        private static void ClearTableProdukts(MetroListView list_Produkts)
+        {
+            list_Produkts.Clear();
+            
+            list_Produkts.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Farmer", 200, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Quatity", 100, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Units", 100, textAlign: HorizontalAlignment.Left);
+            //list_Produkts.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+            
         }
 
         /// <summary>
@@ -89,7 +117,7 @@ namespace Accounting
             using (DatabaseContext db = new DatabaseContext())
             {
                 var list = db.Expenses.ToList();
-
+                list_Expenses.Font = tablefont;
                 foreach (var item in list)
                 {
                     ListViewItem listItems = new ListViewItem(item.Date.ToShortDateString());
@@ -132,6 +160,7 @@ namespace Accounting
                 a.SubItems.Add(customerID.Full_Name);
                 a.SubItems.Add(income.Payment);
                 a.SubItems.Add(income.Price.ToString("c"));
+                a.SubItems.Add(income.Products);
                 listview.Items.Add(a);
             }
         }
@@ -158,20 +187,6 @@ namespace Accounting
             item.SubItems.Add(obj_Expense.Details.ToString());
             list_Expenses.Items.Add(item);
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="list_Produkts"></param>
-        /// <param name="obj_Produkt"></param>
-        internal static void AddProdukt(MetroListView list_Produkts, Produkt obj_Produkt)
-        {
-            ListViewItem item = new ListViewItem(obj_Produkt.Date.ToShortDateString());
-            item.SubItems.Add(obj_Produkt.Farmer);
-            item.SubItems.Add(obj_Produkt.Produce);
-            item.SubItems.Add(obj_Produkt.Price.ToString("c"));
-            item.SubItems.Add(obj_Produkt.Quantity.ToString());
-            item.SubItems.Add(obj_Produkt.Units[obj_Produkt.Unit]);
-            list_Produkts.Items.Add(item);
-        }
+
     }
 }
