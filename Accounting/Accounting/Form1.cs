@@ -18,6 +18,7 @@ namespace Accounting
         public Form_Main()
         {
             InitializeComponent();
+            int a = 0;
         }
         /// <summary>
         /// 
