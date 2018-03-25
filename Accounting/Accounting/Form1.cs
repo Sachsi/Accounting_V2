@@ -315,7 +315,9 @@ namespace Accounting
                         db.Entry<Produkt>(del_Produkt).State = System.Data.Entity.EntityState.Deleted;
                         db.Set<Produkt>().Remove(del_Produkt);
                         produktBindingSource.RemoveCurrent();
+                        mlV_Products_Income.Items[produktBindingSource.Position+1].Remove();
                         TabControl.RemoveRow(List_Produkts);
+                        
                     }
                     db.SaveChanges();
                 }
