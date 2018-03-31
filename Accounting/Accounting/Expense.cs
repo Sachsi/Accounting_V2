@@ -29,6 +29,10 @@ namespace Accounting
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
+        [Column("Details")]
+        [DataType(DataType.Text)]
+        public string Details { get; set; } 
+
         [NotMapped]
         public int ObjectState { get; set; }
     }

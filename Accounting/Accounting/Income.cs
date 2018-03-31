@@ -29,6 +29,10 @@
         [DataType(DataType.Currency)]
         public Double Price { get; set; }
 
+        [Column("Products")]
+        [DataType(dataType: DataType.Text)]
+        public string Products { get; set; }
+
         [NotMapped]
         public int ObjectState { get; set; }
     }

@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201802201947209_addUnitColum.Designer.cs">
       <DependentUpon>201802201947209_addUnitColum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803182108221_IncomeExpensas.cs" />
+    <Compile Include="Migrations\201803182108221_IncomeExpensas.Designer.cs">
+      <DependentUpon>201803182108221_IncomeExpensas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
@@ -199,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802201947209_addUnitColum.resx">
       <DependentUpon>201802201947209_addUnitColum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803182108221_IncomeExpensas.resx">
+      <DependentUpon>201803182108221_IncomeExpensas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

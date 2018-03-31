@@ -1,5 +1,6 @@
 ﻿using Accounting;
 using MetroFramework;
+using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,6 @@ namespace Accounting
         public Form_Main()
         {
             InitializeComponent();
-            int a = 0;
         }
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace Accounting
                 expensesBindingSource.DataSource = db.Expenses.ToList();
                 produktBindingSource.DataSource = db.Produkts.ToList();
             }   
-
+            
             ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
             if (incomeBindingSource.Count != 0)
                 TabControl.RefreshIncome(List_Income);
@@ -43,12 +43,13 @@ namespace Accounting
             if (expensesBindingSource.Count != 0)
                 TabControl.RefreshExpenses(List_Expenses);
             if (produktBindingSource.Count != 0)
-                TabControl.RefreshProdukt(List_Produkts);
+                TabControl.RefreshProdukt(List_Produkts, mlV_Products_Income);
 
             mP_Customer.Enabled = false;
             mP_Income.Enabled = false;
             mP_Expenses.Enabled = false;
             mP_Produkts.Enabled = false;
+
         }
         /// <summary>
         /// 
@@ -85,6 +86,12 @@ namespace Accounting
                     if (obj_Income != null)
                     {
                         obj_Income.Customer = db.Customers.First(c => c.Id == obj_Income.Customer_Id);
+
+                        foreach (var item in mlV_Products_Income.CheckedIndices)
+                        {
+                            string a = mlV_Products_Income.Items[Convert.ToInt32(item)].Text;
+                            obj_Income.Products = obj_Income.Products + a;
+                        }
                    
                         if (db.Entry<Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
                             db.Set<Income>().Attach(obj_Income);
@@ -138,7 +145,7 @@ namespace Accounting
                         db.SaveChanges();
                         mP_Produkts.Enabled = false;
                         obj_Produkt.ObjectState = 0;
-                        TabControl.AddProdukt(List_Produkts, obj_Produkt);
+                        TabControl.RefreshProdukt(List_Produkts, mlV_Products_Income);
                     }
                 } 
             }    
@@ -220,17 +227,19 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Cancel_Tables_Click(object sender, EventArgs e)
         {
-            //mP_Customer.Enabled = false;
-            //mP_Expenses.Enabled = false;
-            //mP_Income.Enabled = false;
-            //incomeBindingSource.ResetBindings(false);
-            //expansesBindingSource.ResetBindings(false);
-            //customerBindingSource.ResetBindings(false);
-            //Form1_Load(sender, e);
+            mP_Customer.Enabled = false;
+            mP_Expenses.Enabled = false;
+            mP_Income.Enabled = false;
+            mP_Produkts.Enabled = false;
+            produktBindingSource.ResetBindings(false);
+            incomeBindingSource.ResetBindings(false);
+            expensesBindingSource.ResetBindings(false);
+            customerBindingSource.ResetBindings(false);
+            //Form_Main_Load(sender, e);
         }
 
         /// <summary>
-        /// 
+        /// remove the selected rows from the current visible table
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -306,7 +315,9 @@ namespace Accounting
                         db.Entry<Produkt>(del_Produkt).State = System.Data.Entity.EntityState.Deleted;
                         db.Set<Produkt>().Remove(del_Produkt);
                         produktBindingSource.RemoveCurrent();
+                        mlV_Products_Income.Items[produktBindingSource.Position+1].Remove();
                         TabControl.RemoveRow(List_Produkts);
+                        
                     }
                     db.SaveChanges();
                 }
