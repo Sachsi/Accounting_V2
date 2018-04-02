@@ -151,7 +151,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 1;
+            this.mTC_Accounting.SelectedIndex = 4;
             this.mTC_Accounting.Size = new System.Drawing.Size(769, 377);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
@@ -280,7 +280,7 @@
             this.mT_FullName_Customer.SelectionStart = 0;
             this.mT_FullName_Customer.ShortcutsEnabled = true;
             this.mT_FullName_Customer.Size = new System.Drawing.Size(122, 29);
-            this.mT_FullName_Customer.TabIndex = 10;
+            this.mT_FullName_Customer.TabIndex = 1;
             this.mT_FullName_Customer.Text = "Max Muster";
             this.mT_FullName_Customer.UseSelectable = true;
             this.mT_FullName_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -333,7 +333,7 @@
             this.metroCheckBox3.Location = new System.Drawing.Point(518, 56);
             this.metroCheckBox3.Name = "metroCheckBox3";
             this.metroCheckBox3.Size = new System.Drawing.Size(81, 15);
-            this.metroCheckBox3.TabIndex = 8;
+            this.metroCheckBox3.TabIndex = 6;
             this.metroCheckBox3.Text = "Horse Barn";
             this.metroCheckBox3.UseSelectable = true;
             // 
@@ -344,7 +344,7 @@
             this.mCB_Nieightbarhood_Customer.Location = new System.Drawing.Point(518, 31);
             this.mCB_Nieightbarhood_Customer.Name = "mCB_Nieightbarhood_Customer";
             this.mCB_Nieightbarhood_Customer.Size = new System.Drawing.Size(104, 15);
-            this.mCB_Nieightbarhood_Customer.TabIndex = 7;
+            this.mCB_Nieightbarhood_Customer.TabIndex = 5;
             this.mCB_Nieightbarhood_Customer.Text = "Neightbarhood";
             this.mCB_Nieightbarhood_Customer.UseSelectable = true;
             // 
@@ -355,7 +355,7 @@
             this.mCB_CSA_Customer.Location = new System.Drawing.Point(518, 6);
             this.mCB_CSA_Customer.Name = "mCB_CSA_Customer";
             this.mCB_CSA_Customer.Size = new System.Drawing.Size(45, 15);
-            this.mCB_CSA_Customer.TabIndex = 6;
+            this.mCB_CSA_Customer.TabIndex = 4;
             this.mCB_CSA_Customer.Text = "CSA";
             this.mCB_CSA_Customer.UseSelectable = true;
             // 
@@ -387,7 +387,7 @@
             this.mTB_Phone_Customer.SelectionStart = 0;
             this.mTB_Phone_Customer.ShortcutsEnabled = true;
             this.mTB_Phone_Customer.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Phone_Customer.TabIndex = 5;
+            this.mTB_Phone_Customer.TabIndex = 3;
             this.mTB_Phone_Customer.Text = "0123456789";
             this.mTB_Phone_Customer.UseSelectable = true;
             this.mTB_Phone_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -421,7 +421,7 @@
             this.mTB_EMail_Customer.SelectionStart = 0;
             this.mTB_EMail_Customer.ShortcutsEnabled = true;
             this.mTB_EMail_Customer.Size = new System.Drawing.Size(122, 29);
-            this.mTB_EMail_Customer.TabIndex = 3;
+            this.mTB_EMail_Customer.TabIndex = 2;
             this.mTB_EMail_Customer.Text = "eMail@msn.com";
             this.mTB_EMail_Customer.UseSelectable = true;
             this.mTB_EMail_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -455,7 +455,7 @@
             this.mTB_Date_Customer.SelectionStart = 0;
             this.mTB_Date_Customer.ShortcutsEnabled = true;
             this.mTB_Date_Customer.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Date_Customer.TabIndex = 2;
+            this.mTB_Date_Customer.TabIndex = 0;
             this.mTB_Date_Customer.Text = "01.01.2018";
             this.mTB_Date_Customer.UseSelectable = true;
             this.mTB_Date_Customer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -561,7 +561,7 @@
             this.mlV_Products_Income.Name = "mlV_Products_Income";
             this.mlV_Products_Income.OwnerDraw = true;
             this.mlV_Products_Income.Size = new System.Drawing.Size(137, 84);
-            this.mlV_Products_Income.TabIndex = 13;
+            this.mlV_Products_Income.TabIndex = 4;
             this.mlV_Products_Income.UseCompatibleStateImageBehavior = false;
             this.mlV_Products_Income.UseSelectable = true;
             this.mlV_Products_Income.View = System.Windows.Forms.View.List;
@@ -585,7 +585,7 @@
             this.mCB_Customer_Income.Location = new System.Drawing.Point(87, 42);
             this.mCB_Customer_Income.Name = "mCB_Customer_Income";
             this.mCB_Customer_Income.Size = new System.Drawing.Size(122, 29);
-            this.mCB_Customer_Income.TabIndex = 10;
+            this.mCB_Customer_Income.TabIndex = 1;
             this.mCB_Customer_Income.UseSelectable = true;
             this.mCB_Customer_Income.ValueMember = "Id";
             // 
@@ -657,7 +657,7 @@
             this.mTB_Price_Income.SelectionStart = 0;
             this.mTB_Price_Income.ShortcutsEnabled = true;
             this.mTB_Price_Income.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Price_Income.TabIndex = 5;
+            this.mTB_Price_Income.TabIndex = 3;
             this.mTB_Price_Income.Text = "10,23";
             this.mTB_Price_Income.UseSelectable = true;
             this.mTB_Price_Income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -691,7 +691,7 @@
             this.mTB_Payment_Income.SelectionStart = 0;
             this.mTB_Payment_Income.ShortcutsEnabled = true;
             this.mTB_Payment_Income.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Payment_Income.TabIndex = 3;
+            this.mTB_Payment_Income.TabIndex = 2;
             this.mTB_Payment_Income.Text = "Chash";
             this.mTB_Payment_Income.UseSelectable = true;
             this.mTB_Payment_Income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -725,7 +725,7 @@
             this.mTB_Date_Income.SelectionStart = 0;
             this.mTB_Date_Income.ShortcutsEnabled = true;
             this.mTB_Date_Income.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Date_Income.TabIndex = 2;
+            this.mTB_Date_Income.TabIndex = 0;
             this.mTB_Date_Income.Text = "01.01.2018";
             this.mTB_Date_Income.UseSelectable = true;
             this.mTB_Date_Income.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -860,7 +860,7 @@
             this.mTB_Details.SelectionStart = 0;
             this.mTB_Details.ShortcutsEnabled = true;
             this.mTB_Details.Size = new System.Drawing.Size(162, 68);
-            this.mTB_Details.TabIndex = 11;
+            this.mTB_Details.TabIndex = 4;
             this.mTB_Details.Text = "Details";
             this.mTB_Details.UseSelectable = true;
             this.mTB_Details.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -898,7 +898,7 @@
             this.mTB_Dealer_Expenses.SelectionStart = 0;
             this.mTB_Dealer_Expenses.ShortcutsEnabled = true;
             this.mTB_Dealer_Expenses.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Dealer_Expenses.TabIndex = 10;
+            this.mTB_Dealer_Expenses.TabIndex = 1;
             this.mTB_Dealer_Expenses.Text = "Dealer";
             this.mTB_Dealer_Expenses.UseSelectable = true;
             this.mTB_Dealer_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -968,7 +968,7 @@
             this.mTB_Price_Expenses.SelectionStart = 0;
             this.mTB_Price_Expenses.ShortcutsEnabled = true;
             this.mTB_Price_Expenses.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Price_Expenses.TabIndex = 5;
+            this.mTB_Price_Expenses.TabIndex = 3;
             this.mTB_Price_Expenses.Text = "10,23";
             this.mTB_Price_Expenses.UseSelectable = true;
             this.mTB_Price_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1002,7 +1002,7 @@
             this.mTB_Payment_Expenses.SelectionStart = 0;
             this.mTB_Payment_Expenses.ShortcutsEnabled = true;
             this.mTB_Payment_Expenses.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Payment_Expenses.TabIndex = 3;
+            this.mTB_Payment_Expenses.TabIndex = 2;
             this.mTB_Payment_Expenses.Text = "Chash";
             this.mTB_Payment_Expenses.UseSelectable = true;
             this.mTB_Payment_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1037,7 +1037,7 @@
             this.mTB_Date_Expenses.SelectionStart = 0;
             this.mTB_Date_Expenses.ShortcutsEnabled = true;
             this.mTB_Date_Expenses.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Date_Expenses.TabIndex = 2;
+            this.mTB_Date_Expenses.TabIndex = 0;
             this.mTB_Date_Expenses.Text = "01.01.2018";
             this.mTB_Date_Expenses.UseSelectable = true;
             this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1165,7 +1165,7 @@
             this.mCB_Produkts_Unit.Location = new System.Drawing.Point(603, 3);
             this.mCB_Produkts_Unit.Name = "mCB_Produkts_Unit";
             this.mCB_Produkts_Unit.Size = new System.Drawing.Size(95, 29);
-            this.mCB_Produkts_Unit.TabIndex = 14;
+            this.mCB_Produkts_Unit.TabIndex = 4;
             this.mCB_Produkts_Unit.UseSelectable = true;
             this.mCB_Produkts_Unit.SelectedIndexChanged += new System.EventHandler(this.mCB_Produkts_Unit_SelectedIndexChanged);
             // 
@@ -1215,7 +1215,7 @@
             this.mTB_Produkts_Quantity.SelectionStart = 0;
             this.mTB_Produkts_Quantity.ShortcutsEnabled = true;
             this.mTB_Produkts_Quantity.Size = new System.Drawing.Size(94, 29);
-            this.mTB_Produkts_Quantity.TabIndex = 11;
+            this.mTB_Produkts_Quantity.TabIndex = 5;
             this.mTB_Produkts_Quantity.Text = "100";
             this.mTB_Produkts_Quantity.UseSelectable = true;
             this.mTB_Produkts_Quantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1253,7 +1253,7 @@
             this.mTB_Produkts_Dealer.SelectionStart = 0;
             this.mTB_Produkts_Dealer.ShortcutsEnabled = true;
             this.mTB_Produkts_Dealer.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Dealer.TabIndex = 10;
+            this.mTB_Produkts_Dealer.TabIndex = 1;
             this.mTB_Produkts_Dealer.Text = "Pinsch of Soil";
             this.mTB_Produkts_Dealer.UseSelectable = true;
             this.mTB_Produkts_Dealer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1323,7 +1323,7 @@
             this.mTB_Produkts_Price.SelectionStart = 0;
             this.mTB_Produkts_Price.ShortcutsEnabled = true;
             this.mTB_Produkts_Price.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Price.TabIndex = 5;
+            this.mTB_Produkts_Price.TabIndex = 3;
             this.mTB_Produkts_Price.Text = "1,00";
             this.mTB_Produkts_Price.UseSelectable = true;
             this.mTB_Produkts_Price.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1357,7 +1357,7 @@
             this.mTB_Produkts_Produkt.SelectionStart = 0;
             this.mTB_Produkts_Produkt.ShortcutsEnabled = true;
             this.mTB_Produkts_Produkt.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Produkt.TabIndex = 3;
+            this.mTB_Produkts_Produkt.TabIndex = 2;
             this.mTB_Produkts_Produkt.Text = "Veggie";
             this.mTB_Produkts_Produkt.UseSelectable = true;
             this.mTB_Produkts_Produkt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1392,7 +1392,7 @@
             this.mTB_Produkts_Date.SelectionStart = 0;
             this.mTB_Produkts_Date.ShortcutsEnabled = true;
             this.mTB_Produkts_Date.Size = new System.Drawing.Size(122, 29);
-            this.mTB_Produkts_Date.TabIndex = 2;
+            this.mTB_Produkts_Date.TabIndex = 0;
             this.mTB_Produkts_Date.Text = "01.01.2018";
             this.mTB_Produkts_Date.UseSelectable = true;
             this.mTB_Produkts_Date.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1409,7 +1409,7 @@
             this.mB_Save.Location = new System.Drawing.Point(688, 455);
             this.mB_Save.Name = "mB_Save";
             this.mB_Save.Size = new System.Drawing.Size(100, 25);
-            this.mB_Save.TabIndex = 1;
+            this.mB_Save.TabIndex = 4;
             this.mB_Save.Text = "&Save";
             this.mB_Save.UseSelectable = true;
             this.mB_Save.Click += new System.EventHandler(this.mB_Save_Tables_Click);
@@ -1420,7 +1420,7 @@
             this.mB_Add_Customer.Location = new System.Drawing.Point(264, 455);
             this.mB_Add_Customer.Name = "mB_Add_Customer";
             this.mB_Add_Customer.Size = new System.Drawing.Size(100, 25);
-            this.mB_Add_Customer.TabIndex = 2;
+            this.mB_Add_Customer.TabIndex = 0;
             this.mB_Add_Customer.Text = "&Add";
             this.mB_Add_Customer.UseSelectable = true;
             this.mB_Add_Customer.Click += new System.EventHandler(this.mB_Add_Customer_Click);
@@ -1431,7 +1431,7 @@
             this.mB_Edit_Customer.Location = new System.Drawing.Point(370, 455);
             this.mB_Edit_Customer.Name = "mB_Edit_Customer";
             this.mB_Edit_Customer.Size = new System.Drawing.Size(100, 25);
-            this.mB_Edit_Customer.TabIndex = 3;
+            this.mB_Edit_Customer.TabIndex = 1;
             this.mB_Edit_Customer.Text = "&Edit";
             this.mB_Edit_Customer.UseSelectable = true;
             this.mB_Edit_Customer.Click += new System.EventHandler(this.mB_Edit_Customer_Click);
@@ -1442,7 +1442,7 @@
             this.mB_Remove.Location = new System.Drawing.Point(582, 455);
             this.mB_Remove.Name = "mB_Remove";
             this.mB_Remove.Size = new System.Drawing.Size(100, 25);
-            this.mB_Remove.TabIndex = 4;
+            this.mB_Remove.TabIndex = 3;
             this.mB_Remove.Text = "&Remove";
             this.mB_Remove.UseSelectable = true;
             this.mB_Remove.Click += new System.EventHandler(this.mB_Remove_Click);
@@ -1453,7 +1453,7 @@
             this.metroButton1.Location = new System.Drawing.Point(476, 455);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(100, 25);
-            this.metroButton1.TabIndex = 5;
+            this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "&Cancel";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.mB_Cancel_Tables_Click);
