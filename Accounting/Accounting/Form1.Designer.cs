@@ -142,16 +142,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mTC_Accounting.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
             this.mTC_Accounting.Controls.Add(this.mTP_Customer);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
             this.mTC_Accounting.Controls.Add(this.mTP_Expenses);
-            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
             this.mTC_Accounting.Controls.Add(this.mTP_Produkts);
             this.mTC_Accounting.HotTrack = true;
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 4;
+            this.mTC_Accounting.SelectedIndex = 0;
             this.mTC_Accounting.Size = new System.Drawing.Size(769, 377);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
