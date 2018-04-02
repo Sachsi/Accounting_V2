@@ -90,7 +90,7 @@ namespace Accounting
                         foreach (var item in mlV_Products_Income.CheckedIndices)
                         {
                             string a = mlV_Products_Income.Items[Convert.ToInt32(item)].Text;
-                            obj_Income.Products = obj_Income.Products + a;
+                            obj_Income.Products = obj_Income.Products + a + ", ";
                         }
                    
                         if (db.Entry<Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)

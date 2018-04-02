@@ -100,10 +100,11 @@ namespace Accounting
             list_Produkts.Clear();
             
             list_Produkts.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
-            list_Produkts.Columns.Add("Farmer", 200, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Farmer", 180, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Produce", 150, textAlign: HorizontalAlignment.Left);
             list_Produkts.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Left);
-            list_Produkts.Columns.Add("Quatity", 100, textAlign: HorizontalAlignment.Left);
-            list_Produkts.Columns.Add("Units", 100, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Quatity", 90, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Units", 90, textAlign: HorizontalAlignment.Left);
             //list_Produkts.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
             
         }
