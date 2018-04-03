@@ -117,6 +117,9 @@
       <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50728\lib\net11\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NetDimension.WinForm.ModernUI, Version=1.0.6639.22990, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetDimension.WinForm.ModernUI.1.0.1\lib\NetDimension.WinForm.ModernUI.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>

@@ -90,7 +90,6 @@
             this.mTB_Price_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Payment_Expenses = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Date_Expenses = new MetroFramework.Controls.MetroTextBox();
-            this.mTP_Overview = new System.Windows.Forms.TabPage();
             this.mTP_Produkts = new MetroFramework.Controls.MetroTabPage();
             this.List_Produkts = new MetroFramework.Controls.MetroListView();
             this.CH_Produkts_Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -142,7 +141,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mTC_Accounting.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.mTC_Accounting.Controls.Add(this.mTP_Overview);
             this.mTC_Accounting.Controls.Add(this.mTP_Customer);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
             this.mTC_Accounting.Controls.Add(this.mTP_Expenses);
@@ -151,7 +149,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(23, 63);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 0;
+            this.mTC_Accounting.SelectedIndex = 3;
             this.mTC_Accounting.Size = new System.Drawing.Size(769, 377);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 0;
@@ -1043,14 +1041,6 @@
             this.mTB_Date_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Date_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // mTP_Overview
-            // 
-            this.mTP_Overview.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Overview.Name = "mTP_Overview";
-            this.mTP_Overview.Size = new System.Drawing.Size(761, 335);
-            this.mTP_Overview.TabIndex = 0;
-            this.mTP_Overview.Text = "Overview";
-            // 
             // mTP_Produkts
             // 
             this.mTP_Produkts.Controls.Add(this.List_Produkts);
@@ -1498,7 +1488,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl mTC_Accounting;
-        private System.Windows.Forms.TabPage mTP_Overview;
         private System.Windows.Forms.TabPage mTP_Customer;
         private MetroFramework.Controls.MetroButton mB_Save;
         private MetroFramework.Controls.MetroPanel mP_Customer;
