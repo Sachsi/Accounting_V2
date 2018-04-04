@@ -151,11 +151,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
-    <Compile Include="Database.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ucDatabase.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Database.Designer.cs">
-      <DependentUpon>Database.cs</DependentUpon>
+    <Compile Include="ucDatabase.Designer.cs">
+      <DependentUpon>ucDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="Expense.cs" />
@@ -198,8 +198,8 @@
     <Compile Include="Updater.Designer.cs">
       <DependentUpon>Updater.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Database.resx">
-      <DependentUpon>Database.cs</DependentUpon>
+    <EmbeddedResource Include="ucDatabase.resx">
+      <DependentUpon>ucDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

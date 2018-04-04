@@ -11,9 +11,9 @@ using MetroFramework;
 
 namespace Accounting
 {
-    public partial class Database : MetroFramework.Forms.MetroForm
+    public partial class ucDatabase : MetroFramework.Controls.MetroUserControl
     {
-        public Database()
+        public ucDatabase()
         {
             InitializeComponent();
         }
@@ -334,6 +334,11 @@ namespace Accounting
                 ml_Unit.Text = "g";
             else if (mCB_Produkts_Unit.SelectedIndex == 2)
                 ml_Unit.Text = "lb";
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
