@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.mP_Dashboard = new MetroFramework.Controls.MetroPanel();
+            this.mLink_Back = new MetroFramework.Controls.MetroLink();
             this.SuspendLayout();
             // 
             // mP_Dashboard
@@ -45,15 +46,27 @@
             this.mP_Dashboard.VerticalScrollbarHighlightOnWheel = false;
             this.mP_Dashboard.VerticalScrollbarSize = 10;
             // 
+            // mLink_Back
+            // 
+            this.mLink_Back.Image = global::Accounting.Properties.Resources.CircledBorderArrowLeft32;
+            this.mLink_Back.ImageSize = 32;
+            this.mLink_Back.Location = new System.Drawing.Point(23, 21);
+            this.mLink_Back.Name = "mLink_Back";
+            this.mLink_Back.Size = new System.Drawing.Size(33, 33);
+            this.mLink_Back.TabIndex = 1;
+            this.mLink_Back.UseSelectable = true;
+            this.mLink_Back.Click += new System.EventHandler(this.mLink_Back_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 623);
+            this.Controls.Add(this.mLink_Back);
             this.Controls.Add(this.mP_Dashboard);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Form_Main";
-            this.Text = "Dashboard";
+            this.Text = "        Dashboard";
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.ResumeLayout(false);
 
@@ -62,6 +75,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroPanel mP_Dashboard;
+        private MetroFramework.Controls.MetroLink mLink_Back;
     }
 }
 

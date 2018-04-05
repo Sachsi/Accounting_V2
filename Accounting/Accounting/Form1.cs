@@ -27,10 +27,11 @@ namespace Accounting
                 return _instance;
             } }
 
-        public MetroFramework.Controls.MetroPanel MetroPanel  {
+        public MetroPanel MetroPanel  {
             get { return mP_Dashboard; } set { mP_Dashboard = value; } }
 
-        //public MetroFramework.Forms.MetroForm MetroForm { get { return this; } set {  = value; } }
+        public MetroLink MetroLink {
+            get { return mLink_Back; } set { mLink_Back = value; } }
 
         public Form_Main()
         {
@@ -44,11 +45,19 @@ namespace Accounting
         private void Form_Main_Load(object sender, EventArgs e)
         {
             _instance = this;
-            ucDatabase uc = new ucDatabase();
+            ucDashboard uc = new ucDashboard();
+            //ucDatabase uc = new ucDatabase();
             uc.Dock = DockStyle.Fill;
-            
+
             mP_Dashboard.Controls.Add(uc);
+
+            mLink_Back.Visible = false;
         }
 
+        private void mLink_Back_Click(object sender, EventArgs e)
+        {
+            mLink_Back.Visible = false;
+            mP_Dashboard.Controls["ucDashboard"].BringToFront();
+        }
     }
 }
