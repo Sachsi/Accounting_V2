@@ -198,11 +198,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProduktsProperties\Units.cs" />
     <Compile Include="TabControl.cs" />
+    <Compile Include="ucOverview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOverview.Designer.cs">
+      <DependentUpon>ucOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Updater.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Updater.Designer.cs">
       <DependentUpon>Updater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usSetting.Designer.cs">
+      <DependentUpon>usSetting.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
@@ -238,8 +250,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucOverview.resx">
+      <DependentUpon>ucOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Updater.resx">
       <DependentUpon>Updater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usSetting.resx">
+      <DependentUpon>usSetting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Accounting_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />
