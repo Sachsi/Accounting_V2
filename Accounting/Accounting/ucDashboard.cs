@@ -26,11 +26,10 @@ namespace Accounting
         {
             Form_Main.Instance.MetroLink.Visible = true;
 
-            ucDatabase uc = new ucDatabase();
-            uc.Dock = DockStyle.Fill;
-
             if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucDatabase"))
             {
+                ucDatabase uc = new ucDatabase();
+                uc.Dock = DockStyle.Fill;
                 Form_Main.Instance.MetroPanel.Controls.Add(uc);   
             }
             Form_Main.Instance.MetroPanel.Controls["ucDatabase"].BringToFront();
@@ -40,11 +39,10 @@ namespace Accounting
         {
             Form_Main.Instance.MetroLink.Visible = true;
 
-            ucOverview uc = new ucOverview();
-            uc.Dock = DockStyle.Fill;
-
             if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
             {
+                ucOverview uc = new ucOverview();
+                uc.Dock = DockStyle.Fill;
                 Form_Main.Instance.MetroPanel.Controls.Add(uc);
             }
             Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
@@ -54,11 +52,10 @@ namespace Accounting
         {
             Form_Main.Instance.MetroLink.Visible = true;
 
-            ucOverview uc = new ucOverview();
-            uc.Dock = DockStyle.Fill;
-
             if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
             {
+                ucOverview uc = new ucOverview();
+                uc.Dock = DockStyle.Fill;
                 Form_Main.Instance.MetroPanel.Controls.Add(uc);
             }
             Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
@@ -68,11 +65,10 @@ namespace Accounting
         {
             Form_Main.Instance.MetroLink.Visible = true;
 
-            ucSetting uc = new ucSetting();
-            uc.Dock = DockStyle.Fill;
-
             if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
             {
+                ucSetting uc = new ucSetting();
+                uc.Dock = DockStyle.Fill;
                 Form_Main.Instance.MetroPanel.Controls.Add(uc);
             }
             Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();

@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // usSetting
+            // ucSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "usSetting";
-            this.Size = new System.Drawing.Size(792, 521);
+            this.Name = "ucSetting";
+            this.Size = new System.Drawing.Size(835, 536);
             this.ResumeLayout(false);
 
         }
