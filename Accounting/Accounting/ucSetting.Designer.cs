@@ -1,6 +1,6 @@
 ﻿namespace Accounting
 {
-    partial class usSetting
+    partial class ucSetting
     {
         /// <summary> 
         /// Erforderliche Designervariable.

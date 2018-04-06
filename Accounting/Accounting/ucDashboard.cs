@@ -29,9 +29,53 @@ namespace Accounting
             ucDatabase uc = new ucDatabase();
             uc.Dock = DockStyle.Fill;
 
-            Form_Main.Instance.MetroPanel.Controls.Add(uc);
+            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucDatabase"))
+            {
+                Form_Main.Instance.MetroPanel.Controls.Add(uc);   
+            }
             Form_Main.Instance.MetroPanel.Controls["ucDatabase"].BringToFront();
+        }
 
+        private void mT_Overview_Click(object sender, EventArgs e)
+        {
+            Form_Main.Instance.MetroLink.Visible = true;
+
+            ucOverview uc = new ucOverview();
+            uc.Dock = DockStyle.Fill;
+
+            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
+            {
+                Form_Main.Instance.MetroPanel.Controls.Add(uc);
+            }
+            Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
+        }
+
+        private void mTile_Search_Click(object sender, EventArgs e)
+        {
+            Form_Main.Instance.MetroLink.Visible = true;
+
+            ucOverview uc = new ucOverview();
+            uc.Dock = DockStyle.Fill;
+
+            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
+            {
+                Form_Main.Instance.MetroPanel.Controls.Add(uc);
+            }
+            Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
+        }
+
+        private void mTile_Settings_Click(object sender, EventArgs e)
+        {
+            Form_Main.Instance.MetroLink.Visible = true;
+
+            ucSetting uc = new ucSetting();
+            uc.Dock = DockStyle.Fill;
+
+            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
+            {
+                Form_Main.Instance.MetroPanel.Controls.Add(uc);
+            }
+            Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
         }
     }
 }

@@ -210,11 +210,11 @@
     <Compile Include="Updater.Designer.cs">
       <DependentUpon>Updater.cs</DependentUpon>
     </Compile>
-    <Compile Include="usSetting.cs">
+    <Compile Include="ucSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="usSetting.Designer.cs">
-      <DependentUpon>usSetting.cs</DependentUpon>
+    <Compile Include="ucSetting.Designer.cs">
+      <DependentUpon>ucSetting.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
@@ -256,8 +256,8 @@
     <EmbeddedResource Include="Updater.resx">
       <DependentUpon>Updater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usSetting.resx">
-      <DependentUpon>usSetting.cs</DependentUpon>
+    <EmbeddedResource Include="ucSetting.resx">
+      <DependentUpon>ucSetting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Accounting_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Accounting
 {
-    public partial class usSetting : MetroFramework.Controls.MetroUserControl
+    public partial class ucSetting : MetroFramework.Controls.MetroUserControl
     {
-        public usSetting()
+        public ucSetting()
         {
             InitializeComponent();
         }
