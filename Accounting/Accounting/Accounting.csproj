@@ -266,6 +266,7 @@
     <None Include="Income.datasource">
       <SubType>Designer</SubType>
     </None>
+    <None Include="MetroFramework.Properties.Resources.datasource" />
     <None Include="packages.config" />
     <None Include="Produkt.datasource" />
     <None Include="Properties\Settings.settings">

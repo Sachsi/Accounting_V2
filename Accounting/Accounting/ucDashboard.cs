@@ -65,13 +65,13 @@ namespace Accounting
         {
             Form_Main.Instance.MetroLink.Visible = true;
 
-            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
+            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucSetting"))
             {
                 ucSetting uc = new ucSetting();
                 uc.Dock = DockStyle.Fill;
                 Form_Main.Instance.MetroPanel.Controls.Add(uc);
             }
-            Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
+            Form_Main.Instance.MetroPanel.Controls["ucSetting"].BringToFront();
         }
     }
 }

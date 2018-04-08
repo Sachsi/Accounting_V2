@@ -31,18 +31,18 @@ namespace Accounting
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 expensesBindingSource.DataSource = db.Expenses.ToList();
                 produktBindingSource.DataSource = db.Produkts.ToList();
+
+
+                ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
+                if (db.Incomes.Count() != 0)
+                    TabControl.RefreshIncome(List_Income);
+                if (db.Customers.Count() != 0)
+                    TabControl.RefreshCustomer(List_Customer);
+                if (db.Expenses.Count() != 0)
+                    TabControl.RefreshExpenses(List_Expenses);
+                if (db.Produkts.Count() != 0)
+                    TabControl.RefreshProdukt(List_Produkts, mlV_Products_Income);
             }
-
-            ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
-            if (incomeBindingSource.Count != 0)
-                TabControl.RefreshIncome(List_Income);
-            if (customerBindingSource.Count != 0)
-                TabControl.RefreshCustomer(List_Customer);
-            if (expensesBindingSource.Count != 0)
-                TabControl.RefreshExpenses(List_Expenses);
-            if (produktBindingSource.Count != 0)
-                TabControl.RefreshProdukt(List_Produkts, mlV_Products_Income);
-
             mP_Customer.Enabled = false;
             mP_Income.Enabled = false;
             mP_Expenses.Enabled = false;
@@ -337,6 +337,11 @@ namespace Accounting
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mTB_Payment_Expenses_Click(object sender, EventArgs e)
         {
 
         }
