@@ -151,6 +151,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="Migrations\201804102005452_AllTables.cs" />
+    <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
+      <DependentUpon>201804102005452_AllTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804102017399_changedTypeUnit.cs" />
+    <Compile Include="Migrations\201804102017399_changedTypeUnit.Designer.cs">
+      <DependentUpon>201804102017399_changedTypeUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,27 +181,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Income.cs" />
-    <Compile Include="Migrations\201801072138383_new.cs" />
-    <Compile Include="Migrations\201801072138383_new.Designer.cs">
-      <DependentUpon>201801072138383_new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802111655090_addExpenses.cs" />
-    <Compile Include="Migrations\201802111655090_addExpenses.Designer.cs">
-      <DependentUpon>201802111655090_addExpenses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802191812003_addProdukts.cs" />
-    <Compile Include="Migrations\201802191812003_addProdukts.Designer.cs">
-      <DependentUpon>201802191812003_addProdukts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802201947209_addUnitColum.cs" />
-    <Compile Include="Migrations\201802201947209_addUnitColum.Designer.cs">
-      <DependentUpon>201802201947209_addUnitColum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803182108221_IncomeExpensas.cs" />
-    <Compile Include="Migrations\201803182108221_IncomeExpensas.Designer.cs">
-      <DependentUpon>201803182108221_IncomeExpensas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,6 +204,12 @@
     <Compile Include="ucSetting.Designer.cs">
       <DependentUpon>ucSetting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\201804102005452_AllTables.resx">
+      <DependentUpon>201804102005452_AllTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804102017399_changedTypeUnit.resx">
+      <DependentUpon>201804102017399_changedTypeUnit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,21 +218,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801072138383_new.resx">
-      <DependentUpon>201801072138383_new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802111655090_addExpenses.resx">
-      <DependentUpon>201802111655090_addExpenses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802191812003_addProdukts.resx">
-      <DependentUpon>201802191812003_addProdukts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802201947209_addUnitColum.resx">
-      <DependentUpon>201802201947209_addUnitColum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803182108221_IncomeExpensas.resx">
-      <DependentUpon>201803182108221_IncomeExpensas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

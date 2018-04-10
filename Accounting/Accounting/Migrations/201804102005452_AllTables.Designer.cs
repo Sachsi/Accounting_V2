@@ -7,13 +7,13 @@ namespace Accounting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class _new : IMigrationMetadata
+    public sealed partial class AllTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_new));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AllTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801072138383_new"; }
+            get { return "201804102005452_AllTables"; }
         }
         
         string IMigrationMetadata.Source

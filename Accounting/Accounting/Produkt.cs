@@ -36,7 +36,7 @@
         public List<string> Units { get { return new List<string>() { "Piece", "Gramm", "Pound", "Bunch" }; } }
 
         [Column("Quantity")]
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         [NotMapped]
         public int ObjectState { get; set; }
