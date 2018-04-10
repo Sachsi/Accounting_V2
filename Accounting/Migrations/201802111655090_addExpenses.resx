@@ -117,73 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="mTC_Accounting.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mTP_Customer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mP_Customer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="List_Customer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mTP_Income.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="List_Income.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mP_Income.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mTP_Expenses.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="List_Expenses.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mP_Expenses.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="produktBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>13, 10</value>
-  </metadata>
-  <metadata name="mP_Customer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="customerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>322, 15</value>
-  </metadata>
-  <metadata name="List_Customer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="List_Income.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mP_Income.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="incomeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>490, 19</value>
-  </metadata>
-  <metadata name="incomeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>490, 19</value>
-  </metadata>
-  <metadata name="List_Expenses.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mP_Expenses.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="expensesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>658, 19</value>
-  </metadata>
-  <metadata name="unitsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>176, 12</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>75</value>
-  </metadata>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
+  </data>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>

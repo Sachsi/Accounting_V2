@@ -1,4 +1,4 @@
-﻿namespace Accounting
+namespace Accounting
 {
     using System;
     using System.Collections.Generic;
@@ -6,40 +6,34 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Produkts")]
-    public partial class Produkt
+    [Table("Expanses")]
+    public partial class Expense
     {
         public int Id { get; set; }
 
         [Column("Date")]
         [DataType(DataType.Date)]
-        public DateTime  Date { get; set; }
+        public DateTime Date { get; set; }
 
-        [Column("Farmer")]
+        [Column("Dealer")]
         [DataType(DataType.Text)]
         [StringLength(30)]
-        public string Farmer { get; set; }
+        public string Dealer { get; set; }
 
-        [Column("Produce")]
+        [Column("Payment")]
         [DataType(DataType.Text)]
-        [StringLength(20)]
-        public string Produce { get; set; }
+        [StringLength(10)]
+        public string Payment { get; set; }
 
         [Column("Price")]
         [DataType(DataType.Currency)]
         public double Price { get; set; }
 
-        [Column("Unit")]
-        public int Unit { get; set; }
-
-        [NotMapped]
-        public List<string> Units { get { return new List<string>() { "Piece", "Gramm", "Pound", "Bunch" }; } }
-
-        [Column("Quantity")]
-        public int Quantity { get; set; }
+        [Column("Details")]
+        [DataType(DataType.Text)]
+        public string Details { get; set; } 
 
         [NotMapped]
         public int ObjectState { get; set; }
-
     }
 }
