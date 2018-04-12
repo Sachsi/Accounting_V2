@@ -13,6 +13,19 @@ namespace Accounting
 {
     public partial class ucDatabase : MetroFramework.Controls.MetroUserControl
     {
+        static ucDatabase _instance;
+
+
+        public static ucDatabase Instance{
+            get { 
+                    if (_instance == null)
+                {
+                    _instance = new ucDatabase();
+                }
+                    return _instance;
+            }
+            }
+
         public ucDatabase()
         {
             InitializeComponent();
@@ -25,6 +38,8 @@ namespace Accounting
         /// <param name="e"></param>
         private void Database_Load(object sender, EventArgs e)
         {
+            _instance = this;
+
             using (DatabaseContext db = new DatabaseContext())
             {
                 customerBindingSource.DataSource = db.Customers.ToList();

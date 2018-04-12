@@ -19,7 +19,22 @@ namespace Accounting
 
         private void ucDashboard_Load(object sender, EventArgs e)
         {
+            ucDatabase ucDatabase = new ucDatabase();
+            ucDatabase.Dock = DockStyle.Fill;
+            Form_Main.Instance.MetroPanel.Controls.Add(ucDatabase);
 
+            ucOverview ucOverview = new ucOverview();
+            ucOverview.Dock = DockStyle.Fill;
+            Form_Main.Instance.MetroPanel.Controls.Add(ucOverview);
+
+            ucSearch ucSearch = new ucSearch();
+            ucOverview.Dock = DockStyle.Fill;
+            Form_Main.Instance.MetroPanel.Controls.Add(ucSearch);
+
+            ///this user Control has to be the last because of user settings.
+            ucSetting ucSetting = new ucSetting();
+            ucSetting.Dock = DockStyle.Fill;
+            Form_Main.Instance.MetroPanel.Controls.Add(ucSetting);
         }
 
         private void mTile_Database_Click(object sender, EventArgs e)
@@ -52,13 +67,13 @@ namespace Accounting
         {
             Form_Main.Instance.MetroLink.Visible = true;
 
-            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucOverview"))
+            if (!Form_Main.Instance.MetroPanel.Controls.ContainsKey("ucSearch"))
             {
-                ucOverview uc = new ucOverview();
+                ucSearch uc = new ucSearch();
                 uc.Dock = DockStyle.Fill;
                 Form_Main.Instance.MetroPanel.Controls.Add(uc);
             }
-            Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
+            Form_Main.Instance.MetroPanel.Controls["ucSearch"].BringToFront();
         }
 
         private void mTile_Settings_Click(object sender, EventArgs e)

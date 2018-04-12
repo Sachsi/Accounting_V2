@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Documents\Visual Studio 2017\puplish\Application Files\</PublishUrl>
+    <PublishUrl>D:\Documents\Visual Studio 2017\GitRepository\Accounting\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -40,7 +40,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -192,6 +192,12 @@
     <Compile Include="ucOverview.Designer.cs">
       <DependentUpon>ucOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSearch.Designer.cs">
+      <DependentUpon>ucSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Updater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     <EmbeddedResource Include="ucOverview.resx">
       <DependentUpon>ucOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucSearch.resx">
+      <DependentUpon>ucSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Updater.resx">
       <DependentUpon>Updater.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,8 +274,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
-    <None Include="Resources\settings128.png" />
     <None Include="Resources\pulse-box128.png" />
+    <None Include="Resources\pulse-box64.png" />
+    <None Include="Resources\settings128.png" />
     <None Include="Resources\CircledBorderArrowLeft32.png" />
     <None Include="Resources\database_icon64.png" />
     <None Include="Resources\AppListIcon.targetsize-64.png" />

@@ -66,7 +66,7 @@
             this.Controls.Add(this.mP_Dashboard);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Form_Main";
-            this.Text = "        Dashboard";
+            this.Text = "        Accounting";
             this.Load += new System.EventHandler(this.Form_Main_Load);
             this.ResumeLayout(false);
 
