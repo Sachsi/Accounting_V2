@@ -24,6 +24,9 @@ namespace Accounting
         public int HorseBarn { get { return horseBarn; } private set {; } }
         private int horseBarn;
 
+        public double IncomeSum { get { return incomeSum; } set { incomeSum = value; } }
+        private double incomeSum;
+
         public ucOverview()
         {
             InitializeComponent();
@@ -31,6 +34,24 @@ namespace Accounting
 
         private void ucOverview_Load(object sender, EventArgs e)
         {
+        }
+
+        private void Timer_Overview_Tick(object sender, EventArgs e)
+        {
+            Count_CSA_Customer();
+            mL_CSA_Customer.Text = "CSA Customer: " + csaCustomer.ToString();
+
+            Count_Nieghtbarhood();
+            mL_Nieghtbarhood.Text = "Nieghtbarhood: " + nieghtbarhood.ToString();
+
+            Count_HorseBarn();
+            mL_HorseBarn.Text = "Horse Barn: " + horseBarn.ToString();
+
+            Count_Customer();
+            mL_Customer.Text = "Customer: " + customer.ToString();
+
+            Sum_Income();
+            mL_SumIncome.Text = "Income " + DateTime.Now.Year.ToString() + ": " + incomeSum.ToString("c", ucSetting.CurrencyDefault);
         }
 
         private void Count_HorseBarn()
@@ -71,8 +92,6 @@ namespace Accounting
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                Customer obj = new Customer();
-
                 customer = 0;
 
                 var result = db.Customers.Select(c => c.Id >= 0 );
@@ -88,7 +107,6 @@ namespace Accounting
         {
             using (DatabaseContext db = new DatabaseContext())
             {
-                Customer obj = new Customer();
 
                 nieghtbarhood = 0;
 
@@ -101,19 +119,20 @@ namespace Accounting
             }
         }
 
-        private void Timer_Overview_Tick(object sender, EventArgs e)
+        private void Sum_Income()
         {
-            Count_CSA_Customer();
-            mL_CSA_Customer.Text = "CSA Customer: " + csaCustomer.ToString();
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                var sumIncome = db.Incomes.ToList().Where(c => c.Date.Year == DateTime.Now.Year);
 
-            Count_Nieghtbarhood();
-            mL_Nieghtbarhood.Text = "Nieghtbarhood: " + nieghtbarhood.ToString();
+                incomeSum = 0;
 
-            Count_HorseBarn();
-            mL_HorseBarn.Text = "Horse Barn: " + horseBarn.ToString();
-
-            Count_Customer();
-            mL_Customer.Text = "Customer: " + customer.ToString();
+                foreach (var item in sumIncome)
+                {
+                    incomeSum += item.Price;
+                }
+                
+            }
         }
     }
 }

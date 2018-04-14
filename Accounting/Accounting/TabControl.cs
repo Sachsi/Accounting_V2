@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace Accounting
         {
             using (DatabaseContext Db = new DatabaseContext())
             {
-                
+                ClearTableCustomer(listview);
                 var list = Db.Customers.ToList();
                 listview.Font = tablefont;
 
@@ -41,13 +42,31 @@ namespace Accounting
             }
         }
         /// <summary>
+        /// cleared the whole table content of table Customer and create 6 new columns
+        /// </summary>
+        /// <param name="list_Customer"></param>
+        private static void ClearTableCustomer(MetroListView list_Customer)
+        {
+            list_Customer.Clear();
+
+            list_Customer.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("Full Name", 120, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("E-Mail Address", 150, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("Phone Number", 150, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("CSA", 90, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("Neighbarhood", 90, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("Horse Barn", 90, textAlign: HorizontalAlignment.Left);
+        }
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="listview"></param>
         public static void RefreshIncome(MetroListView listview)
         {
+            
             using (DatabaseContext Db = new DatabaseContext())
             {
+                ClearTableIncome(listview);
                 var list = Db.Incomes.ToList();
                 listview.Font = tablefont;
 
@@ -63,11 +82,27 @@ namespace Accounting
                         b.SubItems.Add("Error");
                     }
                     b.SubItems.Add(c.Payment);
-                    b.SubItems.Add(c.Price.ToString("c"));
+                    b.SubItems.Add(c.Price.ToString("c",ucSetting.CurrencyDefault));
                     b.SubItems.Add(c.Products);
                     listview.Items.Add(b);
                 }
             }
+        }
+        /// <summary>
+        /// cleared the whole table content of table Income and create 5 new columns
+        /// </summary>
+        /// <param name="list_Income"></param>
+        private static void ClearTableIncome(MetroListView list_Income)
+        {
+            list_Income.Clear();
+
+            list_Income.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
+            list_Income.Columns.Add("Full Name", 180, textAlign: HorizontalAlignment.Left);
+            list_Income.Columns.Add("Payment", 150, textAlign: HorizontalAlignment.Left);
+            list_Income.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Left);
+            list_Income.Columns.Add("Products", 200, textAlign: HorizontalAlignment.Left);
+            //list_Produkts.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
+
         }
 
         internal static void RefreshProdukt(MetroListView list_Produkts, MetroListView selected_Produkts)
@@ -86,15 +121,27 @@ namespace Accounting
                     ListViewItem listItems = new ListViewItem(item.Date.ToLongDateString());
                     listItems.SubItems.Add(item.Farmer);
                     listItems.SubItems.Add(item.Produce);
-                    listItems.SubItems.Add(item.Price.ToString("c"));
+                    listItems.SubItems.Add(item.Price.ToString("c",ucSetting.CurrencyDefault));
                     listItems.SubItems.Add(item.Quantity.ToString());
-                    listItems.SubItems.Add(item.Units[item.Unit]);
+                    try
+                    {
+                        listItems.SubItems.Add(item.Units[item.Unit]);
+                    }
+                    catch (Exception)
+                    {
+                        item.Unit = 0;
+                        listItems.SubItems.Add(item.Units[item.Unit]);
+                    }
                     list_Produkts.Items.Add(listItems);
                     selected_Produkts.Items.Add(item.Produce);
                 }
             }
         }
 
+        /// <summary>
+        /// cleared the whole table content of table Produkts and create 6 new columns
+        /// </summary>
+        /// <param name="list_Produkts"></param>
         private static void ClearTableProdukts(MetroListView list_Produkts)
         {
             list_Produkts.Clear();
@@ -103,7 +150,7 @@ namespace Accounting
             list_Produkts.Columns.Add("Farmer", 180, textAlign: HorizontalAlignment.Left);
             list_Produkts.Columns.Add("Produce", 150, textAlign: HorizontalAlignment.Left);
             list_Produkts.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Left);
-            list_Produkts.Columns.Add("Quatity", 90, textAlign: HorizontalAlignment.Left);
+            list_Produkts.Columns.Add("Quantity", 90, textAlign: HorizontalAlignment.Left);
             list_Produkts.Columns.Add("Units", 90, textAlign: HorizontalAlignment.Left);
             //list_Produkts.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.ColumnContent);
             
@@ -117,6 +164,7 @@ namespace Accounting
         {
             using (DatabaseContext db = new DatabaseContext())
             {
+                ClearTableExpenses(list_Expenses);
                 var list = db.Expenses.ToList();
                 list_Expenses.Font = tablefont;
                 foreach (var item in list)
@@ -124,13 +172,27 @@ namespace Accounting
                     ListViewItem listItems = new ListViewItem(item.Date.ToShortDateString());
                     listItems.SubItems.Add(item.Dealer);
                     listItems.SubItems.Add(item.Payment);
-                    listItems.SubItems.Add(item.Price.ToString("c"));
+                    listItems.SubItems.Add(item.Price.ToString("c",ucSetting.CurrencyDefault));
                     listItems.SubItems.Add(item.Details.ToString());
                     list_Expenses.Items.Add(listItems);
                 }
             }
         }
 
+        /// <summary>
+        /// cleared the whole table content of table Expenses and create 5 new columns
+        /// </summary>
+        /// <param name="list_Expenses"></param>
+        private static void ClearTableExpenses(MetroListView list_Expenses)
+        {
+            list_Expenses.Clear();
+
+            list_Expenses.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
+            list_Expenses.Columns.Add("Dealer", 180, textAlign: HorizontalAlignment.Left);
+            list_Expenses.Columns.Add("Payment", 150, textAlign: HorizontalAlignment.Left);
+            list_Expenses.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Left);
+            list_Expenses.Columns.Add("Details", 200, textAlign: HorizontalAlignment.Left);
+        }
         /// <summary>
         /// 
         /// </summary>

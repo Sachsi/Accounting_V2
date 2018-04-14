@@ -64,6 +64,8 @@
             this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
             this.mL_Theme = new MetroFramework.Controls.MetroLabel();
             this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
+            this.mCB_Currency = new MetroFramework.Controls.MetroComboBox();
+            this.mL_Currency = new MetroFramework.Controls.MetroLabel();
             this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
             this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
             this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
@@ -87,7 +89,7 @@
             this.mTC_Settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mTC_Settings.Location = new System.Drawing.Point(0, 0);
             this.mTC_Settings.Name = "mTC_Settings";
-            this.mTC_Settings.SelectedIndex = 0;
+            this.mTC_Settings.SelectedIndex = 1;
             this.mTC_Settings.Size = new System.Drawing.Size(835, 536);
             this.mTC_Settings.TabIndex = 0;
             this.mTC_Settings.UseSelectable = true;
@@ -440,6 +442,8 @@
             // 
             // mTP_Options
             // 
+            this.mTP_Options.Controls.Add(this.mCB_Currency);
+            this.mTP_Options.Controls.Add(this.mL_Currency);
             this.mTP_Options.Controls.Add(this.mTB_BusinessName);
             this.mTP_Options.Controls.Add(this.mL_BusinessName);
             this.mTP_Options.HorizontalScrollbarBarColor = true;
@@ -453,6 +457,30 @@
             this.mTP_Options.VerticalScrollbarBarColor = true;
             this.mTP_Options.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Options.VerticalScrollbarSize = 10;
+            // 
+            // mCB_Currency
+            // 
+            this.mCB_Currency.FormattingEnabled = true;
+            this.mCB_Currency.ItemHeight = 23;
+            this.mCB_Currency.Items.AddRange(new object[] {
+            "$",
+            "€",
+            "Yan"});
+            this.mCB_Currency.Location = new System.Drawing.Point(194, 54);
+            this.mCB_Currency.Name = "mCB_Currency";
+            this.mCB_Currency.Size = new System.Drawing.Size(121, 29);
+            this.mCB_Currency.TabIndex = 5;
+            this.mCB_Currency.UseSelectable = true;
+            this.mCB_Currency.SelectedIndexChanged += new System.EventHandler(this.mCB_Currency_SelectedIndexChanged);
+            // 
+            // mL_Currency
+            // 
+            this.mL_Currency.AutoSize = true;
+            this.mL_Currency.Location = new System.Drawing.Point(194, 32);
+            this.mL_Currency.Name = "mL_Currency";
+            this.mL_Currency.Size = new System.Drawing.Size(64, 19);
+            this.mL_Currency.TabIndex = 4;
+            this.mL_Currency.Text = "Currency:";
             // 
             // mTB_BusinessName
             // 
@@ -577,5 +605,7 @@
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroTextBox mTB_BusinessName;
         private MetroFramework.Controls.MetroLabel mL_BusinessName;
+        private MetroFramework.Controls.MetroComboBox mCB_Currency;
+        private MetroFramework.Controls.MetroLabel mL_Currency;
     }
 }
