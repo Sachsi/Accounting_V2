@@ -115,6 +115,7 @@ namespace Accounting
         {
             if ((List_Customer.Visible == true) && (List_Customer.SelectedItems.Count > 0))
             {
+                customerBindingSource.Position = List_Customer.SelectedItems[0].Index;
                 mP_Customer.Enabled = true;
                 mTB_Date_Customer.Focus();
                 Customer obj = customerBindingSource.Current as Customer;
@@ -123,9 +124,28 @@ namespace Accounting
             }
             else if ((List_Income.Visible == true) && (List_Income.SelectedItems.Count > 0))
             {
+                incomeBindingSource.Position = List_Income.SelectedItems[0].Index;
                 mP_Income.Enabled = true;
                 mTB_Date_Income.Focus();
                 Income obj = incomeBindingSource.Current as Income;
+                if (obj != null)
+                    obj.ObjectState = 2;
+            }
+            else if ((List_Expenses.Visible == true) && (List_Expenses.SelectedItems.Count > 0))
+            {
+                expensesBindingSource.Position = List_Expenses.SelectedItems[0].Index;
+                mP_Expenses.Enabled = true;
+                mTB_Date_Expenses.Focus();
+                Expense obj = expensesBindingSource.Current as Expense;
+                if (obj != null)
+                    obj.ObjectState = 2;
+            }
+            else if ((List_Produkts.Visible == true) && (List_Produkts.SelectedItems.Count > 0))
+            {
+                produktBindingSource.Position = List_Produkts.SelectedItems[0].Index;
+                mP_Produkts.Enabled = true;
+                mTB_Produkts_Date.Focus();
+                Produkt obj = produktBindingSource.Current as Produkt;
                 if (obj != null)
                     obj.ObjectState = 2;
             }
@@ -261,7 +281,7 @@ namespace Accounting
                         db.SaveChanges();
                         mP_Customer.Enabled = false;
                         obj_Customer.ObjectState = 0;
-                        TabControl.AddCustomer(List_Customer, obj_Customer);
+                        TabControl.RefreshCustomer(List_Customer);
                     }
                 }
                 else if (mTC_Accounting.SelectedTab == mTP_Income)
@@ -270,7 +290,16 @@ namespace Accounting
 
                     if (obj_Income != null)
                     {
-                        obj_Income.Customer = db.Customers.First(c => c.Id == obj_Income.Customer_Id);
+                        try
+                        {
+                            obj_Income.Customer = db.Customers.First(c => c.Id == obj_Income.Customer_Id);
+                        }
+                        catch (Exception)
+                        {
+                            MetroMessageBox.Show(this, "Pleaser enter one Cutomer Name \n\r " + e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        
 
                         foreach (var item in mlV_Products_Income.CheckedIndices)
                         {
@@ -288,7 +317,7 @@ namespace Accounting
                         db.SaveChanges();
                         mP_Income.Enabled = false;
                         obj_Income.ObjectState = 0;
-                        TabControl.AddIncome(List_Income, obj_Income);
+                        TabControl.RefreshIncome(List_Income);
                         return;
                     }
                 }
@@ -308,13 +337,19 @@ namespace Accounting
                         db.SaveChanges();
                         mP_Expenses.Enabled = false;
                         obj_Expense.ObjectState = 0;
-                        TabControl.AddExpenses(List_Expenses, obj_Expense);
+                        TabControl.RefreshExpenses(List_Expenses);
                         return;
                     }
                 }
                 else if (mTC_Accounting.SelectedTab == mTP_Produkts)
                 {
                     Produkt obj_Produkt = produktBindingSource.Current as Produkt;
+
+                    if ((obj_Produkt.Unit < 0) &&(obj_Produkt.Unit > obj_Produkt.Units.Count)  )
+                    {
+                        MetroMessageBox.Show(this, "Pleaser selevt one Unit\n\r " + e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     if (obj_Produkt != null)
                     {

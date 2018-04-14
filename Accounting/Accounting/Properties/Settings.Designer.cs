@@ -70,5 +70,16 @@ namespace Accounting.Properties {
                 this["FirstStart"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Globalization.CultureInfo Currency {
+            get {
+                return ((global::System.Globalization.CultureInfo)(this["Currency"]));
+            }
+            set {
+                this["Currency"] = value;
+            }
+        }
     }
 }

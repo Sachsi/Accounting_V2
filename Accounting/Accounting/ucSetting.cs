@@ -8,12 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Accounting.Properties;
+using System.Globalization;
+using MetroFramework;
 
 namespace Accounting
 {
+    /// <summary>
+    /// Define cultures whose formatting conventions are to be used.
+    /// </summary>
     public partial class ucSetting : MetroFramework.Controls.MetroUserControl
     {
-        
+        public static CultureInfo CurrencyDefault
+        {
+            get { return currencyDefault; }
+            set
+            {
+                currencyDefault = value;
+            }
+        }
+        static CultureInfo currencyDefault;
+
+        // Define cultures whose formatting conventions are to be used.
+        static CultureInfo[] cultures = {CultureInfo.CreateSpecificCulture("en-US"),
+                          CultureInfo.CreateSpecificCulture("fr-FR"),
+                          CultureInfo.CreateSpecificCulture("ja-JP"),
+                          };
 
         public ucSetting()
         {
@@ -23,6 +42,10 @@ namespace Accounting
             mCB_Theme.SelectedIndex = Settings.Default["Theme"].GetHashCode();
             mCB_Style.SelectedIndex = Settings.Default["Style"].GetHashCode();
             mTB_BusinessName.Text = Settings.Default["BusinessName"].ToString();
+
+            currencyDefault = (System.Globalization.CultureInfo)Settings.Default["Currency"];
+
+            //mCB_Currency.Text = Settings.Default["Currency"].ToString();
             
         }
 
@@ -44,20 +67,30 @@ namespace Accounting
 
         private void ucSetting_Load(object sender, EventArgs e)
         {
-            //metroStyleManager1.Owner = this;
-            //metroStyleManager1.Style = (MetroFramework.MetroColorStyle)Settings.Default["Style"];
-            //metroStyleManager1.Theme = (MetroFramework.MetroThemeStyle)Settings.Default["Theme"];
-
-            //metroStyleManager1.Owner = ucDatabase.Instance;
-            //metroStyleManager1.Style = (MetroFramework.MetroColorStyle)Settings.Default["Style"].GetHashCode();
-            //metroStyleManager1.Theme = (MetroFramework.MetroThemeStyle)Settings.Default["Theme"].GetHashCode();
         }
 
         private void mTB_BusinessName_TextChanged(object sender, EventArgs e)
         {
+            if (!(mTB_BusinessName.Text == Settings.Default["BusinessName"].ToString()))
+                MessageBox.Show("Please restart the Application and do some entries!", "Info",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             Form_Main.Instance.Text = "       Accounting of "+ mTB_BusinessName.Text;
             Settings.Default["BusinessName"] = mTB_BusinessName.Text;
             Settings.Default.Save();
+
+
+        }
+
+        private void mCB_Currency_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!(mCB_Currency.Text == Settings.Default["Currency"].ToString()))
+                MessageBox.Show("Please restart the Application and do some entries!", "Info",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Settings.Default["Currency"] = cultures[mCB_Currency.SelectedIndex];
+            Settings.Default.Save();
+           
         }
     }
 }
