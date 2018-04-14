@@ -71,26 +71,31 @@ namespace Accounting
 
         private void mTB_BusinessName_TextChanged(object sender, EventArgs e)
         {
-            if (!(mTB_BusinessName.Text == Settings.Default["BusinessName"].ToString()))
-                MessageBox.Show("Please restart the Application and do some entries!", "Info",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            if (Settings.Default["BusinessName"].ToString() == mTB_BusinessName.Text.ToString())
+            {
+                return;
+            }
             Form_Main.Instance.Text = "       Accounting of "+ mTB_BusinessName.Text;
             Settings.Default["BusinessName"] = mTB_BusinessName.Text;
             Settings.Default.Save();
 
-
+            MessageInfo();
         }
 
         private void mCB_Currency_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!(mCB_Currency.Text == Settings.Default["Currency"].ToString()))
-                MessageBox.Show("Please restart the Application and do some entries!", "Info",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            if (Settings.Default["Currency"] == cultures[mCB_Currency.SelectedIndex])
+            {
+                return;
+            }
             Settings.Default["Currency"] = cultures[mCB_Currency.SelectedIndex];
             Settings.Default.Save();
-           
+            MessageInfo();
         }
+
+        private void MessageInfo()
+        {
+            mL_Setting_Info.Text = "Plaese restart your Application for settings to take effect!";
+         }
     }
 }
