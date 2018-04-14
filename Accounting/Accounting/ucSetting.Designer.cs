@@ -48,15 +48,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.mCB_Style = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
-            this.mL_Theme = new MetroFramework.Controls.MetroLabel();
-            this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
-            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
-            this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,15 +59,24 @@
             this.incomesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mCB_Style = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
+            this.mL_Theme = new MetroFramework.Controls.MetroLabel();
+            this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
+            this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
+            this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
+            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.mTC_Settings.SuspendLayout();
             this.mTP_Design.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.mTP_Options.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Settings
@@ -314,6 +314,70 @@
             this.metroGrid1.Size = new System.Drawing.Size(725, 115);
             this.metroGrid1.TabIndex = 2;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            // 
+            // eMailDataGridViewTextBoxColumn
+            // 
+            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "E_Mail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "E_Mail";
+            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
+            // 
+            // phoneNrDataGridViewTextBoxColumn
+            // 
+            this.phoneNrDataGridViewTextBoxColumn.DataPropertyName = "PhoneNr";
+            this.phoneNrDataGridViewTextBoxColumn.HeaderText = "PhoneNr";
+            this.phoneNrDataGridViewTextBoxColumn.Name = "phoneNrDataGridViewTextBoxColumn";
+            // 
+            // cSADataGridViewCheckBoxColumn
+            // 
+            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
+            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
+            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
+            // 
+            // neighbarhoodDataGridViewCheckBoxColumn
+            // 
+            this.neighbarhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighbarhood";
+            this.neighbarhoodDataGridViewCheckBoxColumn.HeaderText = "Neighbarhood";
+            this.neighbarhoodDataGridViewCheckBoxColumn.Name = "neighbarhoodDataGridViewCheckBoxColumn";
+            // 
+            // horsBarnDataGridViewCheckBoxColumn
+            // 
+            this.horsBarnDataGridViewCheckBoxColumn.DataPropertyName = "Hors_Barn";
+            this.horsBarnDataGridViewCheckBoxColumn.HeaderText = "Hors_Barn";
+            this.horsBarnDataGridViewCheckBoxColumn.Name = "horsBarnDataGridViewCheckBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // incomesDataGridViewTextBoxColumn
+            // 
+            this.incomesDataGridViewTextBoxColumn.DataPropertyName = "Incomes";
+            this.incomesDataGridViewTextBoxColumn.HeaderText = "Incomes";
+            this.incomesDataGridViewTextBoxColumn.Name = "incomesDataGridViewTextBoxColumn";
+            // 
+            // objectStateDataGridViewTextBoxColumn
+            // 
+            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
+            // 
             // mCB_Style
             // 
             this.mCB_Style.FormattingEnabled = true;
@@ -390,33 +454,6 @@
             this.mTP_Options.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Options.VerticalScrollbarSize = 10;
             // 
-            // mTP_Info
-            // 
-            this.mTP_Info.HorizontalScrollbarBarColor = true;
-            this.mTP_Info.HorizontalScrollbarHighlightOnWheel = false;
-            this.mTP_Info.HorizontalScrollbarSize = 10;
-            this.mTP_Info.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Info.Name = "mTP_Info";
-            this.mTP_Info.Size = new System.Drawing.Size(827, 494);
-            this.mTP_Info.TabIndex = 2;
-            this.mTP_Info.Text = "Info";
-            this.mTP_Info.VerticalScrollbarBarColor = true;
-            this.mTP_Info.VerticalScrollbarHighlightOnWheel = false;
-            this.mTP_Info.VerticalScrollbarSize = 10;
-            // 
-            // metroStyleManager1
-            // 
-            this.metroStyleManager1.Owner = this;
-            // 
-            // mL_BusinessName
-            // 
-            this.mL_BusinessName.AutoSize = true;
-            this.mL_BusinessName.Location = new System.Drawing.Point(3, 32);
-            this.mL_BusinessName.Name = "mL_BusinessName";
-            this.mL_BusinessName.Size = new System.Drawing.Size(130, 19);
-            this.mL_BusinessName.TabIndex = 2;
-            this.mL_BusinessName.Text = "Your Business Name:";
-            // 
             // mTB_BusinessName
             // 
             // 
@@ -451,69 +488,32 @@
             this.mTB_BusinessName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.mTB_BusinessName.TextChanged += new System.EventHandler(this.mTB_BusinessName_TextChanged);
             // 
-            // idDataGridViewTextBoxColumn
+            // mL_BusinessName
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.mL_BusinessName.AutoSize = true;
+            this.mL_BusinessName.Location = new System.Drawing.Point(3, 32);
+            this.mL_BusinessName.Name = "mL_BusinessName";
+            this.mL_BusinessName.Size = new System.Drawing.Size(130, 19);
+            this.mL_BusinessName.TabIndex = 2;
+            this.mL_BusinessName.Text = "Your Business Name:";
             // 
-            // fullNameDataGridViewTextBoxColumn
+            // mTP_Info
             // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.mTP_Info.HorizontalScrollbarBarColor = true;
+            this.mTP_Info.HorizontalScrollbarHighlightOnWheel = false;
+            this.mTP_Info.HorizontalScrollbarSize = 10;
+            this.mTP_Info.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Info.Name = "mTP_Info";
+            this.mTP_Info.Size = new System.Drawing.Size(827, 494);
+            this.mTP_Info.TabIndex = 2;
+            this.mTP_Info.Text = "Info";
+            this.mTP_Info.VerticalScrollbarBarColor = true;
+            this.mTP_Info.VerticalScrollbarHighlightOnWheel = false;
+            this.mTP_Info.VerticalScrollbarSize = 10;
             // 
-            // eMailDataGridViewTextBoxColumn
+            // metroStyleManager1
             // 
-            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "E_Mail";
-            this.eMailDataGridViewTextBoxColumn.HeaderText = "E_Mail";
-            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
-            // 
-            // phoneNrDataGridViewTextBoxColumn
-            // 
-            this.phoneNrDataGridViewTextBoxColumn.DataPropertyName = "PhoneNr";
-            this.phoneNrDataGridViewTextBoxColumn.HeaderText = "PhoneNr";
-            this.phoneNrDataGridViewTextBoxColumn.Name = "phoneNrDataGridViewTextBoxColumn";
-            // 
-            // cSADataGridViewCheckBoxColumn
-            // 
-            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
-            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
-            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
-            // 
-            // neighbarhoodDataGridViewCheckBoxColumn
-            // 
-            this.neighbarhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighbarhood";
-            this.neighbarhoodDataGridViewCheckBoxColumn.HeaderText = "Neighbarhood";
-            this.neighbarhoodDataGridViewCheckBoxColumn.Name = "neighbarhoodDataGridViewCheckBoxColumn";
-            // 
-            // horsBarnDataGridViewCheckBoxColumn
-            // 
-            this.horsBarnDataGridViewCheckBoxColumn.DataPropertyName = "Hors_Barn";
-            this.horsBarnDataGridViewCheckBoxColumn.HeaderText = "Hors_Barn";
-            this.horsBarnDataGridViewCheckBoxColumn.Name = "horsBarnDataGridViewCheckBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // incomesDataGridViewTextBoxColumn
-            // 
-            this.incomesDataGridViewTextBoxColumn.DataPropertyName = "Incomes";
-            this.incomesDataGridViewTextBoxColumn.HeaderText = "Incomes";
-            this.incomesDataGridViewTextBoxColumn.Name = "incomesDataGridViewTextBoxColumn";
-            // 
-            // objectStateDataGridViewTextBoxColumn
-            // 
-            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
-            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
-            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
+            this.metroStyleManager1.Owner = this;
             // 
             // ucSetting
             // 
@@ -531,10 +531,10 @@
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.mTP_Options.ResumeLayout(false);
             this.mTP_Options.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
