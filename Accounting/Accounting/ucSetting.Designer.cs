@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mTC_Settings = new MetroFramework.Controls.MetroTabControl();
+            this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
+            this.mL_Setting_Info = new MetroFramework.Controls.MetroLabel();
+            this.mCB_Currency = new MetroFramework.Controls.MetroComboBox();
+            this.mL_Currency = new MetroFramework.Controls.MetroLabel();
+            this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
+            this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
             this.mTP_Design = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -58,27 +63,21 @@
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.incomesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerBindingSource = new System.Windows.Forms.BindingSource();
             this.mCB_Style = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
             this.mL_Theme = new MetroFramework.Controls.MetroLabel();
-            this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
-            this.mL_Setting_Info = new MetroFramework.Controls.MetroLabel();
-            this.mCB_Currency = new MetroFramework.Controls.MetroComboBox();
-            this.mL_Currency = new MetroFramework.Controls.MetroLabel();
-            this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
-            this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
             this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager();
             this.mTC_Settings.SuspendLayout();
+            this.mTP_Options.SuspendLayout();
             this.mTP_Design.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            this.mTP_Options.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +93,100 @@
             this.mTC_Settings.Size = new System.Drawing.Size(835, 536);
             this.mTC_Settings.TabIndex = 0;
             this.mTC_Settings.UseSelectable = true;
+            // 
+            // mTP_Options
+            // 
+            this.mTP_Options.Controls.Add(this.mL_Setting_Info);
+            this.mTP_Options.Controls.Add(this.mCB_Currency);
+            this.mTP_Options.Controls.Add(this.mL_Currency);
+            this.mTP_Options.Controls.Add(this.mTB_BusinessName);
+            this.mTP_Options.Controls.Add(this.mL_BusinessName);
+            this.mTP_Options.HorizontalScrollbarBarColor = true;
+            this.mTP_Options.HorizontalScrollbarHighlightOnWheel = false;
+            this.mTP_Options.HorizontalScrollbarSize = 10;
+            this.mTP_Options.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Options.Name = "mTP_Options";
+            this.mTP_Options.Size = new System.Drawing.Size(827, 494);
+            this.mTP_Options.TabIndex = 1;
+            this.mTP_Options.Text = "Options";
+            this.mTP_Options.VerticalScrollbarBarColor = true;
+            this.mTP_Options.VerticalScrollbarHighlightOnWheel = false;
+            this.mTP_Options.VerticalScrollbarSize = 10;
+            // 
+            // mL_Setting_Info
+            // 
+            this.mL_Setting_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mL_Setting_Info.Location = new System.Drawing.Point(0, 475);
+            this.mL_Setting_Info.Name = "mL_Setting_Info";
+            this.mL_Setting_Info.Size = new System.Drawing.Size(827, 19);
+            this.mL_Setting_Info.TabIndex = 6;
+            // 
+            // mCB_Currency
+            // 
+            this.mCB_Currency.FormattingEnabled = true;
+            this.mCB_Currency.ItemHeight = 23;
+            this.mCB_Currency.Items.AddRange(new object[] {
+            "$",
+            "€",
+            "Yan"});
+            this.mCB_Currency.Location = new System.Drawing.Point(194, 54);
+            this.mCB_Currency.Name = "mCB_Currency";
+            this.mCB_Currency.Size = new System.Drawing.Size(121, 29);
+            this.mCB_Currency.TabIndex = 5;
+            this.mCB_Currency.UseSelectable = true;
+            this.mCB_Currency.SelectedIndexChanged += new System.EventHandler(this.mCB_Currency_SelectedIndexChanged);
+            // 
+            // mL_Currency
+            // 
+            this.mL_Currency.AutoSize = true;
+            this.mL_Currency.Location = new System.Drawing.Point(194, 32);
+            this.mL_Currency.Name = "mL_Currency";
+            this.mL_Currency.Size = new System.Drawing.Size(64, 19);
+            this.mL_Currency.TabIndex = 4;
+            this.mL_Currency.Text = "Currency:";
+            // 
+            // mTB_BusinessName
+            // 
+            // 
+            // 
+            // 
+            this.mTB_BusinessName.CustomButton.Image = null;
+            this.mTB_BusinessName.CustomButton.Location = new System.Drawing.Point(122, 1);
+            this.mTB_BusinessName.CustomButton.Name = "";
+            this.mTB_BusinessName.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_BusinessName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_BusinessName.CustomButton.TabIndex = 1;
+            this.mTB_BusinessName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_BusinessName.CustomButton.UseSelectable = true;
+            this.mTB_BusinessName.CustomButton.Visible = false;
+            this.mTB_BusinessName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_BusinessName.Lines = new string[] {
+        "Your Business Name"};
+            this.mTB_BusinessName.Location = new System.Drawing.Point(3, 54);
+            this.mTB_BusinessName.MaxLength = 32767;
+            this.mTB_BusinessName.Name = "mTB_BusinessName";
+            this.mTB_BusinessName.PasswordChar = '\0';
+            this.mTB_BusinessName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_BusinessName.SelectedText = "";
+            this.mTB_BusinessName.SelectionLength = 0;
+            this.mTB_BusinessName.SelectionStart = 0;
+            this.mTB_BusinessName.ShortcutsEnabled = true;
+            this.mTB_BusinessName.Size = new System.Drawing.Size(150, 29);
+            this.mTB_BusinessName.TabIndex = 3;
+            this.mTB_BusinessName.Text = "Your Business Name";
+            this.mTB_BusinessName.UseSelectable = true;
+            this.mTB_BusinessName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_BusinessName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_BusinessName.TextChanged += new System.EventHandler(this.mTB_BusinessName_TextChanged);
+            // 
+            // mL_BusinessName
+            // 
+            this.mL_BusinessName.AutoSize = true;
+            this.mL_BusinessName.Location = new System.Drawing.Point(3, 32);
+            this.mL_BusinessName.Name = "mL_BusinessName";
+            this.mL_BusinessName.Size = new System.Drawing.Size(130, 19);
+            this.mL_BusinessName.TabIndex = 2;
+            this.mL_BusinessName.Text = "Your Business Name:";
             // 
             // mTP_Design
             // 
@@ -441,100 +534,6 @@
             this.mL_Theme.TabIndex = 2;
             this.mL_Theme.Text = "Theme:";
             // 
-            // mTP_Options
-            // 
-            this.mTP_Options.Controls.Add(this.mL_Setting_Info);
-            this.mTP_Options.Controls.Add(this.mCB_Currency);
-            this.mTP_Options.Controls.Add(this.mL_Currency);
-            this.mTP_Options.Controls.Add(this.mTB_BusinessName);
-            this.mTP_Options.Controls.Add(this.mL_BusinessName);
-            this.mTP_Options.HorizontalScrollbarBarColor = true;
-            this.mTP_Options.HorizontalScrollbarHighlightOnWheel = false;
-            this.mTP_Options.HorizontalScrollbarSize = 10;
-            this.mTP_Options.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Options.Name = "mTP_Options";
-            this.mTP_Options.Size = new System.Drawing.Size(827, 494);
-            this.mTP_Options.TabIndex = 1;
-            this.mTP_Options.Text = "Options";
-            this.mTP_Options.VerticalScrollbarBarColor = true;
-            this.mTP_Options.VerticalScrollbarHighlightOnWheel = false;
-            this.mTP_Options.VerticalScrollbarSize = 10;
-            // 
-            // mL_Setting_Info
-            // 
-            this.mL_Setting_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mL_Setting_Info.Location = new System.Drawing.Point(0, 475);
-            this.mL_Setting_Info.Name = "mL_Setting_Info";
-            this.mL_Setting_Info.Size = new System.Drawing.Size(827, 19);
-            this.mL_Setting_Info.TabIndex = 6;
-            // 
-            // mCB_Currency
-            // 
-            this.mCB_Currency.FormattingEnabled = true;
-            this.mCB_Currency.ItemHeight = 23;
-            this.mCB_Currency.Items.AddRange(new object[] {
-            "$",
-            "€",
-            "Yan"});
-            this.mCB_Currency.Location = new System.Drawing.Point(194, 54);
-            this.mCB_Currency.Name = "mCB_Currency";
-            this.mCB_Currency.Size = new System.Drawing.Size(121, 29);
-            this.mCB_Currency.TabIndex = 5;
-            this.mCB_Currency.UseSelectable = true;
-            this.mCB_Currency.SelectedIndexChanged += new System.EventHandler(this.mCB_Currency_SelectedIndexChanged);
-            // 
-            // mL_Currency
-            // 
-            this.mL_Currency.AutoSize = true;
-            this.mL_Currency.Location = new System.Drawing.Point(194, 32);
-            this.mL_Currency.Name = "mL_Currency";
-            this.mL_Currency.Size = new System.Drawing.Size(64, 19);
-            this.mL_Currency.TabIndex = 4;
-            this.mL_Currency.Text = "Currency:";
-            // 
-            // mTB_BusinessName
-            // 
-            // 
-            // 
-            // 
-            this.mTB_BusinessName.CustomButton.Image = null;
-            this.mTB_BusinessName.CustomButton.Location = new System.Drawing.Point(122, 1);
-            this.mTB_BusinessName.CustomButton.Name = "";
-            this.mTB_BusinessName.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.mTB_BusinessName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_BusinessName.CustomButton.TabIndex = 1;
-            this.mTB_BusinessName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_BusinessName.CustomButton.UseSelectable = true;
-            this.mTB_BusinessName.CustomButton.Visible = false;
-            this.mTB_BusinessName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.mTB_BusinessName.Lines = new string[] {
-        "Your Business Name"};
-            this.mTB_BusinessName.Location = new System.Drawing.Point(3, 54);
-            this.mTB_BusinessName.MaxLength = 32767;
-            this.mTB_BusinessName.Name = "mTB_BusinessName";
-            this.mTB_BusinessName.PasswordChar = '\0';
-            this.mTB_BusinessName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_BusinessName.SelectedText = "";
-            this.mTB_BusinessName.SelectionLength = 0;
-            this.mTB_BusinessName.SelectionStart = 0;
-            this.mTB_BusinessName.ShortcutsEnabled = true;
-            this.mTB_BusinessName.Size = new System.Drawing.Size(150, 29);
-            this.mTB_BusinessName.TabIndex = 3;
-            this.mTB_BusinessName.Text = "Your Business Name";
-            this.mTB_BusinessName.UseSelectable = true;
-            this.mTB_BusinessName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_BusinessName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mTB_BusinessName.TextChanged += new System.EventHandler(this.mTB_BusinessName_TextChanged);
-            // 
-            // mL_BusinessName
-            // 
-            this.mL_BusinessName.AutoSize = true;
-            this.mL_BusinessName.Location = new System.Drawing.Point(3, 32);
-            this.mL_BusinessName.Name = "mL_BusinessName";
-            this.mL_BusinessName.Size = new System.Drawing.Size(130, 19);
-            this.mL_BusinessName.TabIndex = 2;
-            this.mL_BusinessName.Text = "Your Business Name:";
-            // 
             // mTP_Info
             // 
             this.mTP_Info.HorizontalScrollbarBarColor = true;
@@ -562,6 +561,8 @@
             this.Size = new System.Drawing.Size(835, 536);
             this.Load += new System.EventHandler(this.ucSetting_Load);
             this.mTC_Settings.ResumeLayout(false);
+            this.mTP_Options.ResumeLayout(false);
+            this.mTP_Options.PerformLayout();
             this.mTP_Design.ResumeLayout(false);
             this.mTP_Design.PerformLayout();
             this.metroTabControl2.ResumeLayout(false);
@@ -570,8 +571,6 @@
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            this.mTP_Options.ResumeLayout(false);
-            this.mTP_Options.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
 
