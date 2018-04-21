@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="Enums\Month.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
       <DependentUpon>201804102005452_AllTables.cs</DependentUpon>
@@ -302,6 +303,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

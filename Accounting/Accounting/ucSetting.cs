@@ -42,6 +42,7 @@ namespace Accounting
             mCB_Theme.SelectedIndex = Settings.Default["Theme"].GetHashCode();
             mCB_Style.SelectedIndex = Settings.Default["Style"].GetHashCode();
             mTB_BusinessName.Text = Settings.Default["BusinessName"].ToString();
+            Form_Main.Instance.Text = "       Accounting of " + Settings.Default["BusinessName"].ToString();
 
             currencyDefault = (System.Globalization.CultureInfo)Settings.Default["Currency"];
 
@@ -75,7 +76,7 @@ namespace Accounting
             {
                 return;
             }
-            Form_Main.Instance.Text = "       Accounting of "+ mTB_BusinessName.Text;
+           Form_Main.Instance.Text = "       Accounting of "+ mTB_BusinessName.Text;
             Settings.Default["BusinessName"] = mTB_BusinessName.Text;
             Settings.Default.Save();
 

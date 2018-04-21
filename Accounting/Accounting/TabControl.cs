@@ -173,7 +173,15 @@ namespace Accounting
                     listItems.SubItems.Add(item.Dealer);
                     listItems.SubItems.Add(item.Payment);
                     listItems.SubItems.Add(item.Price.ToString("c",ucSetting.CurrencyDefault));
-                    listItems.SubItems.Add(item.Details.ToString());
+                    try
+                    {
+                        listItems.SubItems.Add(item.Details.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        listItems.SubItems.Add("No details");
+                    }
+                    
                     list_Expenses.Items.Add(listItems);
                 }
             }
