@@ -8,24 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
+using System.Data.Entity;
 
 namespace Accounting
 {
     public partial class ucDatabase : MetroFramework.Controls.MetroUserControl
     {
-        static ucDatabase _instance;
-
-
-        public static ucDatabase Instance{
-            get { 
-                    if (_instance == null)
-                {
-                    _instance = new ucDatabase();
-                }
-                    return _instance;
-            }
-            }
-
         public ucDatabase()
         {
             InitializeComponent();
@@ -38,14 +26,24 @@ namespace Accounting
         /// <param name="e"></param>
         private void Database_Load(object sender, EventArgs e)
         {
-            _instance = this;
+            //SQLClient.SQLDatabase test = new SQLClient.SQLDatabase("HelloWorld");
+            //test.createConnectionString();
+
+            ////test.CheckConnection();
+
+            //DatabaseContext database = new DatabaseContext(test.ConnectionString);
+
+
 
             using (DatabaseContext db = new DatabaseContext())
             {
+                
+                
                 customerBindingSource.DataSource = db.Customers.ToList();
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 expensesBindingSource.DataSource = db.Expenses.ToList();
                 produktBindingSource.DataSource = db.Produkts.ToList();
+ 
 
 
                 ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
@@ -63,6 +61,8 @@ namespace Accounting
             mP_Expenses.Enabled = false;
             mP_Produkts.Enabled = false;
         }
+
+
         /// <summary>
         /// 
         /// </summary>

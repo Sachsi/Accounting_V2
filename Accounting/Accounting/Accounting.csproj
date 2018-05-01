@@ -23,7 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <UpdateUrl>https://79.215.31.144:48271/</UpdateUrl>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -40,7 +41,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -159,12 +160,14 @@
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
       <DependentUpon>201804102005452_AllTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804102017399_changedTypeUnit.cs" />
-    <Compile Include="Migrations\201804102017399_changedTypeUnit.Designer.cs">
-      <DependentUpon>201804102017399_changedTypeUnit.cs</DependentUpon>
+    <Compile Include="Migrations\201804282146370_changes.cs" />
+    <Compile Include="Migrations\201804282146370_changes.Designer.cs">
+      <DependentUpon>201804282146370_changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="SQLClient\IDatabase.cs" />
+    <Compile Include="SQLClient\SQLDatabase.cs" />
     <Compile Include="ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,8 +221,8 @@
     <EmbeddedResource Include="Migrations\201804102005452_AllTables.resx">
       <DependentUpon>201804102005452_AllTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804102017399_changedTypeUnit.resx">
-      <DependentUpon>201804102017399_changedTypeUnit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804282146370_changes.resx">
+      <DependentUpon>201804282146370_changes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>

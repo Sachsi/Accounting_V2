@@ -7,18 +7,18 @@ namespace Accounting.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changedTypeUnit : IMigrationMetadata
+    public sealed partial class changes : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedTypeUnit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changes));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804102017399_changedTypeUnit"; }
+            get { return "201804282146370_changes"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

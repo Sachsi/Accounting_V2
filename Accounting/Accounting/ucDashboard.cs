@@ -16,7 +16,11 @@ namespace Accounting
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ucDashboard_Load(object sender, EventArgs e)
         {
             ucDatabase ucDatabase = new ucDatabase();
@@ -36,7 +40,11 @@ namespace Accounting
             ucSetting.Dock = DockStyle.Fill;
             Form_Main.Instance.MetroPanel.Controls.Add(ucSetting);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mTile_Database_Click(object sender, EventArgs e)
         {
             Form_Main.Instance.MetroLink.Visible = true;
@@ -49,7 +57,11 @@ namespace Accounting
             }
             Form_Main.Instance.MetroPanel.Controls["ucDatabase"].BringToFront();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mT_Overview_Click(object sender, EventArgs e)
         {
             Form_Main.Instance.MetroLink.Visible = true;
@@ -62,7 +74,11 @@ namespace Accounting
             }
             Form_Main.Instance.MetroPanel.Controls["ucOverview"].BringToFront();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mTile_Search_Click(object sender, EventArgs e)
         {
             Form_Main.Instance.MetroLink.Visible = true;
@@ -75,7 +91,11 @@ namespace Accounting
             }
             Form_Main.Instance.MetroPanel.Controls["ucSearch"].BringToFront();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mTile_Settings_Click(object sender, EventArgs e)
         {
             Form_Main.Instance.MetroLink.Visible = true;

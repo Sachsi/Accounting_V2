@@ -101,11 +101,10 @@
             this.mP_Produkts = new MetroFramework.Controls.MetroPanel();
             this.mL_Produkts_Unit = new MetroFramework.Controls.MetroLabel();
             this.mCB_Produkts_Unit = new MetroFramework.Controls.MetroComboBox();
-            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ml_Unit = new MetroFramework.Controls.MetroLabel();
             this.mL_Produkts_Quantity = new MetroFramework.Controls.MetroLabel();
             this.mTB_Produkts_Quantity = new MetroFramework.Controls.MetroTextBox();
+            this.produktBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mTB_Produkts_Dealer = new MetroFramework.Controls.MetroTextBox();
             this.mL_Produkts_Price = new MetroFramework.Controls.MetroLabel();
             this.mL_Produkts_Farmer = new MetroFramework.Controls.MetroLabel();
@@ -114,6 +113,7 @@
             this.mTB_Produkts_Price = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Produkts_Produkt = new MetroFramework.Controls.MetroTextBox();
             this.mTB_Produkts_Date = new MetroFramework.Controls.MetroTextBox();
+            this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mB_Save = new MetroFramework.Controls.MetroButton();
             this.mB_Add_Customer = new MetroFramework.Controls.MetroButton();
             this.mB_Edit_Customer = new MetroFramework.Controls.MetroButton();
@@ -1156,15 +1156,6 @@
             this.mCB_Produkts_Unit.UseSelectable = true;
             this.mCB_Produkts_Unit.SelectedIndexChanged += new System.EventHandler(this.mCB_Produkts_Unit_SelectedIndexChanged);
             // 
-            // produktBindingSource
-            // 
-            this.produktBindingSource.DataSource = typeof(Accounting.Produkt);
-            // 
-            // unitsBindingSource
-            // 
-            this.unitsBindingSource.DataMember = "Units";
-            this.unitsBindingSource.DataSource = this.produktBindingSource;
-            // 
             // ml_Unit
             // 
             this.ml_Unit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1220,6 +1211,10 @@
             this.mTB_Produkts_Quantity.UseSelectable = true;
             this.mTB_Produkts_Quantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Produkts_Quantity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // produktBindingSource
+            // 
+            this.produktBindingSource.DataSource = typeof(Accounting.Produkt);
             // 
             // mTB_Produkts_Dealer
             // 
@@ -1400,6 +1395,11 @@
             this.mTB_Produkts_Date.UseSelectable = true;
             this.mTB_Produkts_Date.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Produkts_Date.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // unitsBindingSource
+            // 
+            this.unitsBindingSource.DataMember = "Units";
+            this.unitsBindingSource.DataSource = this.produktBindingSource;
             // 
             // mB_Save
             // 

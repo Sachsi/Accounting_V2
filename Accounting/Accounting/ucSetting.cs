@@ -18,6 +18,8 @@ namespace Accounting
     /// </summary>
     public partial class ucSetting : MetroFramework.Controls.MetroUserControl
     {
+        Settings settings = new Settings();
+
         public static CultureInfo CurrencyDefault
         {
             get { return currencyDefault; }
@@ -43,7 +45,6 @@ namespace Accounting
             mCB_Style.SelectedIndex = Settings.Default["Style"].GetHashCode();
             mTB_BusinessName.Text = Settings.Default["BusinessName"].ToString();
             Form_Main.Instance.Text = "       Accounting of " + Settings.Default["BusinessName"].ToString();
-
             currencyDefault = (System.Globalization.CultureInfo)Settings.Default["Currency"];
 
             //mCB_Currency.Text = Settings.Default["Currency"].ToString();
@@ -56,6 +57,7 @@ namespace Accounting
 
             Settings.Default["Style"] = (MetroFramework.MetroColorStyle)mCB_Style.SelectedIndex;
             Settings.Default.Save();
+            
         }
 
         private void mCB_Theme_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,6 +99,25 @@ namespace Accounting
         private void MessageInfo()
         {
             mL_Setting_Info.Text = "Plaese restart your Application for settings to take effect!";
+         }
+
+        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Form_Main.Instance.DialogResult = MetroMessageBox.Show(this, "This will delete your database after a restart the application. \n\r" +
+                "Are you sure to do it?","Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (Form_Main.Instance.DialogResult == DialogResult.Yes)
+            {
+                Settings.Default.FirstStart = true;
+                Settings.Default.Save();
+                Application.Exit();
+            }
+            else
+            {
+                ml_DeleteDatabse.Text = "";
+                Settings.Default.FirstStart = false;
+                Settings.Default.Save();
+            }
          }
     }
 }

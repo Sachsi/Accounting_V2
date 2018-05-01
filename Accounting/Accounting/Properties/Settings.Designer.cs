@@ -49,19 +49,7 @@ namespace Accounting.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Your Bussnies")]
-        public string BusinessName {
-            get {
-                return ((string)(this["BusinessName"]));
-            }
-            set {
-                this["BusinessName"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool FirstStart {
             get {
                 return ((bool)(this["FirstStart"]));
@@ -73,12 +61,25 @@ namespace Accounting.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("(Default)")]
         public global::System.Globalization.CultureInfo Currency {
             get {
                 return ((global::System.Globalization.CultureInfo)(this["Currency"]));
             }
             set {
                 this["Currency"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Your Business")]
+        public string BusinessName {
+            get {
+                return ((string)(this["BusinessName"]));
+            }
+            set {
+                this["BusinessName"] = value;
             }
         }
     }

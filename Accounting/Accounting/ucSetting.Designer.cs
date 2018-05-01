@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mTC_Settings = new MetroFramework.Controls.MetroTabControl();
             this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
             this.mL_Setting_Info = new MetroFramework.Controls.MetroLabel();
@@ -54,6 +54,16 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.mCB_Style = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
+            this.mL_Theme = new MetroFramework.Controls.MetroLabel();
+            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.MTP_DatabaseSettings = new MetroFramework.Controls.MetroTabPage();
+            this.mCB_DeleteDatabase = new MetroFramework.Controls.MetroCheckBox();
+            this.ml_DeleteDatabse = new MetroFramework.Controls.MetroLabel();
+            this.GB_DeleteDB = new System.Windows.Forms.GroupBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,12 +75,6 @@
             this.incomesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mCB_Style = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
-            this.mL_Theme = new MetroFramework.Controls.MetroLabel();
-            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.mTC_Settings.SuspendLayout();
             this.mTP_Options.SuspendLayout();
             this.mTP_Design.SuspendLayout();
@@ -78,19 +82,22 @@
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
+            this.MTP_DatabaseSettings.SuspendLayout();
+            this.GB_DeleteDB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mTC_Settings
             // 
-            this.mTC_Settings.Controls.Add(this.mTP_Options);
             this.mTC_Settings.Controls.Add(this.mTP_Design);
+            this.mTC_Settings.Controls.Add(this.mTP_Options);
+            this.mTC_Settings.Controls.Add(this.MTP_DatabaseSettings);
             this.mTC_Settings.Controls.Add(this.mTP_Info);
             this.mTC_Settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mTC_Settings.Location = new System.Drawing.Point(0, 0);
             this.mTC_Settings.Name = "mTC_Settings";
-            this.mTC_Settings.SelectedIndex = 0;
+            this.mTC_Settings.SelectedIndex = 2;
             this.mTC_Settings.Size = new System.Drawing.Size(835, 536);
             this.mTC_Settings.TabIndex = 0;
             this.mTC_Settings.UseSelectable = true;
@@ -363,14 +370,14 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -384,96 +391,32 @@
             this.incomesDataGridViewTextBoxColumn,
             this.objectStateDataGridViewTextBoxColumn});
             this.metroGrid1.DataSource = this.customerBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(3, 14);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(725, 115);
             this.metroGrid1.TabIndex = 2;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            // 
-            // eMailDataGridViewTextBoxColumn
-            // 
-            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "E_Mail";
-            this.eMailDataGridViewTextBoxColumn.HeaderText = "E_Mail";
-            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
-            // 
-            // phoneNrDataGridViewTextBoxColumn
-            // 
-            this.phoneNrDataGridViewTextBoxColumn.DataPropertyName = "PhoneNr";
-            this.phoneNrDataGridViewTextBoxColumn.HeaderText = "PhoneNr";
-            this.phoneNrDataGridViewTextBoxColumn.Name = "phoneNrDataGridViewTextBoxColumn";
-            // 
-            // cSADataGridViewCheckBoxColumn
-            // 
-            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
-            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
-            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
-            // 
-            // neighbarhoodDataGridViewCheckBoxColumn
-            // 
-            this.neighbarhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighbarhood";
-            this.neighbarhoodDataGridViewCheckBoxColumn.HeaderText = "Neighbarhood";
-            this.neighbarhoodDataGridViewCheckBoxColumn.Name = "neighbarhoodDataGridViewCheckBoxColumn";
-            // 
-            // horsBarnDataGridViewCheckBoxColumn
-            // 
-            this.horsBarnDataGridViewCheckBoxColumn.DataPropertyName = "Hors_Barn";
-            this.horsBarnDataGridViewCheckBoxColumn.HeaderText = "Hors_Barn";
-            this.horsBarnDataGridViewCheckBoxColumn.Name = "horsBarnDataGridViewCheckBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // incomesDataGridViewTextBoxColumn
-            // 
-            this.incomesDataGridViewTextBoxColumn.DataPropertyName = "Incomes";
-            this.incomesDataGridViewTextBoxColumn.HeaderText = "Incomes";
-            this.incomesDataGridViewTextBoxColumn.Name = "incomesDataGridViewTextBoxColumn";
-            // 
-            // objectStateDataGridViewTextBoxColumn
-            // 
-            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
-            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
-            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
             // 
             // mCB_Style
             // 
@@ -553,6 +496,117 @@
             // 
             this.metroStyleManager1.Owner = this;
             // 
+            // MTP_DatabaseSettings
+            // 
+            this.MTP_DatabaseSettings.Controls.Add(this.GB_DeleteDB);
+            this.MTP_DatabaseSettings.HorizontalScrollbarBarColor = true;
+            this.MTP_DatabaseSettings.HorizontalScrollbarHighlightOnWheel = false;
+            this.MTP_DatabaseSettings.HorizontalScrollbarSize = 10;
+            this.MTP_DatabaseSettings.Location = new System.Drawing.Point(4, 38);
+            this.MTP_DatabaseSettings.Name = "MTP_DatabaseSettings";
+            this.MTP_DatabaseSettings.Size = new System.Drawing.Size(827, 494);
+            this.MTP_DatabaseSettings.TabIndex = 3;
+            this.MTP_DatabaseSettings.Text = "Database Settings";
+            this.MTP_DatabaseSettings.VerticalScrollbarBarColor = true;
+            this.MTP_DatabaseSettings.VerticalScrollbarHighlightOnWheel = false;
+            this.MTP_DatabaseSettings.VerticalScrollbarSize = 10;
+            // 
+            // mCB_DeleteDatabase
+            // 
+            this.mCB_DeleteDatabase.AutoSize = true;
+            this.mCB_DeleteDatabase.Location = new System.Drawing.Point(15, 31);
+            this.mCB_DeleteDatabase.Name = "mCB_DeleteDatabase";
+            this.mCB_DeleteDatabase.Size = new System.Drawing.Size(39, 15);
+            this.mCB_DeleteDatabase.TabIndex = 2;
+            this.mCB_DeleteDatabase.Text = "No";
+            this.mCB_DeleteDatabase.UseSelectable = true;
+            this.mCB_DeleteDatabase.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
+            // 
+            // ml_DeleteDatabse
+            // 
+            this.ml_DeleteDatabse.AutoSize = true;
+            this.ml_DeleteDatabse.Location = new System.Drawing.Point(15, 59);
+            this.ml_DeleteDatabse.Name = "ml_DeleteDatabse";
+            this.ml_DeleteDatabse.Size = new System.Drawing.Size(0, 0);
+            this.ml_DeleteDatabse.TabIndex = 3;
+            // 
+            // GB_DeleteDB
+            // 
+            this.GB_DeleteDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GB_DeleteDB.BackColor = System.Drawing.Color.Transparent;
+            this.GB_DeleteDB.Controls.Add(this.ml_DeleteDatabse);
+            this.GB_DeleteDB.Controls.Add(this.mCB_DeleteDatabase);
+            this.GB_DeleteDB.Location = new System.Drawing.Point(635, 17);
+            this.GB_DeleteDB.Name = "GB_DeleteDB";
+            this.GB_DeleteDB.Size = new System.Drawing.Size(141, 111);
+            this.GB_DeleteDB.TabIndex = 4;
+            this.GB_DeleteDB.TabStop = false;
+            this.GB_DeleteDB.Text = "Delete Database";
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            // 
+            // eMailDataGridViewTextBoxColumn
+            // 
+            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "E_Mail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "E_Mail";
+            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
+            // 
+            // phoneNrDataGridViewTextBoxColumn
+            // 
+            this.phoneNrDataGridViewTextBoxColumn.DataPropertyName = "PhoneNr";
+            this.phoneNrDataGridViewTextBoxColumn.HeaderText = "PhoneNr";
+            this.phoneNrDataGridViewTextBoxColumn.Name = "phoneNrDataGridViewTextBoxColumn";
+            // 
+            // cSADataGridViewCheckBoxColumn
+            // 
+            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
+            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
+            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
+            // 
+            // neighbarhoodDataGridViewCheckBoxColumn
+            // 
+            this.neighbarhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighbarhood";
+            this.neighbarhoodDataGridViewCheckBoxColumn.HeaderText = "Neighbarhood";
+            this.neighbarhoodDataGridViewCheckBoxColumn.Name = "neighbarhoodDataGridViewCheckBoxColumn";
+            // 
+            // horsBarnDataGridViewCheckBoxColumn
+            // 
+            this.horsBarnDataGridViewCheckBoxColumn.DataPropertyName = "Hors_Barn";
+            this.horsBarnDataGridViewCheckBoxColumn.HeaderText = "Hors_Barn";
+            this.horsBarnDataGridViewCheckBoxColumn.Name = "horsBarnDataGridViewCheckBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // incomesDataGridViewTextBoxColumn
+            // 
+            this.incomesDataGridViewTextBoxColumn.DataPropertyName = "Incomes";
+            this.incomesDataGridViewTextBoxColumn.HeaderText = "Incomes";
+            this.incomesDataGridViewTextBoxColumn.Name = "incomesDataGridViewTextBoxColumn";
+            // 
+            // objectStateDataGridViewTextBoxColumn
+            // 
+            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
+            // 
             // ucSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,8 +625,11 @@
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
+            this.MTP_DatabaseSettings.ResumeLayout(false);
+            this.GB_DeleteDB.ResumeLayout(false);
+            this.GB_DeleteDB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -618,5 +675,9 @@
         private MetroFramework.Controls.MetroComboBox mCB_Currency;
         private MetroFramework.Controls.MetroLabel mL_Currency;
         private MetroFramework.Controls.MetroLabel mL_Setting_Info;
+        private MetroFramework.Controls.MetroTabPage MTP_DatabaseSettings;
+        private System.Windows.Forms.GroupBox GB_DeleteDB;
+        private MetroFramework.Controls.MetroLabel ml_DeleteDatabse;
+        private MetroFramework.Controls.MetroCheckBox mCB_DeleteDatabase;
     }
 }

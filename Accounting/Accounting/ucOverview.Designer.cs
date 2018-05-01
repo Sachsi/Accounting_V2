@@ -36,23 +36,23 @@
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.mL_Customer = new MetroFramework.Controls.MetroLabel();
             this.mT_IncomeDetails = new MetroFramework.Controls.MetroTile();
+            this.ml_Price_ILY = new MetroFramework.Controls.MetroLabel();
+            this.ml_Price_ILM = new MetroFramework.Controls.MetroLabel();
+            this.ml_Price_IM = new MetroFramework.Controls.MetroLabel();
+            this.ml_Price_IS = new MetroFramework.Controls.MetroLabel();
             this.mL_IncomeLastYear = new MetroFramework.Controls.MetroLabel();
             this.mL_IncomeLastMonth = new MetroFramework.Controls.MetroLabel();
             this.mL_IncomeMonth = new MetroFramework.Controls.MetroLabel();
             this.mL_SumIncome = new MetroFramework.Controls.MetroLabel();
             this.mT_ExpensesDetails = new MetroFramework.Controls.MetroTile();
-            this.mL_ExpensesLastYear = new MetroFramework.Controls.MetroLabel();
-            this.ml_ExpensesLastMonth = new MetroFramework.Controls.MetroLabel();
-            this.mL_ExpensesYear = new MetroFramework.Controls.MetroLabel();
-            this.mL_ExpensesMonth = new MetroFramework.Controls.MetroLabel();
-            this.ml_Price_ILY = new MetroFramework.Controls.MetroLabel();
-            this.ml_Price_ILM = new MetroFramework.Controls.MetroLabel();
-            this.ml_Price_IM = new MetroFramework.Controls.MetroLabel();
-            this.ml_Price_IS = new MetroFramework.Controls.MetroLabel();
             this.ml_Price_ELY = new MetroFramework.Controls.MetroLabel();
+            this.mL_ExpensesLastYear = new MetroFramework.Controls.MetroLabel();
             this.ml_Price_ELM = new MetroFramework.Controls.MetroLabel();
+            this.ml_ExpensesLastMonth = new MetroFramework.Controls.MetroLabel();
             this.ml_Price_EM = new MetroFramework.Controls.MetroLabel();
             this.ml_Price_ES = new MetroFramework.Controls.MetroLabel();
+            this.mL_ExpensesYear = new MetroFramework.Controls.MetroLabel();
+            this.mL_ExpensesMonth = new MetroFramework.Controls.MetroLabel();
             this.metroTile1.SuspendLayout();
             this.mT_IncomeDetails.SuspendLayout();
             this.mT_ExpensesDetails.SuspendLayout();
@@ -141,6 +141,50 @@
             this.mT_IncomeDetails.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mT_IncomeDetails.UseSelectable = true;
             // 
+            // ml_Price_ILY
+            // 
+            this.ml_Price_ILY.AutoSize = true;
+            this.ml_Price_ILY.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ml_Price_ILY.Location = new System.Drawing.Point(147, 151);
+            this.ml_Price_ILY.Name = "ml_Price_ILY";
+            this.ml_Price_ILY.Size = new System.Drawing.Size(49, 25);
+            this.ml_Price_ILY.TabIndex = 7;
+            this.ml_Price_ILY.Text = "Price";
+            this.ml_Price_ILY.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // ml_Price_ILM
+            // 
+            this.ml_Price_ILM.AutoSize = true;
+            this.ml_Price_ILM.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ml_Price_ILM.Location = new System.Drawing.Point(147, 118);
+            this.ml_Price_ILM.Name = "ml_Price_ILM";
+            this.ml_Price_ILM.Size = new System.Drawing.Size(49, 25);
+            this.ml_Price_ILM.TabIndex = 6;
+            this.ml_Price_ILM.Text = "Price";
+            this.ml_Price_ILM.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // ml_Price_IM
+            // 
+            this.ml_Price_IM.AutoSize = true;
+            this.ml_Price_IM.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ml_Price_IM.Location = new System.Drawing.Point(147, 81);
+            this.ml_Price_IM.Name = "ml_Price_IM";
+            this.ml_Price_IM.Size = new System.Drawing.Size(49, 25);
+            this.ml_Price_IM.TabIndex = 5;
+            this.ml_Price_IM.Text = "Price";
+            this.ml_Price_IM.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // ml_Price_IS
+            // 
+            this.ml_Price_IS.AutoSize = true;
+            this.ml_Price_IS.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ml_Price_IS.Location = new System.Drawing.Point(147, 46);
+            this.ml_Price_IS.Name = "ml_Price_IS";
+            this.ml_Price_IS.Size = new System.Drawing.Size(49, 25);
+            this.ml_Price_IS.TabIndex = 4;
+            this.ml_Price_IS.Text = "Price";
+            this.ml_Price_IS.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // mL_IncomeLastYear
             // 
             this.mL_IncomeLastYear.AutoSize = true;
@@ -202,90 +246,6 @@
             this.mT_ExpensesDetails.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.mT_ExpensesDetails.UseSelectable = true;
             // 
-            // mL_ExpensesLastYear
-            // 
-            this.mL_ExpensesLastYear.AutoSize = true;
-            this.mL_ExpensesLastYear.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.mL_ExpensesLastYear.Location = new System.Drawing.Point(3, 151);
-            this.mL_ExpensesLastYear.Name = "mL_ExpensesLastYear";
-            this.mL_ExpensesLastYear.Size = new System.Drawing.Size(118, 25);
-            this.mL_ExpensesLastYear.TabIndex = 6;
-            this.mL_ExpensesLastYear.Text = "Expenses Year";
-            // 
-            // ml_ExpensesLastMonth
-            // 
-            this.ml_ExpensesLastMonth.AutoSize = true;
-            this.ml_ExpensesLastMonth.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ml_ExpensesLastMonth.Location = new System.Drawing.Point(3, 116);
-            this.ml_ExpensesLastMonth.Name = "ml_ExpensesLastMonth";
-            this.ml_ExpensesLastMonth.Size = new System.Drawing.Size(140, 25);
-            this.ml_ExpensesLastMonth.TabIndex = 5;
-            this.ml_ExpensesLastMonth.Text = "Expenses Month:";
-            // 
-            // mL_ExpensesYear
-            // 
-            this.mL_ExpensesYear.AutoSize = true;
-            this.mL_ExpensesYear.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.mL_ExpensesYear.Location = new System.Drawing.Point(3, 46);
-            this.mL_ExpensesYear.Name = "mL_ExpensesYear";
-            this.mL_ExpensesYear.Size = new System.Drawing.Size(124, 25);
-            this.mL_ExpensesYear.TabIndex = 3;
-            this.mL_ExpensesYear.Text = "Expenses Sum:";
-            // 
-            // mL_ExpensesMonth
-            // 
-            this.mL_ExpensesMonth.AutoSize = true;
-            this.mL_ExpensesMonth.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.mL_ExpensesMonth.Location = new System.Drawing.Point(3, 81);
-            this.mL_ExpensesMonth.Name = "mL_ExpensesMonth";
-            this.mL_ExpensesMonth.Size = new System.Drawing.Size(140, 25);
-            this.mL_ExpensesMonth.TabIndex = 4;
-            this.mL_ExpensesMonth.Text = "Expenses Month:";
-            // 
-            // ml_Price_ILY
-            // 
-            this.ml_Price_ILY.AutoSize = true;
-            this.ml_Price_ILY.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ml_Price_ILY.Location = new System.Drawing.Point(147, 151);
-            this.ml_Price_ILY.Name = "ml_Price_ILY";
-            this.ml_Price_ILY.Size = new System.Drawing.Size(49, 25);
-            this.ml_Price_ILY.TabIndex = 7;
-            this.ml_Price_ILY.Text = "Price";
-            this.ml_Price_ILY.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // ml_Price_ILM
-            // 
-            this.ml_Price_ILM.AutoSize = true;
-            this.ml_Price_ILM.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ml_Price_ILM.Location = new System.Drawing.Point(147, 118);
-            this.ml_Price_ILM.Name = "ml_Price_ILM";
-            this.ml_Price_ILM.Size = new System.Drawing.Size(49, 25);
-            this.ml_Price_ILM.TabIndex = 6;
-            this.ml_Price_ILM.Text = "Price";
-            this.ml_Price_ILM.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // ml_Price_IM
-            // 
-            this.ml_Price_IM.AutoSize = true;
-            this.ml_Price_IM.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ml_Price_IM.Location = new System.Drawing.Point(147, 81);
-            this.ml_Price_IM.Name = "ml_Price_IM";
-            this.ml_Price_IM.Size = new System.Drawing.Size(49, 25);
-            this.ml_Price_IM.TabIndex = 5;
-            this.ml_Price_IM.Text = "Price";
-            this.ml_Price_IM.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // ml_Price_IS
-            // 
-            this.ml_Price_IS.AutoSize = true;
-            this.ml_Price_IS.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.ml_Price_IS.Location = new System.Drawing.Point(147, 46);
-            this.ml_Price_IS.Name = "ml_Price_IS";
-            this.ml_Price_IS.Size = new System.Drawing.Size(49, 25);
-            this.ml_Price_IS.TabIndex = 4;
-            this.ml_Price_IS.Text = "Price";
-            this.ml_Price_IS.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // ml_Price_ELY
             // 
             this.ml_Price_ELY.AutoSize = true;
@@ -297,6 +257,16 @@
             this.ml_Price_ELY.Text = "Price";
             this.ml_Price_ELY.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // mL_ExpensesLastYear
+            // 
+            this.mL_ExpensesLastYear.AutoSize = true;
+            this.mL_ExpensesLastYear.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.mL_ExpensesLastYear.Location = new System.Drawing.Point(3, 151);
+            this.mL_ExpensesLastYear.Name = "mL_ExpensesLastYear";
+            this.mL_ExpensesLastYear.Size = new System.Drawing.Size(118, 25);
+            this.mL_ExpensesLastYear.TabIndex = 6;
+            this.mL_ExpensesLastYear.Text = "Expenses Year";
+            // 
             // ml_Price_ELM
             // 
             this.ml_Price_ELM.AutoSize = true;
@@ -307,6 +277,16 @@
             this.ml_Price_ELM.TabIndex = 10;
             this.ml_Price_ELM.Text = "Price";
             this.ml_Price_ELM.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // ml_ExpensesLastMonth
+            // 
+            this.ml_ExpensesLastMonth.AutoSize = true;
+            this.ml_ExpensesLastMonth.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.ml_ExpensesLastMonth.Location = new System.Drawing.Point(3, 116);
+            this.ml_ExpensesLastMonth.Name = "ml_ExpensesLastMonth";
+            this.ml_ExpensesLastMonth.Size = new System.Drawing.Size(140, 25);
+            this.ml_ExpensesLastMonth.TabIndex = 5;
+            this.ml_ExpensesLastMonth.Text = "Expenses Month:";
             // 
             // ml_Price_EM
             // 
@@ -329,6 +309,26 @@
             this.ml_Price_ES.TabIndex = 8;
             this.ml_Price_ES.Text = "Price";
             this.ml_Price_ES.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // mL_ExpensesYear
+            // 
+            this.mL_ExpensesYear.AutoSize = true;
+            this.mL_ExpensesYear.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.mL_ExpensesYear.Location = new System.Drawing.Point(3, 46);
+            this.mL_ExpensesYear.Name = "mL_ExpensesYear";
+            this.mL_ExpensesYear.Size = new System.Drawing.Size(124, 25);
+            this.mL_ExpensesYear.TabIndex = 3;
+            this.mL_ExpensesYear.Text = "Expenses Sum:";
+            // 
+            // mL_ExpensesMonth
+            // 
+            this.mL_ExpensesMonth.AutoSize = true;
+            this.mL_ExpensesMonth.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.mL_ExpensesMonth.Location = new System.Drawing.Point(3, 81);
+            this.mL_ExpensesMonth.Name = "mL_ExpensesMonth";
+            this.mL_ExpensesMonth.Size = new System.Drawing.Size(140, 25);
+            this.mL_ExpensesMonth.TabIndex = 4;
+            this.mL_ExpensesMonth.Text = "Expenses Month:";
             // 
             // ucOverview
             // 

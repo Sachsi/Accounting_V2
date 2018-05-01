@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Accounting.Migrations;
 using System.Globalization;
+using Accounting.Properties;
 
 namespace Accounting
 {
@@ -35,10 +36,13 @@ namespace Accounting
         public MetroLink MetroLink {
             get { return mLink_Back; } set { mLink_Back = value; } }
 
+        Settings settings = new Settings();
+
         public Form_Main()
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -46,9 +50,21 @@ namespace Accounting
         /// <param name="e"></param>
         private void Form_Main_Load(object sender, EventArgs e)
         {
+           
+            if (Settings.Default.FirstStart == true)
+            {
+                DialogResult = MetroMessageBox.Show(this, "Are you sure to delete the complete database?. You can not undo it!\n\r To delete you database you can do it unter setting, as well.",
+                            "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (DialogResult == DialogResult.No)
+                {
+                    Settings.Default.FirstStart = false;
+                    Settings.Default.Save();
+                }
+            }
+
+
             _instance = this;
             ucDashboard uc = new ucDashboard();
-            //ucDatabase uc = new ucDatabase();
             uc.Dock = DockStyle.Fill;
 
             mP_Dashboard.Controls.Add(uc);
