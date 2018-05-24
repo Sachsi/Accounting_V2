@@ -120,6 +120,7 @@
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
             this.mB_Cancel = new MetroFramework.Controls.MetroButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.mB_Filter = new MetroFramework.Controls.MetroButton();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -153,7 +154,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(0, 0);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 3;
+            this.mTC_Accounting.SelectedIndex = 2;
             this.mTC_Accounting.Size = new System.Drawing.Size(960, 480);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 1;
@@ -1003,7 +1004,6 @@
             this.mTB_Payment_Expenses.UseSelectable = true;
             this.mTB_Payment_Expenses.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_Payment_Expenses.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mTB_Payment_Expenses.Click += new System.EventHandler(this.mTB_Payment_Expenses_Click);
             // 
             // mTB_Date_Expenses
             // 
@@ -1468,10 +1468,10 @@
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.Controls.Add(this.mTC_Accounting);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.mB_Filter);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Edit_Customer);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Remove);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Add_Customer);
@@ -1480,6 +1480,17 @@
             this.splitContainer1.Size = new System.Drawing.Size(960, 520);
             this.splitContainer1.SplitterDistance = 480;
             this.splitContainer1.TabIndex = 10;
+            // 
+            // mB_Filter
+            // 
+            this.mB_Filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.mB_Filter.Location = new System.Drawing.Point(303, 8);
+            this.mB_Filter.Name = "mB_Filter";
+            this.mB_Filter.Size = new System.Drawing.Size(100, 25);
+            this.mB_Filter.TabIndex = 10;
+            this.mB_Filter.Text = "&Filter";
+            this.mB_Filter.UseSelectable = true;
+            this.mB_Filter.Click += new System.EventHandler(this.mB_Filter_Click);
             // 
             // ucDatabase
             // 
@@ -1608,5 +1619,6 @@
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Price;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Produkt;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Date;
+        private MetroFramework.Controls.MetroButton mB_Filter;
     }
 }

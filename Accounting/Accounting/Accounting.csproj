@@ -24,8 +24,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>https://79.215.31.144:48271/</UpdateUrl>
-    <ApplicationRevision>12</ApplicationRevision>
-    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -166,8 +166,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SQLClient\IDatabase.cs" />
-    <Compile Include="SQLClient\SQLDatabase.cs" />
+    <Compile Include="SQLDatabase\IDatabase.cs" />
+    <Compile Include="SQLDatabase\ISearchInDB.cs" />
+    <Compile Include="SQLDatabase\SQLDatabase.cs" />
+    <Compile Include="SQLDatabase\SQLSearch.cs" />
     <Compile Include="ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>

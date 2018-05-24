@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Accounting
 {
-    public partial class ucSearch : UserControl
+    public partial class ucSearch : MetroFramework.Controls.MetroUserControl
     {
         public ucSearch()
         {

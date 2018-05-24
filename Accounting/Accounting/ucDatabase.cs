@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using System.Data.Entity;
+using Accounting.SQLDatabase;
 
 namespace Accounting
 {
@@ -33,18 +34,14 @@ namespace Accounting
 
             //DatabaseContext database = new DatabaseContext(test.ConnectionString);
 
-
-
             using (DatabaseContext db = new DatabaseContext())
             {
-                
-                
+
+
                 customerBindingSource.DataSource = db.Customers.ToList();
                 incomeBindingSource.DataSource = db.Incomes.ToList();
                 expensesBindingSource.DataSource = db.Expenses.ToList();
                 produktBindingSource.DataSource = db.Produkts.ToList();
- 
-
 
                 ///Tabellen werden nur geladen, wenn die Datenbanken Einträge enthalten
                 if (db.Incomes.Count() != 0)
@@ -347,7 +344,7 @@ namespace Accounting
 
                     if ((obj_Produkt.Unit < 0) &&(obj_Produkt.Unit > obj_Produkt.Units.Count)  )
                     {
-                        MetroMessageBox.Show(this, "Pleaser selevt one Unit\n\r " + e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MetroMessageBox.Show(this, "Pleaser select one Unit\n\r " + e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -386,14 +383,22 @@ namespace Accounting
                 ml_Unit.Text = "lb";
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+
+        private void mB_Filter_Click(object sender, EventArgs e)
         {
 
+            using (DatabaseContext db = new DatabaseContext())
+            {
+
+                string a = "Tobias Sachse";
+                List<Income> list = new List<Income>();
+
+                list = SQLSearch.SearchForNameIncome(db, a);
+
+                
+            }
         }
 
-        private void mTB_Payment_Expenses_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }
