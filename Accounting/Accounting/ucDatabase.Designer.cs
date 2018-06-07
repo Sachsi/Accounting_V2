@@ -154,7 +154,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(0, 0);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 2;
+            this.mTC_Accounting.SelectedIndex = 1;
             this.mTC_Accounting.Size = new System.Drawing.Size(960, 480);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 1;
@@ -554,13 +554,18 @@
             // 
             // mlV_Products_Income
             // 
+            this.mlV_Products_Income.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.mlV_Products_Income.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mlV_Products_Income.CheckBoxes = true;
             this.mlV_Products_Income.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mlV_Products_Income.FullRowSelect = true;
-            this.mlV_Products_Income.Location = new System.Drawing.Point(617, 0);
+            this.mlV_Products_Income.HotTracking = true;
+            this.mlV_Products_Income.HoverSelection = true;
+            this.mlV_Products_Income.Location = new System.Drawing.Point(620, 0);
             this.mlV_Products_Income.Name = "mlV_Products_Income";
             this.mlV_Products_Income.OwnerDraw = true;
-            this.mlV_Products_Income.Size = new System.Drawing.Size(258, 90);
+            this.mlV_Products_Income.Size = new System.Drawing.Size(332, 87);
             this.mlV_Products_Income.TabIndex = 4;
             this.mlV_Products_Income.UseCompatibleStateImageBehavior = false;
             this.mlV_Products_Income.UseSelectable = true;
@@ -581,6 +586,7 @@
             this.mCB_Customer_Income.DataSource = this.customerBindingSource;
             this.mCB_Customer_Income.DisplayMember = "Full_Name";
             this.mCB_Customer_Income.FormattingEnabled = true;
+            this.mCB_Customer_Income.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.mCB_Customer_Income.ItemHeight = 23;
             this.mCB_Customer_Income.Location = new System.Drawing.Point(87, 42);
             this.mCB_Customer_Income.Name = "mCB_Customer_Income";
@@ -1458,8 +1464,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;

@@ -58,6 +58,7 @@
             this.mTile_Search.Size = new System.Drawing.Size(128, 128);
             this.mTile_Search.TabIndex = 2;
             this.mTile_Search.Text = "&Search";
+            this.mTile_Search.TileImage = global::Accounting.Properties.Resources.AppListIcon_targetsize_64;
             this.mTile_Search.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mTile_Search.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mTile_Search.UseSelectable = true;

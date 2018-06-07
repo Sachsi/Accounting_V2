@@ -48,7 +48,7 @@ namespace Accounting
         private static void ClearTableCustomer(MetroListView list_Customer)
         {
             list_Customer.Clear();
-
+            
             list_Customer.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("Full Name", 120, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("E-Mail Address", 150, textAlign: HorizontalAlignment.Left);

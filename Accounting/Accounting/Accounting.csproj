@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="Enums\Database.cs" />
     <Compile Include="Enums\Month.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
@@ -284,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\AppListIcon.targetsize-641.png" />
     <None Include="Resources\pulse-box128.png" />
     <None Include="Resources\pulse-box64.png" />
     <None Include="Resources\settings128.png" />

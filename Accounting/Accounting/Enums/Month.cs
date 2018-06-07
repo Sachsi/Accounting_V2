@@ -43,4 +43,5 @@ namespace Accounting.Enums
         Month = 0,
         Year = 1
     }
+
 }
