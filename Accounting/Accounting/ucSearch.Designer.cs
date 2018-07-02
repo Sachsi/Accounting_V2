@@ -205,6 +205,7 @@
             this.mTB_SearchArg3.UseSelectable = true;
             this.mTB_SearchArg3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_SearchArg3.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mP_SearchArg2
             // 
@@ -264,6 +265,7 @@
             this.mTB_SearchArg2.UseSelectable = true;
             this.mTB_SearchArg2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_SearchArg2.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mP_SelectTable
             // 
@@ -358,6 +360,7 @@
             this.mTB_SearchArg1.UseSelectable = true;
             this.mTB_SearchArg1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_SearchArg1.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mB_Search
             // 

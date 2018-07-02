@@ -22,8 +22,11 @@ namespace Accounting
         /// <summary>
         /// Number of the maximum search arguments
         /// </summary>
-        private int CountSearchArguments = 4;
-
+        private int CountSearchArguments = 0;
+        private int MAXCountOfArguments = 4;
+        /// <summary>
+        /// 
+        /// </summary>
         public ucSearch()
         {
             InitializeComponent();
@@ -43,7 +46,11 @@ namespace Accounting
 
             ClearAllArguemntTextBox();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ucSearch_Load(object sender, EventArgs e)
         {
             for(int i = 0; i < tableName.Length; i++)
@@ -55,29 +62,33 @@ namespace Accounting
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TableSelected(object sender, EventArgs e)
         {
             using (Accounting.DatabaseContext db = new DatabaseContext())
             {
                 switch (mCB_SelectTable.SelectedIndex)
                 {
-                    case (int)Enums.Table.Customer:
+                    case (int)Table.Customer:
                         TabControl.RefreshCustomer(List_Search);
                         LoadAllArguments(Table.Customer);
                         mP_SearchArg1.Enabled = true;
                         break;
-                    case (int)Enums.Table.Income:
+                    case (int)Table.Income:
                         TabControl.RefreshIncome(List_Search);
                         LoadAllArguments(Table.Income);
                         mP_SearchArg1.Enabled = true;
                         break;
-                    case (int)Enums.Table.Expenses:
+                    case (int)Table.Expenses:
                         TabControl.RefreshExpenses(List_Search);
                         LoadAllArguments(Table.Expenses);
                         mP_SearchArg1.Enabled = true;
                         break;
-                    case (int)Enums.Table.Products:
+                    case (int)Table.Products:
                         TabControl.RefreshProdukt(List_Search, List_Search);
                         LoadAllArguments(Table.Products);
                         mP_SearchArg1.Enabled = true;
@@ -95,6 +106,7 @@ namespace Accounting
         private void LoadAllArguments(Table table)
         {
             ClearAllArgumentComboBox();
+            ClearAllArguemntTextBox();
 
             switch (table)
             {
@@ -169,6 +181,67 @@ namespace Accounting
             mTB_SearchArg2.Clear();
             mTB_SearchArg3.Clear();
             mTB_SearchArg4.Clear();
+        }
+
+        private void EnableNextSearchBox(object sender, EventArgs e)
+        {
+            string a;
+            MetroFramework.Controls.MetroTextBox answer = sender as MetroFramework.Controls.MetroTextBox;
+
+            if (answer.Text != "")
+            {
+                switch (answer.Name.ToString())
+                {
+                    case "mTB_SearchArg1":
+                        if (metroComboBox2.SelectedIndex > -1)
+                        {
+                            mP_SearchArg2.Enabled = true;
+                            CountSearchArguments = 1;
+                        }
+                        else
+                            MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case "mTB_SearchArg2":
+                        mP_SearchArg3.Enabled = true;
+                        CountSearchArguments = 2;
+                        break;
+                    case "mTB_SearchArg3":
+                        mP_SearchArg4.Enabled = true;
+                        CountSearchArguments = 3;
+                        break;
+                    case "mTB_SearchArg4":
+                        CountSearchArguments = 4;
+                        break;
+                    default:
+                        break;
+                }
+            }else
+            {
+                switch (answer.Name.ToString())
+                {
+                    case "mTB_SearchArg1":
+                        mP_SearchArg2.Enabled = false;
+                        mP_SearchArg3.Enabled = false;
+                        mP_SearchArg4.Enabled = false;
+                        CountSearchArguments = 0;
+                        break;
+                    case "mTB_SearchArg2":
+                        mP_SearchArg3.Enabled = false;
+                        mP_SearchArg4.Enabled = false;
+                        CountSearchArguments = 1;
+                        break;
+                    case "mTB_SearchArg3":
+                        mP_SearchArg4.Enabled = false;
+                        CountSearchArguments = 2;
+                        break;
+                    case "mTB_SearchArg4":
+                        CountSearchArguments = 3;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
         }
     }
 }
