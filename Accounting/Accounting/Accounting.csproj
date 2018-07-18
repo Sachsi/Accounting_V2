@@ -156,6 +156,7 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="Enums\Database.cs" />
+    <Compile Include="Enums\Error.cs" />
     <Compile Include="Enums\Month.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
@@ -171,6 +172,7 @@
     <Compile Include="SQLDatabase\ISearchInDB.cs" />
     <Compile Include="SQLDatabase\SQLDatabase.cs" />
     <Compile Include="SQLDatabase\SQLSearch.cs" />
+    <Compile Include="SQLDatabase\SearchDetails.cs" />
     <Compile Include="ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>

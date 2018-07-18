@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Accounting.Enums;
+using Accounting.SQLDatabase;
 
 namespace Accounting
 {
@@ -18,6 +19,13 @@ namespace Accounting
         public string[] IncomeColumName = new string[4];
         public string[] ExpensesColumName = new string[4];
         public string[] ProductsColumName = new string[6];
+
+        List<Income> income = new List<Income>();
+        List<Expense> epxpense = new List<Expense>();
+        List<Produkt> produkt = new List<Produkt>();
+        List<Customer> customer = new List<Customer>();
+
+        public SearchDetails[] searchDetails = new SearchDetails[4];
 
         /// <summary>
         /// Number of the maximum search arguments
@@ -57,8 +65,6 @@ namespace Accounting
             {
                 mCB_SelectTable.Items.Add(tableName[i]);
             }
-
-
         }
 
 
@@ -185,7 +191,6 @@ namespace Accounting
 
         private void EnableNextSearchBox(object sender, EventArgs e)
         {
-            string a;
             MetroFramework.Controls.MetroTextBox answer = sender as MetroFramework.Controls.MetroTextBox;
 
             if (answer.Text != "")
@@ -193,8 +198,11 @@ namespace Accounting
                 switch (answer.Name.ToString())
                 {
                     case "mTB_SearchArg1":
-                        if (metroComboBox2.SelectedIndex > -1)
+                        if (metroComboBox2.SelectedIndex > (int)ErrorState.Nothing)
                         {
+                            searchDetails[0].searchstring = mTB_SearchArg1.Text;
+                            searchDetails[0].ColumIndex = metroComboBox2.SelectedIndex;
+                            searchDetails[0].ArgumentNr = 1;
                             mP_SearchArg2.Enabled = true;
                             CountSearchArguments = 1;
                         }
@@ -202,21 +210,38 @@ namespace Accounting
                             MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case "mTB_SearchArg2":
-                        mP_SearchArg3.Enabled = true;
-                        CountSearchArguments = 2;
+                        if (metroComboBox3.SelectedIndex > (int)ErrorState.Nothing)
+                        {
+                            searchDetails[1].searchstring = mTB_SearchArg2.Text;
+                            searchDetails[1].ColumIndex = metroComboBox3.SelectedIndex;
+                            searchDetails[1].ArgumentNr = 2;
+                            mP_SearchArg3.Enabled = true;
+                            CountSearchArguments = 2;
+                        }else
+                            MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case "mTB_SearchArg3":
-                        mP_SearchArg4.Enabled = true;
-                        CountSearchArguments = 3;
+                        if (metroComboBox4.SelectedIndex > (int)ErrorState.Nothing)
+                        {
+                            searchDetails[2].searchstring = mTB_SearchArg3.Text;
+                            searchDetails[2].ColumIndex = metroComboBox3.SelectedIndex;
+                            searchDetails[2].ArgumentNr = 3;
+                            mP_SearchArg4.Enabled = true;
+                            CountSearchArguments = 3;
+                        }else
+                            MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case "mTB_SearchArg4":
+                        searchDetails[3].searchstring = mTB_SearchArg4.Text;
+                        searchDetails[3].ColumIndex = metroComboBox4.SelectedIndex;
+                        searchDetails[3].ArgumentNr = 4;
                         CountSearchArguments = 4;
                         break;
                     default:
                         break;
                 }
             }else
-            {
+            {///reset each argument box and disabled it.
                 switch (answer.Name.ToString())
                 {
                     case "mTB_SearchArg1":
@@ -242,6 +267,138 @@ namespace Accounting
                 }
             }
             
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mB_Search_Click(object sender, EventArgs e)
+        {
+            switch (mCB_SelectTable.SelectedIndex)
+            {
+                case (int)Table.Customer:
+
+                    for(int i = 0; i < CountSearchArguments; i++)
+                    {
+                        SelectColumCustomer(searchDetails[i]);
+                    }
+                    LoadCustomerList(customer);
+                    break;
+                case (int)Table.Income:
+                    break;
+                case (int)Table.Expenses:
+                    break;
+                case (int)Table.Products:
+                    break;
+                default:
+                    MetroFramework.MetroMessageBox.Show(this, "No table selected! Please select one table.", 
+                                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
+
+            //int index = metroComboBox2.SelectedIndex;
+    
+            //SelectColumCustomer(index);
+
+            //SelectColumIncome(index);
+            
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        private void SelectColumIncome(int index)
+        {
+            switch (index)
+            {
+                case (int)IncomeColuems.Date:
+                    break;
+                case (int)IncomeColuems.FullName:
+                    break;
+                case (int)IncomeColuems.Price:
+                    break;
+                case (int)IncomeColuems.Products:
+                    break;
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        private void SelectColumCustomer(SearchDetails searchDetails)
+        {
+            bool result;
+
+            switch (searchDetails.ColumIndex)
+            {
+                case (int)CustomerColums.Date:
+                    DateTime dateTime;
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        customer = SQLSearch.SearchCustomerDate(dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!","Information",  
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)CustomerColums.FullName:
+                    customer = SQLSearch.SearchCustomerName(searchDetails.searchstring);
+                    break;
+                case (int)CustomerColums.EMail:
+                    customer = SQLSearch.SearchCustomerMail(searchDetails.searchstring);
+                    break;
+                case (int)CustomerColums.Phone:
+                    customer = SQLSearch.SearchCustomerPhone(searchDetails.searchstring);
+                    break;
+                case (int)CustomerColums.CSA:
+                    if(bool.TryParse(searchDetails.searchstring, out result))
+                        customer = SQLSearch.SearchCustomerCSA(result);
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter true or false!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)CustomerColums.HorsBarn:
+                    if(bool.TryParse(searchDetails.searchstring, out result))
+                        customer = SQLSearch.SearchCustomerHorseBarn(result);
+                     else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter true or false!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)CustomerColums.Neigtbar:
+                    if(bool.TryParse(searchDetails.searchstring, out result))
+                        customer = SQLSearch.SearchCustomerNeighbarhood(result);
+                     else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter true or false!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// clear the current list view and load it with the customer entites
+        /// </summary>
+        /// <param name="customer">new customer list to load</param>
+        private void LoadCustomerList(List<Customer> customer)
+        {
+            List_Search.Items.Clear();
+
+            foreach (Customer item in customer)
+            {
+                ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
+                b.SubItems.Add(item.Full_Name);
+                b.SubItems.Add(item.E_Mail);
+                b.SubItems.Add(item.PhoneNr);
+                b.SubItems.Add(item.CSA.ToString());
+                b.SubItems.Add(item.Neighbarhood.ToString());
+                b.SubItems.Add(item.Hors_Barn.ToString());
+                List_Search.Items.Add(b);
+            }
         }
     }
 }

@@ -146,6 +146,7 @@
             this.mTB_SearchArg4.UseSelectable = true;
             this.mTB_SearchArg4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_SearchArg4.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mP_SearchArg3
             // 
@@ -371,6 +372,7 @@
             this.mB_Search.TabIndex = 8;
             this.mB_Search.Text = "&Search";
             this.mB_Search.UseSelectable = true;
+            this.mB_Search.Click += new System.EventHandler(this.mB_Search_Click);
             // 
             // ucSearch
             // 
