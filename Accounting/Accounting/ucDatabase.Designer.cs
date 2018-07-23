@@ -120,7 +120,6 @@
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
             this.mB_Cancel = new MetroFramework.Controls.MetroButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.mB_Filter = new MetroFramework.Controls.MetroButton();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -1476,7 +1475,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.mB_Filter);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Edit_Customer);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Remove);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Add_Customer);
@@ -1485,17 +1483,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(960, 520);
             this.splitContainer1.SplitterDistance = 480;
             this.splitContainer1.TabIndex = 10;
-            // 
-            // mB_Filter
-            // 
-            this.mB_Filter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Filter.Location = new System.Drawing.Point(303, 8);
-            this.mB_Filter.Name = "mB_Filter";
-            this.mB_Filter.Size = new System.Drawing.Size(100, 25);
-            this.mB_Filter.TabIndex = 10;
-            this.mB_Filter.Text = "&Filter";
-            this.mB_Filter.UseSelectable = true;
-            this.mB_Filter.Click += new System.EventHandler(this.mB_Filter_Click);
             // 
             // ucDatabase
             // 
@@ -1624,6 +1611,5 @@
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Price;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Produkt;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Date;
-        private MetroFramework.Controls.MetroButton mB_Filter;
     }
 }

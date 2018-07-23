@@ -296,13 +296,17 @@ namespace Accounting
                             MetroMessageBox.Show(this, "Pleaser enter one Cutomer Name \n\r " + e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
-                        
 
-                        foreach (var item in mlV_Products_Income.CheckedIndices)
+                        if (mlV_Products_Income.CheckedItems.Count != 0)
                         {
-                            string a = mlV_Products_Income.Items[Convert.ToInt32(item)].Text;
-                            obj_Income.Products = obj_Income.Products + a + ", ";
+                            foreach (var item in mlV_Products_Income.CheckedIndices)
+                            {
+                                string a = mlV_Products_Income.Items[Convert.ToInt32(item)].Text;
+                                obj_Income.Products = obj_Income.Products + a + ", ";
+                            }
                         }
+                        else
+                            obj_Income.Products = " ";
 
                         if (db.Entry<Income>(obj_Income).State == System.Data.Entity.EntityState.Detached)
                             db.Set<Income>().Attach(obj_Income);
@@ -324,6 +328,11 @@ namespace Accounting
 
                     if (obj_Expense != null)
                     {
+                        if (obj_Expense.Details == null)
+                        {
+                            obj_Expense.Details = "No Details ";
+                        }
+
                         if (db.Entry<Expense>(obj_Expense).State == System.Data.Entity.EntityState.Detached)
                             db.Set<Expense>().Attach(obj_Expense);
                         if (obj_Expense.ObjectState == 1)
@@ -381,22 +390,6 @@ namespace Accounting
                 ml_Unit.Text = "g";
             else if (mCB_Produkts_Unit.SelectedIndex == 2)
                 ml_Unit.Text = "lb";
-        }
-
-
-        private void mB_Filter_Click(object sender, EventArgs e)
-        {
-
-            using (DatabaseContext db = new DatabaseContext())
-            {
-
-                string a = "Tobias Sachse";
-                List<Income> list = new List<Income>();
-
-                list = SQLSearch.SearchForNameIncome(db, a);
-
-                
-            }
         }
 
 

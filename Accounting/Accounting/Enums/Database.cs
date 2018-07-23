@@ -16,9 +16,11 @@ namespace Accounting.Enums
 
     enum CustomerColums : int
     {
-        Date     = 0,
-        FullName = 1,
-        EMail    = 2,
+        None    = 0,
+        Date_Des    ,
+        Date_Asc,
+        FullName ,
+        EMail    ,
         Phone       ,
         CSA         ,
         HorsBarn    ,
@@ -27,27 +29,39 @@ namespace Accounting.Enums
 
     enum IncomeColuems : int
     {
-        Date    = 0 ,
+        None    = 0,
+        Date_Des,
+        Date_Asc,
         FullName    ,
         Price       ,
         Products    ,
+        Price_Des   ,
+        Price_Asc
     }
 
     enum ExpensesColums : int
     {
-        Date    = 0,
+        None = 0,
+        Date_Des,
+        Date_Asc,
         Dealer      ,
         Price       ,
         Details     ,
+        Price_Des   ,
+        Price_Asc
     }
 
     enum ProductColums : int
     {
-        Date     = 0,
+        None = 0,
+        Date_Des,
+        Date_Asc,
         Farmer      ,
         Produce     ,
-        Price       ,
-        Quantity    ,
+        Price_Des   ,
+        Price_Asc   ,
+        Quantity_Des,
+        Quantity_Asc,
         Unit        ,
     }
 }

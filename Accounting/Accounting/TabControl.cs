@@ -118,7 +118,7 @@ namespace Accounting
 
                 foreach (var item in list)
                 {
-                    ListViewItem listItems = new ListViewItem(item.Date.ToLongDateString());
+                    ListViewItem listItems = new ListViewItem(item.Date.ToShortDateString());
                     listItems.SubItems.Add(item.Farmer);
                     listItems.SubItems.Add(item.Produce);
                     listItems.SubItems.Add(item.Price.ToString("c",ucSetting.CurrencyDefault));

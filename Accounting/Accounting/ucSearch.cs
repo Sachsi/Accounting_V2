@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Accounting.Enums;
+﻿using Accounting.Enums;
 using Accounting.SQLDatabase;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Accounting
 {
     public partial class ucSearch : MetroFramework.Controls.MetroUserControl
     {
         public string[] tableName = new string[4];
-        public string[] CustomColumName = new string[7];
-        public string[] IncomeColumName = new string[4];
-        public string[] ExpensesColumName = new string[4];
-        public string[] ProductsColumName = new string[6];
+        public string[] CustomColumName = new string[9];
+        public string[] IncomeColumName = new string[8];
+        public string[] ExpensesColumName = new string[8];
+        public string[] ProductsColumName = new string[10];
 
         List<Income> income = new List<Income>();
-        List<Expense> epxpense = new List<Expense>();
+        List<Expense> expense = new List<Expense>();
         List<Produkt> produkt = new List<Produkt>();
         List<Customer> customer = new List<Customer>();
 
@@ -41,16 +36,19 @@ namespace Accounting
 
             tableName[0] = "Customer"; tableName[1] = "Income";  tableName[2] = "Expenses";  tableName[3] = "Products";
 
-            CustomColumName[0] = "Date"; CustomColumName[1] = "Full Name"; CustomColumName[2] = "E-Mail Address";
-            CustomColumName[3] = "Phone Number"; CustomColumName[4] = "CSA"; CustomColumName[5] = "Horse Barn";
-            CustomColumName[6] = "Neightbarhood";
+            CustomColumName[0] = " "; CustomColumName[1] = "Date <"; CustomColumName[2] = "Date >"; CustomColumName[3] = "Full Name"; CustomColumName[4] = "E-Mail Address";
+            CustomColumName[5] = "Phone Number"; CustomColumName[6] = "CSA"; CustomColumName[7] = "Horse Barn";
+            CustomColumName[8] = "Neightbarhood";
 
-            IncomeColumName[0] = "Date"; IncomeColumName[1] = "Full Name"; IncomeColumName[2] = "Price"; IncomeColumName[3] = "Products";
+            IncomeColumName[0] = " "; IncomeColumName[1] = "Date <"; IncomeColumName[2] = "Date >"; IncomeColumName[3] = "Full Name"; IncomeColumName[4] = "Price";
+            IncomeColumName[5] = "Products"; IncomeColumName[6] = "Price <"; ; IncomeColumName[7] = "Price >";
 
-            ExpensesColumName[0] = "Date"; ExpensesColumName[1] = "Dealer"; ExpensesColumName[2] = "Price"; ExpensesColumName[3] = "Details";
+            ExpensesColumName[0] = " "; ExpensesColumName[1] = "Date <"; ExpensesColumName[2] = "Date >"; ExpensesColumName[3] = "Dealer";
+            ExpensesColumName[4] = "Price"; ExpensesColumName[5] = "Details"; ExpensesColumName[6] = "Price <"; ExpensesColumName[7] = "Price >";
 
-            ProductsColumName[0] = "Date"; ProductsColumName[1] = "Farmer"; ProductsColumName[2] = "Produce"; ProductsColumName[3] = "Price";
-            ProductsColumName[4] = "Quantity"; ProductsColumName[5] = "Unit";
+            ProductsColumName[0] = " "; ProductsColumName[1] = "Date <"; ProductsColumName[2] = "Date >"; ProductsColumName[3] = "Farmer";
+            ProductsColumName[4] = "Produce"; ProductsColumName[5] = "Price <";ProductsColumName[6] = "Price >"; ProductsColumName[7] = "Quantity <";
+            ProductsColumName[8] = "Quantity >"; ProductsColumName[9] = "Unit";
 
             ClearAllArguemntTextBox();
         }
@@ -75,34 +73,37 @@ namespace Accounting
         /// <param name="e"></param>
         private void TableSelected(object sender, EventArgs e)
         {
+            MetroFramework.Controls.MetroListView temp = new MetroFramework.Controls.MetroListView();
             using (Accounting.DatabaseContext db = new DatabaseContext())
             {
+                
                 switch (mCB_SelectTable.SelectedIndex)
                 {
                     case (int)Table.Customer:
                         TabControl.RefreshCustomer(List_Search);
                         LoadAllArguments(Table.Customer);
-                        mP_SearchArg1.Enabled = true;
+
                         break;
                     case (int)Table.Income:
                         TabControl.RefreshIncome(List_Search);
                         LoadAllArguments(Table.Income);
-                        mP_SearchArg1.Enabled = true;
+                        income = db.Incomes.ToList();
+      
                         break;
                     case (int)Table.Expenses:
                         TabControl.RefreshExpenses(List_Search);
                         LoadAllArguments(Table.Expenses);
-                        mP_SearchArg1.Enabled = true;
+           
                         break;
                     case (int)Table.Products:
-                        TabControl.RefreshProdukt(List_Search, List_Search);
+                        TabControl.RefreshProdukt(List_Search, temp);
                         LoadAllArguments(Table.Products);
-                        mP_SearchArg1.Enabled = true;
+               
                         break;
                     default:
-                        DisableAllSearchArg();
                         break;
                 }
+                ClearFilter();
             }
         }
         /// <summary>
@@ -169,14 +170,18 @@ namespace Accounting
         }
 
         /// <summary>
-        /// Disable all search argument boxes
+        /// Disable and reset all search argument boxes
         /// </summary>
-        private void DisableAllSearchArg()
+        private void ClearFilter()
         {
-            mP_SearchArg1.Enabled = false;
-            mP_SearchArg2.Enabled = false;
-            mP_SearchArg3.Enabled = false;
-            mP_SearchArg4.Enabled = false;
+            
+            ClearAllArguemntTextBox();
+
+            metroComboBox2.SelectedIndex = 0;
+            metroComboBox3.SelectedIndex = 0;
+            metroComboBox4.SelectedIndex = 0;
+            metroComboBox5.SelectedIndex = 0;
+
         }
         /// <summary>
         /// clear all four search text boxes
@@ -189,84 +194,51 @@ namespace Accounting
             mTB_SearchArg4.Clear();
         }
 
-        private void EnableNextSearchBox(object sender, EventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        private void EnableNextSearchBox()
         {
-            MetroFramework.Controls.MetroTextBox answer = sender as MetroFramework.Controls.MetroTextBox;
-
-            if (answer.Text != "")
+ 
+            if (metroComboBox2.SelectedIndex > (int)ErrorState.Nothing)
             {
-                switch (answer.Name.ToString())
-                {
-                    case "mTB_SearchArg1":
-                        if (metroComboBox2.SelectedIndex > (int)ErrorState.Nothing)
-                        {
-                            searchDetails[0].searchstring = mTB_SearchArg1.Text;
-                            searchDetails[0].ColumIndex = metroComboBox2.SelectedIndex;
-                            searchDetails[0].ArgumentNr = 1;
-                            mP_SearchArg2.Enabled = true;
-                            CountSearchArguments = 1;
-                        }
-                        else
-                            MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    case "mTB_SearchArg2":
-                        if (metroComboBox3.SelectedIndex > (int)ErrorState.Nothing)
-                        {
-                            searchDetails[1].searchstring = mTB_SearchArg2.Text;
-                            searchDetails[1].ColumIndex = metroComboBox3.SelectedIndex;
-                            searchDetails[1].ArgumentNr = 2;
-                            mP_SearchArg3.Enabled = true;
-                            CountSearchArguments = 2;
-                        }else
-                            MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    case "mTB_SearchArg3":
-                        if (metroComboBox4.SelectedIndex > (int)ErrorState.Nothing)
-                        {
-                            searchDetails[2].searchstring = mTB_SearchArg3.Text;
-                            searchDetails[2].ColumIndex = metroComboBox3.SelectedIndex;
-                            searchDetails[2].ArgumentNr = 3;
-                            mP_SearchArg4.Enabled = true;
-                            CountSearchArguments = 3;
-                        }else
-                            MessageBox.Show("Please select one colume!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    case "mTB_SearchArg4":
-                        searchDetails[3].searchstring = mTB_SearchArg4.Text;
-                        searchDetails[3].ColumIndex = metroComboBox4.SelectedIndex;
-                        searchDetails[3].ArgumentNr = 4;
-                        CountSearchArguments = 4;
-                        break;
-                    default:
-                        break;
-                }
-            }else
-            {///reset each argument box and disabled it.
-                switch (answer.Name.ToString())
-                {
-                    case "mTB_SearchArg1":
-                        mP_SearchArg2.Enabled = false;
-                        mP_SearchArg3.Enabled = false;
-                        mP_SearchArg4.Enabled = false;
-                        CountSearchArguments = 0;
-                        break;
-                    case "mTB_SearchArg2":
-                        mP_SearchArg3.Enabled = false;
-                        mP_SearchArg4.Enabled = false;
-                        CountSearchArguments = 1;
-                        break;
-                    case "mTB_SearchArg3":
-                        mP_SearchArg4.Enabled = false;
-                        CountSearchArguments = 2;
-                        break;
-                    case "mTB_SearchArg4":
-                        CountSearchArguments = 3;
-                        break;
-                    default:
-                        break;
-                }
+                searchDetails[0].searchstring = mTB_SearchArg1.Text;
+                searchDetails[0].ColumIndex = metroComboBox2.SelectedIndex;
+                searchDetails[0].ArgumentNr = 1;
+
+                if (CountSearchArguments < 1)
+                    CountSearchArguments = 1;
             }
-            
+
+            if (metroComboBox3.SelectedIndex > (int)ErrorState.Nothing)
+            {
+                searchDetails[1].searchstring = mTB_SearchArg2.Text;
+                searchDetails[1].ColumIndex = metroComboBox3.SelectedIndex;
+                searchDetails[1].ArgumentNr = 2;
+
+                if (CountSearchArguments < 2)
+                    CountSearchArguments = 2;
+            }
+
+            if (metroComboBox4.SelectedIndex > (int)ErrorState.Nothing)
+            {
+                searchDetails[2].searchstring = mTB_SearchArg3.Text;
+                searchDetails[2].ColumIndex = metroComboBox4.SelectedIndex;
+                searchDetails[2].ArgumentNr = 3;
+
+                if (CountSearchArguments < 3)
+                    CountSearchArguments = 3;
+            }
+
+            if (metroComboBox5.SelectedIndex > (int)ErrorState.Nothing)
+            {
+                searchDetails[3].searchstring = mTB_SearchArg4.Text;
+                searchDetails[3].ColumIndex = metroComboBox5.SelectedIndex;
+                searchDetails[3].ArgumentNr = 4;
+                if (CountSearchArguments < 4)
+                    CountSearchArguments = 4;
+            }
+
         }
 
         /// <summary>
@@ -276,50 +248,178 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Search_Click(object sender, EventArgs e)
         {
-            switch (mCB_SelectTable.SelectedIndex)
+            EnableNextSearchBox();
+            using (DatabaseContext db = new DatabaseContext())
             {
-                case (int)Table.Customer:
+                 switch (mCB_SelectTable.SelectedIndex)
+                 {
+                     case (int)Table.Customer:
+                        customer = db.Customers.ToList();
+                         for(int i = 0; i < CountSearchArguments; i++)
+                         {
+                             SelectColumCustomer(searchDetails[i]);
+                         }
+                        LoadCustomerList(customer);
+                         break;
+                     case (int)Table.Income:
+                        income = db.Incomes.ToList();
+                         for (int i = 0; i < CountSearchArguments; i++)
+                         {
+                             SelectColumIncome(searchDetails[i]);
+                         }
+                         LoadIncomeList(income);
+                         break;
+                     case (int)Table.Expenses:
+                        expense = db.Expenses.ToList();
+                         for (int i = 0; i < CountSearchArguments; i++)
+                         {
+                             SelectColumExpenses(searchDetails[i]);
+                         }
+                         LoadExpensesList(expense);
+                         break;
+                     case (int)Table.Products:
+                        produkt = db.Produkts.ToList();
+                         for (int i = 0; i < CountSearchArguments; i++)
+                         {
+                             SelectColumProduce(searchDetails[i]);
+                         }
+                         LoadProductList(produkt);
+                         break;
+                     default:
+                         MetroFramework.MetroMessageBox.Show(this, "No table selected! Please select one table.", 
+                                             "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                         break;
+                 }
 
-                    for(int i = 0; i < CountSearchArguments; i++)
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="searchDetails"></param>
+        private void SelectColumExpenses(SearchDetails searchDetails)
+        {
+            double temp;
+            DateTime dateTime;
+            switch (searchDetails.ColumIndex)
+            {
+                case (int)ExpensesColums.Date_Asc:
+                    if (searchDetails.DateTimeConverter(out dateTime))
                     {
-                        SelectColumCustomer(searchDetails[i]);
+                        expense = SQLSearch.SearchExpenseDateAsc(expense,dateTime);
                     }
-                    LoadCustomerList(customer);
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
-                case (int)Table.Income:
+                case (int)ExpensesColums.Date_Des:
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        expense = SQLSearch.SearchExpenseDateDes(expense, dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
-                case (int)Table.Expenses:
+                case (int)ExpensesColums.Dealer:
+                    expense = SQLSearch.SearchExpenseDealer(expense,searchDetails.searchstring);
                     break;
-                case (int)Table.Products:
+                case (int)ExpensesColums.Price:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        expense = SQLSearch.SearchExpensePrice(expense,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ExpensesColums.Details:
+                    expense = SQLSearch.SearchExpenseDetails(expense,searchDetails.searchstring);
+                    break;
+                case (int)ExpensesColums.Price_Des:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        expense = SQLSearch.SearchExpensePriceDesc(expense,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ExpensesColums.Price_Asc:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        expense = SQLSearch.SearchExpensePriceAsc(expense,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
-                    MetroFramework.MetroMessageBox.Show(this, "No table selected! Please select one table.", 
-                                        "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
-
-            //int index = metroComboBox2.SelectedIndex;
-    
-            //SelectColumCustomer(index);
-
-            //SelectColumIncome(index);
-            
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="index"></param>
-        private void SelectColumIncome(int index)
+        private void SelectColumIncome(SearchDetails searchDetails)
         {
-            switch (index)
+            double temp;
+            DateTime dateTime;
+            switch (searchDetails.ColumIndex)
             {
-                case (int)IncomeColuems.Date:
+                case (int)IncomeColuems.Date_Asc:
+                    
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        income = SQLSearch.SearchIncomeDateAsc(income, dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)IncomeColuems.Date_Des:
+
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        income = SQLSearch.SearchIncomeDateDes(income, dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case (int)IncomeColuems.FullName:
+                    income = SQLSearch.SearchIncomeName(income,searchDetails.searchstring);
                     break;
                 case (int)IncomeColuems.Price:
+
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        income = SQLSearch.SearchIncomePrice(income,temp);
+                    }else
+                    MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case (int)IncomeColuems.Products:
+                    income = SQLSearch.SearchIncomeProduct(income,searchDetails.searchstring);
+                    break;
+                case (int)IncomeColuems.Price_Des:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        income = SQLSearch.SearchIncomePriceDesc(income,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)IncomeColuems.Price_Asc:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        income = SQLSearch.SearchIncomePriceAsce(income,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
                     break;
@@ -332,48 +432,136 @@ namespace Accounting
         private void SelectColumCustomer(SearchDetails searchDetails)
         {
             bool result;
-
+            DateTime dateTime;
             switch (searchDetails.ColumIndex)
             {
-                case (int)CustomerColums.Date:
-                    DateTime dateTime;
+                case (int)CustomerColums.Date_Asc:
                     if (searchDetails.DateTimeConverter(out dateTime))
                     {
-                        customer = SQLSearch.SearchCustomerDate(dateTime);
+                        customer = SQLSearch.SearchCustomerDateAsc(customer,dateTime);
                     }
                     else
                         MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!","Information",  
                                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
+                case (int)CustomerColums.Date_Des:
+                    
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        customer = SQLSearch.SearchCustomerDateDes(customer, dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
                 case (int)CustomerColums.FullName:
-                    customer = SQLSearch.SearchCustomerName(searchDetails.searchstring);
+                    customer = SQLSearch.SearchCustomerName(customer,searchDetails.searchstring);
                     break;
                 case (int)CustomerColums.EMail:
-                    customer = SQLSearch.SearchCustomerMail(searchDetails.searchstring);
+                    customer = SQLSearch.SearchCustomerMail(customer,searchDetails.searchstring);
                     break;
                 case (int)CustomerColums.Phone:
-                    customer = SQLSearch.SearchCustomerPhone(searchDetails.searchstring);
+                    customer = SQLSearch.SearchCustomerPhone(customer,searchDetails.searchstring);
                     break;
                 case (int)CustomerColums.CSA:
                     if(bool.TryParse(searchDetails.searchstring, out result))
-                        customer = SQLSearch.SearchCustomerCSA(result);
+                        customer = SQLSearch.SearchCustomerCSA(customer,result);
                     else
                         MetroFramework.MetroMessageBox.Show(this, "Please enter true or false!", "Information",
                                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case (int)CustomerColums.HorsBarn:
                     if(bool.TryParse(searchDetails.searchstring, out result))
-                        customer = SQLSearch.SearchCustomerHorseBarn(result);
+                        customer = SQLSearch.SearchCustomerHorseBarn(customer,result);
                      else
                         MetroFramework.MetroMessageBox.Show(this, "Please enter true or false!", "Information",
                                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case (int)CustomerColums.Neigtbar:
                     if(bool.TryParse(searchDetails.searchstring, out result))
-                        customer = SQLSearch.SearchCustomerNeighbarhood(result);
+                        customer = SQLSearch.SearchCustomerNeighbarhood(customer,result);
                      else
                         MetroFramework.MetroMessageBox.Show(this, "Please enter true or false!", "Information",
                                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="searchDetails"></param>
+        private void SelectColumProduce(SearchDetails searchDetails)
+        {
+            double temp;
+            DateTime dateTime;
+            switch (searchDetails.ColumIndex)
+            {
+                case (int)ProductColums.Date_Asc:
+                   
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        produkt = SQLSearch.SearchProductsDateAsc(produkt, dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ProductColums.Date_Des:
+                   
+                    if (searchDetails.DateTimeConverter(out dateTime))
+                    {
+                        produkt = SQLSearch.SearchProductsDateDes(produkt, dateTime);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct date!", "Information",
+                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ProductColums.Farmer:
+                    produkt = SQLSearch.SearchProductsFarmer(produkt,searchDetails.searchstring);
+                    break;
+                case (int)ProductColums.Produce:
+                    produkt = SQLSearch.SearchProductsProduce(produkt,searchDetails.searchstring);
+                    break;
+                case (int)ProductColums.Price_Asc:
+                    if(double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        produkt = SQLSearch.SearchProductsPriceAsc(produkt,temp);
+                    }else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ProductColums.Price_Des:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        produkt = SQLSearch.SearchProductsPriceDesc(produkt,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ProductColums.Unit:
+                        produkt = SQLSearch.SearchProductsUnit(produkt,searchDetails.searchstring);
+                    break;
+                case (int)ProductColums.Quantity_Asc:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        produkt = SQLSearch.SearchProductsQuantityAsc(produkt,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case (int)ProductColums.Quantity_Des:
+                    if (double.TryParse(searchDetails.searchstring, out temp))
+                    {
+                        produkt = SQLSearch.SearchProductsQuantityDesc(produkt,temp);
+                    }
+                    else
+                        MetroFramework.MetroMessageBox.Show(this, "Please enter a correct dezimal number!", "Information",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 default:
                     break;
@@ -385,20 +573,111 @@ namespace Accounting
         /// </summary>
         /// <param name="customer">new customer list to load</param>
         private void LoadCustomerList(List<Customer> customer)
+        {  
+                List_Search.Items.Clear();
+
+                foreach (Customer item in customer)
+                {
+                    ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
+                    b.SubItems.Add(item.Full_Name);
+                    b.SubItems.Add(item.E_Mail);
+                    b.SubItems.Add(item.PhoneNr);
+                    b.SubItems.Add(item.CSA.ToString());
+                    b.SubItems.Add(item.Neighbarhood.ToString());
+                    b.SubItems.Add(item.Hors_Barn.ToString());
+                    List_Search.Items.Add(b);
+                }
+
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="income"></param>
+        private void LoadIncomeList(List<Income> income)
         {
             List_Search.Items.Clear();
 
-            foreach (Customer item in customer)
+            foreach (Income item in income)
             {
                 ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
-                b.SubItems.Add(item.Full_Name);
-                b.SubItems.Add(item.E_Mail);
-                b.SubItems.Add(item.PhoneNr);
-                b.SubItems.Add(item.CSA.ToString());
-                b.SubItems.Add(item.Neighbarhood.ToString());
-                b.SubItems.Add(item.Hors_Barn.ToString());
+                b.SubItems.Add(item.Customer.Full_Name);
+                b.SubItems.Add(item.Payment);
+                b.SubItems.Add(item.Price.ToString("c", ucSetting.CurrencyDefault));
+                b.SubItems.Add(item.Products);
                 List_Search.Items.Add(b);
             }
+
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="expenses"></param>
+        private void LoadExpensesList(List<Expense> expenses)
+        {
+            List_Search.Items.Clear();
+
+            foreach (Expense item in expenses)
+            {
+                ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
+                b.SubItems.Add(item.Dealer);
+                b.SubItems.Add(item.Payment);
+                b.SubItems.Add(item.Price.ToString("c", ucSetting.CurrencyDefault));
+                b.SubItems.Add(item.Details);
+                List_Search.Items.Add(b);
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="producs"></param>
+        private void LoadProductList(List<Produkt> producs)
+        {
+            List_Search.Items.Clear();
+
+            foreach (Produkt item in producs)
+            {
+                ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
+                b.SubItems.Add(item.Farmer);
+                b.SubItems.Add(item.Produce);
+                b.SubItems.Add(item.Price.ToString("c", ucSetting.CurrencyDefault));
+                b.SubItems.Add(item.Quantity.ToString());
+                b.SubItems.Add(item.Units[item.Unit]);
+                List_Search.Items.Add(b);
+            }
+        }
+
+        /// <summary>
+        /// Relaod Database table with all his entries.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mB_RelaodDB_Click(object sender, EventArgs e)
+        {
+            MetroFramework.Controls.MetroListView temp =new MetroFramework.Controls.MetroListView();
+            using (Accounting.DatabaseContext db = new DatabaseContext())
+            {
+                switch (mCB_SelectTable.SelectedIndex)
+                {
+                    case (int)Table.Customer:
+                        TabControl.RefreshCustomer(List_Search);
+                        break;
+                    case (int)Table.Expenses:
+                        TabControl.RefreshExpenses(List_Search);
+                        break;
+                    case (int)Table.Income:
+                        TabControl.RefreshIncome(List_Search);
+                        income = db.Incomes.ToList();
+                    break;
+                    case (int)Table.Products:
+                        TabControl.RefreshProdukt(List_Search, temp);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         }
     }
 }

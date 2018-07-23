@@ -30,6 +30,7 @@
         {
             this.List_Search = new MetroFramework.Controls.MetroListView();
             this.gB_SearchParameter = new System.Windows.Forms.GroupBox();
+            this.mB_RelaodDB = new MetroFramework.Controls.MetroButton();
             this.mP_SearchArg4 = new MetroFramework.Controls.MetroPanel();
             this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
             this.mTB_SearchArg4 = new MetroFramework.Controls.MetroTextBox();
@@ -74,6 +75,7 @@
             this.gB_SearchParameter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gB_SearchParameter.BackColor = System.Drawing.Color.Transparent;
+            this.gB_SearchParameter.Controls.Add(this.mB_RelaodDB);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg4);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg3);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg2);
@@ -87,12 +89,22 @@
             this.gB_SearchParameter.TabStop = false;
             this.gB_SearchParameter.Text = "Search Arguments";
             // 
+            // mB_RelaodDB
+            // 
+            this.mB_RelaodDB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mB_RelaodDB.Location = new System.Drawing.Point(791, 32);
+            this.mB_RelaodDB.Name = "mB_RelaodDB";
+            this.mB_RelaodDB.Size = new System.Drawing.Size(112, 25);
+            this.mB_RelaodDB.TabIndex = 11;
+            this.mB_RelaodDB.Text = "&Reload Database";
+            this.mB_RelaodDB.UseSelectable = true;
+            this.mB_RelaodDB.Click += new System.EventHandler(this.mB_RelaodDB_Click);
+            // 
             // mP_SearchArg4
             // 
             this.mP_SearchArg4.AutoSize = true;
             this.mP_SearchArg4.Controls.Add(this.metroComboBox5);
             this.mP_SearchArg4.Controls.Add(this.mTB_SearchArg4);
-            this.mP_SearchArg4.Enabled = false;
             this.mP_SearchArg4.HorizontalScrollbarBarColor = true;
             this.mP_SearchArg4.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_SearchArg4.HorizontalScrollbarSize = 10;
@@ -146,13 +158,11 @@
             this.mTB_SearchArg4.UseSelectable = true;
             this.mTB_SearchArg4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mTB_SearchArg4.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mP_SearchArg3
             // 
             this.mP_SearchArg3.Controls.Add(this.metroComboBox4);
             this.mP_SearchArg3.Controls.Add(this.mTB_SearchArg3);
-            this.mP_SearchArg3.Enabled = false;
             this.mP_SearchArg3.HorizontalScrollbarBarColor = true;
             this.mP_SearchArg3.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_SearchArg3.HorizontalScrollbarSize = 10;
@@ -206,13 +216,11 @@
             this.mTB_SearchArg3.UseSelectable = true;
             this.mTB_SearchArg3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mTB_SearchArg3.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mP_SearchArg2
             // 
             this.mP_SearchArg2.Controls.Add(this.metroComboBox3);
             this.mP_SearchArg2.Controls.Add(this.mTB_SearchArg2);
-            this.mP_SearchArg2.Enabled = false;
             this.mP_SearchArg2.HorizontalScrollbarBarColor = true;
             this.mP_SearchArg2.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_SearchArg2.HorizontalScrollbarSize = 10;
@@ -266,7 +274,6 @@
             this.mTB_SearchArg2.UseSelectable = true;
             this.mTB_SearchArg2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mTB_SearchArg2.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mP_SelectTable
             // 
@@ -307,7 +314,6 @@
             // 
             this.mP_SearchArg1.Controls.Add(this.metroComboBox2);
             this.mP_SearchArg1.Controls.Add(this.mTB_SearchArg1);
-            this.mP_SearchArg1.Enabled = false;
             this.mP_SearchArg1.HorizontalScrollbarBarColor = true;
             this.mP_SearchArg1.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_SearchArg1.HorizontalScrollbarSize = 10;
@@ -361,7 +367,6 @@
             this.mTB_SearchArg1.UseSelectable = true;
             this.mTB_SearchArg1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_SearchArg1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mTB_SearchArg1.TextChanged += new System.EventHandler(this.EnableNextSearchBox);
             // 
             // mB_Search
             // 
@@ -417,5 +422,6 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private MetroFramework.Controls.MetroTextBox mTB_SearchArg2;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private MetroFramework.Controls.MetroButton mB_RelaodDB;
     }
 }
