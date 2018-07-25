@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.mL_CSA_Customer = new MetroFramework.Controls.MetroLabel();
             this.mL_Nieghtbarhood = new MetroFramework.Controls.MetroLabel();
             this.mL_HorseBarn = new MetroFramework.Controls.MetroLabel();
@@ -53,9 +58,13 @@
             this.ml_Price_ES = new MetroFramework.Controls.MetroLabel();
             this.mL_ExpensesYear = new MetroFramework.Controls.MetroLabel();
             this.mL_ExpensesMonth = new MetroFramework.Controls.MetroLabel();
+            this.InfoChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.incomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroTile1.SuspendLayout();
             this.mT_IncomeDetails.SuspendLayout();
             this.mT_ExpensesDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InfoChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mL_CSA_Customer
@@ -330,10 +339,49 @@
             this.mL_ExpensesMonth.TabIndex = 4;
             this.mL_ExpensesMonth.Text = "Expenses Month:";
             // 
+            // InfoChart
+            // 
+            this.InfoChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.InfoChart.BorderSkin.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
+            chartArea1.Area3DStyle.Inclination = 20;
+            chartArea1.Area3DStyle.Rotation = 10;
+            chartArea1.Area3DStyle.WallWidth = 20;
+            chartArea1.Name = "Income";
+            this.InfoChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.InfoChart.Legends.Add(legend1);
+            this.InfoChart.Location = new System.Drawing.Point(6, 275);
+            this.InfoChart.Name = "InfoChart";
+            this.InfoChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "Income";
+            series1.Legend = "Legend1";
+            series1.Name = "Income";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "Income";
+            series2.Legend = "Legend1";
+            series2.Name = "Expenses";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.InfoChart.Series.Add(series1);
+            this.InfoChart.Series.Add(series2);
+            this.InfoChart.Size = new System.Drawing.Size(759, 218);
+            this.InfoChart.TabIndex = 4;
+            this.InfoChart.Text = "chart";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            title1.Name = "ChartOverview";
+            title1.Text = "Chart Overview";
+            this.InfoChart.Titles.Add(title1);
+            // 
+            // incomeBindingSource
+            // 
+            this.incomeBindingSource.DataSource = typeof(Accounting.Income);
+            // 
             // ucOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.InfoChart);
             this.Controls.Add(this.mT_ExpensesDetails);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.mT_IncomeDetails);
@@ -346,6 +394,8 @@
             this.mT_IncomeDetails.PerformLayout();
             this.mT_ExpensesDetails.ResumeLayout(false);
             this.mT_ExpensesDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InfoChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +425,7 @@
         private MetroFramework.Controls.MetroLabel ml_Price_ELM;
         private MetroFramework.Controls.MetroLabel ml_Price_EM;
         private MetroFramework.Controls.MetroLabel ml_Price_ES;
+        private System.Windows.Forms.DataVisualization.Charting.Chart InfoChart;
+        private System.Windows.Forms.BindingSource incomeBindingSource;
     }
 }

@@ -58,6 +58,37 @@ namespace Accounting
 
         private void ucOverview_Load(object sender, EventArgs e)
         {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void RelaodChart()
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                List<Income> source1 = SQLDatabase.SQLSearch.SearchIncomeDateYear(db.Incomes.ToList(), DateTime.Now.Year);
+                List<Expense> source2 = SQLDatabase.SQLSearch.SearchExpenseDateYear(db.Expenses.ToList(), DateTime.Now.Year);
+
+                ///Clear Chart
+                InfoChart.Series["Income"].Points.Clear();
+                InfoChart.Series["Expenses"].Points.Clear();
+
+                InfoChart.Series["Income"].ToolTip = "Income";
+                InfoChart.Series["Expenses"].ToolTip = "Expenses";
+
+                for (int month = 1; month < 13; month++)
+                {
+                    double temp = SQLDatabase.SQLSearch.SearchIncomeDateMonth(source1, month).Sum(c => c.Price);
+                    InfoChart.Series["Income"].Points.AddXY(((MonthEn)month).ToString(), temp);
+                    InfoChart.Series["Income"].Points[month-1].ToolTip = temp.ToString("c");
+
+                    temp = SQLDatabase.SQLSearch.SearchExpenseDateMonth(source2, month).Sum(c => c.Price);
+                    InfoChart.Series["Expenses"].Points.AddXY(((MonthEn)month).ToString(), temp);
+                    InfoChart.Series["Expenses"].Points[month - 1].ToolTip = temp.ToString("c");
+                }
+            }
         }
 
         private void Timer_Overview_Tick(object sender, EventArgs e)
@@ -109,10 +140,8 @@ namespace Accounting
                 ml_Price_ELM.Text = expensesSumLastMonth.ToString("c", ucSetting.CurrencyDefault);
             }
 
-
-
-
-
+            ///Reload the Chart
+            RelaodChart();
 
         }
 

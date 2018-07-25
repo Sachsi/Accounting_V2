@@ -199,6 +199,44 @@ namespace Accounting.SQLDatabase
         /// 
         /// </summary>
         /// <param name="list"></param>
+        /// <param name="monthe"></param>
+        /// <returns></returns>
+        public static List<Income> SearchIncomeDateMonth(List<Income> list, int monthe)
+        {
+            List<Income> income;
+
+            income = list;
+
+            income = (from Name in income
+                      where Name.Date.Month == monthe
+                      orderby Name.Customer.Full_Name descending
+                      select Name).ToList();
+
+            return income;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static List<Income> SearchIncomeDateYear(List<Income> list, int year)
+        {
+            List<Income> income;
+
+            income = list;
+
+            income = (from Name in income
+                      where Name.Date.Year == year
+                      orderby Name.Customer.Full_Name descending
+                      select Name).ToList();
+
+            return income;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
         /// <param name="date"></param>
         /// <returns></returns>
         public static List<Income> SearchIncomeDateDes(List<Income> list, DateTime date)
@@ -319,6 +357,44 @@ namespace Accounting.SQLDatabase
                             where Name.Date >= date
                             orderby Name.Date descending
                             select Name).ToList();
+
+            return expenses;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static List<Expense> SearchExpenseDateYear(List<Expense> list, int year)
+        {
+            List<Expense> expenses;
+
+            expenses = list;
+
+            expenses = (from Name in expenses
+                        where Name.Date.Year == year
+                        orderby Name.Date descending
+                        select Name).ToList();
+
+            return expenses;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="month"></param>
+        /// <returns></returns>
+        public static List<Expense> SearchExpenseDateMonth(List<Expense> list, int month)
+        {
+            List<Expense> expenses;
+
+            expenses = list;
+
+            expenses = (from Name in expenses
+                        where Name.Date.Month == month
+                        orderby Name.Date descending
+                        select Name).ToList();
 
             return expenses;
         }
