@@ -40,6 +40,7 @@ namespace Accounting
 
         public Form_Main()
         {
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             InitializeComponent();
         }
 

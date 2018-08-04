@@ -679,5 +679,10 @@ namespace Accounting
             }
 
         }
+
+        private void mB_Print_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.mTile_Settings = new MetroFramework.Controls.MetroTile();
             this.mTile_Search = new MetroFramework.Controls.MetroTile();
             this.mTile_Database = new MetroFramework.Controls.MetroTile();

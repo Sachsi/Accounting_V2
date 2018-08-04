@@ -142,8 +142,9 @@
             // 
             // mTC_Accounting
             // 
-            this.mTC_Accounting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mTC_Accounting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mTC_Accounting.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mTC_Accounting.Controls.Add(this.mTP_Customer);
             this.mTC_Accounting.Controls.Add(this.mTP_Income);
@@ -154,7 +155,7 @@
             this.mTC_Accounting.Location = new System.Drawing.Point(0, 0);
             this.mTC_Accounting.Name = "mTC_Accounting";
             this.mTC_Accounting.SelectedIndex = 1;
-            this.mTC_Accounting.Size = new System.Drawing.Size(960, 480);
+            this.mTC_Accounting.Size = new System.Drawing.Size(860, 423);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 1;
             this.mTC_Accounting.UseSelectable = true;
@@ -168,7 +169,7 @@
             this.mTP_Customer.HorizontalScrollbarSize = 10;
             this.mTP_Customer.Location = new System.Drawing.Point(4, 38);
             this.mTP_Customer.Name = "mTP_Customer";
-            this.mTP_Customer.Size = new System.Drawing.Size(952, 438);
+            this.mTP_Customer.Size = new System.Drawing.Size(852, 381);
             this.mTP_Customer.TabIndex = 5;
             this.mTP_Customer.Text = "Customer";
             this.mTP_Customer.VerticalScrollbarBarColor = true;
@@ -177,8 +178,8 @@
             // 
             // mP_Customer
             // 
-            this.mP_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mP_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mP_Customer.Controls.Add(this.mT_FullName_Customer);
             this.mP_Customer.Controls.Add(this.mL_Phone_Customer);
             this.mP_Customer.Controls.Add(this.mL_FullName_Customer);
@@ -193,9 +194,9 @@
             this.mP_Customer.HorizontalScrollbarBarColor = true;
             this.mP_Customer.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_Customer.HorizontalScrollbarSize = 10;
-            this.mP_Customer.Location = new System.Drawing.Point(0, 345);
+            this.mP_Customer.Location = new System.Drawing.Point(0, 309);
             this.mP_Customer.Name = "mP_Customer";
-            this.mP_Customer.Size = new System.Drawing.Size(952, 90);
+            this.mP_Customer.Size = new System.Drawing.Size(856, 79);
             this.mP_Customer.TabIndex = 8;
             this.mP_Customer.VerticalScrollbarBarColor = true;
             this.mP_Customer.VerticalScrollbarHighlightOnWheel = false;
@@ -412,6 +413,9 @@
             // 
             // List_Customer
             // 
+            this.List_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.List_Customer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CH_Date,
             this.CH_Customer,
@@ -425,7 +429,7 @@
             this.List_Customer.Location = new System.Drawing.Point(0, 3);
             this.List_Customer.Name = "List_Customer";
             this.List_Customer.OwnerDraw = true;
-            this.List_Customer.Size = new System.Drawing.Size(952, 340);
+            this.List_Customer.Size = new System.Drawing.Size(849, 300);
             this.List_Customer.TabIndex = 7;
             this.List_Customer.UseCompatibleStateImageBehavior = false;
             this.List_Customer.UseSelectable = true;
@@ -475,7 +479,7 @@
             this.mTP_Income.HorizontalScrollbarSize = 10;
             this.mTP_Income.Location = new System.Drawing.Point(4, 38);
             this.mTP_Income.Name = "mTP_Income";
-            this.mTP_Income.Size = new System.Drawing.Size(952, 438);
+            this.mTP_Income.Size = new System.Drawing.Size(852, 381);
             this.mTP_Income.TabIndex = 2;
             this.mTP_Income.Text = "Income";
             this.mTP_Income.VerticalScrollbarBarColor = true;
@@ -484,6 +488,9 @@
             // 
             // List_Income
             // 
+            this.List_Income.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.List_Income.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CH_Date_Income,
             this.CH_Customer_Income,
@@ -495,7 +502,7 @@
             this.List_Income.Location = new System.Drawing.Point(0, 3);
             this.List_Income.Name = "List_Income";
             this.List_Income.OwnerDraw = true;
-            this.List_Income.Size = new System.Drawing.Size(952, 340);
+            this.List_Income.Size = new System.Drawing.Size(849, 300);
             this.List_Income.TabIndex = 4;
             this.List_Income.UseCompatibleStateImageBehavior = false;
             this.List_Income.UseSelectable = true;
@@ -528,8 +535,8 @@
             // 
             // mP_Income
             // 
-            this.mP_Income.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mP_Income.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mP_Income.Controls.Add(this.mlV_Products_Income);
             this.mP_Income.Controls.Add(this.ml_Products_Income);
             this.mP_Income.Controls.Add(this.mCB_Customer_Income);
@@ -543,9 +550,9 @@
             this.mP_Income.HorizontalScrollbarBarColor = true;
             this.mP_Income.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_Income.HorizontalScrollbarSize = 10;
-            this.mP_Income.Location = new System.Drawing.Point(0, 345);
+            this.mP_Income.Location = new System.Drawing.Point(0, 309);
             this.mP_Income.Name = "mP_Income";
-            this.mP_Income.Size = new System.Drawing.Size(952, 90);
+            this.mP_Income.Size = new System.Drawing.Size(856, 78);
             this.mP_Income.TabIndex = 3;
             this.mP_Income.VerticalScrollbarBarColor = true;
             this.mP_Income.VerticalScrollbarHighlightOnWheel = false;
@@ -561,10 +568,10 @@
             this.mlV_Products_Income.FullRowSelect = true;
             this.mlV_Products_Income.HotTracking = true;
             this.mlV_Products_Income.HoverSelection = true;
-            this.mlV_Products_Income.Location = new System.Drawing.Point(620, 0);
+            this.mlV_Products_Income.Location = new System.Drawing.Point(585, 3);
             this.mlV_Products_Income.Name = "mlV_Products_Income";
             this.mlV_Products_Income.OwnerDraw = true;
-            this.mlV_Products_Income.Size = new System.Drawing.Size(332, 87);
+            this.mlV_Products_Income.Size = new System.Drawing.Size(264, 68);
             this.mlV_Products_Income.TabIndex = 4;
             this.mlV_Products_Income.UseCompatibleStateImageBehavior = false;
             this.mlV_Products_Income.UseSelectable = true;
@@ -747,7 +754,7 @@
             this.mTP_Expenses.HorizontalScrollbarSize = 10;
             this.mTP_Expenses.Location = new System.Drawing.Point(4, 38);
             this.mTP_Expenses.Name = "mTP_Expenses";
-            this.mTP_Expenses.Size = new System.Drawing.Size(952, 438);
+            this.mTP_Expenses.Size = new System.Drawing.Size(852, 381);
             this.mTP_Expenses.TabIndex = 3;
             this.mTP_Expenses.Text = "Expenses";
             this.mTP_Expenses.VerticalScrollbar = true;
@@ -757,6 +764,9 @@
             // 
             // List_Expenses
             // 
+            this.List_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.List_Expenses.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CH_Date_Expenses,
             this.CH_Dealer_Expenses,
@@ -768,7 +778,7 @@
             this.List_Expenses.Location = new System.Drawing.Point(0, 3);
             this.List_Expenses.Name = "List_Expenses";
             this.List_Expenses.OwnerDraw = true;
-            this.List_Expenses.Size = new System.Drawing.Size(952, 340);
+            this.List_Expenses.Size = new System.Drawing.Size(849, 300);
             this.List_Expenses.TabIndex = 5;
             this.List_Expenses.UseCompatibleStateImageBehavior = false;
             this.List_Expenses.UseSelectable = true;
@@ -801,8 +811,8 @@
             // 
             // mP_Expenses
             // 
-            this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mP_Expenses.Controls.Add(this.ml_Details);
             this.mP_Expenses.Controls.Add(this.mTB_Details);
             this.mP_Expenses.Controls.Add(this.mTB_Dealer_Expenses);
@@ -816,9 +826,9 @@
             this.mP_Expenses.HorizontalScrollbarBarColor = true;
             this.mP_Expenses.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_Expenses.HorizontalScrollbarSize = 10;
-            this.mP_Expenses.Location = new System.Drawing.Point(0, 345);
+            this.mP_Expenses.Location = new System.Drawing.Point(0, 309);
             this.mP_Expenses.Name = "mP_Expenses";
-            this.mP_Expenses.Size = new System.Drawing.Size(952, 90);
+            this.mP_Expenses.Size = new System.Drawing.Size(856, 78);
             this.mP_Expenses.TabIndex = 4;
             this.mP_Expenses.VerticalScrollbarBarColor = true;
             this.mP_Expenses.VerticalScrollbarHighlightOnWheel = false;
@@ -839,9 +849,9 @@
             // 
             // 
             this.mTB_Details.CustomButton.Image = null;
-            this.mTB_Details.CustomButton.Location = new System.Drawing.Point(90, 2);
+            this.mTB_Details.CustomButton.Location = new System.Drawing.Point(199, 2);
             this.mTB_Details.CustomButton.Name = "";
-            this.mTB_Details.CustomButton.Size = new System.Drawing.Size(69, 69);
+            this.mTB_Details.CustomButton.Size = new System.Drawing.Size(61, 61);
             this.mTB_Details.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTB_Details.CustomButton.TabIndex = 1;
             this.mTB_Details.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -861,7 +871,7 @@
             this.mTB_Details.SelectionLength = 0;
             this.mTB_Details.SelectionStart = 0;
             this.mTB_Details.ShortcutsEnabled = true;
-            this.mTB_Details.Size = new System.Drawing.Size(162, 74);
+            this.mTB_Details.Size = new System.Drawing.Size(263, 66);
             this.mTB_Details.TabIndex = 4;
             this.mTB_Details.Text = "Details";
             this.mTB_Details.UseSelectable = true;
@@ -1054,7 +1064,7 @@
             this.mTP_Produkts.HorizontalScrollbarSize = 10;
             this.mTP_Produkts.Location = new System.Drawing.Point(4, 38);
             this.mTP_Produkts.Name = "mTP_Produkts";
-            this.mTP_Produkts.Size = new System.Drawing.Size(952, 438);
+            this.mTP_Produkts.Size = new System.Drawing.Size(852, 381);
             this.mTP_Produkts.TabIndex = 4;
             this.mTP_Produkts.Text = "Produkts";
             this.mTP_Produkts.VerticalScrollbarBarColor = true;
@@ -1063,6 +1073,9 @@
             // 
             // List_Produkts
             // 
+            this.List_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.List_Produkts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CH_Produkts_Date,
             this.CH_Produkts_Farmer,
@@ -1075,7 +1088,7 @@
             this.List_Produkts.Location = new System.Drawing.Point(0, 3);
             this.List_Produkts.Name = "List_Produkts";
             this.List_Produkts.OwnerDraw = true;
-            this.List_Produkts.Size = new System.Drawing.Size(952, 340);
+            this.List_Produkts.Size = new System.Drawing.Size(849, 300);
             this.List_Produkts.TabIndex = 7;
             this.List_Produkts.UseCompatibleStateImageBehavior = false;
             this.List_Produkts.UseSelectable = true;
@@ -1113,8 +1126,8 @@
             // 
             // mP_Produkts
             // 
-            this.mP_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.mP_Produkts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mP_Produkts.Controls.Add(this.mL_Produkts_Unit);
             this.mP_Produkts.Controls.Add(this.mCB_Produkts_Unit);
             this.mP_Produkts.Controls.Add(this.ml_Unit);
@@ -1131,9 +1144,9 @@
             this.mP_Produkts.HorizontalScrollbarBarColor = true;
             this.mP_Produkts.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_Produkts.HorizontalScrollbarSize = 10;
-            this.mP_Produkts.Location = new System.Drawing.Point(0, 345);
+            this.mP_Produkts.Location = new System.Drawing.Point(0, 309);
             this.mP_Produkts.Name = "mP_Produkts";
-            this.mP_Produkts.Size = new System.Drawing.Size(952, 90);
+            this.mP_Produkts.Size = new System.Drawing.Size(856, 79);
             this.mP_Produkts.TabIndex = 6;
             this.mP_Produkts.VerticalScrollbarBarColor = true;
             this.mP_Produkts.VerticalScrollbarHighlightOnWheel = false;
@@ -1409,7 +1422,7 @@
             // mB_Save
             // 
             this.mB_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Save.Location = new System.Drawing.Point(848, 8);
+            this.mB_Save.Location = new System.Drawing.Point(748, 5);
             this.mB_Save.Name = "mB_Save";
             this.mB_Save.Size = new System.Drawing.Size(100, 25);
             this.mB_Save.TabIndex = 9;
@@ -1420,7 +1433,7 @@
             // mB_Add_Customer
             // 
             this.mB_Add_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Add_Customer.Location = new System.Drawing.Point(424, 8);
+            this.mB_Add_Customer.Location = new System.Drawing.Point(324, 5);
             this.mB_Add_Customer.Name = "mB_Add_Customer";
             this.mB_Add_Customer.Size = new System.Drawing.Size(100, 25);
             this.mB_Add_Customer.TabIndex = 5;
@@ -1431,7 +1444,7 @@
             // mB_Edit_Customer
             // 
             this.mB_Edit_Customer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Edit_Customer.Location = new System.Drawing.Point(530, 8);
+            this.mB_Edit_Customer.Location = new System.Drawing.Point(430, 5);
             this.mB_Edit_Customer.Name = "mB_Edit_Customer";
             this.mB_Edit_Customer.Size = new System.Drawing.Size(100, 25);
             this.mB_Edit_Customer.TabIndex = 6;
@@ -1442,7 +1455,7 @@
             // mB_Remove
             // 
             this.mB_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Remove.Location = new System.Drawing.Point(742, 8);
+            this.mB_Remove.Location = new System.Drawing.Point(642, 5);
             this.mB_Remove.Name = "mB_Remove";
             this.mB_Remove.Size = new System.Drawing.Size(100, 25);
             this.mB_Remove.TabIndex = 8;
@@ -1453,7 +1466,7 @@
             // mB_Cancel
             // 
             this.mB_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mB_Cancel.Location = new System.Drawing.Point(636, 8);
+            this.mB_Cancel.Location = new System.Drawing.Point(536, 5);
             this.mB_Cancel.Name = "mB_Cancel";
             this.mB_Cancel.Size = new System.Drawing.Size(100, 25);
             this.mB_Cancel.TabIndex = 7;
@@ -1480,8 +1493,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.mB_Add_Customer);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Cancel);
             this.splitContainer1.Panel2.Controls.Add(this.mB_Save);
-            this.splitContainer1.Size = new System.Drawing.Size(960, 520);
-            this.splitContainer1.SplitterDistance = 480;
+            this.splitContainer1.Size = new System.Drawing.Size(860, 460);
+            this.splitContainer1.SplitterDistance = 423;
             this.splitContainer1.TabIndex = 10;
             // 
             // ucDatabase
@@ -1490,7 +1503,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
             this.Name = "ucDatabase";
-            this.Size = new System.Drawing.Size(960, 520);
+            this.Size = new System.Drawing.Size(860, 460);
             this.Load += new System.EventHandler(this.Database_Load);
             this.mTC_Accounting.ResumeLayout(false);
             this.mTP_Customer.ResumeLayout(false);

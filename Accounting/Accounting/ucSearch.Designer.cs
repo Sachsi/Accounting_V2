@@ -30,6 +30,7 @@
         {
             this.List_Search = new MetroFramework.Controls.MetroListView();
             this.gB_SearchParameter = new System.Windows.Forms.GroupBox();
+            this.mB_Print = new MetroFramework.Controls.MetroButton();
             this.mB_RelaodDB = new MetroFramework.Controls.MetroButton();
             this.mP_SearchArg4 = new MetroFramework.Controls.MetroPanel();
             this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
@@ -57,14 +58,15 @@
             // 
             // List_Search
             // 
-            this.List_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.List_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.List_Search.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.List_Search.FullRowSelect = true;
             this.List_Search.Location = new System.Drawing.Point(0, 3);
             this.List_Search.Name = "List_Search";
             this.List_Search.OwnerDraw = true;
-            this.List_Search.Size = new System.Drawing.Size(970, 312);
+            this.List_Search.Size = new System.Drawing.Size(931, 364);
             this.List_Search.TabIndex = 0;
             this.List_Search.UseCompatibleStateImageBehavior = false;
             this.List_Search.UseSelectable = true;
@@ -72,9 +74,11 @@
             // 
             // gB_SearchParameter
             // 
-            this.gB_SearchParameter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gB_SearchParameter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gB_SearchParameter.AutoSize = true;
             this.gB_SearchParameter.BackColor = System.Drawing.Color.Transparent;
+            this.gB_SearchParameter.Controls.Add(this.mB_Print);
             this.gB_SearchParameter.Controls.Add(this.mB_RelaodDB);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg4);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg3);
@@ -82,17 +86,28 @@
             this.gB_SearchParameter.Controls.Add(this.mP_SelectTable);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg1);
             this.gB_SearchParameter.Controls.Add(this.mB_Search);
-            this.gB_SearchParameter.Location = new System.Drawing.Point(3, 321);
+            this.gB_SearchParameter.Location = new System.Drawing.Point(3, 370);
             this.gB_SearchParameter.Name = "gB_SearchParameter";
-            this.gB_SearchParameter.Size = new System.Drawing.Size(967, 119);
+            this.gB_SearchParameter.Size = new System.Drawing.Size(928, 136);
             this.gB_SearchParameter.TabIndex = 1;
             this.gB_SearchParameter.TabStop = false;
             this.gB_SearchParameter.Text = "Search Arguments";
             // 
+            // mB_Print
+            // 
+            this.mB_Print.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mB_Print.Location = new System.Drawing.Point(791, 81);
+            this.mB_Print.Name = "mB_Print";
+            this.mB_Print.Size = new System.Drawing.Size(112, 25);
+            this.mB_Print.TabIndex = 12;
+            this.mB_Print.Text = "&Print";
+            this.mB_Print.UseSelectable = true;
+            this.mB_Print.Click += new System.EventHandler(this.mB_Print_Click);
+            // 
             // mB_RelaodDB
             // 
             this.mB_RelaodDB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mB_RelaodDB.Location = new System.Drawing.Point(791, 32);
+            this.mB_RelaodDB.Location = new System.Drawing.Point(791, 50);
             this.mB_RelaodDB.Name = "mB_RelaodDB";
             this.mB_RelaodDB.Size = new System.Drawing.Size(112, 25);
             this.mB_RelaodDB.TabIndex = 11;
@@ -371,7 +386,7 @@
             // mB_Search
             // 
             this.mB_Search.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mB_Search.Location = new System.Drawing.Point(791, 75);
+            this.mB_Search.Location = new System.Drawing.Point(791, 19);
             this.mB_Search.Name = "mB_Search";
             this.mB_Search.Size = new System.Drawing.Size(112, 25);
             this.mB_Search.TabIndex = 8;
@@ -388,7 +403,7 @@
             this.Controls.Add(this.gB_SearchParameter);
             this.Controls.Add(this.List_Search);
             this.Name = "ucSearch";
-            this.Size = new System.Drawing.Size(973, 455);
+            this.Size = new System.Drawing.Size(934, 509);
             this.Load += new System.EventHandler(this.ucSearch_Load);
             this.gB_SearchParameter.ResumeLayout(false);
             this.gB_SearchParameter.PerformLayout();
@@ -399,6 +414,7 @@
             this.mP_SelectTable.PerformLayout();
             this.mP_SearchArg1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -423,5 +439,6 @@
         private MetroFramework.Controls.MetroTextBox mTB_SearchArg2;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroButton mB_RelaodDB;
+        private MetroFramework.Controls.MetroButton mB_Print;
     }
 }
