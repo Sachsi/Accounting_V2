@@ -66,7 +66,7 @@
             this.List_Search.Location = new System.Drawing.Point(0, 3);
             this.List_Search.Name = "List_Search";
             this.List_Search.OwnerDraw = true;
-            this.List_Search.Size = new System.Drawing.Size(931, 364);
+            this.List_Search.Size = new System.Drawing.Size(857, 298);
             this.List_Search.TabIndex = 0;
             this.List_Search.UseCompatibleStateImageBehavior = false;
             this.List_Search.UseSelectable = true;
@@ -86,9 +86,9 @@
             this.gB_SearchParameter.Controls.Add(this.mP_SelectTable);
             this.gB_SearchParameter.Controls.Add(this.mP_SearchArg1);
             this.gB_SearchParameter.Controls.Add(this.mB_Search);
-            this.gB_SearchParameter.Location = new System.Drawing.Point(3, 370);
+            this.gB_SearchParameter.Location = new System.Drawing.Point(3, 307);
             this.gB_SearchParameter.Name = "gB_SearchParameter";
-            this.gB_SearchParameter.Size = new System.Drawing.Size(928, 136);
+            this.gB_SearchParameter.Size = new System.Drawing.Size(854, 150);
             this.gB_SearchParameter.TabIndex = 1;
             this.gB_SearchParameter.TabStop = false;
             this.gB_SearchParameter.Text = "Search Arguments";
@@ -96,9 +96,9 @@
             // mB_Print
             // 
             this.mB_Print.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mB_Print.Location = new System.Drawing.Point(791, 81);
+            this.mB_Print.Location = new System.Drawing.Point(327, 106);
             this.mB_Print.Name = "mB_Print";
-            this.mB_Print.Size = new System.Drawing.Size(112, 25);
+            this.mB_Print.Size = new System.Drawing.Size(121, 25);
             this.mB_Print.TabIndex = 12;
             this.mB_Print.Text = "&Print";
             this.mB_Print.UseSelectable = true;
@@ -107,9 +107,9 @@
             // mB_RelaodDB
             // 
             this.mB_RelaodDB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mB_RelaodDB.Location = new System.Drawing.Point(791, 50);
+            this.mB_RelaodDB.Location = new System.Drawing.Point(20, 105);
             this.mB_RelaodDB.Name = "mB_RelaodDB";
-            this.mB_RelaodDB.Size = new System.Drawing.Size(112, 25);
+            this.mB_RelaodDB.Size = new System.Drawing.Size(121, 25);
             this.mB_RelaodDB.TabIndex = 11;
             this.mB_RelaodDB.Text = "&Reload Database";
             this.mB_RelaodDB.UseSelectable = true;
@@ -386,9 +386,9 @@
             // mB_Search
             // 
             this.mB_Search.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.mB_Search.Location = new System.Drawing.Point(791, 19);
+            this.mB_Search.Location = new System.Drawing.Point(174, 106);
             this.mB_Search.Name = "mB_Search";
-            this.mB_Search.Size = new System.Drawing.Size(112, 25);
+            this.mB_Search.Size = new System.Drawing.Size(121, 25);
             this.mB_Search.TabIndex = 8;
             this.mB_Search.Text = "&Search";
             this.mB_Search.UseSelectable = true;
@@ -402,8 +402,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.gB_SearchParameter);
             this.Controls.Add(this.List_Search);
+            this.MinimumSize = new System.Drawing.Size(860, 460);
             this.Name = "ucSearch";
-            this.Size = new System.Drawing.Size(934, 509);
+            this.Size = new System.Drawing.Size(860, 460);
             this.Load += new System.EventHandler(this.ucSearch_Load);
             this.gB_SearchParameter.ResumeLayout(false);
             this.gB_SearchParameter.PerformLayout();

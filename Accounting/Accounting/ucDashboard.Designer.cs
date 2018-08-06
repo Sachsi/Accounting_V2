@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             this.mTile_Settings = new MetroFramework.Controls.MetroTile();
             this.mTile_Search = new MetroFramework.Controls.MetroTile();
             this.mTile_Database = new MetroFramework.Controls.MetroTile();
@@ -105,8 +104,9 @@
             this.Controls.Add(this.mTile_Search);
             this.Controls.Add(this.mTile_Database);
             this.Controls.Add(this.mT_Overview);
+            this.MinimumSize = new System.Drawing.Size(860, 460);
             this.Name = "ucDashboard";
-            this.Size = new System.Drawing.Size(886, 591);
+            this.Size = new System.Drawing.Size(860, 460);
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.UseStyleColors = true;
             this.Load += new System.EventHandler(this.ucDashboard_Load);

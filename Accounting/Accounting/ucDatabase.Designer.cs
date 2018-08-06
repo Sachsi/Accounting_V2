@@ -1502,6 +1502,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(860, 460);
             this.Name = "ucDatabase";
             this.Size = new System.Drawing.Size(860, 460);
             this.Load += new System.EventHandler(this.Database_Load);
