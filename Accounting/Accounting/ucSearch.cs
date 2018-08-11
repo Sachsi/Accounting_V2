@@ -682,7 +682,7 @@ namespace Accounting
 
         private void mB_Print_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start(@"D:\Documents\Visual Studio 2017\GitRepository\ReportViewer\ReportViewer\bin\Debug" + @"\ReportViewer.exe");
         }
     }
 }

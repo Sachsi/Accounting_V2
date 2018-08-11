@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mTC_Settings = new MetroFramework.Controls.MetroTabControl();
+            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
             this.mTP_Design = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -73,7 +74,6 @@
             this.GB_DeleteDB = new System.Windows.Forms.GroupBox();
             this.ml_DeleteDatabse = new MetroFramework.Controls.MetroLabel();
             this.mCB_DeleteDatabase = new MetroFramework.Controls.MetroCheckBox();
-            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.mTC_Settings.SuspendLayout();
             this.mTP_Design.SuspendLayout();
@@ -93,9 +93,9 @@
             this.mTC_Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mTC_Settings.Controls.Add(this.mTP_Info);
             this.mTC_Settings.Controls.Add(this.mTP_Design);
             this.mTC_Settings.Controls.Add(this.mTP_Options);
+            this.mTC_Settings.Controls.Add(this.mTP_Info);
             this.mTC_Settings.Controls.Add(this.MTP_DatabaseSettings);
             this.mTC_Settings.Location = new System.Drawing.Point(0, 0);
             this.mTC_Settings.Name = "mTC_Settings";
@@ -103,6 +103,20 @@
             this.mTC_Settings.Size = new System.Drawing.Size(860, 460);
             this.mTC_Settings.TabIndex = 0;
             this.mTC_Settings.UseSelectable = true;
+            // 
+            // mTP_Info
+            // 
+            this.mTP_Info.HorizontalScrollbarBarColor = true;
+            this.mTP_Info.HorizontalScrollbarHighlightOnWheel = false;
+            this.mTP_Info.HorizontalScrollbarSize = 10;
+            this.mTP_Info.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Info.Name = "mTP_Info";
+            this.mTP_Info.Size = new System.Drawing.Size(852, 418);
+            this.mTP_Info.TabIndex = 2;
+            this.mTP_Info.Text = "Info";
+            this.mTP_Info.VerticalScrollbarBarColor = true;
+            this.mTP_Info.VerticalScrollbarHighlightOnWheel = false;
+            this.mTP_Info.VerticalScrollbarSize = 10;
             // 
             // mTP_Design
             // 
@@ -591,20 +605,6 @@
             this.mCB_DeleteDatabase.Text = "No";
             this.mCB_DeleteDatabase.UseSelectable = true;
             this.mCB_DeleteDatabase.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
-            // 
-            // mTP_Info
-            // 
-            this.mTP_Info.HorizontalScrollbarBarColor = true;
-            this.mTP_Info.HorizontalScrollbarHighlightOnWheel = false;
-            this.mTP_Info.HorizontalScrollbarSize = 10;
-            this.mTP_Info.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Info.Name = "mTP_Info";
-            this.mTP_Info.Size = new System.Drawing.Size(852, 418);
-            this.mTP_Info.TabIndex = 2;
-            this.mTP_Info.Text = "Info";
-            this.mTP_Info.VerticalScrollbarBarColor = true;
-            this.mTP_Info.VerticalScrollbarHighlightOnWheel = false;
-            this.mTP_Info.VerticalScrollbarSize = 10;
             // 
             // metroStyleManager1
             // 
