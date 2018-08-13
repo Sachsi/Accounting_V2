@@ -676,7 +676,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Customer List</Value>
+                      <Value>Income List</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>

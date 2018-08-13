@@ -32,12 +32,14 @@ namespace Accounting
                 reportDataSource.Value = db.Customers.ToList();
 
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-                
+
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyName","Pinsch of Soil Farm"),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyOwner","Marcel Sachse"),
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyAddress","258 2078, Langley, Canada")
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyAddress","258 2078, Langley, Canada"),
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyPhone","7788992185"),
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyEMail","marcelsachse@msn.com")
                 };
 
                 reportViewer1.LocalReport.SetParameters(rParams);
