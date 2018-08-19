@@ -263,6 +263,9 @@
     <EmbeddedResource Include="Migrations\201804282146370_changes.resx">
       <DependentUpon>201804282146370_changes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportExpenses.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportIncome.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Accounting.Properties;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,19 +28,30 @@ namespace Accounting
             using (DatabaseContext db = new DatabaseContext())
             {
                 customerBindingSource.DataSource = db.Customers.ToList();
-                ReportDataSource reportDataSource = new ReportDataSource();
-                reportDataSource.Name = "TableCustomer";
-                reportDataSource.Value = db.Customers.ToList();
-
-                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+                IncomeBindingSource.DataSource = db.Incomes.ToList();
+                ReportDataSource reportDataSourceC = new ReportDataSource();
+                reportDataSourceC.Name = "TableIncome";
+                reportDataSourceC.Value = db.Incomes.ToList();
+                reportViewer1.LocalReport.DataSources.Add(reportDataSourceC);
+                ReportDataSource reportDataSourceI = new ReportDataSource();
+                reportDataSourceI.Name = "TableCustomer";
+                reportDataSourceI.Value = db.Customers.ToList();
+                reportViewer1.LocalReport.DataSources.Add(reportDataSourceI);
+                ReportDataSource reportDataSourceE = new ReportDataSource();
+                reportDataSourceE.Name = "TableExpenses";
+                reportDataSourceE.Value = db.Expenses.ToList();
+                reportViewer1.LocalReport.DataSources.Add(reportDataSourceE);
+                double a = 0;
 
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
+                    
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyName","Pinsch of Soil Farm"),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyOwner","Marcel Sachse"),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyAddress","258 2078, Langley, Canada"),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyPhone","7788992185"),
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyEMail","marcelsachse@msn.com")
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyEMail","marcelsachse@msn.com"),
+                    //new Microsoft.Reporting.WinForms.ReportParameter("Currency", a.ToString("c",ucSetting.CurrencyDefault))
                 };
 
                 reportViewer1.LocalReport.SetParameters(rParams);

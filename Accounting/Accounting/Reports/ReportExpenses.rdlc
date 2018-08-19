@@ -11,23 +11,23 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="TableIncome">
+    <DataSet Name="TableExpenses">
       <Query>
         <DataSourceName>Accounting</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Customer">
-          <DataField>Customer</DataField>
-          <rd:TypeName>Accounting.Customer</rd:TypeName>
-        </Field>
-        <Field Name="Customer_Id">
-          <DataField>Customer_Id</DataField>
-          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
         <Field Name="Date">
           <DataField>Date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Dealer">
+          <DataField>Dealer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Details">
+          <DataField>Details</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
@@ -45,64 +45,11 @@
           <DataField>Price</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Products">
-          <DataField>Products</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Accounting</rd:DataSetName>
-        <rd:TableName>Income</rd:TableName>
-        <rd:ObjectDataSourceType>Accounting.Income, Accounting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="TableCustomer">
-      <Query>
-        <DataSourceName>Accounting</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="CSA">
-          <DataField>CSA</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="Date">
-          <DataField>Date</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="E_Mail">
-          <DataField>E_Mail</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Full_Name">
-          <DataField>Full_Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Hors_Barn">
-          <DataField>Hors_Barn</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="Id">
-          <DataField>Id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Neighbarhood">
-          <DataField>Neighbarhood</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="ObjectState">
-          <DataField>ObjectState</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="PhoneNr">
-          <DataField>PhoneNr</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Accounting</rd:DataSetName>
-        <rd:TableName>Customer</rd:TableName>
-        <rd:ObjectDataSourceType>Accounting.Customer, Accounting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Expense</rd:TableName>
+        <rd:ObjectDataSourceType>Accounting.Expense, Accounting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -114,16 +61,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.4496cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.11521cm</Width>
+                  <Width>3.9445cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.8975cm</Width>
+                  <Width>8.09435cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.97083cm</Width>
+                  <Width>1.97776cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -169,7 +116,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Customer</Value>
+                                  <Value>Dealer</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -199,7 +146,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Products</Value>
+                                  <Value>Details</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -264,7 +211,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatDateTime(Fields!Date.Value,DateFormat.ShortDate)</Value>
+                                  <Value>=FormatDateTime(Fields!Date.Value, DateFormat.ShortDate)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -287,21 +234,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Customer">
+                        <Textbox Name="Dealer">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIf(Fields!Customer.Value</Value>
+                                  <Value>=Fields!Dealer.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Customer</rd:DefaultName>
+                          <rd:DefaultName>Dealer</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -317,21 +264,21 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Products">
+                        <Textbox Name="Details">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Products.Value</Value>
+                                  <Value>=Fields!Details.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Products</rd:DefaultName>
+                          <rd:DefaultName>Details</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -383,7 +330,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
+                        <Textbox Name="Textbox18">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -399,7 +346,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <rd:DefaultName>Textbox18</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -415,7 +362,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox8">
+                        <Textbox Name="Textbox19">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -429,7 +376,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <rd:DefaultName>Textbox19</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -445,7 +392,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="Textbox20">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -459,7 +406,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -483,7 +430,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=FormatCurrency(Sum(Fields!Price.Value),2)</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -528,15 +477,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>TableIncome</DataSetName>
-            <SortExpressions>
-              <SortExpression>
-                <Value>=Fields!Date.Value</Value>
-              </SortExpression>
-            </SortExpressions>
+            <DataSetName>TableExpenses</DataSetName>
             <Top>0.03528cm</Top>
             <Height>1.8cm</Height>
-            <Width>16.48354cm</Width>
+            <Width>16.46621cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -547,7 +491,7 @@
         <Height>1.19455in</Height>
         <Style />
       </Body>
-      <Width>6.48958in</Width>
+      <Width>6.48276in</Width>
       <Page>
         <PageHeader>
           <Height>3.00454cm</Height>
@@ -561,7 +505,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Income List</Value>
+                      <Value>Expenses List</Value>
                       <Style>
                         <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -575,7 +519,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Height>0.78521cm</Height>
-              <Width>16.48354cm</Width>
+              <Width>16.46621cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -668,7 +612,7 @@
               <Top>1.49104cm</Top>
               <Left>12.22785cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.25569cm</Width>
+              <Width>4.23836cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -739,9 +683,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
               <Top>1.13453cm</Top>
-              <Left>12.30343cm</Left>
+              <Left>12.19257cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.18011cm</Width>
+              <Width>4.27364cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

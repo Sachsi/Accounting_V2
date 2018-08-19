@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.IncomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.IncomeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +45,10 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(860, 460);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // IncomeBindingSource
+            // 
+            this.IncomeBindingSource.DataSource = typeof(Accounting.Income);
             // 
             // customerBindingSource
             // 
@@ -57,6 +63,7 @@
             this.Name = "ReportViewer";
             this.Text = "ReportViewer";
             this.Load += new System.EventHandler(this.ReportViewer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.IncomeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -65,5 +72,6 @@
         #endregion
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.BindingSource IncomeBindingSource;
     }
 }
