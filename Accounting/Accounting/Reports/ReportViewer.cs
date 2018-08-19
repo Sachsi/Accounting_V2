@@ -27,8 +27,6 @@ namespace Accounting
 
             using (DatabaseContext db = new DatabaseContext())
             {
-                customerBindingSource.DataSource = db.Customers.ToList();
-                IncomeBindingSource.DataSource = db.Incomes.ToList();
                 ReportDataSource reportDataSourceC = new ReportDataSource();
                 reportDataSourceC.Name = "TableIncome";
                 reportDataSourceC.Value = db.Incomes.ToList();
@@ -41,7 +39,11 @@ namespace Accounting
                 reportDataSourceE.Name = "TableExpenses";
                 reportDataSourceE.Value = db.Expenses.ToList();
                 reportViewer1.LocalReport.DataSources.Add(reportDataSourceE);
-                double a = 0;
+                ReportDataSource reportDataSourceP = new ReportDataSource();
+                reportDataSourceP.Name = "TableProducts";
+                reportDataSourceP.Value = db.Produkts.ToList();
+                reportViewer1.LocalReport.DataSources.Add(reportDataSourceP);
+
 
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
