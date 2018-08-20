@@ -19,6 +19,11 @@ namespace Accounting
         List<Expense> expense = new List<Expense>();
         List<Produkt> produkt = new List<Produkt>();
         List<Customer> customer = new List<Customer>();
+       
+
+        private object ReportData;
+        private string ReportDataName;
+        private string ReportName;
 
         public SearchDetails[] searchDetails = new SearchDetails[4];
 
@@ -574,9 +579,12 @@ namespace Accounting
         /// <param name="customer">new customer list to load</param>
         private void LoadCustomerList(List<Customer> customer)
         {  
-                List_Search.Items.Clear();
+            List_Search.Items.Clear();
+            ReportData = customer;
+            ReportDataName = "TableCustomer";
+            ReportName = "Accounting.Reports.ReportCustomer.rdlc";
 
-                foreach (Customer item in customer)
+            foreach (Customer item in customer)
                 {
                     ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
                     b.SubItems.Add(item.Full_Name);
@@ -596,7 +604,12 @@ namespace Accounting
         /// <param name="income"></param>
         private void LoadIncomeList(List<Income> income)
         {
+            List<ReportIncome> reportIncomes = new List<ReportIncome>();
             List_Search.Items.Clear();
+            reportIncomes.Clear();
+
+            ReportDataName = "TableReportIncome";
+            ReportName = "Accounting.Reports.ReportIncome.rdlc";
 
             foreach (Income item in income)
             {
@@ -608,7 +621,19 @@ namespace Accounting
                 List_Search.Items.Add(b);
             }
 
-
+            foreach (Income item in income)
+            {
+                ReportIncome a = new ReportIncome();
+                a.Id = item.Id;
+                a.Customer = item.Customer.Full_Name;
+                a.Date = item.Date;
+                a.Payment = item.Payment;
+                a.Price = item.Price;
+                a.Products = item.Products;
+                a.ObjectState = item.ObjectState;
+                reportIncomes.Add(a);
+            }
+            ReportData = reportIncomes;
         }
         /// <summary>
         /// 
@@ -617,6 +642,9 @@ namespace Accounting
         private void LoadExpensesList(List<Expense> expenses)
         {
             List_Search.Items.Clear();
+            ReportData = expense;
+            ReportDataName = "TableExpenses";
+            ReportName = "Accounting.Reports.ReportExpenses.rdlc";
 
             foreach (Expense item in expenses)
             {
@@ -635,6 +663,9 @@ namespace Accounting
         private void LoadProductList(List<Produkt> producs)
         {
             List_Search.Items.Clear();
+            ReportData = producs;
+            ReportDataName = "TableProducts";
+            ReportName = "Accounting.Reports.ReportProducts.rdlc";
 
             foreach (Produkt item in producs)
             {
@@ -645,7 +676,8 @@ namespace Accounting
                 b.SubItems.Add(item.Quantity.ToString());
                 b.SubItems.Add(item.Units[item.Unit]);
                 List_Search.Items.Add(b);
-            }
+                
+             }
         }
 
         /// <summary>
@@ -677,15 +709,21 @@ namespace Accounting
                         break;
                 }
             }
+            ClearFilter();
 
         }
 
         private void mB_Print_Click(object sender, EventArgs e)
         {
-            Accounting.ReportViewer reports = new ReportViewer();
+            
 
+            Accounting.ReportViewer reports = new ReportViewer(this);
+            reports.ReportDataSetName = ReportDataName;
+            reports.Database = ReportData;
+            reports.ReportName = ReportName;
 
             reports.Show();
+           
         }
     }
 }

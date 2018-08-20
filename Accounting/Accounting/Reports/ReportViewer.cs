@@ -14,53 +14,72 @@ namespace Accounting
 {
     public partial class ReportViewer : MetroFramework.Forms.MetroForm
     {
-        public ReportViewer()
+        private ReportDataSource reportDataSource;
+
+        public String ReportDataSetName
         {
+            get { return this.reportDataSource.Name; }
+            set { this.reportDataSource.Name = value; }
+        }
+
+        public object Database
+        {
+            get { return this.reportDataSource.Value; }
+            set { this.reportDataSource.Value = value; }
+        }
+
+        public string ReportName
+        {
+            get { return this.reportViewer1.LocalReport.ReportEmbeddedResource; }
+            set { this.reportViewer1.LocalReport.ReportEmbeddedResource = value; }
+        }
+
+        Accounting.ucSearch ucSearch;
+
+        public ReportViewer(Accounting.ucSearch ucSearch)
+        {
+            this.ucSearch = new ucSearch();
+            this.ucSearch = ucSearch;
+            reportDataSource = new ReportDataSource();
             InitializeComponent();
+        }
+
+        public void AddReportDataSouce()
+        {
+            reportViewer1.LocalReport.DataSources.Add(reportDataSource);
         }
 
         private void ReportViewer_Load(object sender, EventArgs e)
         {
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
-            //this.reportViewer1.RefreshReport();
-            //this.reportViewer1.RefreshReport();
 
-            using (DatabaseContext db = new DatabaseContext())
-            {
-                ReportDataSource reportDataSourceC = new ReportDataSource();
-                reportDataSourceC.Name = "TableIncome";
-                reportDataSourceC.Value = db.Incomes.ToList();
-                reportViewer1.LocalReport.DataSources.Add(reportDataSourceC);
-                ReportDataSource reportDataSourceI = new ReportDataSource();
-                reportDataSourceI.Name = "TableCustomer";
-                reportDataSourceI.Value = db.Customers.ToList();
-                reportViewer1.LocalReport.DataSources.Add(reportDataSourceI);
-                ReportDataSource reportDataSourceE = new ReportDataSource();
-                reportDataSourceE.Name = "TableExpenses";
-                reportDataSourceE.Value = db.Expenses.ToList();
-                reportViewer1.LocalReport.DataSources.Add(reportDataSourceE);
-                ReportDataSource reportDataSourceP = new ReportDataSource();
-                reportDataSourceP.Name = "TableProducts";
-                reportDataSourceP.Value = db.Produkts.ToList();
-                reportViewer1.LocalReport.DataSources.Add(reportDataSourceP);
-
+            
+            AddReportDataSouce();
+ 
 
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                     
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyName","Pinsch of Soil Farm"),
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyOwner","Marcel Sachse"),
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyAddress","258 2078, Langley, Canada"),
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyPhone","7788992185"),
-                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyEMail","marcelsachse@msn.com"),
-                    //new Microsoft.Reporting.WinForms.ReportParameter("Currency", a.ToString("c",ucSetting.CurrencyDefault))
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyName",Settings.Default["BusinessName"].ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyOwner", Settings.Default["CompanyTitle"].ToString() +
+                                                                    " " + Settings.Default["CompanyOwner"].ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyAddress",Settings.Default["CompanyPostcode"].ToString() +
+                                                                    " " + Settings.Default["CompanyCity"].ToString() +
+                                                                    "\n" + Settings.Default["CompanyCountry"].ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyPhone",Settings.Default["CompanyPhone"].ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("CompanyEMail",Settings.Default["CompanyEMail"].ToString()),
+                   
                 };
 
                 reportViewer1.LocalReport.SetParameters(rParams);
                 this.reportViewer1.RefreshReport();
-            }
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void ReportViewer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ucSearch.Focus();
         }
     }
 }

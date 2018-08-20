@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mTC_Settings = new MetroFramework.Controls.MetroTabControl();
-            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
             this.mTP_Design = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -65,11 +64,29 @@
             this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
             this.mL_Theme = new MetroFramework.Controls.MetroLabel();
             this.mTP_Options = new MetroFramework.Controls.MetroTabPage();
+            this.mTB_EMail = new MetroFramework.Controls.MetroTextBox();
+            this.mL_EMail = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Phone = new MetroFramework.Controls.MetroTextBox();
+            this.mL_Phone = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Title = new MetroFramework.Controls.MetroTextBox();
+            this.mL_Title = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Country = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Postcode = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Province = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Street = new MetroFramework.Controls.MetroTextBox();
+            this.mL_BusinessStreet = new MetroFramework.Controls.MetroLabel();
+            this.mTB_Owner = new MetroFramework.Controls.MetroTextBox();
+            this.mL_BusinessOwner = new MetroFramework.Controls.MetroLabel();
             this.mL_Setting_Info = new MetroFramework.Controls.MetroLabel();
             this.mCB_Currency = new MetroFramework.Controls.MetroComboBox();
             this.mL_Currency = new MetroFramework.Controls.MetroLabel();
             this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
             this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
+            this.mTP_Info = new MetroFramework.Controls.MetroTabPage();
             this.MTP_DatabaseSettings = new MetroFramework.Controls.MetroTabPage();
             this.GB_DeleteDB = new System.Windows.Forms.GroupBox();
             this.ml_DeleteDatabse = new MetroFramework.Controls.MetroLabel();
@@ -99,24 +116,10 @@
             this.mTC_Settings.Controls.Add(this.MTP_DatabaseSettings);
             this.mTC_Settings.Location = new System.Drawing.Point(0, 0);
             this.mTC_Settings.Name = "mTC_Settings";
-            this.mTC_Settings.SelectedIndex = 3;
+            this.mTC_Settings.SelectedIndex = 1;
             this.mTC_Settings.Size = new System.Drawing.Size(860, 460);
             this.mTC_Settings.TabIndex = 0;
             this.mTC_Settings.UseSelectable = true;
-            // 
-            // mTP_Info
-            // 
-            this.mTP_Info.HorizontalScrollbarBarColor = true;
-            this.mTP_Info.HorizontalScrollbarHighlightOnWheel = false;
-            this.mTP_Info.HorizontalScrollbarSize = 10;
-            this.mTP_Info.Location = new System.Drawing.Point(4, 38);
-            this.mTP_Info.Name = "mTP_Info";
-            this.mTP_Info.Size = new System.Drawing.Size(852, 418);
-            this.mTP_Info.TabIndex = 2;
-            this.mTP_Info.Text = "Info";
-            this.mTP_Info.VerticalScrollbarBarColor = true;
-            this.mTP_Info.VerticalScrollbarHighlightOnWheel = false;
-            this.mTP_Info.VerticalScrollbarSize = 10;
             // 
             // mTP_Design
             // 
@@ -467,6 +470,23 @@
             // 
             // mTP_Options
             // 
+            this.mTP_Options.Controls.Add(this.mTB_EMail);
+            this.mTP_Options.Controls.Add(this.mL_EMail);
+            this.mTP_Options.Controls.Add(this.mTB_Phone);
+            this.mTP_Options.Controls.Add(this.mL_Phone);
+            this.mTP_Options.Controls.Add(this.mTB_Title);
+            this.mTP_Options.Controls.Add(this.mL_Title);
+            this.mTP_Options.Controls.Add(this.mTB_Country);
+            this.mTP_Options.Controls.Add(this.metroLabel4);
+            this.mTP_Options.Controls.Add(this.mTB_Postcode);
+            this.mTP_Options.Controls.Add(this.metroLabel3);
+            this.mTP_Options.Controls.Add(this.mTB_Province);
+            this.mTP_Options.Controls.Add(this.metroLabel6);
+            this.mTP_Options.Controls.Add(this.metroLabel5);
+            this.mTP_Options.Controls.Add(this.mTB_Street);
+            this.mTP_Options.Controls.Add(this.mL_BusinessStreet);
+            this.mTP_Options.Controls.Add(this.mTB_Owner);
+            this.mTP_Options.Controls.Add(this.mL_BusinessOwner);
             this.mTP_Options.Controls.Add(this.mL_Setting_Info);
             this.mTP_Options.Controls.Add(this.mCB_Currency);
             this.mTP_Options.Controls.Add(this.mL_Currency);
@@ -479,10 +499,363 @@
             this.mTP_Options.Name = "mTP_Options";
             this.mTP_Options.Size = new System.Drawing.Size(852, 418);
             this.mTP_Options.TabIndex = 1;
-            this.mTP_Options.Text = "Options";
+            this.mTP_Options.Text = "Company Details";
             this.mTP_Options.VerticalScrollbarBarColor = true;
             this.mTP_Options.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Options.VerticalScrollbarSize = 10;
+            // 
+            // mTB_EMail
+            // 
+            // 
+            // 
+            // 
+            this.mTB_EMail.CustomButton.Image = null;
+            this.mTB_EMail.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_EMail.CustomButton.Name = "";
+            this.mTB_EMail.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_EMail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_EMail.CustomButton.TabIndex = 1;
+            this.mTB_EMail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_EMail.CustomButton.UseSelectable = true;
+            this.mTB_EMail.CustomButton.Visible = false;
+            this.mTB_EMail.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_EMail.Lines = new string[] {
+        "E-Mail"};
+            this.mTB_EMail.Location = new System.Drawing.Point(540, 86);
+            this.mTB_EMail.MaxLength = 32767;
+            this.mTB_EMail.Name = "mTB_EMail";
+            this.mTB_EMail.PasswordChar = '\0';
+            this.mTB_EMail.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_EMail.SelectedText = "";
+            this.mTB_EMail.SelectionLength = 0;
+            this.mTB_EMail.SelectionStart = 0;
+            this.mTB_EMail.ShortcutsEnabled = true;
+            this.mTB_EMail.Size = new System.Drawing.Size(170, 29);
+            this.mTB_EMail.TabIndex = 8;
+            this.mTB_EMail.Text = "E-Mail";
+            this.mTB_EMail.UseSelectable = true;
+            this.mTB_EMail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_EMail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_EMail.TextChanged += new System.EventHandler(this.mTB_EMail_TextChanged_1);
+            // 
+            // mL_EMail
+            // 
+            this.mL_EMail.AutoSize = true;
+            this.mL_EMail.Location = new System.Drawing.Point(394, 91);
+            this.mL_EMail.Name = "mL_EMail";
+            this.mL_EMail.Size = new System.Drawing.Size(50, 19);
+            this.mL_EMail.TabIndex = 23;
+            this.mL_EMail.Text = "E-Mail:";
+            // 
+            // mTB_Phone
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Phone.CustomButton.Image = null;
+            this.mTB_Phone.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Phone.CustomButton.Name = "";
+            this.mTB_Phone.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Phone.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Phone.CustomButton.TabIndex = 1;
+            this.mTB_Phone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Phone.CustomButton.UseSelectable = true;
+            this.mTB_Phone.CustomButton.Visible = false;
+            this.mTB_Phone.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Phone.Lines = new string[] {
+        "12596333"};
+            this.mTB_Phone.Location = new System.Drawing.Point(540, 51);
+            this.mTB_Phone.MaxLength = 32767;
+            this.mTB_Phone.Name = "mTB_Phone";
+            this.mTB_Phone.PasswordChar = '\0';
+            this.mTB_Phone.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Phone.SelectedText = "";
+            this.mTB_Phone.SelectionLength = 0;
+            this.mTB_Phone.SelectionStart = 0;
+            this.mTB_Phone.ShortcutsEnabled = true;
+            this.mTB_Phone.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Phone.TabIndex = 7;
+            this.mTB_Phone.Text = "12596333";
+            this.mTB_Phone.UseSelectable = true;
+            this.mTB_Phone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Phone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Phone.TextChanged += new System.EventHandler(this.mTB_Phone_TextChanged);
+            // 
+            // mL_Phone
+            // 
+            this.mL_Phone.AutoSize = true;
+            this.mL_Phone.Location = new System.Drawing.Point(394, 56);
+            this.mL_Phone.Name = "mL_Phone";
+            this.mL_Phone.Size = new System.Drawing.Size(49, 19);
+            this.mL_Phone.TabIndex = 21;
+            this.mL_Phone.Text = "Phone:";
+            // 
+            // mTB_Title
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Title.CustomButton.Image = null;
+            this.mTB_Title.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Title.CustomButton.Name = "";
+            this.mTB_Title.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Title.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Title.CustomButton.TabIndex = 1;
+            this.mTB_Title.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Title.CustomButton.UseSelectable = true;
+            this.mTB_Title.CustomButton.Visible = false;
+            this.mTB_Title.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Title.Lines = new string[] {
+        "Title"};
+            this.mTB_Title.Location = new System.Drawing.Point(169, 51);
+            this.mTB_Title.MaxLength = 32767;
+            this.mTB_Title.Name = "mTB_Title";
+            this.mTB_Title.PasswordChar = '\0';
+            this.mTB_Title.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Title.SelectedText = "";
+            this.mTB_Title.SelectionLength = 0;
+            this.mTB_Title.SelectionStart = 0;
+            this.mTB_Title.ShortcutsEnabled = true;
+            this.mTB_Title.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Title.TabIndex = 0;
+            this.mTB_Title.Text = "Title";
+            this.mTB_Title.UseSelectable = true;
+            this.mTB_Title.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Title.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Title.TextChanged += new System.EventHandler(this.mTB_Title_TextChanged);
+            // 
+            // mL_Title
+            // 
+            this.mL_Title.AutoSize = true;
+            this.mL_Title.Location = new System.Drawing.Point(23, 56);
+            this.mL_Title.Name = "mL_Title";
+            this.mL_Title.Size = new System.Drawing.Size(36, 19);
+            this.mL_Title.TabIndex = 19;
+            this.mL_Title.Text = "Title:";
+            // 
+            // mTB_Country
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Country.CustomButton.Image = null;
+            this.mTB_Country.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Country.CustomButton.Name = "";
+            this.mTB_Country.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Country.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Country.CustomButton.TabIndex = 1;
+            this.mTB_Country.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Country.CustomButton.UseSelectable = true;
+            this.mTB_Country.CustomButton.Visible = false;
+            this.mTB_Country.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Country.Lines = new string[] {
+        "Country"};
+            this.mTB_Country.Location = new System.Drawing.Point(169, 261);
+            this.mTB_Country.MaxLength = 32767;
+            this.mTB_Country.Name = "mTB_Country";
+            this.mTB_Country.PasswordChar = '\0';
+            this.mTB_Country.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Country.SelectedText = "";
+            this.mTB_Country.SelectionLength = 0;
+            this.mTB_Country.SelectionStart = 0;
+            this.mTB_Country.ShortcutsEnabled = true;
+            this.mTB_Country.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Country.TabIndex = 6;
+            this.mTB_Country.Text = "Country";
+            this.mTB_Country.UseSelectable = true;
+            this.mTB_Country.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Country.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Country.TextChanged += new System.EventHandler(this.mTB_Country_TextChanged);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(23, 266);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel4.TabIndex = 17;
+            this.metroLabel4.Text = "Country:";
+            // 
+            // mTB_Postcode
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Postcode.CustomButton.Image = null;
+            this.mTB_Postcode.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Postcode.CustomButton.Name = "";
+            this.mTB_Postcode.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Postcode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Postcode.CustomButton.TabIndex = 1;
+            this.mTB_Postcode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Postcode.CustomButton.UseSelectable = true;
+            this.mTB_Postcode.CustomButton.Visible = false;
+            this.mTB_Postcode.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Postcode.Lines = new string[] {
+        "Postcode"};
+            this.mTB_Postcode.Location = new System.Drawing.Point(169, 191);
+            this.mTB_Postcode.MaxLength = 32767;
+            this.mTB_Postcode.Name = "mTB_Postcode";
+            this.mTB_Postcode.PasswordChar = '\0';
+            this.mTB_Postcode.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Postcode.SelectedText = "";
+            this.mTB_Postcode.SelectionLength = 0;
+            this.mTB_Postcode.SelectionStart = 0;
+            this.mTB_Postcode.ShortcutsEnabled = true;
+            this.mTB_Postcode.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Postcode.TabIndex = 4;
+            this.mTB_Postcode.Text = "Postcode";
+            this.mTB_Postcode.UseSelectable = true;
+            this.mTB_Postcode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Postcode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Postcode.TextChanged += new System.EventHandler(this.mTB_Postcode_TextChanged);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(23, 196);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel3.TabIndex = 15;
+            this.metroLabel3.Text = "Postcode:";
+            // 
+            // mTB_Province
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Province.CustomButton.Image = null;
+            this.mTB_Province.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Province.CustomButton.Name = "";
+            this.mTB_Province.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Province.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Province.CustomButton.TabIndex = 1;
+            this.mTB_Province.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Province.CustomButton.UseSelectable = true;
+            this.mTB_Province.CustomButton.Visible = false;
+            this.mTB_Province.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Province.Lines = new string[] {
+        "Province"};
+            this.mTB_Province.Location = new System.Drawing.Point(169, 226);
+            this.mTB_Province.MaxLength = 32767;
+            this.mTB_Province.Name = "mTB_Province";
+            this.mTB_Province.PasswordChar = '\0';
+            this.mTB_Province.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Province.SelectedText = "";
+            this.mTB_Province.SelectionLength = 0;
+            this.mTB_Province.SelectionStart = 0;
+            this.mTB_Province.ShortcutsEnabled = true;
+            this.mTB_Province.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Province.TabIndex = 5;
+            this.mTB_Province.Text = "Province";
+            this.mTB_Province.UseSelectable = true;
+            this.mTB_Province.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Province.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Province.TextChanged += new System.EventHandler(this.mTB_Province_TextChanged);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(23, 231);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel6.TabIndex = 13;
+            this.metroLabel6.Text = "Province:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(19, 23);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(148, 19);
+            this.metroLabel5.TabIndex = 12;
+            this.metroLabel5.Text = "Adress of your Business:";
+            // 
+            // mTB_Street
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Street.CustomButton.Image = null;
+            this.mTB_Street.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Street.CustomButton.Name = "";
+            this.mTB_Street.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Street.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Street.CustomButton.TabIndex = 1;
+            this.mTB_Street.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Street.CustomButton.UseSelectable = true;
+            this.mTB_Street.CustomButton.Visible = false;
+            this.mTB_Street.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Street.Lines = new string[] {
+        "Street"};
+            this.mTB_Street.Location = new System.Drawing.Point(169, 156);
+            this.mTB_Street.MaxLength = 32767;
+            this.mTB_Street.Name = "mTB_Street";
+            this.mTB_Street.PasswordChar = '\0';
+            this.mTB_Street.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Street.SelectedText = "";
+            this.mTB_Street.SelectionLength = 0;
+            this.mTB_Street.SelectionStart = 0;
+            this.mTB_Street.ShortcutsEnabled = true;
+            this.mTB_Street.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Street.TabIndex = 3;
+            this.mTB_Street.Text = "Street";
+            this.mTB_Street.UseSelectable = true;
+            this.mTB_Street.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Street.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Street.TextChanged += new System.EventHandler(this.mTB_Street_TextChanged);
+            // 
+            // mL_BusinessStreet
+            // 
+            this.mL_BusinessStreet.AutoSize = true;
+            this.mL_BusinessStreet.Location = new System.Drawing.Point(23, 161);
+            this.mL_BusinessStreet.Name = "mL_BusinessStreet";
+            this.mL_BusinessStreet.Size = new System.Drawing.Size(46, 19);
+            this.mL_BusinessStreet.TabIndex = 10;
+            this.mL_BusinessStreet.Text = "Street:";
+            // 
+            // mTB_Owner
+            // 
+            // 
+            // 
+            // 
+            this.mTB_Owner.CustomButton.Image = null;
+            this.mTB_Owner.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.mTB_Owner.CustomButton.Name = "";
+            this.mTB_Owner.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_Owner.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_Owner.CustomButton.TabIndex = 1;
+            this.mTB_Owner.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_Owner.CustomButton.UseSelectable = true;
+            this.mTB_Owner.CustomButton.Visible = false;
+            this.mTB_Owner.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_Owner.Lines = new string[] {
+        "Owner"};
+            this.mTB_Owner.Location = new System.Drawing.Point(169, 121);
+            this.mTB_Owner.MaxLength = 32767;
+            this.mTB_Owner.Name = "mTB_Owner";
+            this.mTB_Owner.PasswordChar = '\0';
+            this.mTB_Owner.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_Owner.SelectedText = "";
+            this.mTB_Owner.SelectionLength = 0;
+            this.mTB_Owner.SelectionStart = 0;
+            this.mTB_Owner.ShortcutsEnabled = true;
+            this.mTB_Owner.Size = new System.Drawing.Size(170, 29);
+            this.mTB_Owner.TabIndex = 2;
+            this.mTB_Owner.Text = "Owner";
+            this.mTB_Owner.UseSelectable = true;
+            this.mTB_Owner.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_Owner.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTB_Owner.TextChanged += new System.EventHandler(this.mTB_Owner_TextChanged);
+            // 
+            // mL_BusinessOwner
+            // 
+            this.mL_BusinessOwner.AutoSize = true;
+            this.mL_BusinessOwner.Location = new System.Drawing.Point(23, 126);
+            this.mL_BusinessOwner.Name = "mL_BusinessOwner";
+            this.mL_BusinessOwner.Size = new System.Drawing.Size(52, 19);
+            this.mL_BusinessOwner.TabIndex = 8;
+            this.mL_BusinessOwner.Text = "Owner:";
             // 
             // mL_Setting_Info
             // 
@@ -500,17 +873,17 @@
             "$",
             "€",
             "Yan"});
-            this.mCB_Currency.Location = new System.Drawing.Point(194, 54);
+            this.mCB_Currency.Location = new System.Drawing.Point(540, 261);
             this.mCB_Currency.Name = "mCB_Currency";
-            this.mCB_Currency.Size = new System.Drawing.Size(121, 29);
-            this.mCB_Currency.TabIndex = 5;
+            this.mCB_Currency.Size = new System.Drawing.Size(170, 29);
+            this.mCB_Currency.TabIndex = 9;
             this.mCB_Currency.UseSelectable = true;
             this.mCB_Currency.SelectedIndexChanged += new System.EventHandler(this.mCB_Currency_SelectedIndexChanged);
             // 
             // mL_Currency
             // 
             this.mL_Currency.AutoSize = true;
-            this.mL_Currency.Location = new System.Drawing.Point(194, 32);
+            this.mL_Currency.Location = new System.Drawing.Point(394, 266);
             this.mL_Currency.Name = "mL_Currency";
             this.mL_Currency.Size = new System.Drawing.Size(64, 19);
             this.mL_Currency.TabIndex = 4;
@@ -522,7 +895,7 @@
             // 
             // 
             this.mTB_BusinessName.CustomButton.Image = null;
-            this.mTB_BusinessName.CustomButton.Location = new System.Drawing.Point(122, 1);
+            this.mTB_BusinessName.CustomButton.Location = new System.Drawing.Point(142, 1);
             this.mTB_BusinessName.CustomButton.Name = "";
             this.mTB_BusinessName.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.mTB_BusinessName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -533,7 +906,7 @@
             this.mTB_BusinessName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.mTB_BusinessName.Lines = new string[] {
         "Your Business Name"};
-            this.mTB_BusinessName.Location = new System.Drawing.Point(3, 54);
+            this.mTB_BusinessName.Location = new System.Drawing.Point(169, 86);
             this.mTB_BusinessName.MaxLength = 32767;
             this.mTB_BusinessName.Name = "mTB_BusinessName";
             this.mTB_BusinessName.PasswordChar = '\0';
@@ -542,8 +915,8 @@
             this.mTB_BusinessName.SelectionLength = 0;
             this.mTB_BusinessName.SelectionStart = 0;
             this.mTB_BusinessName.ShortcutsEnabled = true;
-            this.mTB_BusinessName.Size = new System.Drawing.Size(150, 29);
-            this.mTB_BusinessName.TabIndex = 3;
+            this.mTB_BusinessName.Size = new System.Drawing.Size(170, 29);
+            this.mTB_BusinessName.TabIndex = 1;
             this.mTB_BusinessName.Text = "Your Business Name";
             this.mTB_BusinessName.UseSelectable = true;
             this.mTB_BusinessName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -553,11 +926,25 @@
             // mL_BusinessName
             // 
             this.mL_BusinessName.AutoSize = true;
-            this.mL_BusinessName.Location = new System.Drawing.Point(3, 32);
+            this.mL_BusinessName.Location = new System.Drawing.Point(23, 91);
             this.mL_BusinessName.Name = "mL_BusinessName";
-            this.mL_BusinessName.Size = new System.Drawing.Size(130, 19);
+            this.mL_BusinessName.Size = new System.Drawing.Size(99, 19);
             this.mL_BusinessName.TabIndex = 2;
-            this.mL_BusinessName.Text = "Your Business Name:";
+            this.mL_BusinessName.Text = "Business Name:";
+            // 
+            // mTP_Info
+            // 
+            this.mTP_Info.HorizontalScrollbarBarColor = true;
+            this.mTP_Info.HorizontalScrollbarHighlightOnWheel = false;
+            this.mTP_Info.HorizontalScrollbarSize = 10;
+            this.mTP_Info.Location = new System.Drawing.Point(4, 38);
+            this.mTP_Info.Name = "mTP_Info";
+            this.mTP_Info.Size = new System.Drawing.Size(852, 418);
+            this.mTP_Info.TabIndex = 2;
+            this.mTP_Info.Text = "Info";
+            this.mTP_Info.VerticalScrollbarBarColor = true;
+            this.mTP_Info.VerticalScrollbarHighlightOnWheel = false;
+            this.mTP_Info.VerticalScrollbarSize = 10;
             // 
             // MTP_DatabaseSettings
             // 
@@ -683,5 +1070,22 @@
         private System.Windows.Forms.GroupBox GB_DeleteDB;
         private MetroFramework.Controls.MetroLabel ml_DeleteDatabse;
         private MetroFramework.Controls.MetroCheckBox mCB_DeleteDatabase;
+        private MetroFramework.Controls.MetroTextBox mTB_Street;
+        private MetroFramework.Controls.MetroLabel mL_BusinessStreet;
+        private MetroFramework.Controls.MetroTextBox mTB_Owner;
+        private MetroFramework.Controls.MetroLabel mL_BusinessOwner;
+        private MetroFramework.Controls.MetroTextBox mTB_Province;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox mTB_Title;
+        private MetroFramework.Controls.MetroLabel mL_Title;
+        private MetroFramework.Controls.MetroTextBox mTB_Country;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroTextBox mTB_Postcode;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTextBox mTB_EMail;
+        private MetroFramework.Controls.MetroLabel mL_EMail;
+        private MetroFramework.Controls.MetroTextBox mTB_Phone;
+        private MetroFramework.Controls.MetroLabel mL_Phone;
     }
 }

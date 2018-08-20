@@ -17,5 +17,29 @@
     <Setting Name="BusinessName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Your Business</Value>
     </Setting>
+    <Setting Name="CompanyOwner" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Name</Value>
+    </Setting>
+    <Setting Name="CompanyStreet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Street</Value>
+    </Setting>
+    <Setting Name="CompanyCity" Type="System.String" Scope="User">
+      <Value Profile="(Default)">City</Value>
+    </Setting>
+    <Setting Name="CompanyPhone" Type="System.String" Scope="User">
+      <Value Profile="(Default)">111111111111</Value>
+    </Setting>
+    <Setting Name="CompanyEMail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">maxmusterman@mail.com</Value>
+    </Setting>
+    <Setting Name="CompanyCountry" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Country</Value>
+    </Setting>
+    <Setting Name="CompanyPostcode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Postcode</Value>
+    </Setting>
+    <Setting Name="CompanyTitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr.</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

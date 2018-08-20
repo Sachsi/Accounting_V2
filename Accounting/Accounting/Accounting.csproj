@@ -185,6 +185,7 @@
     <Compile Include="Enums\Database.cs" />
     <Compile Include="Enums\Error.cs" />
     <Compile Include="Enums\Month.cs" />
+    <Compile Include="ReportIncome.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
       <DependentUpon>201804102005452_AllTables.cs</DependentUpon>
@@ -330,6 +331,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReportIncome.datasource" />
     <None Include="TabControl.datasource" />
     <None Include="Units.datasource" />
   </ItemGroup>

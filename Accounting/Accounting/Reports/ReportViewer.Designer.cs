@@ -39,7 +39,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Accounting.Reports.ReportProducts.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Accounting.Reports.ReportCustomer.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -62,6 +62,7 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReportViewer";
             this.Text = "ReportViewer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportViewer_FormClosed);
             this.Load += new System.EventHandler(this.ReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IncomeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
