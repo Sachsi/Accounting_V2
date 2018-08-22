@@ -97,7 +97,7 @@
             this.mTC_Settings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mTC_Settings.Location = new System.Drawing.Point(0, 0);
             this.mTC_Settings.Name = "mTC_Settings";
-            this.mTC_Settings.SelectedIndex = 2;
+            this.mTC_Settings.SelectedIndex = 0;
             this.mTC_Settings.Size = new System.Drawing.Size(835, 536);
             this.mTC_Settings.TabIndex = 0;
             this.mTC_Settings.UseSelectable = true;
