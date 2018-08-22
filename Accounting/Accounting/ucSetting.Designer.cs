@@ -57,6 +57,17 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cSADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.neighbarhoodDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.horsBarnDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.incomesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mCB_Style = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.mCB_Theme = new MetroFramework.Controls.MetroComboBox();
@@ -85,25 +96,14 @@
             this.mTB_BusinessName = new MetroFramework.Controls.MetroTextBox();
             this.mL_BusinessName = new MetroFramework.Controls.MetroLabel();
             this.MTP_DatabaseSettings = new MetroFramework.Controls.MetroTabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mTB_GST = new MetroFramework.Controls.MetroTextBox();
+            this.mTB_PST = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.GB_DeleteDB = new System.Windows.Forms.GroupBox();
             this.mCB_DeleteDatabase = new MetroFramework.Controls.MetroCheckBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cSADataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.neighbarhoodDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.horsBarnDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.incomesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.objectStateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.mTB_PST = new MetroFramework.Controls.MetroTextBox();
-            this.mTB_GST = new MetroFramework.Controls.MetroTextBox();
             this.mTC_Settings.SuspendLayout();
             this.mTP_Info.SuspendLayout();
             this.mTP_Design.SuspendLayout();
@@ -111,12 +111,12 @@
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.mTP_Options.SuspendLayout();
             this.MTP_DatabaseSettings.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.GB_DeleteDB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mTC_Settings
@@ -150,7 +150,7 @@
             this.mTP_Info.HorizontalScrollbarSize = 10;
             this.mTP_Info.Location = new System.Drawing.Point(4, 38);
             this.mTP_Info.Name = "mTP_Info";
-            this.mTP_Info.Size = new System.Drawing.Size(852, 418);
+            this.mTP_Info.Size = new System.Drawing.Size(827, 494);
             this.mTP_Info.TabIndex = 2;
             this.mTP_Info.Text = "Info";
             this.mTP_Info.VerticalScrollbarBarColor = true;
@@ -241,7 +241,7 @@
             this.mTP_Design.HorizontalScrollbarSize = 10;
             this.mTP_Design.Location = new System.Drawing.Point(4, 38);
             this.mTP_Design.Name = "mTP_Design";
-            this.mTP_Design.Size = new System.Drawing.Size(852, 418);
+            this.mTP_Design.Size = new System.Drawing.Size(827, 494);
             this.mTP_Design.TabIndex = 0;
             this.mTP_Design.Text = "Design";
             this.mTP_Design.VerticalScrollbarBarColor = true;
@@ -452,6 +452,70 @@
             this.metroGrid1.Size = new System.Drawing.Size(835, 141);
             this.metroGrid1.TabIndex = 2;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            // 
+            // eMailDataGridViewTextBoxColumn
+            // 
+            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "E_Mail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "E_Mail";
+            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
+            // 
+            // phoneNrDataGridViewTextBoxColumn
+            // 
+            this.phoneNrDataGridViewTextBoxColumn.DataPropertyName = "PhoneNr";
+            this.phoneNrDataGridViewTextBoxColumn.HeaderText = "PhoneNr";
+            this.phoneNrDataGridViewTextBoxColumn.Name = "phoneNrDataGridViewTextBoxColumn";
+            // 
+            // cSADataGridViewCheckBoxColumn
+            // 
+            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
+            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
+            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
+            // 
+            // neighbarhoodDataGridViewCheckBoxColumn
+            // 
+            this.neighbarhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighbarhood";
+            this.neighbarhoodDataGridViewCheckBoxColumn.HeaderText = "Neighbarhood";
+            this.neighbarhoodDataGridViewCheckBoxColumn.Name = "neighbarhoodDataGridViewCheckBoxColumn";
+            // 
+            // horsBarnDataGridViewCheckBoxColumn
+            // 
+            this.horsBarnDataGridViewCheckBoxColumn.DataPropertyName = "Hors_Barn";
+            this.horsBarnDataGridViewCheckBoxColumn.HeaderText = "Hors_Barn";
+            this.horsBarnDataGridViewCheckBoxColumn.Name = "horsBarnDataGridViewCheckBoxColumn";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // incomesDataGridViewTextBoxColumn
+            // 
+            this.incomesDataGridViewTextBoxColumn.DataPropertyName = "Incomes";
+            this.incomesDataGridViewTextBoxColumn.HeaderText = "Incomes";
+            this.incomesDataGridViewTextBoxColumn.Name = "incomesDataGridViewTextBoxColumn";
+            // 
+            // objectStateDataGridViewTextBoxColumn
+            // 
+            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
+            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
+            // 
             // mCB_Style
             // 
             this.mCB_Style.FormattingEnabled = true;
@@ -541,7 +605,7 @@
             this.mTP_Options.HorizontalScrollbarSize = 10;
             this.mTP_Options.Location = new System.Drawing.Point(4, 38);
             this.mTP_Options.Name = "mTP_Options";
-            this.mTP_Options.Size = new System.Drawing.Size(852, 418);
+            this.mTP_Options.Size = new System.Drawing.Size(827, 494);
             this.mTP_Options.TabIndex = 1;
             this.mTP_Options.Text = "Company Details";
             this.mTP_Options.VerticalScrollbarBarColor = true;
@@ -904,9 +968,9 @@
             // mL_Setting_Info
             // 
             this.mL_Setting_Info.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mL_Setting_Info.Location = new System.Drawing.Point(0, 399);
+            this.mL_Setting_Info.Location = new System.Drawing.Point(0, 475);
             this.mL_Setting_Info.Name = "mL_Setting_Info";
-            this.mL_Setting_Info.Size = new System.Drawing.Size(852, 19);
+            this.mL_Setting_Info.Size = new System.Drawing.Size(827, 19);
             this.mL_Setting_Info.TabIndex = 6;
             // 
             // mCB_Currency
@@ -985,103 +1049,12 @@
             this.MTP_DatabaseSettings.HorizontalScrollbarSize = 10;
             this.MTP_DatabaseSettings.Location = new System.Drawing.Point(4, 38);
             this.MTP_DatabaseSettings.Name = "MTP_DatabaseSettings";
-            this.MTP_DatabaseSettings.Size = new System.Drawing.Size(852, 418);
+            this.MTP_DatabaseSettings.Size = new System.Drawing.Size(827, 494);
             this.MTP_DatabaseSettings.TabIndex = 3;
             this.MTP_DatabaseSettings.Text = "Database Settings";
             this.MTP_DatabaseSettings.VerticalScrollbarBarColor = true;
             this.MTP_DatabaseSettings.VerticalScrollbarHighlightOnWheel = false;
             this.MTP_DatabaseSettings.VerticalScrollbarSize = 10;
-            // 
-            // GB_DeleteDB
-            // 
-            this.GB_DeleteDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.GB_DeleteDB.BackColor = System.Drawing.Color.Transparent;
-            this.GB_DeleteDB.Controls.Add(this.mCB_DeleteDatabase);
-            this.GB_DeleteDB.Location = new System.Drawing.Point(209, 16);
-            this.GB_DeleteDB.Name = "GB_DeleteDB";
-            this.GB_DeleteDB.Size = new System.Drawing.Size(141, 111);
-            this.GB_DeleteDB.TabIndex = 4;
-            this.GB_DeleteDB.TabStop = false;
-            this.GB_DeleteDB.Text = "Delete Database";
-            // 
-            // mCB_DeleteDatabase
-            // 
-            this.mCB_DeleteDatabase.AutoSize = true;
-            this.mCB_DeleteDatabase.Location = new System.Drawing.Point(15, 31);
-            this.mCB_DeleteDatabase.Name = "mCB_DeleteDatabase";
-            this.mCB_DeleteDatabase.Size = new System.Drawing.Size(39, 15);
-            this.mCB_DeleteDatabase.TabIndex = 2;
-            this.mCB_DeleteDatabase.Text = "No";
-            this.mCB_DeleteDatabase.UseSelectable = true;
-            this.mCB_DeleteDatabase.Click += new System.EventHandler(this.mCB_DeleteDatabase_Click);
-            // 
-            // metroStyleManager1
-            // 
-            this.metroStyleManager1.Owner = this;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
-            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            // 
-            // eMailDataGridViewTextBoxColumn
-            // 
-            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "E_Mail";
-            this.eMailDataGridViewTextBoxColumn.HeaderText = "E_Mail";
-            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
-            // 
-            // phoneNrDataGridViewTextBoxColumn
-            // 
-            this.phoneNrDataGridViewTextBoxColumn.DataPropertyName = "PhoneNr";
-            this.phoneNrDataGridViewTextBoxColumn.HeaderText = "PhoneNr";
-            this.phoneNrDataGridViewTextBoxColumn.Name = "phoneNrDataGridViewTextBoxColumn";
-            // 
-            // cSADataGridViewCheckBoxColumn
-            // 
-            this.cSADataGridViewCheckBoxColumn.DataPropertyName = "CSA";
-            this.cSADataGridViewCheckBoxColumn.HeaderText = "CSA";
-            this.cSADataGridViewCheckBoxColumn.Name = "cSADataGridViewCheckBoxColumn";
-            // 
-            // neighbarhoodDataGridViewCheckBoxColumn
-            // 
-            this.neighbarhoodDataGridViewCheckBoxColumn.DataPropertyName = "Neighbarhood";
-            this.neighbarhoodDataGridViewCheckBoxColumn.HeaderText = "Neighbarhood";
-            this.neighbarhoodDataGridViewCheckBoxColumn.Name = "neighbarhoodDataGridViewCheckBoxColumn";
-            // 
-            // horsBarnDataGridViewCheckBoxColumn
-            // 
-            this.horsBarnDataGridViewCheckBoxColumn.DataPropertyName = "Hors_Barn";
-            this.horsBarnDataGridViewCheckBoxColumn.HeaderText = "Hors_Barn";
-            this.horsBarnDataGridViewCheckBoxColumn.Name = "horsBarnDataGridViewCheckBoxColumn";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // incomesDataGridViewTextBoxColumn
-            // 
-            this.incomesDataGridViewTextBoxColumn.DataPropertyName = "Incomes";
-            this.incomesDataGridViewTextBoxColumn.HeaderText = "Incomes";
-            this.incomesDataGridViewTextBoxColumn.Name = "incomesDataGridViewTextBoxColumn";
-            // 
-            // objectStateDataGridViewTextBoxColumn
-            // 
-            this.objectStateDataGridViewTextBoxColumn.DataPropertyName = "ObjectState";
-            this.objectStateDataGridViewTextBoxColumn.HeaderText = "ObjectState";
-            this.objectStateDataGridViewTextBoxColumn.Name = "objectStateDataGridViewTextBoxColumn";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
             // 
             // groupBox1
             // 
@@ -1097,57 +1070,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taxes";
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(6, 31);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(34, 19);
-            this.metroLabel8.TabIndex = 2;
-            this.metroLabel8.Text = "PST:";
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(6, 70);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(35, 19);
-            this.metroLabel12.TabIndex = 3;
-            this.metroLabel12.Text = "GST:";
-            // 
-            // mTB_PST
-            // 
-            // 
-            // 
-            // 
-            this.mTB_PST.CustomButton.Image = null;
-            this.mTB_PST.CustomButton.Location = new System.Drawing.Point(44, 1);
-            this.mTB_PST.CustomButton.Name = "";
-            this.mTB_PST.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.mTB_PST.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTB_PST.CustomButton.TabIndex = 1;
-            this.mTB_PST.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTB_PST.CustomButton.UseSelectable = true;
-            this.mTB_PST.CustomButton.Visible = false;
-            this.mTB_PST.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.mTB_PST.Lines = new string[] {
-        "7 %"};
-            this.mTB_PST.Location = new System.Drawing.Point(74, 26);
-            this.mTB_PST.MaxLength = 32767;
-            this.mTB_PST.Name = "mTB_PST";
-            this.mTB_PST.PasswordChar = '\0';
-            this.mTB_PST.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTB_PST.SelectedText = "";
-            this.mTB_PST.SelectionLength = 0;
-            this.mTB_PST.SelectionStart = 0;
-            this.mTB_PST.ShortcutsEnabled = true;
-            this.mTB_PST.Size = new System.Drawing.Size(72, 29);
-            this.mTB_PST.TabIndex = 6;
-            this.mTB_PST.Text = "7 %";
-            this.mTB_PST.UseSelectable = true;
-            this.mTB_PST.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTB_PST.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // mTB_GST
             // 
@@ -1182,6 +1104,84 @@
             this.mTB_GST.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTB_GST.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // mTB_PST
+            // 
+            // 
+            // 
+            // 
+            this.mTB_PST.CustomButton.Image = null;
+            this.mTB_PST.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.mTB_PST.CustomButton.Name = "";
+            this.mTB_PST.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.mTB_PST.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTB_PST.CustomButton.TabIndex = 1;
+            this.mTB_PST.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTB_PST.CustomButton.UseSelectable = true;
+            this.mTB_PST.CustomButton.Visible = false;
+            this.mTB_PST.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.mTB_PST.Lines = new string[] {
+        "7 %"};
+            this.mTB_PST.Location = new System.Drawing.Point(74, 26);
+            this.mTB_PST.MaxLength = 32767;
+            this.mTB_PST.Name = "mTB_PST";
+            this.mTB_PST.PasswordChar = '\0';
+            this.mTB_PST.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTB_PST.SelectedText = "";
+            this.mTB_PST.SelectionLength = 0;
+            this.mTB_PST.SelectionStart = 0;
+            this.mTB_PST.ShortcutsEnabled = true;
+            this.mTB_PST.Size = new System.Drawing.Size(72, 29);
+            this.mTB_PST.TabIndex = 6;
+            this.mTB_PST.Text = "7 %";
+            this.mTB_PST.UseSelectable = true;
+            this.mTB_PST.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTB_PST.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(6, 70);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(35, 19);
+            this.metroLabel12.TabIndex = 3;
+            this.metroLabel12.Text = "GST:";
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(6, 31);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(34, 19);
+            this.metroLabel8.TabIndex = 2;
+            this.metroLabel8.Text = "PST:";
+            // 
+            // GB_DeleteDB
+            // 
+            this.GB_DeleteDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GB_DeleteDB.BackColor = System.Drawing.Color.Transparent;
+            this.GB_DeleteDB.Controls.Add(this.mCB_DeleteDatabase);
+            this.GB_DeleteDB.Location = new System.Drawing.Point(209, 16);
+            this.GB_DeleteDB.Name = "GB_DeleteDB";
+            this.GB_DeleteDB.Size = new System.Drawing.Size(141, 111);
+            this.GB_DeleteDB.TabIndex = 4;
+            this.GB_DeleteDB.TabStop = false;
+            this.GB_DeleteDB.Text = "Delete Database";
+            // 
+            // mCB_DeleteDatabase
+            // 
+            this.mCB_DeleteDatabase.AutoSize = true;
+            this.mCB_DeleteDatabase.Location = new System.Drawing.Point(15, 31);
+            this.mCB_DeleteDatabase.Name = "mCB_DeleteDatabase";
+            this.mCB_DeleteDatabase.Size = new System.Drawing.Size(39, 15);
+            this.mCB_DeleteDatabase.TabIndex = 2;
+            this.mCB_DeleteDatabase.Text = "No";
+            this.mCB_DeleteDatabase.UseSelectable = true;
+            this.mCB_DeleteDatabase.Click += new System.EventHandler(this.mCB_DeleteDatabase_Click);
+            // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = this;
+            // 
             // ucSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1201,15 +1201,15 @@
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.mTP_Options.ResumeLayout(false);
             this.mTP_Options.PerformLayout();
             this.MTP_DatabaseSettings.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.GB_DeleteDB.ResumeLayout(false);
             this.GB_DeleteDB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
