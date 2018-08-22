@@ -54,7 +54,13 @@ namespace Accounting
             mTB_Country.Text = Settings.Default["CompanyCountry"].ToString();
             mTB_Province.Text = Settings.Default["CompanyCity"].ToString();
             mTB_Owner.Text = Settings.Default["CompanyOwner"].ToString();
+            mTB_Title.Text = Settings.Default["CompanyTitle"].ToString();
 
+            mL_AppTitle.Text = Application.ProductName;
+            mL_CompanyName.Text = CompanyName;
+            mL_AppDev.Text = "Tobias Sachse";
+            mL_AppVersion.Text = Application.ProductVersion;
+            
         }
 
         private void mCB_Style_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,25 +111,6 @@ namespace Accounting
         private void MessageInfo()
         {
             mL_Setting_Info.Text = "Plaese restart your Application for settings to take effect!";
-         }
-
-        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            Form_Main.Instance.DialogResult = MetroMessageBox.Show(this, "This will delete your database after a restart the application. \n\r" +
-                "Are you sure to do it?","Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (Form_Main.Instance.DialogResult == DialogResult.Yes)
-            {
-                Settings.Default.FirstStart = true;
-                Settings.Default.Save();
-                Application.Exit();
-            }
-            else
-            {
-                ml_DeleteDatabse.Text = "";
-                Settings.Default.FirstStart = false;
-                Settings.Default.Save();
-            }
          }
 
         private void mTB_Owner_TextChanged(object sender, EventArgs e)
@@ -230,6 +217,31 @@ namespace Accounting
             Settings.Default.Save();
 
             MessageInfo();
+        }
+
+        private void mCB_DeleteDatabase_Click(object sender, EventArgs e)
+        {
+            if (mCB_DeleteDatabase.Checked)
+                mCB_DeleteDatabase.Text = "Yes";
+            else
+                mCB_DeleteDatabase.Text = "No";
+
+            Form_Main.Instance.DialogResult = MetroMessageBox.Show(this, "This will delete your database after a restart the application. \n\r" +
+                "Are you sure to do it?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (Form_Main.Instance.DialogResult == DialogResult.Yes)
+            {
+                Settings.Default.FirstStart = true;
+                Settings.Default.Save();
+                Application.Exit();
+            }
+            else
+            {
+                Settings.Default.FirstStart = false;
+                Settings.Default.Save();
+                mCB_DeleteDatabase.Text = "No";
+                mCB_DeleteDatabase.CheckState = CheckState.Unchecked;
+            }
         }
     }
 }
