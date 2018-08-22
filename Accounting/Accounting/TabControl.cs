@@ -48,7 +48,7 @@ namespace Accounting
         private static void ClearTableCustomer(MetroListView list_Customer)
         {
             list_Customer.Clear();
-
+            
             list_Customer.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("Full Name", 120, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("E-Mail Address", 150, textAlign: HorizontalAlignment.Left);
@@ -118,7 +118,7 @@ namespace Accounting
 
                 foreach (var item in list)
                 {
-                    ListViewItem listItems = new ListViewItem(item.Date.ToLongDateString());
+                    ListViewItem listItems = new ListViewItem(item.Date.ToShortDateString());
                     listItems.SubItems.Add(item.Farmer);
                     listItems.SubItems.Add(item.Produce);
                     listItems.SubItems.Add(item.Price.ToString("c",ucSetting.CurrencyDefault));

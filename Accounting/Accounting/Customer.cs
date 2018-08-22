@@ -49,5 +49,6 @@ namespace Accounting
 
         [NotMapped]
         public int ObjectState { get; set; }
+
     }
 }

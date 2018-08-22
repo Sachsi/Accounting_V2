@@ -39,8 +39,9 @@
             this.mP_Dashboard.HorizontalScrollbarHighlightOnWheel = false;
             this.mP_Dashboard.HorizontalScrollbarSize = 10;
             this.mP_Dashboard.Location = new System.Drawing.Point(20, 60);
+            this.mP_Dashboard.MinimumSize = new System.Drawing.Size(860, 460);
             this.mP_Dashboard.Name = "mP_Dashboard";
-            this.mP_Dashboard.Size = new System.Drawing.Size(966, 543);
+            this.mP_Dashboard.Size = new System.Drawing.Size(860, 460);
             this.mP_Dashboard.TabIndex = 0;
             this.mP_Dashboard.VerticalScrollbarBarColor = true;
             this.mP_Dashboard.VerticalScrollbarHighlightOnWheel = false;
@@ -61,10 +62,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 623);
+            this.ClientSize = new System.Drawing.Size(900, 540);
             this.Controls.Add(this.mLink_Back);
             this.Controls.Add(this.mP_Dashboard);
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(900, 540);
             this.Name = "Form_Main";
             this.Text = "        Accounting";
             this.Load += new System.EventHandler(this.Form_Main_Load);

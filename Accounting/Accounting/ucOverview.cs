@@ -58,6 +58,43 @@ namespace Accounting
 
         private void ucOverview_Load(object sender, EventArgs e)
         {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void RelaodChart()
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                List<Income> source1 = SQLDatabase.SQLSearch.SearchIncomeDateYear(db.Incomes.ToList(), DateTime.Now.Year);
+                List<Expense> source2 = SQLDatabase.SQLSearch.SearchExpenseDateYear(db.Expenses.ToList(), DateTime.Now.Year);
+
+                ///Clear Chart
+                InfoChart.Series["Income"].Points.Clear();
+                InfoChart.Series["Expenses"].Points.Clear();
+                InfoChart.Series["Volume of Sale"].Points.Clear();
+
+                InfoChart.Series["Income"].ToolTip = "Income";
+                InfoChart.Series["Expenses"].ToolTip = "Expenses";
+                InfoChart.Series["Volume of Sale"].ToolTip = "Volume of Sale";
+
+                for (int month = 1; month <= (int)DateTime.Now.Month; month++)
+                {
+                    double temp1 = SQLDatabase.SQLSearch.SearchIncomeDateMonth(source1, month).Sum(c => c.Price);
+                    InfoChart.Series["Income"].Points.AddXY(((MonthEn)month).ToString(), temp1);
+                    InfoChart.Series["Income"].Points[month-1].ToolTip = temp1.ToString("c");
+
+                    double temp2 = SQLDatabase.SQLSearch.SearchExpenseDateMonth(source2, month).Sum(c => c.Price);
+                    InfoChart.Series["Expenses"].Points.AddXY(((MonthEn)month).ToString(), temp2);
+                    InfoChart.Series["Expenses"].Points[month - 1].ToolTip = temp2.ToString("c");
+
+
+                    InfoChart.Series["Volume of Sale"].Points.AddXY(((MonthEn)month).ToString(), temp1 + temp2);
+                    InfoChart.Series["Volume of Sale"].Points[month - 1].ToolTip = (temp1 + temp2).ToString("c");
+                }
+            }
         }
 
         private void Timer_Overview_Tick(object sender, EventArgs e)
@@ -92,7 +129,7 @@ namespace Accounting
 
             using (DatabaseContext db = new DatabaseContext())
             {
-                expensesSum = Sum_Expenses(db.Expenses, DateTime.Now, Periode.Month);
+                expensesSum = Sum_Expenses(db.Expenses, DateTime.Now, Periode.Year);
                 mL_ExpensesYear.Text = DateTime.Now.Year.ToString() + ": ";
                 ml_Price_ES.Text = expensesSum.ToString("c", ucSetting.CurrencyDefault);
 
@@ -107,12 +144,31 @@ namespace Accounting
                 expensesSumLastMonth =  Sum_Expenses(db.Expenses, DateTime.Now.AddMonths(-1), Periode.Month);
                 ml_ExpensesLastMonth.Text = ((MonthEn)DateTime.Now.AddMonths(-1).Month).ToString() + ": ";
                 ml_Price_ELM.Text = expensesSumLastMonth.ToString("c", ucSetting.CurrencyDefault);
+
             }
 
+            ///Volume of Sale for year 
+            double VoluemOfSale = ExpensesSum + IncomeSum;
+            ml_VolumeYear.Text = ((MonthEn)DateTime.Now.Year).ToString()+ ":";
+            ml_Price_VSY.Text = VoluemOfSale.ToString("c", ucSetting.CurrencyDefault);
 
+            /// volume of Sale for the last year
+            VoluemOfSale = ExpensesSumLast + IncomeSumLast;
+            ml_VolumeLastYear.Text = ((MonthEn)DateTime.Now.AddYears(-1).Year).ToString() + ":";
+            ml_Price_VSLY.Text = VoluemOfSale.ToString("c", ucSetting.CurrencyDefault);
 
+            ///Volume of Sale for this month 
+            VoluemOfSale = ExpensesSumMonth + IncomeSumMonth;
+            ml_VolumeMonth.Text = ((MonthEn)DateTime.Now.Month).ToString() + ":";
+            ml_Price_VSM.Text = VoluemOfSale.ToString("c", ucSetting.CurrencyDefault);
 
+            /// volume of Sale for the last month
+            VoluemOfSale = ExpensesSumLastMonth + IncomeSumLastMonth;
+            ml_VolumeLastMonth.Text = ((MonthEn)DateTime.Now.AddMonths(-1).Month).ToString() + ":";
+            ml_Price_VSLM.Text = VoluemOfSale.ToString("c", ucSetting.CurrencyDefault);
 
+            ///Reload the Chart
+            RelaodChart();
 
         }
 
@@ -271,6 +327,22 @@ namespace Accounting
                 }
                 
             }
+        }
+
+        private void mT_IncomeDetails_Click(object sender, EventArgs e)
+        {
+            InfoChart.Series["Income"].Enabled = !InfoChart.Series["Income"].Enabled;
+        }
+
+        private void mT_ExpensesDetails_Click(object sender, EventArgs e)
+        {
+            InfoChart.Series["Expenses"].Enabled = !InfoChart.Series["Expenses"].Enabled;
+            
+        }
+
+        private void mT_VolumeOfSale_Click(object sender, EventArgs e)
+        {
+            InfoChart.Series["Volume of Sale"].Enabled = !InfoChart.Series["Volume of Sale"].Enabled;
         }
     }
 }

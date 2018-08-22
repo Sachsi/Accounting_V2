@@ -12,7 +12,7 @@ namespace Accounting.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -80,6 +80,102 @@ namespace Accounting.Properties {
             }
             set {
                 this["BusinessName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Name")]
+        public string CompanyOwner {
+            get {
+                return ((string)(this["CompanyOwner"]));
+            }
+            set {
+                this["CompanyOwner"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Street")]
+        public string CompanyStreet {
+            get {
+                return ((string)(this["CompanyStreet"]));
+            }
+            set {
+                this["CompanyStreet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("City")]
+        public string CompanyCity {
+            get {
+                return ((string)(this["CompanyCity"]));
+            }
+            set {
+                this["CompanyCity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("111111111111")]
+        public string CompanyPhone {
+            get {
+                return ((string)(this["CompanyPhone"]));
+            }
+            set {
+                this["CompanyPhone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("maxmusterman@mail.com")]
+        public string CompanyEMail {
+            get {
+                return ((string)(this["CompanyEMail"]));
+            }
+            set {
+                this["CompanyEMail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Country")]
+        public string CompanyCountry {
+            get {
+                return ((string)(this["CompanyCountry"]));
+            }
+            set {
+                this["CompanyCountry"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Postcode")]
+        public string CompanyPostcode {
+            get {
+                return ((string)(this["CompanyPostcode"]));
+            }
+            set {
+                this["CompanyPostcode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mr.")]
+        public string CompanyTitle {
+            get {
+                return ((string)(this["CompanyTitle"]));
+            }
+            set {
+                this["CompanyTitle"] = value;
             }
         }
     }

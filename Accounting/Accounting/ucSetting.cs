@@ -47,7 +47,19 @@ namespace Accounting
             Form_Main.Instance.Text = "       Accounting of " + Settings.Default["BusinessName"].ToString();
             currencyDefault = (System.Globalization.CultureInfo)Settings.Default["Currency"];
 
-            //mCB_Currency.Text = Settings.Default["Currency"].ToString();
+            mTB_Street.Text = Settings.Default["CompanyStreet"].ToString();
+            mTB_Postcode.Text = Settings.Default["CompanyPostcode"].ToString();
+            mTB_Phone.Text = Settings.Default["CompanyPhone"].ToString();
+            mTB_EMail.Text = Settings.Default["CompanyEMail"].ToString();
+            mTB_Country.Text = Settings.Default["CompanyCountry"].ToString();
+            mTB_Province.Text = Settings.Default["CompanyCity"].ToString();
+            mTB_Owner.Text = Settings.Default["CompanyOwner"].ToString();
+            mTB_Title.Text = Settings.Default["CompanyTitle"].ToString();
+
+            mL_AppTitle.Text = Application.ProductName;
+            mL_CompanyName.Text = CompanyName;
+            mL_AppDev.Text = "Tobias Sachse";
+            mL_AppVersion.Text = Application.ProductVersion;
             
         }
 
@@ -101,10 +113,121 @@ namespace Accounting
             mL_Setting_Info.Text = "Plaese restart your Application for settings to take effect!";
          }
 
-        private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void mTB_Owner_TextChanged(object sender, EventArgs e)
         {
+            if (Settings.Default["CompanyOwner"].ToString() == mTB_Owner.Text.ToString())
+            {
+                return;
+            }
+            
+            Settings.Default["CompanyOwner"] = mTB_Owner.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mTB_Street_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyStreet"].ToString() == mTB_Street.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyStreet"] = mTB_Street.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mTB_Province_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyCity"].ToString() == mTB_Province.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyCity"] = mTB_Province.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mTB_Country_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyCountry"].ToString() == mTB_Country.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyCountry"] = mTB_Country.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mTB_Postcode_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyPostcode"].ToString() == mTB_Postcode.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyPostcode"] = mTB_Postcode.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+ 
+
+        private void mTB_EMail_TextChanged_1(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyEMail"].ToString() == mTB_EMail.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyEMail"] = mTB_EMail.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mTB_Phone_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyPhone"].ToString() == mTB_Phone.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyPhone"] = mTB_Phone.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mTB_Title_TextChanged(object sender, EventArgs e)
+        {
+            if (Settings.Default["CompanyTitle"].ToString() == mTB_Title.Text.ToString())
+            {
+                return;
+            }
+
+            Settings.Default["CompanyTitle"] = mTB_Title.Text;
+            Settings.Default.Save();
+
+            MessageInfo();
+        }
+
+        private void mCB_DeleteDatabase_Click(object sender, EventArgs e)
+        {
+            if (mCB_DeleteDatabase.Checked)
+                mCB_DeleteDatabase.Text = "Yes";
+            else
+                mCB_DeleteDatabase.Text = "No";
+
             Form_Main.Instance.DialogResult = MetroMessageBox.Show(this, "This will delete your database after a restart the application. \n\r" +
-                "Are you sure to do it?","Warning",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                "Are you sure to do it?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (Form_Main.Instance.DialogResult == DialogResult.Yes)
             {
@@ -114,10 +237,11 @@ namespace Accounting
             }
             else
             {
-                ml_DeleteDatabse.Text = "";
                 Settings.Default.FirstStart = false;
                 Settings.Default.Save();
+                mCB_DeleteDatabase.Text = "No";
+                mCB_DeleteDatabase.CheckState = CheckState.Unchecked;
             }
-         }
+        }
     }
 }

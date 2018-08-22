@@ -40,6 +40,7 @@ namespace Accounting
 
         public Form_Main()
         {
+            
             InitializeComponent();
         }
 
@@ -53,7 +54,7 @@ namespace Accounting
            
             if (Settings.Default.FirstStart == true)
             {
-                DialogResult = MetroMessageBox.Show(this, "Are you sure to delete the complete database?. You can not undo it!\n\r To delete you database you can do it unter setting, as well.",
+                DialogResult = MetroMessageBox.Show(this, "Are you sure to delete the complete database?. You can not undo it!\n\r To delete your database you can do it unter setting, as well.",
                             "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (DialogResult == DialogResult.No)
                 {

@@ -58,6 +58,7 @@
             this.mTile_Search.Size = new System.Drawing.Size(128, 128);
             this.mTile_Search.TabIndex = 2;
             this.mTile_Search.Text = "&Search";
+            this.mTile_Search.TileImage = global::Accounting.Properties.Resources.AppListIcon_targetsize_64;
             this.mTile_Search.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mTile_Search.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.mTile_Search.UseSelectable = true;
@@ -103,8 +104,9 @@
             this.Controls.Add(this.mTile_Search);
             this.Controls.Add(this.mTile_Database);
             this.Controls.Add(this.mT_Overview);
+            this.MinimumSize = new System.Drawing.Size(860, 460);
             this.Name = "ucDashboard";
-            this.Size = new System.Drawing.Size(886, 591);
+            this.Size = new System.Drawing.Size(860, 460);
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.UseStyleColors = true;
             this.Load += new System.EventHandler(this.ucDashboard_Load);
