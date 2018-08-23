@@ -651,6 +651,8 @@ namespace Accounting
                 ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
                 b.SubItems.Add(item.Dealer);
                 b.SubItems.Add(item.Payment);
+                b.SubItems.Add(item.GST.ToString("c", ucSetting.CurrencyDefault));
+                b.SubItems.Add(item.PST.ToString("c", ucSetting.CurrencyDefault));
                 b.SubItems.Add(item.Price.ToString("c", ucSetting.CurrencyDefault));
                 b.SubItems.Add(item.Details);
                 List_Search.Items.Add(b);
