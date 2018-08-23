@@ -56,6 +56,9 @@ namespace Accounting
             mTB_Owner.Text = Settings.Default["CompanyOwner"].ToString();
             mTB_Title.Text = Settings.Default["CompanyTitle"].ToString();
 
+            mTB_PST.Text = Settings.Default["PST"].ToString();
+            mTB_GST.Text = Settings.Default["GST"].ToString();
+
             mL_AppTitle.Text = Application.ProductName;
             mL_CompanyName.Text = CompanyName;
             mL_AppDev.Text = "Tobias Sachse";
@@ -241,6 +244,38 @@ namespace Accounting
                 Settings.Default.Save();
                 mCB_DeleteDatabase.Text = "No";
                 mCB_DeleteDatabase.CheckState = CheckState.Unchecked;
+            }
+        }
+
+        private void mTB_GST_TextChanged(object sender, EventArgs e)
+        {
+            int temp;
+
+            if (String.IsNullOrEmpty(mTB_GST.Text))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Please enter valid number!", "Information", MessageBoxButtons.OK);
+            }
+            else
+            {
+                temp = Convert.ToInt32(mTB_GST.Text);
+                Settings.Default.GST = (decimal)temp;
+                Settings.Default.Save();
+            }
+        }
+
+        private void mTB_PST_TextChanged(object sender, EventArgs e)
+        {
+            int temp;
+
+            if (String.IsNullOrEmpty(mTB_PST.Text))
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Please enter valid number!", "Information", MessageBoxButtons.OK);
+            }
+            else
+            {
+                temp = Convert.ToInt32(mTB_PST.Text);
+                Settings.Default.PST = (decimal)temp;
+                Settings.Default.Save();
             }
         }
     }

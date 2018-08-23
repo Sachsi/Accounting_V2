@@ -25,6 +25,12 @@ namespace Accounting
         [StringLength(10)]
         public string Payment { get; set; }
 
+        [Column("GST")]
+        public decimal GST { get; set; }
+
+        [Column("PST")]
+        public decimal PST { get; set; }
+
         [Column("Price")]
         [DataType(DataType.Currency)]
         public double Price { get; set; }

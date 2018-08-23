@@ -185,6 +185,14 @@
     <Compile Include="Enums\Database.cs" />
     <Compile Include="Enums\Error.cs" />
     <Compile Include="Enums\Month.cs" />
+    <Compile Include="Migrations\201808221953291_addTaxes.cs" />
+    <Compile Include="Migrations\201808221953291_addTaxes.Designer.cs">
+      <DependentUpon>201808221953291_addTaxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808231829524_changeDataTypeTax.cs" />
+    <Compile Include="Migrations\201808231829524_changeDataTypeTax.Designer.cs">
+      <DependentUpon>201808231829524_changeDataTypeTax.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportIncome.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
@@ -263,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804282146370_changes.resx">
       <DependentUpon>201804282146370_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221953291_addTaxes.resx">
+      <DependentUpon>201808221953291_addTaxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808231829524_changeDataTypeTax.resx">
+      <DependentUpon>201808231829524_changeDataTypeTax.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportProducts.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -49,7 +49,7 @@ namespace Accounting.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool FirstStart {
             get {
                 return ((bool)(this["FirstStart"]));
@@ -176,6 +176,30 @@ namespace Accounting.Properties {
             }
             set {
                 this["CompanyTitle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public decimal GST {
+            get {
+                return ((decimal)(this["GST"]));
+            }
+            set {
+                this["GST"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public decimal PST {
+            get {
+                return ((decimal)(this["PST"]));
+            }
+            set {
+                this["PST"] = value;
             }
         }
     }

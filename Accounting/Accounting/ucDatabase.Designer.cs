@@ -154,7 +154,7 @@
             this.mTC_Accounting.ItemSize = new System.Drawing.Size(120, 34);
             this.mTC_Accounting.Location = new System.Drawing.Point(0, 0);
             this.mTC_Accounting.Name = "mTC_Accounting";
-            this.mTC_Accounting.SelectedIndex = 1;
+            this.mTC_Accounting.SelectedIndex = 2;
             this.mTC_Accounting.Size = new System.Drawing.Size(860, 423);
             this.mTC_Accounting.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mTC_Accounting.TabIndex = 1;
@@ -792,21 +792,25 @@
             // CH_Dealer_Expenses
             // 
             this.CH_Dealer_Expenses.Text = "Dealer";
+            this.CH_Dealer_Expenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Dealer_Expenses.Width = 200;
             // 
             // CH_Payment_Expenses
             // 
             this.CH_Payment_Expenses.Text = "Payment";
+            this.CH_Payment_Expenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Payment_Expenses.Width = 150;
             // 
             // CH_Price_Expenses
             // 
             this.CH_Price_Expenses.Text = "Price";
+            this.CH_Price_Expenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CH_Price_Expenses.Width = 80;
             // 
             // CH_Details_Expenses
             // 
             this.CH_Details_Expenses.Text = "Details";
+            this.CH_Details_Expenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CH_Details_Expenses.Width = 150;
             // 
             // mP_Expenses

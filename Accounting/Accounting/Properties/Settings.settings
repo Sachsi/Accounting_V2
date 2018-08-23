@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Default</Value>
     </Setting>
     <Setting Name="FirstStart" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Currency" Type="System.Globalization.CultureInfo" Scope="User">
       <Value Profile="(Default)">(Default)</Value>
@@ -40,6 +40,12 @@
     </Setting>
     <Setting Name="CompanyTitle" Type="System.String" Scope="User">
       <Value Profile="(Default)">Mr.</Value>
+    </Setting>
+    <Setting Name="GST" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="PST" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">5</Value>
     </Setting>
   </Settings>
 </SettingsFile>

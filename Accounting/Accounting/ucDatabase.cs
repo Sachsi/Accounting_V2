@@ -260,8 +260,12 @@ namespace Accounting
         /// <param name="e"></param>
         private void mB_Save_Click(object sender, EventArgs e)
         {
+            decimal GSTValue = 0;
+            decimal PSTValue = 0;
+
             using (DatabaseContext db = new DatabaseContext())
             {
+
                 if (mTC_Accounting.SelectedTab == mTP_Customer)
                 {
                     Customer obj_Customer = customerBindingSource.Current as Customer;
@@ -326,6 +330,11 @@ namespace Accounting
                 {
                     Expense obj_Expense = expensesBindingSource.Current as Expense;
 
+                    GSTValue = Properties.Settings.Default.GST;
+                    PSTValue = Properties.Settings.Default.PST;
+                    obj_Expense.GST = Taxes(GSTValue, obj_Expense); ///calculate GST tax of the price
+                    obj_Expense.PST = Taxes(PSTValue, obj_Expense); ///calculate PST tax of the price
+
                     if (obj_Expense != null)
                     {
                         if (obj_Expense.Details == null)
@@ -375,6 +384,18 @@ namespace Accounting
                     }
                 }
             }
+        }
+        /// <summary>
+        /// Calculate the tax of the desired value 
+        /// </summary>
+        /// <param name="GSTValue">Tax in percent</param>
+        /// <param name="obj_Expense">table expenses of colume price</param>
+        /// <returns></returns>
+        private static decimal Taxes(decimal GSTValue, Expense obj_Expense)
+        {
+            GSTValue = GSTValue / 100;
+            GSTValue = GSTValue * (decimal)obj_Expense.Price;
+            return GSTValue;
         }
 
         /// <summary>

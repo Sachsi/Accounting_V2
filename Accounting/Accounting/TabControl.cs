@@ -172,6 +172,8 @@ namespace Accounting
                     ListViewItem listItems = new ListViewItem(item.Date.ToShortDateString());
                     listItems.SubItems.Add(item.Dealer);
                     listItems.SubItems.Add(item.Payment);
+                    listItems.SubItems.Add(item.GST.ToString("c",ucSetting.CurrencyDefault));
+                    listItems.SubItems.Add(item.PST.ToString("c", ucSetting.CurrencyDefault));
                     listItems.SubItems.Add(item.Price.ToString("c",ucSetting.CurrencyDefault));
                     try
                     {
@@ -195,10 +197,12 @@ namespace Accounting
         {
             list_Expenses.Clear();
 
-            list_Expenses.Columns.Add("Date", 150, textAlign: HorizontalAlignment.Left);
-            list_Expenses.Columns.Add("Dealer", 180, textAlign: HorizontalAlignment.Left);
-            list_Expenses.Columns.Add("Payment", 150, textAlign: HorizontalAlignment.Left);
-            list_Expenses.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Left);
+            list_Expenses.Columns.Add("Date", 120, textAlign: HorizontalAlignment.Center );
+            list_Expenses.Columns.Add("Dealer", 150, textAlign: HorizontalAlignment.Center);
+            list_Expenses.Columns.Add("Payment", 120, textAlign: HorizontalAlignment.Center);
+            list_Expenses.Columns.Add("GST", 80, textAlign: HorizontalAlignment.Right);
+            list_Expenses.Columns.Add("PST", 80, textAlign: HorizontalAlignment.Right);
+            list_Expenses.Columns.Add("Price", 100, textAlign: HorizontalAlignment.Right);
             list_Expenses.Columns.Add("Details", 200, textAlign: HorizontalAlignment.Left);
         }
         /// <summary>
