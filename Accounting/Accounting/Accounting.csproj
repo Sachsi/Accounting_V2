@@ -24,9 +24,11 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>https://79.215.31.144:48271/</UpdateUrl>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
+    <ProductName>Accounting</ProductName>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -64,6 +66,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Accounting.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TemplateIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CodeFirstStoreFunctions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=46c4868af4307d2c, processorArchitecture=MSIL">
@@ -193,6 +201,10 @@
     <Compile Include="Migrations\201808231829524_changeDataTypeTax.Designer.cs">
       <DependentUpon>201808231829524_changeDataTypeTax.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808231950352_changedName.cs" />
+    <Compile Include="Migrations\201808231950352_changedName.Designer.cs">
+      <DependentUpon>201808231950352_changedName.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportIncome.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.cs" />
     <Compile Include="Migrations\201804102005452_AllTables.Designer.cs">
@@ -277,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808231829524_changeDataTypeTax.resx">
       <DependentUpon>201808231829524_changeDataTypeTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808231950352_changedName.resx">
+      <DependentUpon>201808231950352_changedName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportProducts.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -369,6 +384,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="TemplateIcon.ico" />
     <None Include="Resources\AppListIcon.targetsize-641.png" />
     <None Include="Resources\pulse-box128.png" />
     <None Include="Resources\pulse-box64.png" />

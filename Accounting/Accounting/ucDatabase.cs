@@ -303,6 +303,7 @@ namespace Accounting
 
                         if (mlV_Products_Income.CheckedItems.Count != 0)
                         {
+                            obj_Income.Products = "";
                             foreach (var item in mlV_Products_Income.CheckedIndices)
                             {
                                 string a = mlV_Products_Income.Items[Convert.ToInt32(item)].Text;
@@ -330,10 +331,19 @@ namespace Accounting
                 {
                     Expense obj_Expense = expensesBindingSource.Current as Expense;
 
-                    GSTValue = Properties.Settings.Default.GST;
-                    PSTValue = Properties.Settings.Default.PST;
-                    obj_Expense.GST = Taxes(GSTValue, obj_Expense); ///calculate GST tax of the price
-                    obj_Expense.PST = Taxes(PSTValue, obj_Expense); ///calculate PST tax of the price
+                    if (mCB_TaxYES_NO.CheckState == CheckState.Unchecked)
+                    {
+                        GSTValue = Properties.Settings.Default.GST;
+                        PSTValue = Properties.Settings.Default.PST;
+                        obj_Expense.GST = Taxes(GSTValue, obj_Expense); ///calculate GST tax of the price
+                        obj_Expense.PST = Taxes(PSTValue, obj_Expense); ///calculate PST tax of the price
+                    }
+                    else
+                    {
+                        obj_Expense.GST = 0;
+                        obj_Expense.PST = 0;
+                    }
+
 
                     if (obj_Expense != null)
                     {
@@ -413,6 +423,14 @@ namespace Accounting
                 ml_Unit.Text = "lb";
         }
 
-
+        private void mCB_TaxYES_NO_CheckedChanged(object sender, EventArgs e)
+        {
+            if (mCB_TaxYES_NO.CheckState == CheckState.Unchecked)
+            {
+                mCB_TaxYES_NO.Text = "Yes";
+            }
+            else
+                mCB_TaxYES_NO.Text = "No";
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace Accounting
             list_Customer.Columns.Add("E-Mail Address", 150, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("Phone Number", 150, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("CSA", 90, textAlign: HorizontalAlignment.Left);
-            list_Customer.Columns.Add("Neighbarhood", 90, textAlign: HorizontalAlignment.Left);
+            list_Customer.Columns.Add("Neighbourhood", 90, textAlign: HorizontalAlignment.Left);
             list_Customer.Columns.Add("Horse Barn", 90, textAlign: HorizontalAlignment.Left);
         }
         /// <summary>

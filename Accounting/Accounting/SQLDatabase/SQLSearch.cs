@@ -158,7 +158,66 @@ namespace Accounting.SQLDatabase
       
             return customer;
         }
-//==============================Income Querys===============================================
+        /// <summary>
+        /// returns the count of CSA customer dependends on the bool CSA value
+        /// </summary>
+        /// <param name="list">database list of customer</param>
+        /// <param name="CSA">value who the function looks for</param>
+        /// <returns></returns>
+        public static int CustomerCountCSA( bool CSA)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                List<Customer> customer = db.Customers.ToList();
+
+                customer = (from Name in customer
+                            where Name.CSA == CSA
+                            orderby Name.Date descending
+                            select Name).ToList();
+                return customer.Count;
+            }
+            
+        }
+        /// <summary>
+        /// returns the count of Neightbourhood customer dependends on the bool Neightbourhood value
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="Neightbourhood"></param>
+        /// <returns></returns>
+        public static int CustomerCountNeightbourhood(List<Customer> list, bool Neightbourhood)
+        {
+            List<Customer> customer;
+
+            customer = list;
+
+            customer = (from Name in customer
+                        where Name.Neighbarhood == Neightbourhood
+                        orderby Name.Date descending
+                        select Name).ToList();
+
+            return customer.Count;
+        }
+        /// <summary>
+        /// returns the count of HorseBarn customer dependends on the bool HorseBarn value
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="HorseBarn"></param>
+        /// <returns></returns>
+        public static int CustomerCountHorseBarn(List<Customer> list, bool HorseBarn)
+        {
+            List<Customer> customer;
+
+            customer = list;
+
+            customer = (from Name in customer
+                        where Name.Hors_Barn == HorseBarn
+                        orderby Name.Date descending
+                        select Name).ToList();
+
+            return customer.Count;
+        }
+
+        //==============================Income Querys===============================================
         /// <summary>
         /// methode to search for a special name in the Income table. Ordered by date.
         /// </summary>

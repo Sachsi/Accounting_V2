@@ -34,10 +34,10 @@ namespace Accounting
         [Column("CSA")]
         public bool CSA { get; set; }
 
-        [Column("Neightbarhood")]
+        [Column("Neighbourhood")]
         public bool Neighbarhood { get; set; }
 
-        [Column("Hors Barn")]
+        [Column("Horse Barn")]
         public bool Hors_Barn { get; set; }
 
         [Column("Date")]

@@ -55,11 +55,11 @@ namespace Accounting
 
             
             AddReportDataSouce();
- 
 
-                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                {
-                    
+
+            Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+            {
+
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyName",Settings.Default["BusinessName"].ToString()),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyOwner", Settings.Default["CompanyTitle"].ToString() +
                                                                     " " + Settings.Default["CompanyOwner"].ToString()),
@@ -68,7 +68,8 @@ namespace Accounting
                                                                     "\n" + Settings.Default["CompanyCountry"].ToString()),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyPhone",Settings.Default["CompanyPhone"].ToString()),
                     new Microsoft.Reporting.WinForms.ReportParameter("CompanyEMail",Settings.Default["CompanyEMail"].ToString()),
-                   
+
+                    new Microsoft.Reporting.WinForms.ReportParameter("CustomerCSA",SQLDatabase.SQLSearch.CustomerCountCSA(true).ToString())
                 };
 
                 reportViewer1.LocalReport.SetParameters(rParams);

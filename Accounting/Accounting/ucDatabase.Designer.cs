@@ -120,6 +120,8 @@
             this.mB_Remove = new MetroFramework.Controls.MetroButton();
             this.mB_Cancel = new MetroFramework.Controls.MetroButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.mCB_TaxYES_NO = new MetroFramework.Controls.MetroCheckBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.mTC_Accounting.SuspendLayout();
             this.mTP_Customer.SuspendLayout();
             this.mP_Customer.SuspendLayout();
@@ -293,9 +295,9 @@
             this.mCB_Nieightbarhood_Customer.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.customerBindingSource, "Neighbarhood", true));
             this.mCB_Nieightbarhood_Customer.Location = new System.Drawing.Point(518, 31);
             this.mCB_Nieightbarhood_Customer.Name = "mCB_Nieightbarhood_Customer";
-            this.mCB_Nieightbarhood_Customer.Size = new System.Drawing.Size(104, 15);
+            this.mCB_Nieightbarhood_Customer.Size = new System.Drawing.Size(108, 15);
             this.mCB_Nieightbarhood_Customer.TabIndex = 5;
-            this.mCB_Nieightbarhood_Customer.Text = "Neightbarhood";
+            this.mCB_Nieightbarhood_Customer.Text = "Neighbourhood";
             this.mCB_Nieightbarhood_Customer.UseSelectable = true;
             // 
             // mCB_CSA_Customer
@@ -462,7 +464,7 @@
             // 
             // CH_Neightbarhood
             // 
-            this.CH_Neightbarhood.Text = "Neightbarhood";
+            this.CH_Neightbarhood.Text = "Neighbourhood";
             this.CH_Neightbarhood.Width = 120;
             // 
             // CH_HorseBarn
@@ -817,6 +819,8 @@
             // 
             this.mP_Expenses.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mP_Expenses.Controls.Add(this.metroLabel2);
+            this.mP_Expenses.Controls.Add(this.mCB_TaxYES_NO);
             this.mP_Expenses.Controls.Add(this.ml_Details);
             this.mP_Expenses.Controls.Add(this.mTB_Details);
             this.mP_Expenses.Controls.Add(this.mTB_Dealer_Expenses);
@@ -841,7 +845,7 @@
             // ml_Details
             // 
             this.ml_Details.AutoSize = true;
-            this.ml_Details.Location = new System.Drawing.Point(501, 8);
+            this.ml_Details.Location = new System.Drawing.Point(582, 8);
             this.ml_Details.Name = "ml_Details";
             this.ml_Details.Size = new System.Drawing.Size(50, 19);
             this.ml_Details.TabIndex = 12;
@@ -853,7 +857,7 @@
             // 
             // 
             this.mTB_Details.CustomButton.Image = null;
-            this.mTB_Details.CustomButton.Location = new System.Drawing.Point(199, 2);
+            this.mTB_Details.CustomButton.Location = new System.Drawing.Point(122, 2);
             this.mTB_Details.CustomButton.Name = "";
             this.mTB_Details.CustomButton.Size = new System.Drawing.Size(61, 61);
             this.mTB_Details.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -865,7 +869,7 @@
             this.mTB_Details.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.mTB_Details.Lines = new string[] {
         "Details"};
-            this.mTB_Details.Location = new System.Drawing.Point(581, 3);
+            this.mTB_Details.Location = new System.Drawing.Point(658, 3);
             this.mTB_Details.MaxLength = 32767;
             this.mTB_Details.Multiline = true;
             this.mTB_Details.Name = "mTB_Details";
@@ -875,7 +879,7 @@
             this.mTB_Details.SelectionLength = 0;
             this.mTB_Details.SelectionStart = 0;
             this.mTB_Details.ShortcutsEnabled = true;
-            this.mTB_Details.Size = new System.Drawing.Size(263, 66);
+            this.mTB_Details.Size = new System.Drawing.Size(186, 66);
             this.mTB_Details.TabIndex = 4;
             this.mTB_Details.Text = "Details";
             this.mTB_Details.UseSelectable = true;
@@ -1070,7 +1074,7 @@
             this.mTP_Produkts.Name = "mTP_Produkts";
             this.mTP_Produkts.Size = new System.Drawing.Size(852, 381);
             this.mTP_Produkts.TabIndex = 4;
-            this.mTP_Produkts.Text = "Produkts";
+            this.mTP_Produkts.Text = "Products";
             this.mTP_Produkts.VerticalScrollbarBarColor = true;
             this.mTP_Produkts.VerticalScrollbarHighlightOnWheel = false;
             this.mTP_Produkts.VerticalScrollbarSize = 10;
@@ -1314,7 +1318,7 @@
             this.mL_Produkts_Produkt.Name = "mL_Produkts_Produkt";
             this.mL_Produkts_Produkt.Size = new System.Drawing.Size(58, 19);
             this.mL_Produkts_Produkt.TabIndex = 9;
-            this.mL_Produkts_Produkt.Text = "Produkt:";
+            this.mL_Produkts_Produkt.Text = "Product:";
             // 
             // mTB_Produkts_Price
             // 
@@ -1501,6 +1505,26 @@
             this.splitContainer1.SplitterDistance = 423;
             this.splitContainer1.TabIndex = 10;
             // 
+            // mCB_TaxYES_NO
+            // 
+            this.mCB_TaxYES_NO.AutoSize = true;
+            this.mCB_TaxYES_NO.Location = new System.Drawing.Point(582, 49);
+            this.mCB_TaxYES_NO.Name = "mCB_TaxYES_NO";
+            this.mCB_TaxYES_NO.Size = new System.Drawing.Size(40, 15);
+            this.mCB_TaxYES_NO.TabIndex = 13;
+            this.mCB_TaxYES_NO.Text = "Yes";
+            this.mCB_TaxYES_NO.UseSelectable = true;
+            this.mCB_TaxYES_NO.CheckedChanged += new System.EventHandler(this.mCB_TaxYES_NO_CheckedChanged);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(501, 47);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(75, 19);
+            this.metroLabel2.TabIndex = 14;
+            this.metroLabel2.Text = "Tax Yes/No:";
+            // 
             // ucDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1629,5 +1653,7 @@
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Price;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Produkt;
         private MetroFramework.Controls.MetroTextBox mTB_Produkts_Date;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroCheckBox mCB_TaxYES_NO;
     }
 }

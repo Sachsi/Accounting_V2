@@ -43,7 +43,7 @@ namespace Accounting
 
             CustomColumName[0] = " "; CustomColumName[1] = "Date <"; CustomColumName[2] = "Date >"; CustomColumName[3] = "Full Name"; CustomColumName[4] = "E-Mail Address";
             CustomColumName[5] = "Phone Number"; CustomColumName[6] = "CSA"; CustomColumName[7] = "Horse Barn";
-            CustomColumName[8] = "Neightbarhood";
+            CustomColumName[8] = "Neighbourhood";
 
             IncomeColumName[0] = " "; IncomeColumName[1] = "Date <"; IncomeColumName[2] = "Date >"; IncomeColumName[3] = "Full Name"; IncomeColumName[4] = "Price";
             IncomeColumName[5] = "Products"; IncomeColumName[6] = "Price <"; ; IncomeColumName[7] = "Price >";
@@ -87,23 +87,23 @@ namespace Accounting
                     case (int)Table.Customer:
                         TabControl.RefreshCustomer(List_Search);
                         LoadAllArguments(Table.Customer);
-
+                        SetReportData(db.Customers.ToList());
                         break;
                     case (int)Table.Income:
                         TabControl.RefreshIncome(List_Search);
                         LoadAllArguments(Table.Income);
                         income = db.Incomes.ToList();
-      
+                        SetReportData(db.Incomes.ToList());
                         break;
                     case (int)Table.Expenses:
                         TabControl.RefreshExpenses(List_Search);
                         LoadAllArguments(Table.Expenses);
-           
+                        SetReportData(db.Expenses.ToList());
                         break;
                     case (int)Table.Products:
                         TabControl.RefreshProdukt(List_Search, temp);
                         LoadAllArguments(Table.Products);
-               
+                        SetReportData(db.Produkts.ToList());
                         break;
                     default:
                         break;
@@ -580,9 +580,7 @@ namespace Accounting
         private void LoadCustomerList(List<Customer> customer)
         {  
             List_Search.Items.Clear();
-            ReportData = customer;
-            ReportDataName = "TableCustomer";
-            ReportName = "Accounting.Reports.ReportCustomer.rdlc";
+            SetReportData(customer);
 
             foreach (Customer item in customer)
                 {
@@ -608,9 +606,6 @@ namespace Accounting
             List_Search.Items.Clear();
             reportIncomes.Clear();
 
-            ReportDataName = "TableReportIncome";
-            ReportName = "Accounting.Reports.ReportIncome.rdlc";
-
             foreach (Income item in income)
             {
                 ListViewItem b = new ListViewItem(item.Date.ToShortDateString());
@@ -633,7 +628,7 @@ namespace Accounting
                 a.ObjectState = item.ObjectState;
                 reportIncomes.Add(a);
             }
-            ReportData = reportIncomes;
+            SetReportData(reportIncomes);
         }
         /// <summary>
         /// 
@@ -642,9 +637,7 @@ namespace Accounting
         private void LoadExpensesList(List<Expense> expenses)
         {
             List_Search.Items.Clear();
-            ReportData = expense;
-            ReportDataName = "TableExpenses";
-            ReportName = "Accounting.Reports.ReportExpenses.rdlc";
+            SetReportData(expenses);
 
             foreach (Expense item in expenses)
             {
@@ -661,13 +654,50 @@ namespace Accounting
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="DbSource"></param>
+        private void SetReportData(object DbSource)
+        {
+            using (DatabaseContext db = new DatabaseContext())
+            {
+
+                if (DbSource.GetType() == db.Expenses.ToList().GetType() )
+                {
+
+                    ReportData = DbSource;
+                    ReportDataName = "TableExpenses";
+                    ReportName = "Accounting.Reports.ReportExpenses.rdlc";
+                }
+                else if(DbSource.GetType() == db.Produkts.ToList().GetType())
+                {
+                    ReportData = DbSource;
+                    ReportDataName = "TableProducts";
+                    ReportName = "Accounting.Reports.ReportProducts.rdlc";
+                }
+                else if (DbSource.GetType() == db.Incomes.ToList().GetType())
+                {
+                    ReportData = DbSource;
+                    ReportDataName = "TableReportIncome";
+                    ReportName = "Accounting.Reports.ReportIncome.rdlc";
+                }
+                else if(DbSource.GetType() == db.Customers.ToList().GetType())
+                {
+                    ReportData = DbSource;
+                    ReportDataName = "TableCustomer";
+                    ReportName = "Accounting.Reports.ReportCustomer.rdlc";
+                }
+            }
+
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="producs"></param>
         private void LoadProductList(List<Produkt> producs)
         {
             List_Search.Items.Clear();
-            ReportData = producs;
-            ReportDataName = "TableProducts";
-            ReportName = "Accounting.Reports.ReportProducts.rdlc";
+            SetReportData(producs);
 
             foreach (Produkt item in producs)
             {
@@ -696,16 +726,20 @@ namespace Accounting
                 {
                     case (int)Table.Customer:
                         TabControl.RefreshCustomer(List_Search);
+                        SetReportData(db.Customers.ToList());
                         break;
                     case (int)Table.Expenses:
                         TabControl.RefreshExpenses(List_Search);
+                        SetReportData(db.Expenses.ToList());
                         break;
                     case (int)Table.Income:
                         TabControl.RefreshIncome(List_Search);
                         income = db.Incomes.ToList();
+                        SetReportData(db.Incomes.ToList());
                     break;
                     case (int)Table.Products:
                         TabControl.RefreshProdukt(List_Search, temp);
+                        SetReportData(db.Produkts.ToList());
                         break;
                     default:
                         break;
