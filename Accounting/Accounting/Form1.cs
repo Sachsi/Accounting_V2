@@ -71,6 +71,7 @@ namespace Accounting
             mP_Dashboard.Controls.Add(uc);
 
             mLink_Back.Visible = false;
+            //this.reportViewer1.RefreshReport();
         }
 
         private void mLink_Back_Click(object sender, EventArgs e)

@@ -46,14 +46,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(860, 460);
             this.reportViewer1.TabIndex = 0;
             // 
-            // IncomeBindingSource
-            // 
-            this.IncomeBindingSource.DataSource = typeof(Accounting.Income);
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(Accounting.Customer);
-            // 
             // ReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

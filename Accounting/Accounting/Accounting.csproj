@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Documents\Visual Studio 2017\GitRepository\Accounting\Publish\</PublishUrl>
+    <PublishUrl>C:\Users\User\Documents\Visual Studio 2017\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -51,10 +51,10 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C191333F018954770B14C0C5A509C2D2DF6DAD08</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>EACCF14A88E039923985361628A5C6FE19070D6C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Accounting_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Accounting_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -141,9 +141,6 @@
     </Reference>
     <Reference Include="NetDimension.WinForm.ModernUI, Version=1.0.6639.22990, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NetDimension.WinForm.ModernUI.1.0.1\lib\NetDimension.WinForm.ModernUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
@@ -310,6 +307,7 @@
     <EmbeddedResource Include="ucSetting.resx">
       <DependentUpon>ucSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Accounting_1_TemporaryKey.pfx" />
     <None Include="Accounting_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Customer.datasource" />
@@ -366,7 +364,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
